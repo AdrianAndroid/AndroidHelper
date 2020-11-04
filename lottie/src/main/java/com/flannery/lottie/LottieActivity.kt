@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.content_lottie.*
 
 class LottieActivity : AppCompatActivity() {
 
@@ -16,5 +17,10 @@ class LottieActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        //json_image_5
+        mLottieAnimationView.imageAssetsFolder = "json_image_5"
+        mLottieAnimationView2.imageAssetsFolder = "json_image_3"
+
     }
 }
