@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     data class Item(val image: Int, val title: String, val cls: Class<*>)
 
     val list = arrayListOf<Item>(
-        Item(R.drawable.ic_package, "包名信息", MainActivity::class.java),
+        Item(R.drawable.ic_package, "包名信息", PackageActivity::class.java),
         Item(R.drawable.ic_svg, "lottie", LottieActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
@@ -79,45 +79,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    private fun initRecyclerView() {
-//
-//        val installedPackages = packageManager.getInstalledPackages(0)
-//        mRecyclerView.layoutManager = LinearLayoutManager(this)
-//        mRecyclerView.adapter = object : RecyclerView.Adapter<VHolder>() {
-//            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VHolder {
-//                val textView: TextView = TextView(applicationContext)
-//                textView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-//                return VHolder(textView);
-//            }
-//
-//            override fun getItemCount(): Int {
-//                return installedPackages.size
-//            }
-//
-//            private fun setDefault(textView: TextView) {
-//                textView.setTextColor(Color.BLACK)
-//                textView.setBackgroundColor(Color.WHITE)
-//                textView.paint.isFakeBoldText = false
-//            }
-//
-//            override fun onBindViewHolder(holder: VHolder, position: Int) {
-//                val textView = holder.itemView as? TextView
-//                textView?.run {
-//                    setDefault(this) //先恢复默认
-//                    val info = installedPackages.get(position)
-//                    val stringBuilder = StringBuilder()
-//                    stringBuilder.append(info.packageName).append("\n")
-//                            .append(info.versionName).append("\n")
-//                            .append(info.versionCode).append("\n")
-//                    text = stringBuilder.toString()
-//
-//                    if ("cn.kuwo.bulubulu" == info.packageName) {
-//                        textView.paint.isFakeBoldText = true
-//                        textView.setTextColor(Color.RED)
-//                    }
-//                }
-//            }
-//
-//        }
-//    }
 }
