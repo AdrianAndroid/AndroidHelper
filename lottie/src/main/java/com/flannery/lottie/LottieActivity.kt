@@ -22,5 +22,8 @@ class LottieActivity : AppCompatActivity() {
         mLottieAnimationView.imageAssetsFolder = "json_image_5"
         mLottieAnimationView2.imageAssetsFolder = "json_image_3"
 
+//        val challangeLoadingView = ChallangeLoadingView(findViewById(R.id.challengeLayout))
+//        challangeLoadingView.start()
+
     }
 }
