@@ -1,3 +1,4 @@
+include ':anrwatchdog'
 include ':lottie'
 include ':app'
 rootProject.name = "AndroidHelper"

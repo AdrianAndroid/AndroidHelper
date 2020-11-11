@@ -1,0 +1,5 @@
+rootProject.ext.setLibConfig project
+
+dependencies {
+    implementation('com.github.anrwatchdog:anrwatchdog:1.4.0')
+}

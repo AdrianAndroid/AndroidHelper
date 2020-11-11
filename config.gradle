@@ -1,0 +1,82 @@
+ext {
+    kotlin_version = '1.3.72'
+
+    // 专门用于application配置
+    setAppConfig_ = {
+        extension ->
+            extension.apply plugin: 'com.android.application'
+            extension.apply plugin: 'kotlin-android'
+            extension.apply plugin: 'kotlin-android-extensions'
+            extension.apply plugin: 'kotlin-kapt'
+            extension.description "application"
+            setAndroidConfig_ extension.android
+            setDependeciesConfig_ extension.dependencies
+    }
+
+    // 专门用于libraray配置
+    setLibConfig = {
+        extension ->
+            extension.apply plugin: 'com.android.library'
+            extension.apply plugin: 'kotlin-android'
+            extension.apply plugin: 'kotlin-android-extensions'
+            extension.apply plugin: 'kotlin-kapt'
+            extension.description "库"
+            setAndroidConfig_ extension.android
+            setDependeciesConfig_ extension.dependencies
+    }
+
+
+    // 设置Android配置 android{ }
+    setAndroidConfig_ = {
+        extension -> //闭包参数extension相当于android对象
+            extension.compileSdkVersion 30
+            extension.buildToolsVersion '30.0.2'
+            //extension.publishNonDefault true
+            extension.defaultConfig {
+                minSdkVersion 19
+                targetSdkVersion 30
+                versionCode 1
+                versionName "1.0"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+            }
+            extension.dataBinding {
+                enabled = true
+            }
+            extension.buildTypes {
+                release {
+                    minifyEnabled false
+                }
+                debug {
+                    minifyEnabled false
+                }
+            }
+            extension.compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            extension.kotlinOptions {
+                jvmTarget = '1.8'
+            }
+    }
+
+    setDependeciesConfig_ = {
+        dependency ->
+            dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+            dependency.implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+            dependency.implementation 'androidx.core:core-ktx:1.3.2'
+            dependency.implementation 'androidx.appcompat:appcompat:1.2.0'
+            dependency.implementation 'com.google.android.material:material:1.2.1'
+            dependency.implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+            dependency.testImplementation 'junit:junit:4.+'
+            dependency.androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+            dependency.androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+            dependency.implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+            dependency.implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+
+            dependency.implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+            dependency.implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    }
+}

@@ -8,8 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.flannery.anrwatchdog.ANRActivity
 import com.flannery.lottie.LottieActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 class MainActivity : AppCompatActivity() {
 
     data class Item(val image: Int, val title: String, val cls: Class<*>)
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     val list = arrayListOf<Item>(
         Item(R.drawable.ic_package, "包名信息", PackageActivity::class.java),
         Item(R.drawable.ic_svg, "lottie", LottieActivity::class.java),
-        Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
+        Item(R.drawable.ic_dog, "ANRWatchDog", ANRActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),

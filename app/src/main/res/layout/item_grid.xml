@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="包名信息"
+        android:textColor="@android:color/black"
         android:textSize="24dp" />
 
 
