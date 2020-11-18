@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="AndroidHelper.anrwatchdog" target="1.8" />
+      <module name="AndroidHelper.app" target="1.8" />
+      <module name="AndroidHelper.app2" target="1.8" />
+      <module name="AndroidHelper.CustomView" target="1.8" />
+      <module name="AndroidHelper.javapoet.app2" target="1.8" />
+      <module name="AndroidHelper.javapoet.arouter_api" target="1.8" />
+      <module name="AndroidHelper.javapoet.common" target="1.8" />
+      <module name="AndroidHelper.javapoet.order" target="1.8" />
+      <module name="AndroidHelper.javapoet.personal" target="1.8" />
+      <module name="AndroidHelper.lottie" target="1.8" />
+      <module name="AndroidHelper.toolbar" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

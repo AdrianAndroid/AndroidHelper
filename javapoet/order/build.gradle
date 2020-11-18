@@ -1,0 +1,21 @@
+rootProject.ext.setLibConfig project
+
+android {
+
+    defaultConfig {
+        buildConfigField("boolean", "isRelease", "true")
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName(), packageNameForAPT: packageNameForAPT]
+            }
+        }
+    }
+}
+
+dependencies {
+    // 公共基础库
+    api project(":javapoet:common")
+    api project(path: ':javapoet:arouter_annotation')
+    api project(path: ':javapoet:arouter_compiler')
+}

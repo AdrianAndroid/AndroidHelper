@@ -1,0 +1,6 @@
+rootProject.ext.setLibConfig project
+
+dependencies {
+    // 引入注解中RouterBean对象（java项目才有javax.lang包）
+    implementation project(':javapoet:arouter_annotation')
+}

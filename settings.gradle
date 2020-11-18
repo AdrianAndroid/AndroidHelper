@@ -1,6 +1,16 @@
+include(
+        ':javapoet:app2'
+        , ':javapoet:personal'
+        , ':javapoet:order'
+        , ':javapoet:common'
+        , ':javapoet:arouter_api'
+        , ':javapoet:arouter_compiler'
+        , ':javapoet:arouter_annotation'
+)
 include ':CustomView'
 include ':toolbar'
 include ':anrwatchdog'
 include ':lottie'
 include ':app'
 rootProject.name = "AndroidHelper"
+
