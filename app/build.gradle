@@ -49,4 +49,6 @@ dependencies {
 
     implementation project(path: ':lottie')
     implementation project(path: ':anrwatchdog')
+    implementation project(path: ':toolbar')
+    implementation project(path: ':CustomView')
 }

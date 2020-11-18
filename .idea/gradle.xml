@@ -11,9 +11,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CustomView" />
             <option value="$PROJECT_DIR$/anrwatchdog" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lottie" />
+            <option value="$PROJECT_DIR$/toolbar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

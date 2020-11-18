@@ -1,3 +1,5 @@
+include ':CustomView'
+include ':toolbar'
 include ':anrwatchdog'
 include ':lottie'
 include ':app'
