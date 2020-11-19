@@ -268,7 +268,7 @@ public class ARouterProcessor extends AbstractProcessor {
             for (RouterBean routerBean : pathList) {
                 methodBuilder.addStatement("$N.put($S, $T.create($T, $L, %T.class, $S, $S))",
                         ProcessorConfig.PATH_VAR1, //pathMap.put
-                        routerBean.getPath(), // "/personal/Personal_Main2Activity"
+                        routerBean.getPath(), // "/personal/Pe。rsonal_Main2Activity"
                         ClassName.get(RouterBean.class),
                         ClassName.get(RouterBean.TypeEnum.class), //RouterBean
                         routerBean.getTypeEnum(),
