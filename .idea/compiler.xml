@@ -21,6 +21,7 @@
       <module name="AndroidHelper.anrwatchdog" target="1.8" />
       <module name="AndroidHelper.app" target="1.8" />
       <module name="AndroidHelper.app2" target="1.8" />
+      <module name="AndroidHelper.bitmapdemo" target="1.8" />
       <module name="AndroidHelper.CustomView" target="1.8" />
       <module name="AndroidHelper.javapoet.app2" target="1.8" />
       <module name="AndroidHelper.javapoet.arouter_api" target="1.8" />

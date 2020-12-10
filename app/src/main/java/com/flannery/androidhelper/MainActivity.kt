@@ -10,6 +10,7 @@ import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.flannery.anrwatchdog.ANRActivity
+import com.flannery.bitmapdemo.BitmapActivity
 import com.flannery.customview.CustomViewActivity
 import com.flannery.lottie.LottieActivity
 import com.flannery.toolbar.ToolbarActivity
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         Item(R.drawable.ic_dog, "ANRWatchDog", ANRActivity::class.java),
         Item(R.drawable.ic_toolbar, "Toolbar", ToolbarActivity::class.java),
         Item(R.drawable.ic_view, "自定义view", CustomViewActivity::class.java),
-        Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
+        Item(R.drawable.ic_bitly, "Bitmap", BitmapActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),
         Item(R.drawable.ic_jingqingqidai, "敬请期待", MoreActivity::class.java),

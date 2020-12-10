@@ -3,9 +3,10 @@
     package="com.flannery.customview">
 
     <application>
+        <activity android:name=".touch.InterruptEventActivity"></activity>
         <activity
             android:name=".CustomViewActivity"
-            android:label="@string/title_activity_custom_view"></activity>
+            android:label="@string/title_activity_custom_view" />
     </application>
 
 </manifest>
