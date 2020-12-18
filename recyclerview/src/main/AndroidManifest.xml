@@ -8,6 +8,7 @@
             android:name=".RecycleActivity"
             android:label="@string/title_activity_recycle"
             android:theme="@style/Theme.AndroidHelper.NoActionBar" />
+        <activity android:name=".FindCompatelyActivity" />
     </application>
 
 </manifest>

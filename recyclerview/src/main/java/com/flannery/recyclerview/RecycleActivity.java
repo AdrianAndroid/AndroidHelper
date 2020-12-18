@@ -20,5 +20,12 @@ public class RecycleActivity extends AppCompatActivity {
                 startActivity(new Intent(RecycleActivity.this, FindChildViewActivity.class));
             }
         });
+
+    }
+
+    public void onClick(View view) {
+        if (view.getId() == R.id.findVisibatly) {
+            startActivity(new Intent(RecycleActivity.this, FindCompatelyActivity.class));
+        }
     }
 }

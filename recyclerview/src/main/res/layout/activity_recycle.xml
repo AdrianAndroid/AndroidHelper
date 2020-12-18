@@ -46,8 +46,11 @@
                 android:text="findUserChildView" />
 
             <Button
+                android:id="@+id/findVisibatly"
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="100dp"
+                android:onClick="onClick"
+                android:text="findVisibatly" />
 
             <Button
                 android:layout_width="match_parent"
