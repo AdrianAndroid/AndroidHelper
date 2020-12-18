@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.AndroidHelper.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AndroidHelper.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AndroidHelper.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

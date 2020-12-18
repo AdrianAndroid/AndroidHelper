@@ -29,6 +29,7 @@
       <module name="AndroidHelper.javapoet.order" target="1.8" />
       <module name="AndroidHelper.javapoet.personal" target="1.8" />
       <module name="AndroidHelper.lottie" target="1.8" />
+      <module name="AndroidHelper.recyclerview" target="1.8" />
       <module name="AndroidHelper.toolbar" target="1.8" />
     </bytecodeTargetLevel>
   </component>

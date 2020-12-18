@@ -1,3 +1,4 @@
+include ':recyclerview'
 include ':bitmapdemo'
 include(
         ':javapoet:app2'
