@@ -71,12 +71,12 @@ ext {
     // 设置Android配置 android{ }
     setAndroidConfig_ = {
         extension -> //闭包参数extension相当于android对象
-            extension.compileSdkVersion 30
+            extension.compileSdkVersion 28
             extension.buildToolsVersion '30.0.2'
             //extension.publishNonDefault true
             extension.defaultConfig {
                 minSdkVersion 19
-                targetSdkVersion 30
+                targetSdkVersion 28
                 versionCode 1
                 versionName "1.0"
 

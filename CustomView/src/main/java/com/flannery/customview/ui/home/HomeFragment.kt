@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.flannery.customview.R
 import com.flannery.customview.touch.InterruptEventActivity
+import com.flannery.customview.touchevent.TouchEventActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -29,6 +30,7 @@ class HomeFragment : Fragment() {
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
+
         return root
     }
 
@@ -36,6 +38,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         onInterceptTouch.setOnClickListener {
             startActivity(Intent(activity, InterruptEventActivity::class.java))
+        }
+
+        touchevent.setOnClickListener {
+            startActivity(Intent(activity, TouchEventActivity::class.java))
         }
     }
 }
