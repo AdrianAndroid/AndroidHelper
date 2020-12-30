@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.flannery.customview.R
+import com.flannery.customview.canlendarscroll.CanlenderScrollActivity
 import com.flannery.customview.touch.InterruptEventActivity
 import com.flannery.customview.touchevent.TouchEventActivity
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -42,6 +43,10 @@ class HomeFragment : Fragment() {
 
         touchevent.setOnClickListener {
             startActivity(Intent(activity, TouchEventActivity::class.java))
+        }
+
+        calendar.setOnClickListener {
+            startActivity(Intent(activity, CanlenderScrollActivity::class.java))
         }
     }
 }

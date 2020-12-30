@@ -117,7 +117,11 @@ public class L {
             if (aClass == null) {
                 printLogString(null, otherTag, o);
             } else {
-                printLogString(findClassStackTraceElement(aClass), otherTag, o);
+                StackTraceElement classStackTraceElement = findClassStackTraceElement(aClass);
+                if (classStackTraceElement == null && TextUtils.isEmpty(otherTag)) {
+                    otherTag = aClass.getName();
+                }
+                printLogString(classStackTraceElement, otherTag, o);
             }
         }
     }
