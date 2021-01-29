@@ -1,0 +1,7 @@
+rootProject.ext.setLibConfig project
+
+dependencies {
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+    //implementation 'com.blankj:utilcode:1.17.1'
+}

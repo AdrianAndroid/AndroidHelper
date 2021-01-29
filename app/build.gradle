@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 28
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.flannery.androidhelper"
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -37,15 +37,17 @@ android {
 }
 
 dependencies {
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'me.yokeyword:fragmentationx:1.0.2'
 
 
 
@@ -55,4 +57,7 @@ dependencies {
     implementation project(path: ':CustomView')
     implementation project(path: ':bitmapdemo')
     implementation project(path: ':recyclerview')
+    implementation project(path: ':webview')
+    implementation project(path: ':html')
+    implementation project(path: ':dialogs')
 }

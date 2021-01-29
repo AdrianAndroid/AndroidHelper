@@ -121,5 +121,8 @@ ext {
             dependency.implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
             dependency.implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
             dependency.implementation 'androidx.multidex:multidex:2.0.1'
+            dependency.implementation 'com.blankj:utilcodex:1.30.5'
+            dependency.implementation 'me.yokeyword:fragmentationx:1.0.2'
+            dependency.api 'com.tencent.tbs.tbssdk:sdk:43939'
     }
 }

@@ -1,3 +1,6 @@
+include ':dialogs'
+include ':html'
+include ':webview'
 include ':lib'
 include ':recyclerview'
 include ':bitmapdemo'
