@@ -11,25 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/CustomView" />
-            <option value="$PROJECT_DIR$/anrwatchdog" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/bitmapdemo" />
-            <option value="$PROJECT_DIR$/dialogs" />
-            <option value="$PROJECT_DIR$/html" />
-            <option value="$PROJECT_DIR$/javapoet" />
-            <option value="$PROJECT_DIR$/javapoet/app2" />
-            <option value="$PROJECT_DIR$/javapoet/arouter_annotation" />
-            <option value="$PROJECT_DIR$/javapoet/arouter_api" />
-            <option value="$PROJECT_DIR$/javapoet/arouter_compiler" />
-            <option value="$PROJECT_DIR$/javapoet/common" />
-            <option value="$PROJECT_DIR$/javapoet/order" />
-            <option value="$PROJECT_DIR$/javapoet/personal" />
-            <option value="$PROJECT_DIR$/lib" />
-            <option value="$PROJECT_DIR$/lottie" />
-            <option value="$PROJECT_DIR$/recyclerview" />
-            <option value="$PROJECT_DIR$/toolbar" />
-            <option value="$PROJECT_DIR$/webview" />
+            <option value="$PROJECT_DIR$/flowlayout" />
+            <option value="$PROJECT_DIR$/touchevent" />
+            <option value="$PROJECT_DIR$/viewpagerdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
