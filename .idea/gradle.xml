@@ -11,6 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ffmpeg" />
             <option value="$PROJECT_DIR$/flowlayout" />
             <option value="$PROJECT_DIR$/touchevent" />
             <option value="$PROJECT_DIR$/viewpagerdemo" />
