@@ -22,7 +22,11 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(stringFromJNI());
 
 
-        Open("/sdcard/test.mp4", this); //testff: File /sdcard/test.mp4 open succes!
+        try {
+            Open("/sdcard/test.mp4", this); //testff: File /sdcard/test.mp4 open succes!
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         //Toast.makeText(this, "" + stringFromJNI(), Toast.LENGTH_SHORT).show();
         //Toast.makeText(this, "" + Open("/sdcard/test.mp4", true), Toast.LENGTH_SHORT).show();
     }

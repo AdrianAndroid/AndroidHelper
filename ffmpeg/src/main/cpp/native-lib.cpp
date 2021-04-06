@@ -32,4 +32,5 @@ Java_com_example_ffmpeg_MainActivity_Open(JNIEnv *env, jobject thiz, jstring url
 
 
     env->ReleaseStringUTFChars(url_, url);
+    return true;
 }
