@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(stringFromJNI());
 
 
-        Toast.makeText(this, "" + Open("url", true), Toast.LENGTH_SHORT).show();
+        Open("/sdcard/test.mp4", this); //testff: File /sdcard/test.mp4 open succes!
+        //Toast.makeText(this, "" + stringFromJNI(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "" + Open("/sdcard/test.mp4", true), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -33,3 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     public native boolean Open(String url, Object handle);
 }
+
+// 问题1
+// jniLib.srcDirs= 没有添加
+// 问题2
+// 。c文件路径问题

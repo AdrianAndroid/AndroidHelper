@@ -1,7 +1,10 @@
+
+//include ':ffmpeg2'
+//include ':testffmpeg'
 include ':ffmpeg'
-include ':flowlayout'
-include ':viewpagerdemo'
-include ':touchevent'
+//include ':flowlayout'
+//include ':viewpagerdemo'
+//include ':touchevent'
 //include ':hotfix'
 //include ':dialogs'
 //include ':html'
