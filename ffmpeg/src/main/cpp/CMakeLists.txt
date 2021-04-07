@@ -31,6 +31,6 @@ find_library(
         log-lib
         log )
 target_link_libraries(
-        native-lib
+        native-lib android
         avcodec avformat avutil swscale swresample
         ${log-lib} )
