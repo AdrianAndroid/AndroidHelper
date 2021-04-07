@@ -1,7 +1,7 @@
-
+include ':testopensl'
 //include ':ffmpeg2'
 //include ':testffmpeg'
-include ':ffmpeg'
+//include ':ffmpeg'
 //include ':flowlayout'
 //include ':viewpagerdemo'
 //include ':touchevent'
