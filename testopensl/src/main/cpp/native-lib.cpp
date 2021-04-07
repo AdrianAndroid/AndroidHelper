@@ -28,24 +28,39 @@
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_Android.h>
 #include <android/log.h>
-#define LOGD(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,"ywl5320",FORMAT,##__VA_ARGS__);
+
+#define LOGD(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR,"ywl5320",FORMAT,##__VA_ARGS__);
 
 
-static SLObjectItf  engineSL = NULL; //对应的引擎对象
-SLEngineItf CreateSL()
-{
+static SLObjectItf engineSL = NULL; //对应的引擎对象
+SLEngineItf CreateSL() {
     SLresult re;
     SLEngineItf en;
     // 1. 创建引擎
-    re = slCreateEngine(&engineSL,0,0,0,0,0);
-    if(re != SL_RESULT_SUCCESS) return NULL;
+    re = slCreateEngine(&engineSL, 0, 0, 0, 0, 0);
+    if (re != SL_RESULT_SUCCESS) return NULL;
     // 2. 等待创建
-    re = (*engineSL)->Realize(engineSL,SL_BOOLEAN_FALSE);
-    if(re != SL_RESULT_SUCCESS) return NULL;
+    re = (*engineSL)->Realize(engineSL, SL_BOOLEAN_FALSE);
+    if (re != SL_RESULT_SUCCESS) return NULL;
     // 3. 获取接口
-    re = (*engineSL)->GetInterface(engineSL,SL_IID_ENGINE,&en);
-    if(re != SL_RESULT_SUCCESS) return NULL;
+    re = (*engineSL)->GetInterface(engineSL, SL_IID_ENGINE, &en);
+    if (re != SL_RESULT_SUCCESS) return NULL;
     return en;
+}
+
+void PcmCall(SLAndroidSimpleBufferQueueItf bf, void *contex) {
+    LOGD("PcmCall");
+    static FILE *fp = NULL;
+    static char *buf = NULL;
+    if (!buf) buf = new char[1024 * 1024];
+    if (!fp) {
+        fp = fopen("/sdcard/test.pcm", "rb");
+    }
+    if (!fp) return;
+    if (feof(fp) == 0) { //没到文件结尾s
+        int len = fread(buf, 1, 1024, fp);
+        if (len > 0) (*bf)->Enqueue(bf, buf, len);
+    }
 }
 
 extern "C"
@@ -59,26 +74,23 @@ Java_aplay_testopensl_MainActivity_stringFromJNI(
 
     //1 创建引擎
     SLEngineItf eng = CreateSL();
-    if(eng)
-    {
+    if (eng) {
         LOGD("CreateSL success！ ");
-    }
-    else
-    {
+    } else {
         LOGD("CreateSL failed！ ");
     }
     // 2.创建混音器
-    SLObjectItf  mix = NULL;
-    SLresult  re = 0;
+    SLObjectItf mix = NULL;
+    SLresult re = 0;
     re = (*eng)->CreateOutputMix(eng, &mix, 0, 0, 0);
-    if(re != SL_RESULT_SUCCESS)
-    {
+    if (re != SL_RESULT_SUCCESS) {
         LOGD("SL_RESULT_SUCCESS failed!");
     }
-    re = (*mix)->Realize(mix,SL_BOOLEAN_FALSE);
-    if(re != SL_RESULT_SUCCESS)
-    {
+    re = (*mix)->Realize(mix, SL_BOOLEAN_FALSE);
+    if (re != SL_RESULT_SUCCESS) {
         LOGD("(*mix)->Realize failed!");
+    } else {
+        LOGD("(*mix)->Realize success!");
     }
 
     SLDataLocator_OutputMix outmix = {SL_DATALOCATOR_OUTPUTMIX, mix};
@@ -86,7 +98,7 @@ Java_aplay_testopensl_MainActivity_stringFromJNI(
 
     // 3. 配置音频信息
     // 缓冲队列
-    SLDataLocator_AndroidSimpleBufferQueue  que = {SL_DATALOCATOR_ANDROIDSIMPLEBUFFERQUEUE, 10};
+    SLDataLocator_AndroidSimpleBufferQueue que = {SL_DATALOCATOR_ANDROIDSIMPLEBUFFERQUEUE, 10};
     //音频格式
     SLDataFormat_PCM pcm = {
             SL_DATAFORMAT_PCM,
@@ -97,6 +109,47 @@ Java_aplay_testopensl_MainActivity_stringFromJNI(
             SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT,
             SL_BYTEORDER_LITTLEENDIAN //字节序，小端
     };
+    SLDataSource ds = {&que, &pcm};
+
+    // 4.创建播放器
+    SLObjectItf player = NULL;
+    SLPlayItf iplayer = NULL;
+    SLAndroidSimpleBufferQueueItf pcmQuee = NULL;
+    const SLInterfaceID ids[] = {SL_IID_BUFFERQUEUE};
+    const SLboolean req[] = {SL_BOOLEAN_TRUE};
+    re = (*eng)->CreateAudioPlayer(eng, &player, &ds, &audioSink,
+                                   sizeof(ids) / sizeof(SLInterfaceID), ids, req);
+    if (re != SL_RESULT_SUCCESS) {
+        LOGD("CreateAudioPlayer failed!");
+    } else {
+        LOGD("CreateAudioPlayer success!");
+    }
+    //等待实例化
+    (*player)->Realize(player, SL_BOOLEAN_FALSE);
+    //获取player接口
+    re = (*player)->GetInterface(player, SL_IID_PLAY, &iplayer);
+    if (re != SL_RESULT_SUCCESS) {
+        LOGD("GetInterface SL_IID_PLAY failed!");
+    } else {
+        LOGD("GetInterface SL_IID_PLAY success!");
+    }
+
+    //读取缓冲队列
+    re = (*player)->GetInterface(player, SL_IID_BUFFERQUEUE, &pcmQuee);
+    if (re != SL_RESULT_SUCCESS) {
+        LOGD("GetInterface SL_IID_BUFFERQUEUE failed!");
+    } else {
+        LOGD("GetInterface SL_IID_BUFFERQUEUE success!");
+    }
+
+    //设置回调函数，播放队列中调用
+    (*pcmQuee)->RegisterCallback(pcmQuee, PcmCall, 0);
+
+    //设置状态
+    (*iplayer)->SetPlayState(iplayer, SL_PLAYSTATE_PLAYING);
+
+    //启动队列
+    (*pcmQuee)->Enqueue(pcmQuee, "", 1);
 
     return env->NewStringUTF(hello.c_str());
 }
