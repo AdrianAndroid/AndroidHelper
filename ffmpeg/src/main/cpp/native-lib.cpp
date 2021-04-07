@@ -291,7 +291,7 @@ Java_com_example_ffmpeg_XPlay_Open(JNIEnv *env, jobject thiz, jstring url_, jobj
                                       frame->height,
                                       data,lines);
                     LOGW("sws_scale = %d",h);
-                    if(h > 0)
+                    if(h >= 0)
                     {
                         ANativeWindow_lock(nwin,&wbuf,0);
                         uint8_t *dst = (uint8_t*)wbuf.bits;
