@@ -17,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Example of a call to a native method
-        TextView tv = findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
-
-
-        try {
-            Open("/sdcard/test.mp4", this); //testff: File /sdcard/test.mp4 open succes!
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        // Example of a call to a native method
+//        TextView tv = findViewById(R.id.sample_text);
+//        tv.setText(stringFromJNI());
+//
+//
+//        try {
+//            Open("/sdcard/test.mp4", this); //testff: File /sdcard/test.mp4 open succes!
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         //Toast.makeText(this, "" + stringFromJNI(), Toast.LENGTH_SHORT).show();
         //Toast.makeText(this, "" + Open("/sdcard/test.mp4", true), Toast.LENGTH_SHORT).show();
     }

@@ -310,3 +310,8 @@ Java_com_example_ffmpeg_MainActivity_Open(JNIEnv *env, jobject thiz, jstring url
     env->ReleaseStringUTFChars(url_, url);
     return true;
 }
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_example_ffmpeg_XPlay_Open(JNIEnv *env, jobject thiz, jstring url, jobject surface) {
+    // TODO: implement Open()
+}
