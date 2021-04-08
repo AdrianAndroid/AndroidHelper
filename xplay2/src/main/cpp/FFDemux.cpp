@@ -103,7 +103,7 @@ XData FFDemux::Read()
     XData d;
     AVPacket *pkt = av_packet_alloc();
     int re = av_read_frame(ic,pkt);
-    if(re != 0)
+    if(re != 0) //失败的情况
     {
         av_packet_free(&pkt);
         return XData();

@@ -65,7 +65,7 @@ void IDecode::Main()
         if(packs.empty())
         {
             packsMutex.unlock();
-            XSleep(1);
+            XSleep(1); //释放cpu
             continue;
         }
         //取出packet 消费者
