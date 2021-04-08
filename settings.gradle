@@ -1,3 +1,4 @@
+include ':xplay3'
 include ':xplay2'
 //include ':xplay'
 include ':testopenles'
