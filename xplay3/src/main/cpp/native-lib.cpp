@@ -61,7 +61,7 @@ jint JNI_OnLoad(JavaVM *vm,void *res)
     TestObs *tobs = new TestObs();
     IDemux *de = new FFDemux();
     //de->AddObs(tobs);
-    de->Open("/sdcard/1080.mp4");
+    de->Open("/sdcard/v1080.mp4");
 
     IDecode *vdecode = new FFDecode();
     //vdecode->Open(de->GetVPara(), true);

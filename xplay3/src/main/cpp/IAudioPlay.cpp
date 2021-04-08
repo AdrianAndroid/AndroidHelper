@@ -60,7 +60,7 @@ void IAudioPlay::Update(XData data)
         if(frames.size() > maxFrame)
         {
             framesMutex.unlock();
-            XSleep(1);
+            XSleep(1);//让出cpu
             continue;
         }
         frames.push_back(data);
