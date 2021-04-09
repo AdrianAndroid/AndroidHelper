@@ -11,10 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/testopenles" />
-            <option value="$PROJECT_DIR$/testopensl" />
-            <option value="$PROJECT_DIR$/xplay2" />
-            <option value="$PROJECT_DIR$/xplay3" />
+            <option value="$PROJECT_DIR$/xplay4" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
