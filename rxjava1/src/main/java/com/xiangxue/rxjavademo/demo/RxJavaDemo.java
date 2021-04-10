@@ -13,8 +13,11 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.internal.operators.observable.ObservableAll;
 import io.reactivex.schedulers.Schedulers;
 
 // TODO 零碎点
@@ -61,6 +64,28 @@ public class RxJavaDemo extends AppCompatActivity {
                     }
                 })
         ;
+    }
+
+    private void test044() {
+        Observable
+                .create(new ObservableOnSubscribe<Object>() {
+                    @Override
+                    public void subscribe(@NonNull ObservableEmitter<Object> e) throws Exception {
+                        e.onNext("");
+                    }
+                })
+                .map(new Function<Object, Object>() {
+                    @Override
+                    public Object apply(@NonNull Object o) throws Exception {
+                        return null;
+                    }
+                })
+                .subscribe(new Consumer<Object>() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+
+                    }
+                });
     }
 
     private void test01() {

@@ -2,6 +2,7 @@ package com.example.touchevent;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 
 /**
  * flannery
@@ -46,6 +47,16 @@ public class L {
         e(DEFAULT_TAG, msg);
     }
 
+
+    public static String getMotionEventName(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            return "ACTION_DOWN";
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            return "ACTION_UP";
+        } else {
+            return "ACTION_OTHER";
+        }
+    }
 
     /**
      * 只能在本类使用，可以打印出行数

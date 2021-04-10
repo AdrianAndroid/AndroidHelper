@@ -6,30 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.touchevent.FrameLayout5
+    <com.example.touchevent.LinearLayout5
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.example.touchevent.FrameLayout4
+        <com.example.touchevent.Button5
+            android:id="@+id/Button5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Button5" />
 
-            <com.example.touchevent.FrameLayout3
+        <com.example.touchevent.LinearLayout4
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.example.touchevent.Button4
+                android:id="@+id/Button4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Button4" />
 
-                <com.example.touchevent.FrameLayout2
+            <com.example.touchevent.LinearLayout3
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <com.example.touchevent.Button3
+                    android:id="@+id/Button3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:text="Button3" />
 
-                    <com.example.touchevent.FrameLayout1
+                <com.example.touchevent.LinearLayout2
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="50dp"
+                    android:orientation="vertical">
+
+                    <com.example.touchevent.Button2
+                        android:id="@+id/Button2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:text="Button2" />
 
-                    </com.example.touchevent.FrameLayout1>
-                </com.example.touchevent.FrameLayout2>
-            </com.example.touchevent.FrameLayout3>
-        </com.example.touchevent.FrameLayout4>
-    </com.example.touchevent.FrameLayout5>
+                    <com.example.touchevent.LinearLayout1
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="50dp"
+                        android:orientation="vertical">
+
+                        <com.example.touchevent.Button1
+                            android:id="@+id/Button1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button1" />
+
+                    </com.example.touchevent.LinearLayout1>
+                </com.example.touchevent.LinearLayout2>
+            </com.example.touchevent.LinearLayout3>
+        </com.example.touchevent.LinearLayout4>
+    </com.example.touchevent.LinearLayout5>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
