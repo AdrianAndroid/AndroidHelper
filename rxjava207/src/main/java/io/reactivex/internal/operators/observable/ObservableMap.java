@@ -38,7 +38,7 @@ public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T,
         final Function<? super T, ? extends U> mapper;
 
         MapObserver(Observer<? super U> actual, Function<? super T, ? extends U> mapper) {
-            super(actual);
+            super(actual); //赋值actual
             this.mapper = mapper;
         }
 

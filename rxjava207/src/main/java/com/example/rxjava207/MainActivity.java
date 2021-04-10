@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +31,64 @@ public class MainActivity extends AppCompatActivity {
                 "]" +
                 txt);
     }
+    static Disposable disposable;
+    private void test3(){
+        Observable
+                .create(new ObservableOnSubscribe<String>() {
+                    @Override
+                    public void subscribe(@NonNull ObservableEmitter<String> e) throws Exception {
+                        e.onNext("lfkdsk");
+
+                        e.onNext("Hello");
+
+                        //SystemClock.sleep(100);
+
+                        disposable.dispose();
+
+                        e.onNext("World");
+
+                        e.onComplete();
+                    }
+                })
+                //.subscribeOn(Schedulers.io())
+                //.observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                       // mTextView.append("bind on subscribe \n");
+                    }
+
+                    @Override
+                    public void onNext(@NonNull String s) {
+                       /// mTextView.append(s);
+                        //mTextView.append("\n");
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        //mTextView.append(" onComplete ");
+                    }
+                });
+    }
+
+    private void test2(){
+        Observable.just("");
+        Observable.fromArray("");
+        Observable.just("", "");
+        Observable.create(new ObservableOnSubscribe<Object>() {
+            @Override
+            public void subscribe(@NonNull ObservableEmitter<Object> e) throws Exception {
+
+            }
+        });
+    }
 
     private void test() {
         Observable
@@ -35,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
                     public void subscribe(@NonNull ObservableEmitter<Object> e) throws Exception {
                         log("create subscribe");
                         e.onNext("");
-                        e.onNext("");
-                        e.onNext("");
-                        e.onComplete();
-//                        e.onError(new Throwable(""));
+//                        e.onComplete();
+                        e.onError(new Throwable(""));
                     }
                 })
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
                 .map(new Function<Object, Object>() {
                     @NonNull
                     @Override
@@ -71,4 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
+

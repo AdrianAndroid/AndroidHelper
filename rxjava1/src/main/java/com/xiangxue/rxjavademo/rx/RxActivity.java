@@ -13,16 +13,20 @@ import com.xiangxue.rxjavademo.source.L;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.schedulers.Schedulers;
 
 public class RxActivity extends AppCompatActivity {
@@ -33,7 +37,6 @@ public class RxActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rx);
 
-        // 给这个控件做防抖
         Button button = findViewById(R.id.button);
 
         Date date = new Date();
@@ -47,11 +50,70 @@ public class RxActivity extends AppCompatActivity {
                     @Override
                     public void accept(Object o) throws Exception {
                         //test();
+                        testDisposable();
                         System.out.println(sdf.format(new Date())); //测试防抖
                     }
                 });
     }
 
+
+    Disposable d = null;
+
+    void testDisposable() {
+        if (d != null && !d.isDisposed()) DisposableHelper.dispose(new AtomicReference<>(d));
+        Observable<Long> interval = Observable.interval(1, TimeUnit.SECONDS);
+        interval.map(new Function<Long, Long>() {
+            @Override
+            public Long apply(@NonNull Long aLong) throws Exception {
+                return aLong;
+            }
+        })
+                .map(new Function<Long, Long>() {
+                    @Override
+                    public Long apply(@NonNull Long aLong) throws Exception {
+                        return aLong;
+                    }
+                })
+                .map(new Function<Long, Long>() {
+                    @Override
+                    public Long apply(@NonNull Long aLong) throws Exception {
+                        return aLong;
+                    }
+                })
+                .map(new Function<Long, Long>() {
+                    @Override
+                    public Long apply(@NonNull Long aLong) throws Exception {
+                        return aLong;
+                    }
+                })
+                .map(new Function<Long, Long>() {
+                    @Override
+                    public Long apply(@NonNull Long aLong) throws Exception {
+                        return aLong;
+                    }
+                });
+        interval.subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull Long aLong) {
+                System.out.println(aLong);
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
 
     ObservableTransformer<Object, Object> CA = new ObservableTransformer<Object, Object>() {
         @NonNull

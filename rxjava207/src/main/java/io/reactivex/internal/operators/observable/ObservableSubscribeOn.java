@@ -31,9 +31,9 @@ public final class ObservableSubscribeOn<T> extends AbstractObservableWithUpstre
     public void subscribeActual(final Observer<? super T> s) {
         final SubscribeOnObserver<T> parent = new SubscribeOnObserver<T>(s);
 
-        s.onSubscribe(parent);
+        s.onSubscribe(parent); //普通的向下流程
 
-        parent.setDisposable(scheduler.scheduleDirect(new SubscribeTask(parent)));
+        parent.setDisposable(scheduler.scheduleDirect(new SubscribeTask(parent))); //切换线程
     }
 
     static final class SubscribeOnObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {

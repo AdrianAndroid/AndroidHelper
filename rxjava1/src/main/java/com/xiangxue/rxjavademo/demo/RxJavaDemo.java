@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -23,6 +25,17 @@ public class RxJavaDemo extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    void testDisposable() {
+        Observable.interval(1, TimeUnit.SECONDS)
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        System.out.println(aLong);
+                    }
+                });
     }
 
     // RxAndroid有什么用
@@ -33,21 +46,28 @@ public class RxJavaDemo extends AppCompatActivity {
                 e.onNext("A");
             }
         })
-        .observeOn(Schedulers.io()) // rxjava
-        .subscribeOn(AndroidSchedulers.mainThread()) // rxandroid
-        .subscribe(new Consumer<String>() {
-            @Override
-            public void accept(String s) throws Exception {
+                .doOnNext(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
 
-            }
-        })
+                    }
+                })
+                .observeOn(Schedulers.io()) // rxjava
+                .subscribeOn(AndroidSchedulers.mainThread()) // rxandroid
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+
+                    }
+                })
         ;
     }
 
     private void test01() {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
-            public void subscribe(ObservableEmitter<String> e) throws Exception {}
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+            }
         }).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
@@ -55,13 +75,16 @@ public class RxJavaDemo extends AppCompatActivity {
             }
 
             @Override
-            public void onNext(String s) {}
+            public void onNext(String s) {
+            }
 
             @Override
-            public void onError(Throwable e) {}
+            public void onError(Throwable e) {
+            }
 
             @Override
-            public void onComplete() {}
+            public void onComplete() {
+            }
         });
 
 
@@ -69,10 +92,12 @@ public class RxJavaDemo extends AppCompatActivity {
 
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
-            public void subscribe(ObservableEmitter<String> e) throws Exception {}
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+            }
         }).subscribe(new Consumer<String>() {
             @Override
-            public void accept(String s) throws Exception {}
+            public void accept(String s) throws Exception {
+            }
         });
     }
 
