@@ -1,4 +1,6 @@
-include ':xplay4'
+include ':rxjava207'
+//include ':rxjava1'
+//include ':xplay4'
 //include ':xplay3'
 //include ':xplay2'
 //include ':xplay'

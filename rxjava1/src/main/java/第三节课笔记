@@ -1,0 +1,81 @@
+@NonNull
+    public static Scheduler onIoScheduler(@NonNull Scheduler defaultScheduler) {
+            return defaultScheduler;
+    }
+
+
+   2.x
+   @NonNull
+    public static Scheduler onIoScheduler(@NonNull Scheduler defaultScheduler) {
+        // 默认是 null  f == null
+        Function<? super Scheduler, ? extends Scheduler> f = onIoHandler;
+        if (f == null) {
+            return defaultScheduler;
+        }
+        return apply(f, defaultScheduler);
+    }
+
+
+     public static void setIoSchedulerHandler(@Nullable Function<? super Scheduler, ? extends Scheduler> handler) {
+            if (lockdown) {
+                throw new IllegalStateException("Plugins can't be changed anymore");
+            }
+            onIoHandler = handler;
+        }
+
+
+
+        ObservableSubscribeOn
+          final Scheduler scheduler; = ioScheduler（线程池的）
+
+      ioScheduler（线程池的）.scheduleDirect(new SubscribeTask(parent))
+        scheduler.scheduleDirect(new SubscribeTask(parent))
+
+
+          // 红色 Runnable
+           @NonNull
+            public Disposable scheduleDirect(@NonNull Runnable run, long delay, @NonNull TimeUnit unit) {
+                final Worker w = createWorker();   == IoScheduler.createWorker(){new EventLoopWorker(pool.get());}
+
+                // 自己包装 Runnable  == 红色 Runnable
+                final Runnable decoratedRun = RxJavaPlugins.onSchedule(run);
+
+                // 又包装一层 Runnable
+                DisposeTask task = new DisposeTask(decoratedRun, w);
+
+                w.schedule(task, delay, unit);
+
+                return task;
+            }
+
+
+
+            // 百分之90 %  主线程
+            new Handler() {
+                        @Override
+                        public void handleMessage(@NonNull Message msg) {
+                            super.handleMessage(msg);
+
+                            // UI 操作 ...
+                        }
+                    };
+            10% 有问题 并非是 主线程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
