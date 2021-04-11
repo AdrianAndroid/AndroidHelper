@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.enjoy.photoview.MultiTouchEvent
+<!--    <com.enjoy.photoview.MultiTouchEvent
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <com.enjoy.photoview.PhotoView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

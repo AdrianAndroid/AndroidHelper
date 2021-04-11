@@ -11,6 +11,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/leo_dispatch" />
+            <option value="$PROJECT_DIR$/leo_dispatch/app" />
+            <option value="$PROJECT_DIR$/leo_dispatch/clickevent" />
+            <option value="$PROJECT_DIR$/leo_dispatch/scrollview_clash" />
+            <option value="$PROJECT_DIR$/leo_dispatch/srl_vp" />
             <option value="$PROJECT_DIR$/photoview" />
           </set>
         </option>

@@ -1,3 +1,7 @@
+include ':leo_dispatch:app'
+include ':leo_dispatch:srl_vp'
+include ':leo_dispatch:scrollview_clash'
+include ':leo_dispatch:clickevent'
 include ':photoview'
 //include ':javalib'
 //include ':rxjava207'
