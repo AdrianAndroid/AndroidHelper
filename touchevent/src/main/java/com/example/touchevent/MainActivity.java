@@ -25,7 +25,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CharSequence text = ((TextView) v).getText();
-                L.m3("==============",text);
+                L.m3("onClick==============",text);
+            }
+        });
+
+        findViewById(ids).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                L.m3("onTouch============", ((TextView) v).getText(), L.getMotionEventName(event));
+                return false;
             }
         });
     }

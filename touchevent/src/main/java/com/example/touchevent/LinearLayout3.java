@@ -29,12 +29,14 @@ public class LinearLayout3 extends LinearLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         L.m3(L.getMotionEventName(ev));
-        return super.dispatchTouchEvent(ev);
+        boolean b = super.dispatchTouchEvent(ev);
+        L.m3(L.getMotionEventName(ev));
+        return b;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        L.m3(L.getMotionEventName(ev));
+        L.m3(L.getMotionEventName(ev), "拦截");
         //return super.onInterceptTouchEvent(ev);
         return true;
     }
@@ -42,6 +44,7 @@ public class LinearLayout3 extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         L.m3(L.getMotionEventName(event));
-        return super.onTouchEvent(event);
+        boolean b = super.onTouchEvent(event);
+        return b;
     }
 }
