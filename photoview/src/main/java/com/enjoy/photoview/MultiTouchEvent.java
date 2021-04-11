@@ -99,9 +99,9 @@ public class MultiTouchEvent extends View {
                 int pointerId = event.getPointerId(upIndex);
                 // 非活跃手指的抬起不用处理
                 if (pointerId == currentPointId) {
-                    if (upIndex == event.getPointerCount() - 1) {
+                    if (upIndex == event.getPointerCount() - 1) { //最后一个
                         upIndex = event.getPointerCount() - 2;
-                    } else {
+                    } else { // 不是最后一个
                         upIndex++;
 //                        upIndex = event.getPointerCount() - 1;
                     }
