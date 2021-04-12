@@ -12,12 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/leo_dispatch" />
-            <option value="$PROJECT_DIR$/leo_dispatch/app" />
-            <option value="$PROJECT_DIR$/leo_dispatch/clickevent" />
-            <option value="$PROJECT_DIR$/leo_dispatch/scrollview_clash" />
-            <option value="$PROJECT_DIR$/leo_dispatch/srl_vp" />
-            <option value="$PROJECT_DIR$/photoview" />
+            <option value="$PROJECT_DIR$/recyclerview" />
+            <option value="$PROJECT_DIR$/recyclerview/leo_Recycler" />
+            <option value="$PROJECT_DIR$/recyclerview/leo_RecyclerView" />
+            <option value="$PROJECT_DIR$/recyclerview/leo_slidecard" />
             <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>

@@ -8,6 +8,7 @@
       <module name="AndroidHelper.bitmapdemo" target="1.8" />
       <module name="AndroidHelper.CustomView" target="1.8" />
       <module name="AndroidHelper.dialogs" target="1.8" />
+      <module name="AndroidHelper.fish" target="1.8" />
       <module name="AndroidHelper.html" target="1.8" />
       <module name="AndroidHelper.javapoet.app2" target="1.8" />
       <module name="AndroidHelper.javapoet.arouter_api" target="1.8" />
@@ -18,9 +19,13 @@
       <module name="AndroidHelper.leo_dispatch.clickevent" target="1.8" />
       <module name="AndroidHelper.leo_dispatch.scrollview_clash" target="1.8" />
       <module name="AndroidHelper.leo_dispatch.srl_vp" target="1.8" />
+      <module name="AndroidHelper.leo_RecyclerView" target="1.8" />
       <module name="AndroidHelper.lottie" target="1.8" />
       <module name="AndroidHelper.photoview" target="1.8" />
       <module name="AndroidHelper.recyclerview" target="1.8" />
+      <module name="AndroidHelper.recyclerview.leo_Recycler" target="1.8" />
+      <module name="AndroidHelper.recyclerview.leo_RecyclerView" target="1.8" />
+      <module name="AndroidHelper.recyclerview.leo_slidecard" target="1.8" />
       <module name="AndroidHelper.rxjava1" target="1.8" />
       <module name="AndroidHelper.toolbar" target="1.8" />
       <module name="AndroidHelper.touchevent" target="1.8" />
