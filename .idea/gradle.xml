@@ -11,13 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/fragmentations" />
-            <option value="$PROJECT_DIR$/fragmentations/demo" />
-            <option value="$PROJECT_DIR$/fragmentations/eventbus_activity_scope" />
-            <option value="$PROJECT_DIR$/fragmentations/fragmentation" />
-            <option value="$PROJECT_DIR$/fragmentations/fragmentation_core" />
-            <option value="$PROJECT_DIR$/fragmentations/fragmentation_swipeback" />
             <option value="$PROJECT_DIR$/leetcode" />
+            <option value="$PROJECT_DIR$/leo_dispatch" />
+            <option value="$PROJECT_DIR$/leo_dispatch/app" />
+            <option value="$PROJECT_DIR$/leo_dispatch/clickevent" />
+            <option value="$PROJECT_DIR$/leo_dispatch/scrollview_clash" />
+            <option value="$PROJECT_DIR$/leo_dispatch/srl_vp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

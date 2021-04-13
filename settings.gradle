@@ -1,17 +1,17 @@
 include ':leetcode'
 
-include(':fragmentations:eventbus_activity_scope'
-        , ':fragmentations:demo'
-        , ':fragmentations:fragmentation_core'
-        , ':fragmentations:fragmentation'
-        , ':fragmentations:fragmentation_swipeback')
+//include(':fragmentations:eventbus_activity_scope'
+//        , ':fragmentations:demo'
+//        , ':fragmentations:fragmentation_core'
+//        , ':fragmentations:fragmentation'
+//        , ':fragmentations:fragmentation_swipeback')
 
 //include(':recyclerview:leo_slidecard', ':recyclerview:leo_Recycler', ':recyclerview:leo_RecyclerView')
 //include ':fish'
-//include ':leo_dispatch:app'
-//include ':leo_dispatch:srl_vp'
-//include ':leo_dispatch:scrollview_clash'
-//include ':leo_dispatch:clickevent'
+include (':leo_dispatch:app'
+, ':leo_dispatch:srl_vp'
+, ':leo_dispatch:scrollview_clash'
+, ':leo_dispatch:clickevent')
 //include ':photoview'
 //include ':javalib'
 //include ':rxjava207'
