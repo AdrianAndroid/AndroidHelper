@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "map": [
+                {
+                    "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "655",
+                        "endLines": "24",
+                        "endColumns": "12",
+                        "endOffsets": "1090"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "483"
+                    }
+                }
+            ]
+        }
+    ]
+}

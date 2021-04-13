@@ -10,6 +10,10 @@
       <module name="AndroidHelper.dialogs" target="1.8" />
       <module name="AndroidHelper.eventbus_activity_scope" target="1.8" />
       <module name="AndroidHelper.fish" target="1.8" />
+      <module name="AndroidHelper.flexboxs.demo-cat-gallery" target="1.8" />
+      <module name="AndroidHelper.flexboxs.demo-playground" target="1.8" />
+      <module name="AndroidHelper.flexboxs.flexbox" target="1.8" />
+      <module name="AndroidHelper.flowlayout" target="1.8" />
       <module name="AndroidHelper.fragmentation" target="1.8" />
       <module name="AndroidHelper.fragmentation.demo" target="1.8" />
       <module name="AndroidHelper.fragmentation_core" target="1.8" />

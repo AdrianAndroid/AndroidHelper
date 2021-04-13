@@ -1,0 +1,138 @@
+[
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_nav_header_main.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_app_bar_main.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_fragment_recyclerview.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\fragment_recyclerview.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_spinner_flex_wrap.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\spinner_flex_wrap.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_add_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-hdpi\\ic_add_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_viewholder_flex_item.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\viewholder_flex_item.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_spinner_flex_direction.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\spinner_flex_direction.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_remove_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-xxhdpi\\ic_remove_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_add_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-mdpi\\ic_add_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_remove_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-hdpi\\ic_remove_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_spinner_align_content.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\spinner_align_content.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_add_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-xxxhdpi\\ic_add_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_remove_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-mdpi\\ic_remove_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable_side_nav_bar.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\menu_activity_main_drawer.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\menu\\activity_main_drawer.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_add_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-xxhdpi\\ic_add_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_spinner_align_items.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\spinner_align_items.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_fragment_flex_item_edit.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\fragment_flex_item_edit.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable_flex_item_background.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable\\flex_item_background.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_fragment_flexboxlayout.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\fragment_flexboxlayout.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_spinner_item.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\spinner_item.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_remove_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-xhdpi\\ic_remove_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\layout_spinner_justify_content.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\layout\\spinner_justify_content.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\xml_new_flex_item_preferences.xml.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\xml\\new_flex_item_preferences.xml"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_add_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-xhdpi\\ic_add_white_24dp.png"
+    },
+    {
+        "merged": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_remove_white_24dp.png.flat",
+        "source": "E:\\Learn\\AndroidHelper\\flexboxs\\demo-playground\\src\\main\\res\\drawable-xxxhdpi\\ic_remove_white_24dp.png"
+    }
+]

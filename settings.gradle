@@ -1,8 +1,12 @@
-
+include ':flexboxs:demo-cat-gallery'
+include ':flexboxs:demo-playground'
+include ':flexboxs:flexbox'
 include ':leetcode'
-include (':okhttp:app'
-        , ':okhttp:okhttp3'
-        , ':okhttp:interceptor')
+
+//include (':okhttp:app'
+//        , ':okhttp:okhttp3'
+//        , ':okhttp:interceptor')
+
 //include(':fragmentations:eventbus_activity_scope'
 //        , ':fragmentations:demo'
 //        , ':fragmentations:fragmentation_core'
@@ -32,7 +36,7 @@ include (':okhttp:app'
 //include ':ffmpeg'
 //include ':flowlayout'
 //include ':viewpagerdemo'
-//include ':touchevent'
+include ':touchevent'
 //include ':hotfix'
 //include ':dialogs'
 //include ':html'

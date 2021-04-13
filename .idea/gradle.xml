@@ -11,11 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/flexboxs" />
+            <option value="$PROJECT_DIR$/flexboxs/demo-cat-gallery" />
+            <option value="$PROJECT_DIR$/flexboxs/demo-playground" />
+            <option value="$PROJECT_DIR$/flexboxs/flexbox" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/okhttp" />
-            <option value="$PROJECT_DIR$/okhttp/app" />
-            <option value="$PROJECT_DIR$/okhttp/interceptor" />
-            <option value="$PROJECT_DIR$/okhttp/okhttp3" />
+            <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
