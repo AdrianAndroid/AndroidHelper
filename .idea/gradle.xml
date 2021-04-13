@@ -11,12 +11,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/fragmentations" />
+            <option value="$PROJECT_DIR$/fragmentations/demo" />
+            <option value="$PROJECT_DIR$/fragmentations/eventbus_activity_scope" />
+            <option value="$PROJECT_DIR$/fragmentations/fragmentation" />
+            <option value="$PROJECT_DIR$/fragmentations/fragmentation_core" />
+            <option value="$PROJECT_DIR$/fragmentations/fragmentation_swipeback" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/recyclerview" />
-            <option value="$PROJECT_DIR$/recyclerview/leo_Recycler" />
-            <option value="$PROJECT_DIR$/recyclerview/leo_RecyclerView" />
-            <option value="$PROJECT_DIR$/recyclerview/leo_slidecard" />
-            <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

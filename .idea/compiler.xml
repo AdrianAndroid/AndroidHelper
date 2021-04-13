@@ -8,7 +8,17 @@
       <module name="AndroidHelper.bitmapdemo" target="1.8" />
       <module name="AndroidHelper.CustomView" target="1.8" />
       <module name="AndroidHelper.dialogs" target="1.8" />
+      <module name="AndroidHelper.eventbus_activity_scope" target="1.8" />
       <module name="AndroidHelper.fish" target="1.8" />
+      <module name="AndroidHelper.fragmentation" target="1.8" />
+      <module name="AndroidHelper.fragmentation.demo" target="1.8" />
+      <module name="AndroidHelper.fragmentation_core" target="1.8" />
+      <module name="AndroidHelper.fragmentation_swipeback" target="1.8" />
+      <module name="AndroidHelper.fragmentations.demo" target="1.8" />
+      <module name="AndroidHelper.fragmentations.eventbus_activity_scope" target="1.8" />
+      <module name="AndroidHelper.fragmentations.fragmentation" target="1.8" />
+      <module name="AndroidHelper.fragmentations.fragmentation_core" target="1.8" />
+      <module name="AndroidHelper.fragmentations.fragmentation_swipeback" target="1.8" />
       <module name="AndroidHelper.html" target="1.8" />
       <module name="AndroidHelper.javapoet.app2" target="1.8" />
       <module name="AndroidHelper.javapoet.arouter_api" target="1.8" />

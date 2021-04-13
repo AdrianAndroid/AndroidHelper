@@ -31,4 +31,10 @@ project.ext {
     retrofitVersion = "2.4.0"
     gsonVersion = "2.8.2"
     cookieVersion = "v1.0.1"
+
+    compileSdkVersion = 29
+    minSdkVersion = 14
+    targetSdkVersion = compileSdkVersion
+
+    appCompatVersion = "1.2.0-rc01"
 }
