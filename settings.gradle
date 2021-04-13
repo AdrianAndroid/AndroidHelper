@@ -1,5 +1,8 @@
-include ':leetcode'
 
+include ':leetcode'
+include (':okhttp:app'
+        , ':okhttp:okhttp3'
+        , ':okhttp:interceptor')
 //include(':fragmentations:eventbus_activity_scope'
 //        , ':fragmentations:demo'
 //        , ':fragmentations:fragmentation_core'
@@ -8,10 +11,12 @@ include ':leetcode'
 
 //include(':recyclerview:leo_slidecard', ':recyclerview:leo_Recycler', ':recyclerview:leo_RecyclerView')
 //include ':fish'
-include (':leo_dispatch:app'
-, ':leo_dispatch:srl_vp'
-, ':leo_dispatch:scrollview_clash'
-, ':leo_dispatch:clickevent')
+
+//include (':leo_dispatch:app'
+//    , ':leo_dispatch:srl_vp'
+//    , ':leo_dispatch:scrollview_clash'
+//    , ':leo_dispatch:clickevent')
+
 //include ':photoview'
 //include ':javalib'
 //include ':rxjava207'

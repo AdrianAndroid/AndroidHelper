@@ -12,11 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/leo_dispatch" />
-            <option value="$PROJECT_DIR$/leo_dispatch/app" />
-            <option value="$PROJECT_DIR$/leo_dispatch/clickevent" />
-            <option value="$PROJECT_DIR$/leo_dispatch/scrollview_clash" />
-            <option value="$PROJECT_DIR$/leo_dispatch/srl_vp" />
+            <option value="$PROJECT_DIR$/okhttp" />
+            <option value="$PROJECT_DIR$/okhttp/app" />
+            <option value="$PROJECT_DIR$/okhttp/interceptor" />
+            <option value="$PROJECT_DIR$/okhttp/okhttp3" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
