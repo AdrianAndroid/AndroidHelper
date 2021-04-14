@@ -12,11 +12,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/material" />
-            <option value="$PROJECT_DIR$/material/behaviordemo" />
-            <option value="$PROJECT_DIR$/material/constraintlayoutdemo" />
-            <option value="$PROJECT_DIR$/material/materialdesign" />
-            <option value="$PROJECT_DIR$/material/modespec" />
+            <option value="$PROJECT_DIR$/pullrefresh" />
+            <option value="$PROJECT_DIR$/pullrefresh/app" />
             <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>

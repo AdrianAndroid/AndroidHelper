@@ -1,4 +1,6 @@
-
+//include ':chromelikeswipelayout'
+//include ':pullrefresh:chromelikeswiplayout'
+include ':pullrefresh:app'
 include ':leetcode'
 
 //include (
