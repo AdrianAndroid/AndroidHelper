@@ -1,8 +1,13 @@
-include ':flexboxs:demo-cat-gallery'
-include ':flexboxs:demo-playground'
-include ':flexboxs:flexbox'
+include (
+        'material:modespec',
+        'material:materialdesign',
+        'material:constraintlayoutdemo'
+)
 include ':leetcode'
 
+//include(':flexboxs:demo-cat-gallery'
+//        , ':flexboxs:demo-playground'
+//        , ':flexboxs:flexbox')
 //include (':okhttp:app'
 //        , ':okhttp:okhttp3'
 //        , ':okhttp:interceptor')

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/color_10"
+        android:gravity="center"
+        android:text="A"
+        android:textSize="56sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/color_10"
+        android:gravity="center"
+        android:text="B"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/t1"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_3"
+        android:minWidth="300dp"
+        android:text="minWidth"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/t2"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="200dp"
+        android:text="maxWidth =200dp maxWidth =200dp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t1" />
+
+    <com.zero.navigation1.view.ZeroView
+        android:id="@+id/z1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintWidth_min="300dp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t2" />
+
+    <TextView
+        android:id="@+id/t3"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_3"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="const_min"
+        android:textSize="32sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/z1"
+        app:layout_constraintWidth_min="300dp" />
+
+    <TextView
+        android:id="@+id/t4"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_3"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="const_max = 200"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t3"
+        app:layout_constraintWidth_max="200dp" />
+
+
+    <TextView
+        android:id="@+id/t12"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="wrap"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t4"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintWidth_min="300dp" />
+
+    <TextView
+        android:id="@+id/t1212"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:text="wrap min"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t12"
+        app:layout_constraintWidth_default="wrap" />
+
+    <TextView
+        android:id="@+id/t121"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxWidth="200dp"
+        android:text="maxWidth = 200 maxWidth = 200 maxWidth = 200"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t1212"
+        app:layout_constraintWidth_default="wrap" />
+
+
+    <TextView
+        android:id="@+id/t22"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxWidth="100dp"
+        android:text="maxWidth无效"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t121"
+        app:layout_constraintWidth_default="spread" />
+
+    <TextView
+        android:id="@+id/t32"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="layout_constraintWidth_max = 200"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t22"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="100dp" />
+
+    <TextView
+        android:id="@+id/t33"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="percent"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t32"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_max="200dp"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <TextView
+        android:id="@+id/t34"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxWidth="200dp"
+        app:layout_constraintWidth_max="100dp"
+        android:text="maxWidth无效"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t33"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_percent="0.9" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

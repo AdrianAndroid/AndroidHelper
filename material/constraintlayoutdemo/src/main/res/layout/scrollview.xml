@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/text_tip"
+            android:text="基本使用，如果不设置约束，默认会在左上角，并且在xml中会显示报错信息，
+运行期是不会报错的，另外约束布局只需提供两个不同方向上的约束即可定位"
+             />
+
+        <include
+            layout="@layout/a1_base"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            style="@style/text_tip"
+            android:text="替代RelativeLayout使用"
+            />
+
+        <include
+            layout="@layout/a2_relativelayout1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+        <TextView
+            style="@style/text_tip"
+            android:text="约束到同一方向上的不同边，已经约束到同一条边，以及实在嵌入在某一控件的一条边的中心位置的应用场景"
+            />
+
+        <include
+            layout="@layout/a3_relativelayout2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            style="@style/text_tip"
+            android:text="当View左右(上下)都设置了约束时，根据bias按比例偏移。默认bias=0.5表示居中"
+            />
+
+        <include
+            layout="@layout/a6_bias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/text_tip"
+            android:text="Placeholder是一个不可见的View，其content属性指定一个实际View的id。给Placeholder设置约束，相当于给指定的View设置约束，这个View就不需要设置了。
+
+利用这个特性，可以提前设置好若干Placeholder的约束，并提取到独立的merge布局文件中成为模板。使用时用include引入模板，实际的View只需要设置相应的id，即可按照模板定义好的布局排列"
+            />
+
+        <include
+            layout="@layout/a7_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+</ScrollView>

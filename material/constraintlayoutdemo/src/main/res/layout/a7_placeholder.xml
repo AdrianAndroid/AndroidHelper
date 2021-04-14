@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        layout="@layout/a7_placeholder_template"
+        />
+    <TextView
+        android:id="@+id/username1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_8"
+        android:gravity="center"
+        android:text="@string/username"
+        android:textSize="32sp"
+        app:layout_constraintWidth_min="120dp" />
+
+    <TextView
+        android:id="@+id/password1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/color_8"
+        android:gravity="center"
+        android:text="@string/password"
+        android:textSize="32sp"
+        app:layout_constraintWidth_min="120dp" />
+
+    <EditText
+        android:id="@+id/e_username1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:hint="@string/username_hint"
+        android:textSize="32sp"
+        app:layout_constraintWidth_min="120dp" />
+
+    <EditText
+        android:id="@+id/e_password1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:hint="@string/password_hint"
+        android:textSize="32sp"
+        app:layout_constraintWidth_min="120dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

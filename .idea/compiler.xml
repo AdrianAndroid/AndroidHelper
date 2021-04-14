@@ -35,6 +35,11 @@
       <module name="AndroidHelper.leo_dispatch.srl_vp" target="1.8" />
       <module name="AndroidHelper.leo_RecyclerView" target="1.8" />
       <module name="AndroidHelper.lottie" target="1.8" />
+      <module name="AndroidHelper.material.constraintlayoutdemo" target="1.8" />
+      <module name="AndroidHelper.material.materialdesign" target="1.8" />
+      <module name="AndroidHelper.material.modespec" target="1.8" />
+      <module name="AndroidHelper.materialdesign" target="1.8" />
+      <module name="AndroidHelper.modespec" target="1.8" />
       <module name="AndroidHelper.okhttp.app" target="1.8" />
       <module name="AndroidHelper.photoview" target="1.8" />
       <module name="AndroidHelper.recyclerview" target="1.8" />

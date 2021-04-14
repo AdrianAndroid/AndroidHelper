@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="username">this is username</string>
+    <string name="password">password</string>
+
+    <string name="app_name">ConstraintLayout</string>
+    <string name="desc" translatable="true">this is a desc</string>
+    <string name="username_hint">username</string>
+    <string name="pwd_hint">password</string>
+    <string name="login">login</string>
+    <string name="copyright">copyright</string>
+    <string name="name_hint">name</string>
+    <string name="password_hint">password</string>
+    <string name="tv_1">testaaaa</string>
+    <string name="tv_2">aaaaaaaaaaaaaaaa</string>
+    <string name="tv_3">Here we have three TextViews: textView1 and textView2 on the left; and textView3 on the right. textView3 has been constrained to the end of textView1 and this works perfectly — it positions and sizes textView3 exactly as we need it.  However, things become more complicated if we need to support multiple languages. If we add a German translation then we have a problem because in the English version the text in textView1 is longer than that in textView2, whereas in German the text in textView2 is longer than that in textView1:</string>
+</resources>

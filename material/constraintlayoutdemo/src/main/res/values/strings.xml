@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="username">登录</string>
+    <string name="password">密码</string>
+
+    <string name="app_name">约束布局</string>
+    <string name="desc">这是一张图片</string>
+    <string name="username_hint">请输入用户名</string>
+    <string name="pwd_hint">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="copyright">copyright</string>
+    <string name="name_hint">请输入用户名</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="tv_1">测试</string>
+    <string name="tv_2">阿</string>
+    <string name="tv_3">这里的问题在于textView3仍然是相对于textView1的，所以textView2直接插入了textView3中。在设计视图里看起来更明显（白色背景的那个）。  比较直接的解决办法是使用TableLayout，或者把 textView1  textView2 包裹在一个垂直的，android:layout_width="wrap_content" 的 LinearLayout中。然后让textView3约束在这个LinearLayout的后面。但是我们有更好的办法：Barriers。  Barrier 是一个虚拟视图，类似于 Guideline，用来约束对象。Barrier 和 Guideline 的区别在于它是由多个 view 的大小决定的。在这个例子中，我们不知道 textView1 和 textView2 哪个长些，因此我们可以 基于这两个 view 的宽度创建一个Barrier。我们可以让 textView3 约束在 Barrier 后面。</string>
+</resources>

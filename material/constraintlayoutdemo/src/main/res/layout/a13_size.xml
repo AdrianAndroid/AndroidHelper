@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/color_10"
+        android:gravity="center"
+        android:text="A"
+        android:textSize="56sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_min="60dp" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/color_10"
+        android:gravity="center"
+        android:text="B"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tip1"
+        style="@style/text_tip_const"
+        android:text="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t1"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_3"
+        android:gravity="center"
+        android:text="wrap_content"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/tip1"
+        app:layout_constraintWidth_min="120dp" />
+
+
+    <TextView
+        android:id="@+id/t2"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="long long long long long long long"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t1" />
+
+    <TextView
+        android:id="@+id/t3"
+        style="@style/text_tip_const_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_3"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="long long long long long long long"
+        android:textSize="32sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t2"
+        app:layout_constraintWidth_min="120dp" />
+
+    <TextView
+        android:id="@+id/tip12"
+        style="@style/text_tip_const"
+        android:text="0dp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t3" />
+
+    <TextView
+        android:id="@+id/t12"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="wrap"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/tip12"
+        app:layout_constraintWidth_default="wrap" />
+
+
+    <TextView
+        android:id="@+id/t22"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="spread"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t12"
+        app:layout_constraintWidth_default="spread" />
+
+    <TextView
+        android:id="@+id/t32"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="wrap wrap wrap wrap wrap wrap wrap wrap"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t22"
+        app:layout_constraintWidth_default="wrap" />
+
+    <TextView
+        android:id="@+id/t33"
+        style="@style/text_tip_const_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="percent"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t32"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_percent="0.2" />
+
+
+    <TextView
+        android:id="@+id/tip13"
+        style="@style/text_tip_const"
+        android:text="应用"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/t33" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_1"
+        android:singleLine="true"
+        android:text="ABCDEFGABCDEFCDEGABCDEFGABCDECDEFGABCDEFGABCDEFG"
+        android:textSize="24sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/text2"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/tip13" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_2"
+        android:text="12345"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintTop_toBottomOf="@id/tip13" />
+
+
+    <TextView
+        android:id="@+id/text11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_12"
+        android:singleLine="true"
+        android:text="ABCDEFGABCDEFCDEGABCDEFGABCDECDEFGABCDEFGABCDEFG"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/text22"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/text2"
+        app:layout_constraintWidth_default="wrap" />
+
+    <TextView
+        android:id="@+id/text22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_11"
+        android:text="12345"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintTop_toBottomOf="@id/text2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

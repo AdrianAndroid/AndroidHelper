@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_min="120dp"
+        android:text="目标控件"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:background="@color/color_10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_7"
+        android:gravity="center"
+        android:text="没有约束"
+        android:textSize="32sp"
+        app:layout_constraintWidth_min="120dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_3"
+        android:gravity="center"
+        android:text="A"
+        android:textSize="32sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/target"
+
+        app:layout_constraintTop_toTopOf="@+id/target"
+        app:layout_constraintWidth_min="120dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_1"
+        android:gravity="center"
+        android:text="B"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/target"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_min="120dp" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_8"
+        android:gravity="center"
+        android:text="C"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/target"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/target"
+        app:layout_constraintWidth_min="120dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_12"
+        android:gravity="center"
+        android:text="D"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/target"
+        app:layout_constraintTop_toBottomOf="@+id/target"
+        app:layout_constraintWidth_min="120dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
