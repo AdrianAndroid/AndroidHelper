@@ -48,6 +48,7 @@
       <module name="AndroidHelper.pullrefresh.chromelikeapp" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeswipelayout" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeswiplayout" target="1.8" />
+      <module name="AndroidHelper.pullrefresh.meituanrefreshlistview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.xrecyclerview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.xrefreshviewapp" target="1.8" />
       <module name="AndroidHelper.recyclerview" target="1.8" />

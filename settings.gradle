@@ -1,3 +1,4 @@
+include ':pullrefresh:meituanrefreshlistview'
 include ':pullrefresh:xrecyclerview'
 include ':pullrefresh:xrefreshviewapp'
 include ':pullrefresh:chromelikeapp'
