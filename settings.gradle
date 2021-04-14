@@ -1,9 +1,13 @@
-include (
-        'material:modespec',
-        'material:materialdesign',
-        'material:constraintlayoutdemo'
-)
+
 include ':leetcode'
+
+//include (
+//        'material:modespec',
+//        'material:materialdesign',
+//        'material:constraintlayoutdemo'
+//)
+
+// include ':material:behaviordemo' //不能运行
 
 //include(':flexboxs:demo-cat-gallery'
 //        , ':flexboxs:demo-playground'
