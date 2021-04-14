@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:test="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            app:layout_scrollFlags="scroll"
+            android:text="AppBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.asha.ChromeLikeSwipeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/chrome_like_swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            xmlns:test="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="#fff5d0"
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                test:layout_heightPercent="50%"
+                test:layout_widthPercent="33%"
+                android:layout_centerVertical="true"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+            <ScrollView
+                android:background="#ffe7f7"
+                android:layout_toRightOf="@id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                test:layout_heightPercent="80%"
+                test:layout_widthPercent="33%"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:text="I am in ScrollView" />
+                </LinearLayout>
+            </ScrollView>
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+    </com.asha.ChromeLikeSwipeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

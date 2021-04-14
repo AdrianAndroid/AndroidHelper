@@ -1,4 +1,5 @@
-//include ':chromelikeswipelayout'
+include ':pullrefresh:chromelikeapp'
+include ':pullrefresh:chromelikeswipelayout'//include ':chromelikeswipelayout'
 //include ':pullrefresh:chromelikeswiplayout'
 include ':pullrefresh:autohomerefreshlistview'
 include ':leetcode'

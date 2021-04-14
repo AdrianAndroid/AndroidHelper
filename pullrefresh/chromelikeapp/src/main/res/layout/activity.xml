@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.asha.chromelikeswipelayout.MainActivity">
+    <Button
+        android:text="ScrollView"
+        android:onClick="OnScrollViewClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="LinearLayout"
+        android:onClick="OnLinearLayoutClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="ListView"
+        android:onClick="OnListViewClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="RecyclerView"
+        android:onClick="OnRecyclerViewClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="NestedRecyclerView"
+        android:onClick="OnNestedRecyclerViewClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Custom height for the reveal container"
+        android:onClick="OnCustomViewWithHeightClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Swipe disabled at runtime example"
+        android:onClick="OnDisabledExampleClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.asha.chromelikeswipelayout.MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            app:layout_scrollFlags="scroll"
+            android:text="AppBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.asha.ChromeLikeSwipeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/chrome_like_swipe_layout"
+        app:clwl_circleColor="#89d999"
+        app:clwl_gap="0dp"
+        app:clwl_radius="45dp"
+        app:clwl_collapseDuration="300"
+        app:clwl_rippleDuration="300"
+        app:clwl_gummyDuration="300"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#DDDDDD">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="I am in LinearLayout" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="I am in LinearLayout" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="I am in LinearLayout" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="I am in LinearLayout" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="I am in LinearLayout" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="I am in LinearLayout" />
+        </LinearLayout>
+    </com.asha.ChromeLikeSwipeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
