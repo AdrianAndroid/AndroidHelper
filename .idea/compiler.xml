@@ -44,7 +44,7 @@
       <module name="AndroidHelper.modespec" target="1.8" />
       <module name="AndroidHelper.okhttp.app" target="1.8" />
       <module name="AndroidHelper.photoview" target="1.8" />
-      <module name="AndroidHelper.pullrefresh.app" target="1.8" />
+      <module name="AndroidHelper.pullrefresh.autohomerefreshlistview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeswiplayout" target="1.8" />
       <module name="AndroidHelper.recyclerview" target="1.8" />
       <module name="AndroidHelper.recyclerview.leo_Recycler" target="1.8" />
