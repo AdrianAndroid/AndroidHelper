@@ -48,6 +48,8 @@
       <module name="AndroidHelper.pullrefresh.chromelikeapp" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeswipelayout" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeswiplayout" target="1.8" />
+      <module name="AndroidHelper.pullrefresh.xrecyclerview" target="1.8" />
+      <module name="AndroidHelper.pullrefresh.xrefreshviewapp" target="1.8" />
       <module name="AndroidHelper.recyclerview" target="1.8" />
       <module name="AndroidHelper.recyclerview.leo_Recycler" target="1.8" />
       <module name="AndroidHelper.recyclerview.leo_RecyclerView" target="1.8" />
@@ -56,6 +58,7 @@
       <module name="AndroidHelper.toolbar" target="1.8" />
       <module name="AndroidHelper.touchevent" target="1.8" />
       <module name="AndroidHelper.webview" target="1.8" />
+      <module name="AndroidHelper.xrecyclerview" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

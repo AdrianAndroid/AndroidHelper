@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.othershe.behaviortest.test1.TestActivity1">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_list"

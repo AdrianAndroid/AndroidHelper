@@ -1,3 +1,5 @@
+include ':pullrefresh:xrecyclerview'
+include ':pullrefresh:xrefreshviewapp'
 include ':pullrefresh:chromelikeapp'
 include ':pullrefresh:chromelikeswipelayout'//include ':chromelikeswipelayout'
 //include ':pullrefresh:chromelikeswiplayout'
