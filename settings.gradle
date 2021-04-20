@@ -1,4 +1,6 @@
-
+include(':bitmap:app'
+        , ':bitmap:bigimage'
+        , ':bitmap:bitmapdemo')
 
 include ':leetcode'
 
@@ -8,7 +10,6 @@ include ':leetcode'
 //        ,':pullrefresh:chromelikeapp'
 //        ,':pullrefresh:chromelikeswipelayout'
 //        ,':pullrefresh:autohomerefreshlistview')
-
 
 
 //include (
@@ -40,10 +41,6 @@ include ':leetcode'
 //    , ':leo_dispatch:scrollview_clash'
 //    , ':leo_dispatch:clickevent')
 
-//include ':photoview'
-//include ':javalib'
-//include ':rxjava207'
-//include ':rxjava1'
 //include ':xplay4'
 //include ':xplay3'
 //include ':xplay2'
@@ -53,6 +50,13 @@ include ':leetcode'
 //include ':ffmpeg2'
 //include ':testffmpeg'
 //include ':ffmpeg'
+
+
+//include ':photoview'
+//include ':javalib'
+//include ':rxjava207'
+//include ':rxjava1'
+
 //include ':flowlayout'
 //include ':viewpagerdemo'
 include ':touchevent'
@@ -62,7 +66,6 @@ include ':touchevent'
 //include ':webview'
 //include ':lib'
 //include ':recyclerview'
-//include ':bitmapdemo'
 //include(
 //        ':javapoet:app2'
 //        , ':javapoet:personal'

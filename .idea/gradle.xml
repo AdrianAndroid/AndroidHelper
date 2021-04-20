@@ -11,6 +11,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/bitmap" />
+            <option value="$PROJECT_DIR$/bitmap/app" />
+            <option value="$PROJECT_DIR$/bitmap/bigimage" />
+            <option value="$PROJECT_DIR$/bitmap/bitmapdemo" />
             <option value="$PROJECT_DIR$/leetcode" />
             <option value="$PROJECT_DIR$/touchevent" />
           </set>
