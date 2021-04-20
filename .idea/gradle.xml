@@ -12,13 +12,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/pullrefresh" />
-            <option value="$PROJECT_DIR$/pullrefresh/autohomerefreshlistview" />
-            <option value="$PROJECT_DIR$/pullrefresh/chromelikeapp" />
-            <option value="$PROJECT_DIR$/pullrefresh/chromelikeswipelayout" />
-            <option value="$PROJECT_DIR$/pullrefresh/meituanrefreshlistview" />
-            <option value="$PROJECT_DIR$/pullrefresh/xrecyclerview" />
-            <option value="$PROJECT_DIR$/pullrefresh/xrefreshviewapp" />
             <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>
