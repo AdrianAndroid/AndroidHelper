@@ -74,9 +74,9 @@ public class ImageCache {
                     // <8.0  bitmap 缓存 java
                     // 8.0 native
                     reusablePool.add(new WeakReference<Bitmap>(oldValue, getReferenceQueue()));
+                } else {
+                    oldValue.recycle();
                 }
-
-                oldValue.recycle();
             }
         };
         try {

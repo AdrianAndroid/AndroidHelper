@@ -1,6 +1,6 @@
-include(':bitmap:app'
-        , ':bitmap:bigimage'
-        , ':bitmap:bitmapdemo')
+include(
+//        ':bitmap:app', ':bitmap:bigimage',
+        ':bitmap:bitmapdemo')
 
 include ':leetcode'
 
