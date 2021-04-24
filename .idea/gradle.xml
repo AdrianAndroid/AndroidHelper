@@ -11,10 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/bitmap" />
-            <option value="$PROJECT_DIR$/bitmap/bitmapdemo" />
+            <option value="$PROJECT_DIR$/MemoryLeak" />
+            <option value="$PROJECT_DIR$/MemoryLeak/memoryleak1" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/touchevent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

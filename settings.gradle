@@ -1,6 +1,6 @@
-include(
-//        ':bitmap:app', ':bitmap:bigimage',
-        ':bitmap:bitmapdemo')
+include 'MemoryLeak:memoryleak1'//include(
+////        ':bitmap:app', ':bitmap:bigimage',
+//        ':bitmap:bitmapdemo')
 
 include ':leetcode'
 
@@ -59,7 +59,7 @@ include ':leetcode'
 
 //include ':flowlayout'
 //include ':viewpagerdemo'
-include ':touchevent'
+//include ':touchevent'
 //include ':hotfix'
 //include ':dialogs'
 //include ':html'
