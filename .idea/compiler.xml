@@ -45,7 +45,7 @@
       <module name="AndroidHelper.material.materialdesign" target="1.8" />
       <module name="AndroidHelper.material.modespec" target="1.8" />
       <module name="AndroidHelper.materialdesign" target="1.8" />
-      <module name="AndroidHelper.MemoryLeak.memoryleak1" target="1.8" />
+      <module name="AndroidHelper.MemoryLeak.memoryleak1" target="11" />
       <module name="AndroidHelper.memoryleak1" target="1.8" />
       <module name="AndroidHelper.modespec" target="1.8" />
       <module name="AndroidHelper.okhttp.app" target="1.8" />

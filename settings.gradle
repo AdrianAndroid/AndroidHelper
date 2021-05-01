@@ -1,4 +1,6 @@
-include 'MemoryLeak:memoryleak1'//include(
+//include 'MemoryLeak:memoryleak1'
+
+//include(
 ////        ':bitmap:app', ':bitmap:bigimage',
 //        ':bitmap:bitmapdemo')
 
