@@ -1,0 +1,243 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+
+#watermark {
+
+  position: relative;
+  overflow: hidden;
+}
+
+#watermark .x {
+  position: absolute;
+  top: 800;
+  left: 400;
+  color: #3300ff;
+  font-size: 50px;
+  pointer-events: none;
+  opacity:0.3;
+  filter:Alpha(opacity=50);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+    </style>
+
+
+    <style type="text/css">
+ html{color:#333;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-rendering:optimizelegibility;font-family:Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}html.borderbox *,html.borderbox :after,html.borderbox :before{box-sizing:border-box}article,aside,blockquote,body,button,code,dd,details,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}audio,canvas,video{display:inline-block}body,button,input,select,textarea{font:300 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}blockquote{position:relative;color:#999;font-weight:400;border-left:1px solid #1abc9c;padding-left:1em;margin:1em 3em 1em 2em}@media only screen and (max-width:640px){blockquote{margin:1em 0}}abbr,acronym{border-bottom:1px dotted;font-variant:normal}abbr{cursor:help}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}q:after,q:before{content:""}sub,sup{font-size:75%;line-height:0;position:relative}:root sub,:root sup{vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a{color:#1abc9c}a:hover{text-decoration:underline}.typo a{border-bottom:1px solid #1abc9c}.typo a:hover{border-bottom-color:#555;color:#555}.typo a:hover,a,ins{text-decoration:none}.typo-u,u{text-decoration:underline}mark{background:#fffdd1;border-bottom:1px solid #ffedce;padding:2px;margin:0 5px}code,pre,pre tt{font-family:Courier,Courier New,monospace}pre{background:hsla(0,0%,97%,.7);border:1px solid #ddd;padding:1em 1.5em;display:block;-webkit-overflow-scrolling:touch}hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:.8em;height:10px}.typo-small,figcaption,small{font-size:.9em;color:#888}b,strong{font-weight:700;color:#000}[draggable]{cursor:move}.clearfix:after,.clearfix:before{content:"";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.textwrap,.textwrap td,.textwrap th{word-wrap:break-word;word-break:break-all}.textwrap-table{table-layout:fixed}.serif{font-family:Palatino,Optima,Georgia,serif}.typo-dl,.typo-form,.typo-hr,.typo-ol,.typo-p,.typo-pre,.typo-table,.typo-ul,.typo dl,.typo form,.typo hr,.typo ol,.typo p,.typo pre,.typo table,.typo ul,blockquote{margin-bottom:1rem}h1,h2,h3,h4,h5,h6{font-family:PingFang SC,Helvetica Neue,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;line-height:1.35}.typo-h1,.typo-h2,.typo-h3,.typo-h4,.typo-h5,.typo-h6,.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}.typo-h1,.typo h1{font-size:2em}.typo-h2,.typo h2{font-size:1.8em}.typo-h3,.typo h3{font-size:1.6em}.typo-h4,.typo h4{font-size:1.4em}.typo-h5,.typo-h6,.typo h5,.typo h6{font-size:1.2em}.typo-ul,.typo ul{margin-left:1.3em;list-style:disc}.typo-ol,.typo ol{list-style:decimal;margin-left:1.9em}.typo-ol ol,.typo-ol ul,.typo-ul ol,.typo-ul ul,.typo li ol,.typo li ul{margin-bottom:.8em;margin-left:2em}.typo-ol ul,.typo-ul ul,.typo li ul{list-style:circle}.typo-table td,.typo-table th,.typo table caption,.typo table td,.typo table th{border:1px solid #ddd;padding:.5em 1em;color:#666}.typo-table th,.typo table th{background:#fbfbfb}.typo-table thead th,.typo table thead th{background:hsla(0,0%,95%,.7)}.typo table caption{border-bottom:none}.typo-input,.typo-textarea{-webkit-appearance:none;border-radius:0}.typo-em,.typo em,caption,legend{color:#000;font-weight:inherit}.typo-em{position:relative}.typo-em:after{position:absolute;top:.65em;left:0;width:100%;overflow:hidden;white-space:nowrap;content:"\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"}.typo img{max-width:100%}.common-content{font-weight:400;color:#353535;line-height:1.75rem;white-space:normal;word-break:normal;font-size:1rem}.common-content img{display:block;max-width:100%;background-color:#eee}.common-content audio,.common-content video{width:100%;background-color:#eee}.common-content center,.common-content font{margin-top:1rem;display:inline-block}.common-content center{width:100%}.common-content pre{margin-top:1rem;padding-left:0;padding-right:0;position:relative;overflow:hidden}.common-content pre code{font-size:.8rem;font-family:Consolas,Liberation Mono,Menlo,monospace,Courier;display:block;width:100%;box-sizing:border-box;padding-left:1rem;padding-right:1rem;overflow-x:auto}.common-content hr{border:none;margin-top:1.5rem;margin-bottom:1.5rem;border-top:1px solid #f5f5f5;height:1px;background:none}.common-content b,.common-content h1,.common-content h2,.common-content h3,.common-content h4,.common-content h5,.common-content strong{font-weight:700}.common-content h1,.common-content h2{font-size:1.125rem;margin-bottom:.45rem}.common-content h3,.common-content h4,.common-content h5{font-size:1rem;margin-bottom:.45rem}.common-content p{font-weight:400;color:#353535;margin-top:.15rem}.common-content .orange{color:#ff5a05}.common-content .reference{font-size:1rem;color:#888}.custom-rich-content h1{margin-top:0;font-weight:400;font-size:15.25px;border-bottom:1px solid #eee;line-height:2.8}.custom-rich-content li,.custom-rich-content p{font-size:14px;color:#888;line-height:1.6}table.hljs-ln{margin-bottom:0;border-spacing:0;border-collapse:collapse}table.hljs-ln,table.hljs-ln tbody,table.hljs-ln td,table.hljs-ln tr{box-sizing:border-box}table.hljs-ln td{padding:0;border:0}table.hljs-ln td.hljs-ln-numbers{min-width:15px;color:rgba(27,31,35,.3);text-align:right;white-space:nowrap;cursor:pointer;user-select:none}table.hljs-ln td.hljs-ln-code,table.hljs-ln td.hljs-ln-numbers{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;line-height:20px;vertical-align:top}table.hljs-ln td.hljs-ln-code{position:relative;padding-right:10px;padding-left:10px;overflow:visible;color:#24292e;word-wrap:normal;white-space:pre}video::-webkit-media-controls{overflow:hidden!important}video::-webkit-media-controls-enclosure{width:calc(100% + 32px);margin-left:auto}.button-cancel{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel,.button-primary{-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary{color:#fff;background-color:#ff5a05;border-radius:3px}@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot);src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.woff) format("woff"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.ttf) format("truetype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.svg#iconfont) format("svg")}@font-face{font-family:player-font;src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot);src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.woff) format("woff"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.ttf) format("truetype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.svg#player-font) format("svg")}.iconfont{font-family:iconfont!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}html{background:#fff;min-height:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{width:100%}body.fixed{overflow:hidden;position:fixed;width:100vw;height:100vh}i{font-style:normal}a{word-wrap:break-word;-webkit-tap-highlight-color:rgba(0,0,0,0)}a:hover{text-decoration:none}.fade-enter-active,.fade-leave-active{transition:opacity .3s}.fade-enter,.fade-leave-to{opacity:0}.MathJax,.MathJax_CHTML,.MathJax_MathContainer,.MathJax_MathML,.MathJax_PHTML,.MathJax_PlainSource,.MathJax_SVG{outline:0}.ios-app-switch .js-audit{display:none}._loading_wrap_{position:fixed;width:100vw;height:100vh;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999}._loading_div_class_,._loading_wrap_{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}._loading_div_class_{word-wrap:break-word;padding:.5rem .75rem;text-align:center;z-index:9999;font-size:.6rem;max-width:60%;color:#fff;border-radius:.25rem;-ms-flex-direction:column;flex-direction:column}._loading_div_class_ .message{color:#353535;font-size:16px;line-height:3}.spinner{animation:circle-rotator 1.4s linear infinite}.spinner *{line-height:0;box-sizing:border-box}@keyframes circle-rotator{0%{transform:rotate(0deg)}to{transform:rotate(270deg)}}.path{stroke-dasharray:187;stroke-dashoffset:0;transform-origin:center;animation:circle-dash 1.4s ease-in-out infinite,circle-colors 5.6s ease-in-out infinite}@keyframes circle-colors{0%{stroke:#ff5a05}to{stroke:#ff5a05}}@keyframes circle-dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;transform:rotate(135deg)}to{stroke-dashoffset:187;transform:rotate(450deg)}}.confirm-box-wrapper,.confirm-box-wrapper .mask{position:absolute;top:0;left:0;right:0;bottom:0}.confirm-box-wrapper .mask{background:rgba(0,0,0,.6)}.confirm-box-wrapper .confirm-box{position:fixed;top:50%;left:50%;width:267px;background:#fff;transform:translate(-50%,-50%);border-radius:7px}.confirm-box-wrapper .confirm-box .head{margin:0 18px;font-size:18px;text-align:center;line-height:65px;border-bottom:1px solid #d9d9d9}.confirm-box-wrapper .confirm-box .body{padding:18px;padding-bottom:0;color:#353535;font-size:12.5px;max-height:150px;overflow:auto}.confirm-box-wrapper .confirm-box .foot{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:18px}.confirm-box-wrapper .confirm-box .foot .button-cancel{border:1px solid #d9d9d9}.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+
+
+
+
+    </style>
+    <style type="text/css">
+        .button-cancel[data-v-87ffcada]{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel[data-v-87ffcada],.button-primary[data-v-87ffcada]{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary[data-v-87ffcada]{color:#fff;background-color:#ff5a05;border-radius:3px}.pd[data-v-87ffcada]{padding-left:1.375rem;padding-right:1.375rem}.article[data-v-87ffcada]{max-width:70rem;margin:0 auto}.article .article-unavailable[data-v-87ffcada]{color:#fa8919;font-size:15px;font-weight:600;line-height:24px;border-radius:5px;padding:12px;background-color:#f6f7fb;margin-top:20px}.article .article-unavailable .iconfont[data-v-87ffcada]{font-size:12px}.article .main[data-v-87ffcada]{padding:1.25rem 0;margin-bottom:52px}.article-title[data-v-87ffcada]{color:#353535;font-weight:400;line-height:1.65rem;font-size:1.34375rem}.article-info[data-v-87ffcada]{color:#888;font-size:.9375rem;margin-top:1.0625rem}.article-content[data-v-87ffcada]{margin-top:1.0625rem}.article-content.android video[data-v-87ffcada]::-webkit-media-controls-fullscreen-button{display:none}.copyright[data-v-87ffcada]{color:#b2b2b2;padding-bottom:20px;margin-top:20px;font-size:13px}.audio-player[data-v-87ffcada]{width:100%;margin:20px 0}.to-comment[data-v-87ffcada]{overflow:hidden;padding-top:10px;margin-bottom:-30px}.to-comment a.button-primary[data-v-87ffcada]{float:right;height:20px;font-size:12px;line-height:20px;padding:4px 8px;cursor:pointer}.article-comments[data-v-87ffcada]{margin-top:2rem}.article-comments h2[data-v-87ffcada]{text-align:center;color:#888;position:relative;z-index:1;margin-bottom:1rem}.article-comments h2[data-v-87ffcada]:before{border-top:1px dotted #888;content:"";position:absolute;top:56%;left:0;width:100%;z-index:-1}.article-comments h2 span[data-v-87ffcada]{font-size:15.25px;font-weight:400;padding:0 1rem;background:#fff;display:inline-block}.article-sub-bottom[data-v-87ffcada]{z-index:10;cursor:pointer}.switch-btns[data-v-87ffcada]{height:76px;cursor:pointer;padding-top:24px;padding-bottom:24px;border-bottom:10px solid #f6f7fb;position:relative}.switch-btns[data-v-87ffcada]:before{content:" ";height:1px;background:#e8e8e8;position:absolute;top:0;left:0;-webkit-box-sizing:border-box;box-sizing:border-box;left:1.375rem;right:1.375rem}.switch-btns .btn[data-v-87ffcada]{height:38px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.switch-btns .btn .tag[data-v-87ffcada]{-webkit-box-flex:0;-ms-flex:0 0 62px;flex:0 0 62px;text-align:center;color:#888;font-size:14px;border-radius:10px;height:22px;line-height:22px;background:#f6f7fb;font-weight:400}.switch-btns .btn .txt[data-v-87ffcada]{margin-left:10px;-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;color:#888;font-size:15px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}@media (max-width:769px){.article .breadcrumb[data-v-87ffcada]{padding-top:10px;padding-bottom:10px}}
+
+
+
+
+
+    </style>
+
+    <style type="text/css">
+        .comment-item{list-style-position:inside;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:1rem}.comment-item a{border-bottom:none}.comment-item .avatar{width:2.625rem;height:2.625rem;-ms-flex-negative:0;flex-shrink:0;border-radius:50%}.comment-item .info{margin-left:.5rem;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.comment-item .info .hd{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .username{color:#888;font-size:15.25px;font-weight:400;line-height:1.2}.comment-item .info .hd .control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .control .btn-share{color:#888;font-size:.75rem;margin-right:1rem}.comment-item .info .hd .control .btn-praise{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15.25px;text-decoration:none}.comment-item .info .hd .control .btn-praise i{color:#888;display:inline-block;font-size:.75rem;margin-right:.3rem;margin-top:-.01rem}.comment-item .info .hd .control .btn-praise i.on,.comment-item .info .hd .control .btn-praise span{color:#ff5a05}.comment-item .info .bd{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all;line-height:1.6}.comment-item .info .time{color:#888;font-size:9px;line-height:1}.comment-item .info .reply .reply-hd{font-size:15.25px}.comment-item .info .reply .reply-hd span{margin-left:-12px;color:#888;font-weight:400}.comment-item .info .reply .reply-hd i{color:#ff5a05;font-size:15.25px}.comment-item .info .reply .reply-content{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all}.comment-item .info .reply .reply-time{color:#888;font-size:9px}
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+
+    <div data-v-87ffcada="" class="article" id="watermark">
+        <p class="x">更多课程请加QQ1046877154，微信loveu_110获取</p>
+        <div data-v-87ffcada="" class="main main-app">
+            <h1 data-v-87ffcada="" class="article-title pd">
+                08讲启动优化（下）：优化启动速度的进阶方法
+            </h1>
+            <div data-v-87ffcada="" class="article-content typo common-content pd"><img data-v-87ffcada=""
+                                                                                        src="https://static001.geekbang.org/resource/image/2e/aa/2e13dd37217aa253b82cf64ada3f02aa.jpg">
+
+
+                <div data-v-87ffcada="" id="article-content" class="">
+                    <div class="text">
+                        <p>专栏上一期，我们一起梳理了应用启动的整个过程和问题，也讲了一些启动优化方法，可以说是完成了启动优化工作最难的一部分。还可以通过删掉或延后一些不必要的业务，来实现相关具体业务的优化。你学会了这些工具和方法，是不是觉得效果非常不错，然后美滋滋地向老大汇报工作成果：“启动速度提升30%，秒杀所有竞品好几条街”。</p><p>“还有什么方法可以做进一步优化吗？怎么证明你秒杀所有的竞品？如何在线上衡量启动优化的效果？怎么保障和监控启动速度是否变慢？”，老大一口气问了四个问题。</p><p>面对这四个问题，你可不能一脸懵。我们的应用启动是不是真的已经做到了极致？如何保证启动优化成果是长期有效的？让我们通过今天的学习，一起来回答老大这些问题吧。</p><h2>启动进阶方法</h2><p>除了上期讲的常规的优化方法，我还有一些与业务无关的“压箱底”方法可以帮助加快应用的启动速度。当然有些方法会用到一些黑科技，它就像一把双刃剑，需要你做深入的评估和测试。</p><p><strong>1. I/O 优化</strong></p><p>在负载过高的时候，I/O性能下降得会比较快。特别是对于低端机，同样的I/O操作耗时可能是高端机器的几十倍。<strong>启动过程不建议出现网络I/O</strong>，相比之下，磁盘I/O是启动优化一定要抠的点。首先我们要清楚启动过程读了什么文件、多少个字节、Buffer是多大、使用了多长时间、在什么线程等一系列信息。</p><!-- [[[read_end]]] --><p><img src="https://static001.geekbang.org/resource/image/b9/d7/b901216f4231f43475ca1227f25b6ed7.png" alt=""></p><p>那么如何实现I/O的监控呢？我今天先卖个关子，下一期我会详细和你聊聊I/O方面的知识。</p><p>通过上面的数据，我们发现chat.db的大小竟然达到500MB。我们经常发现本地启动明明非常快，为什么线上有些用户就那么慢？这可能是一些用户本地积累了非常多的数据，我们也发现有些微信的重度用户，他的DB文件竟然会超过1GB。所以，<strong>重度用户是启动优化一定要覆盖的群体</strong>，我们要做一些特殊的优化策略。</p><p>还有一个是数据结构的选择问题，我们在启动过程只需要读取Setting.sp的几项数据，不过SharedPreference在初始化的时候还是要全部数据一起解析。<strong>如果它的数据量超过1000条，启动过程解析时间可能就超过100毫秒</strong>。如果只解析启动过程用到的数据项则会很大程度减少解析时间，启动过程适合使用随机读写的数据结构。</p><p><img src="https://static001.geekbang.org/resource/image/84/73/84c061b93f84e6b20b36d2ee004b7473.png" alt=""></p><p>可以将ArrayMap改造成支持随机读写、延时解析的数据存储方式。同样我们今天也不再展开这部分内容，这些知识会在存储优化的相关章节进一步展开。</p><p><strong>2. 数据重排</strong></p><p>在上面的表格里面，我们读取test.io文件中1KB数据，因为Buffer不小心写成了1 byte，总共要读取1000次。那系统是不是真的会读1000次磁盘呢？</p><p>事实上1000次读操作只是我们发起的次数，并不是真正的磁盘I/O次数。你可以参考下面Linux文件I/O流程。</p><p><img src="https://static001.geekbang.org/resource/image/30/b4/30a46524d9c91b8b137c73b2c87654b4.png" alt=""></p><p>Linux文件系统从磁盘读文件的时候，会以block为单位去磁盘读取，一般block大小是4KB。也就是说一次磁盘读写大小至少是4KB，然后会把4KB数据放到页缓存Page Cache中。如果下次读取文件数据已经在页缓存中，那就不会发生真实的磁盘I/O，而是直接从页缓存中读取，大大提升了读的速度。所以上面的例子，我们虽然读了1000次，但事实上只会发生一次磁盘I/O，其他的数据都会在页缓存中得到。</p><p>Dex文件用的到的类和安装包APK里面各种资源文件一般都比较小，但是读取非常频繁。我们可以利用系统这个机制将它们按照读取顺序重新排列，减少真实的磁盘I/O次数。</p><p><strong>类重排</strong></p><p>启动过程类加载顺序可以通过复写ClassLoader得到。</p><pre><code>class GetClassLoader extends PathClassLoader {
+    public Class&lt;?&gt; findClass(String name) {
+        // 将 name 记录到文件
+        writeToFile(name，&quot;coldstart_classes.txt&quot;);
+        return super.findClass(name);
+    }
+}
+</code></pre><p>然后通过ReDex的<a href="https://github.com/facebook/redex/blob/master/docs/Interdex.md">Interdex</a>调整类在Dex中的排列顺序，最后可以利用010  Editor查看修改后的效果。</p><p><img src="https://static001.geekbang.org/resource/image/5f/04/5f118a4064ada2fc6b978f4025d57404.png" alt=""></p><p>我多次提到的<a href="https://github.com/facebook/redex">ReDex</a>，是Facebook开源的Dex优化工具，它里面有非常多好用的东西，后续我们会有更详细的介绍。</p><p><strong>资源文件重排</strong></p><p>Facebook在比较早的时候就使用“资源热图”来实现资源文件的重排，最近支付宝在<a href="https://mp.weixin.qq.com/s/79tAFx6zi3JRG-ewoapIVQ">《通过安装包重排布优化Android端启动性能》</a>中也详细讲述了资源重排的原理和落地方法。</p><p>在实现上，它们都是通过修改Kernel源码，单独编译了一个特殊的ROM。这样做的目的有三个：</p><ul>
+<li>
+<p>统计。统计应用启动过程加载了安装包中哪些资源文件，比如assets、drawable、layout等。跟类重排一样，我们可以得到一个资源加载的顺序列表。</p>
+</li>
+<li>
+<p>度量。在完成资源顺序重排后，我们需要确定是否真正生效。比如有哪些资源文件加载了，它是发生真实的磁盘I/O，还是命中了Page Cache。</p>
+</li>
+<li>
+<p>自动化。任何代码提交都有可能改变启动过程中类和资源的加载顺序，如果完全依靠人工手动处理，这个事情很难持续下去。通过定制ROM的一些埋点和配合的工具，我们可以将它们放到自动化流程当中。</p>
+</li>
+</ul><p>跟前面提到的Nanoscope耗时分析工具一样，当系统无法满足我们的优化需求时，就需要直接修改ROM的实现。Facebook“资源热图”相对比较完善，也建设了一些配套的Dashboard工具，希望后续可以开源出来。</p><p>事实上如果仅仅为了统计，我们也可以使用Hook的方式。下面是利用Frida实现获得Android资源加载顺序的方法，不过Frida还是相对小众，后面会替换其他更加成熟的Hook框架。</p><pre><code>resourceImpl.loadXmlResourceParser.implementation=function(a,b,c,d){
+   send('file:'+a)
+   return this.loadXmlResourceParser(a,b,c,d)
+}
+
+
+resourceImpl.loadDrawableForCookie.implementation=function(a,b,c,d,e){
+   send(&quot;file:&quot;+a)
+   return this.loadDrawableForCookie(a,b,c,d,e)
+}
+</code></pre><p>调整安装包文件排列需要修改7zip源码实现支持传入文件列表顺序，同样最后可以利用010  Editor查看修改后的效果。</p><p><img src="https://static001.geekbang.org/resource/image/ea/b1/eaef116a5c0d6be1f3687b159fd214b1.png" alt=""></p><p>这两个优化可能会带来100～200毫秒的提高，<strong>我们还可以大大减少启动过程I/O的时间波动</strong>。特别是对于中低端机器来说，经常发现启动时间波动非常大，这个波动跟CPU调度相关，但更多时候是跟I/O相关。</p><p>可能有同学会问，这些优化思路究竟是怎么样想出来的呢？其实利用文件系统和磁盘读取机制的优化思路，在服务端和Windows上早已经不是什么新鲜事。<strong>所谓的创新，不一定是创造前所未有的东西。我们将已有的方案移植到新的平台，并且很好地结合该平台的特性将其落地，就是一个很大的创新。</strong></p><p><strong>3. 类的加载</strong></p><p>在WeMobileDev公众号发布的<a href="https://mp.weixin.qq.com/s/-NmkSwZu83HAmzKPawdTqQ">《微信Android热补丁实践演进之路》</a>中，我提过在加载类的过程有一个verify class的步骤，它需要校验方法的每一个指令，是一个比较耗时的操作。</p><p><img src="https://static001.geekbang.org/resource/image/d2/d2/d2dbf21396e16c0cd53bbc3c0be405d2.png" alt=""></p><p>我们可以通过Hook来去掉verify这个步骤，这对启动速度有几十毫秒的优化。不过我想说，其实最大的优化场景在于首次和覆盖安装时。以Dalvik平台为例，一个2MB的Dex正常需要350毫秒，将classVerifyMode设为VERIFY_MODE_NONE后，只需要150毫秒，节省超过50%的时间。</p><pre><code>// Dalvik Globals.h
+gDvm.classVerifyMode = VERIFY_MODE_NONE;
+// Art runtime.cc
+verify_ = verifier::VerifyMode::kNone;
+</code></pre><p>但是ART平台要复杂很多，Hook需要兼容几个版本。而且在安装时大部分Dex已经优化好了，去掉ART平台的verify只会对动态加载的Dex带来一些好处。Atlas中的<a href="https://github.com/alibaba/atlas/blob/master/atlas-core/libs/dalvik_hack-3.0.0.5.jar">dalvik_hack-3.0.0.5.jar</a>可以通过下面的方法去掉verify，但是当前没有支持ART平台。</p><pre><code>AndroidRuntime runtime = AndroidRuntime.getInstance();
+runtime.init(context);
+runtime.setVerificationEnabled(false);
+</code></pre><p>这个黑科技可以大大降低首次启动的速度，代价是对后续运行会产生轻微的影响。同时也要考虑兼容性问题，暂时不建议在ART平台使用。</p><p><strong>4. 黑科技</strong></p><p><strong>第一，保活</strong></p><p>讲到黑科技，你可能第一个想到的就是保活。保活可以减少Application创建跟初始化的时间，让冷启动变成温启动。不过在Target 26之后，保活的确变得越来越难。</p><p>对于大厂来说，可能需要寻求厂商合作的机会，例如微信的Hardcoder方案和OPPO推出的<a href="https://www.geekpark.net/news/233791">Hyper Boost</a>方案。根据OPPO的数据，对于手机QQ、淘宝、微信启动场景会直接有20%以上的优化。</p><p>有的时候你问为什么微信可以保活？为什么它可以运行的那么流畅？这里可能不仅仅是技术上的问题，当应用体量足够大，就可以倒逼厂商去专门为它们做优化。</p><p><strong>第二，插件化和热修复</strong></p><p>从2012年开始，淘宝、微信尝试做插件化的探索。到了2015年，淘宝的Dexposed、支付宝的AndFix以及微信的Tinker等热修复技术开始“百花齐放”。</p><p>它们真的那么好吗？事实上大部分的框架在设计上都存在大量的Hook和私有API调用，带来的缺点主要有两个：</p><ul>
+<li>
+<p>稳定性。虽然大家都号称兼容100%的机型，由于厂商的兼容性、安装失败、dex2oat失败等原因，还是会有那么一些代码和资源的异常。Android P推出的non-sdk-interface调用限制，以后适配只会越来越难，成本越来越高。</p>
+</li>
+<li>
+<p>性能。Android Runtime每个版本都有很多的优化，因为插件化和热修复用到的一些黑科技，导致底层Runtime的优化我们是享受不到的。Tinker框架在加载补丁后，应用启动速度会降低5%～10%。</p>
+</li>
+</ul><p>应用加固对启动速度来说简直是灾难，有时候我们需要做一些权衡和选择。为了提升启动速度，支付宝也提出一种<a href="https://mp.weixin.qq.com/s/ePjxcyF3N1vLYvD5dPIjUw">GC抑制</a>的方案。不过首先Android 5.0以下的系统占比已经不高，其次这也会带来一些兼容性问题。我们还是更希望通过手段可以真正优化整个耗时，而不是一些取巧的方式。</p><p>总的来说，对于黑科技我们需要慎重，当你足够了解它们内部的机制以后，可以选择性的使用。</p><h2>启动监控</h2><p>终于千辛万苦的优化好了，我们还要找一套合理、准确的方法来度量优化的成果。同时还要对它做全方位的监控，以免被人破坏劳动果实。</p><p><strong>1. 实验室监控</strong></p><p>如果想客观地反映启动的耗时，视频录制会是一个非常好的选择。特别是我们很难拿到竞品的线上数据，所以实验室监控也非常适合做竞品的对比测试。</p><p>它的难点在于如何让实验系统准确地找到启动结束的点，这里可以通过下面两种方式。</p><ul>
+<li>
+<p>80%绘制。当页面绘制超过80%的时候认为是启动完成，不过可能会把闪屏当成启动结束的点，不一定是我们所期望的。</p>
+</li>
+<li>
+<p>图像识别。手动输入一张启动结束的图片，当实验系统认为当前截屏页面有80%以上相似度时，就认为是启动结束。这种方法更加灵活可控，但是实现难度会稍微高一点。</p>
+</li>
+</ul><p><img src="https://static001.geekbang.org/resource/image/ac/fd/acbbb4f9b147d68bfe9ab519642616fd.png" alt=""></p><p>启动的实验室监控可以定期自动去跑，需要注意的是，我们应该覆盖高、中、低端机不同的场景。但是使用录屏的方式也有一个缺陷，就是出现问题时我们需要人工二次定位具体是什么代码所导致的。</p><p><strong>2. 线上监控</strong></p><p>实验室覆盖的场景和机型还是有限的，是驴是马我们还是要发布到线上进行验证。针对线上，启动监控会更加复杂一些。<a href="https://developer.android.google.cn/topic/performance/vitals/launch-time">Android Vitals</a>可以对应用冷启动、温启动时间做监控。</p><p><img src="https://static001.geekbang.org/resource/image/27/84/27f427f00755a723f8f9b2ada3540f84.png" alt=""></p><p>事实上，每个应用启动的流程都非常复杂，上面的图并不能真实反映每个应用的启动耗时。启动耗时的计算需要考虑非常多的细节，比如：</p><ul>
+<li>
+<p>启动结束的统计时机。是否是使用用户真正可以操作的时间作为启动结束的时间。</p>
+</li>
+<li>
+<p>启动时间扣除的逻辑。闪屏、广告和新手引导这些时间都应该从启动时间里扣除。</p>
+</li>
+<li>
+<p>启动排除逻辑。Broadcast、Server拉起，启动过程进入后台这些都需要排除出统计。</p>
+</li>
+</ul><p>经过精密的扣除和排除逻辑，我们最终可以得到用户的线上启动耗时。<strong>正如我在上一期所说的，准确的启动耗时统计是非常重要的。有很多优化在实验室完成之后，还需要在线上灰度验证效果。这个前提是启动统计是准确的，整个效果评估是真实的。</strong></p><p>那我们一般使用什么指标来衡量启动速度的快慢呢？</p><p>很多应用采用平均启动时间，不过这个指标其实并不太好，一些体验很差的用户很有可能是被平均了。我更建议使用类似下面的指标：</p><ul>
+<li>
+<p>快开慢开比。例如2秒快开比、5秒慢开比，我们可以看到有多少比例的用户体验非常好，多少比例的用户比较槽糕。</p>
+</li>
+<li>
+<p>90%用户的启动时间。如果90%的用户启动时间都小于5秒，那么我们90%区间启动耗时就是5秒。</p>
+</li>
+</ul><p>此外我们还要区分启动的类型。这里要统计首次安装启动、覆盖安装启动、冷启动和温启动这些类型，一般我们都使用普通的<strong>冷启动时间</strong>作为指标。另一方面热启动的占比也可以反映出我们程序的活跃或保活能力。</p><p>除了指标的监控，启动的线上堆栈监控更加困难。Facebook会利用Profilo工具对启动的整个流程耗时做监控，并且在后台直接对不同的版本做自动化对比，监控新版本是否有新增耗时的函数。</p><h2>总结</h2><p>今天我们学习了一些与业务无关的启动优化方法，可以进一步减少启动耗时，特别是减少磁盘I/O可能带来的波动。然后我们探讨了一些黑科技对启动的影响，对于黑科技我们需要两面看，在选择时也要慎重。最后我们探讨了如何在实验室和线上更好地测量和监控启动速度。</p><p>启动优化需要耐得住寂寞，把整个流程摸清摸透，一点点把时间抠出来，特别是对于低端机和系统繁忙的场景。而数据重排的优化，对我有非常大的启发，帮助我开发了一个新的方向。也让我明白了，当我们足够熟悉底层的知识时，可以利用系统的特性去做更加深层次的优化。</p><p>不管怎么说，你都需要谨记一点：对于启动优化要警惕KPI化，<strong>我们要解决的不是一个数字，而是用户真正的体验问题</strong>。</p><p>看完我分享的启动优化的方法后，相信你肯定也还有很多好的思路和方法。<span class="orange">今天的课后作业是分享一下你“压箱底”的启动优化“秘籍”，在留言区分享一下今天学习、练习的收获与心得。</span></p><h2>课后练习</h2><p>今天我们的<a href="https://github.com/AndroidAdvanceWithGeektime/Chapter08">Sample</a>是如何在Dalvik去掉verify，你可以顺着这个思路尝试去分析Dalvik虚拟机加载Dex和类的流程。</p><p>欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。最后别忘了在评论区提交今天的作业，我也为认真完成作业的同学准备了丰厚的“学习加油礼包”，期待与你一起切磋进步哦。</p><p><img src="https://static001.geekbang.org/resource/image/bf/f1/bf8fdc35ddccb10b1161d8ca7eb8f8f1.jpg" alt=""></p>
+                    </div>
+                </div>
+
+            </div>
+            <div data-v-87ffcada="" class="article-comments pd"><h2 data-v-87ffcada=""><span
+                    data-v-87ffcada="">精选留言</span></h2>
+                <ul data-v-87ffcada="">
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/13/d3/e8/453cc21c.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">万里大鹏飞</span>
+                            </div>
+                            <div class="bd">您上面说，Buffer不小心写成了 1 byte，总共要读取 1000次，这样会命中Page Cache中不会导致真正的IO。可是实际测试的时候，read同一个文件，buffer大小1byte和1k的read速度还有有差异的，这个是为什么呢？ <br></div>
+                            <span class="time">2018-12-23 23:45</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">后面io会讲到。主要差别是系统调用跟数据拷贝的时间</p>
+                                <p class="reply-time">2018-12-24 09:41</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4e/9f/ece713ac.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">朱蓝天</span>
+                            </div>
+                            <div class="bd">感谢分享，启动这块的线上监控似乎没有崩溃卡顿内存这几个完整，实验室环境居多。我们最近也在尝试做一些线上启动完整过程的函数级微损监控，另外还有启动这块的代码框架似乎也可以写一些。 <br></div>
+                            <span class="time">2018-12-22 02:01</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/57/2e/0c85eecd.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">小洁</span>
+                            </div>
+                            <div class="bd">优化Dex上文件的重排，是只会在首次安装或者覆盖安装上涉及到吗，其他情况呢? <br></div>
+                            <span class="time">2019-01-04 19:58</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">Dex重排是任何时候都有效果的</p>
+                                <p class="reply-time">2019-01-04 23:59</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/a5/f1/76d4e6bb.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">功夫熊猫</span>
+                            </div>
+                            <div class="bd">对于dex中的class按文件大小重排没有明白为什么为优化i&#47;o速度，class的加载和在dex的位置有什么关系？ <br></div>
+                            <span class="time">2018-12-25 21:43</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">Classdef在dex是连续存放的，所以可以一次读取一大段，mmap中断缺页就会少一些</p>
+                                <p class="reply-time">2018-12-26 00:01</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/76/ae/d6f40a9b.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">志伟</span>
+                            </div>
+                            <div class="bd">今天介绍的 “数据重排”相关的优化压榨了系统和硬件的时间，令我想起以前做存储驱动的相关工作。<br>手机存储的Nand Flash,emmc 等flash存储硬件有其读写的特点或者限制<br>* 最小读取单位sector ，512byte或其他<br>* 最小擦出单位为block(如128个sector64k)或其他<br>* 一个存储单元寿命因芯片质量不同，大概2-3k次<br>通常做法是增大缓存，做一层逻辑的映射，减少实际读写外部Flash的时间，因为每一次硬件操作成本较大，除了实际的数据传输还有开始握手和结束等待的时间。另外会结合磨损均衡和坏块管理算法，提升读写性能和延长存储的使用寿命。<br>调整Apk的文件顺序，使其更加紧凑，那内核I&#47;O读取从flash读取回内存的数据在后续读取中更容易命中，减少了I&#47;O时间。<br>最怕的是随机小文件的读写，因为这样破坏了存储驱动和内核的缓存，要增加很多实际I&#47;O操作,性能很低。<br>在对比I&#47;O性能时候设备也有差异:<br>* 新设备比旧设备性能好<br>* 存储剩余大的设备比存储几乎满的设备性能要好<br>因为旧设备坏块多，存储将满的设备剩余完整好块少，在I&#47;O时候驱动需要调整腾挪数据，找到好的块去写，读时候没有连续读回更多块，降低了缓存的命中，增加了时间。 <br></div>
+                            <span class="time">2018-12-25 00:26</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/aa/87/7f44ec43.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">许圣明</span>
+                            </div>
+                            <div class="bd">你好，请问数据重排指的是根据代码中读取各种资源文件的顺序来调整这些文件在目录中的顺序吗？邻近读取的文件存放的位置也要邻近是吗？ <br></div>
+                            <span class="time">2018-12-22 11:06</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">对的，对于大量连续读取，文件又比较小的，会比较有用</p>
+                                <p class="reply-time">2018-12-22 16:30</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

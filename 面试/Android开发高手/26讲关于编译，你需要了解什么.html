@@ -1,0 +1,269 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+
+#watermark {
+
+  position: relative;
+  overflow: hidden;
+}
+
+#watermark .x {
+  position: absolute;
+  top: 800;
+  left: 400;
+  color: #3300ff;
+  font-size: 50px;
+  pointer-events: none;
+  opacity:0.3;
+  filter:Alpha(opacity=50);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+    </style>
+
+
+    <style type="text/css">
+ html{color:#333;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-rendering:optimizelegibility;font-family:Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}html.borderbox *,html.borderbox :after,html.borderbox :before{box-sizing:border-box}article,aside,blockquote,body,button,code,dd,details,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}audio,canvas,video{display:inline-block}body,button,input,select,textarea{font:300 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}blockquote{position:relative;color:#999;font-weight:400;border-left:1px solid #1abc9c;padding-left:1em;margin:1em 3em 1em 2em}@media only screen and (max-width:640px){blockquote{margin:1em 0}}abbr,acronym{border-bottom:1px dotted;font-variant:normal}abbr{cursor:help}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}q:after,q:before{content:""}sub,sup{font-size:75%;line-height:0;position:relative}:root sub,:root sup{vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a{color:#1abc9c}a:hover{text-decoration:underline}.typo a{border-bottom:1px solid #1abc9c}.typo a:hover{border-bottom-color:#555;color:#555}.typo a:hover,a,ins{text-decoration:none}.typo-u,u{text-decoration:underline}mark{background:#fffdd1;border-bottom:1px solid #ffedce;padding:2px;margin:0 5px}code,pre,pre tt{font-family:Courier,Courier New,monospace}pre{background:hsla(0,0%,97%,.7);border:1px solid #ddd;padding:1em 1.5em;display:block;-webkit-overflow-scrolling:touch}hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:.8em;height:10px}.typo-small,figcaption,small{font-size:.9em;color:#888}b,strong{font-weight:700;color:#000}[draggable]{cursor:move}.clearfix:after,.clearfix:before{content:"";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.textwrap,.textwrap td,.textwrap th{word-wrap:break-word;word-break:break-all}.textwrap-table{table-layout:fixed}.serif{font-family:Palatino,Optima,Georgia,serif}.typo-dl,.typo-form,.typo-hr,.typo-ol,.typo-p,.typo-pre,.typo-table,.typo-ul,.typo dl,.typo form,.typo hr,.typo ol,.typo p,.typo pre,.typo table,.typo ul,blockquote{margin-bottom:1rem}h1,h2,h3,h4,h5,h6{font-family:PingFang SC,Helvetica Neue,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;line-height:1.35}.typo-h1,.typo-h2,.typo-h3,.typo-h4,.typo-h5,.typo-h6,.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}.typo-h1,.typo h1{font-size:2em}.typo-h2,.typo h2{font-size:1.8em}.typo-h3,.typo h3{font-size:1.6em}.typo-h4,.typo h4{font-size:1.4em}.typo-h5,.typo-h6,.typo h5,.typo h6{font-size:1.2em}.typo-ul,.typo ul{margin-left:1.3em;list-style:disc}.typo-ol,.typo ol{list-style:decimal;margin-left:1.9em}.typo-ol ol,.typo-ol ul,.typo-ul ol,.typo-ul ul,.typo li ol,.typo li ul{margin-bottom:.8em;margin-left:2em}.typo-ol ul,.typo-ul ul,.typo li ul{list-style:circle}.typo-table td,.typo-table th,.typo table caption,.typo table td,.typo table th{border:1px solid #ddd;padding:.5em 1em;color:#666}.typo-table th,.typo table th{background:#fbfbfb}.typo-table thead th,.typo table thead th{background:hsla(0,0%,95%,.7)}.typo table caption{border-bottom:none}.typo-input,.typo-textarea{-webkit-appearance:none;border-radius:0}.typo-em,.typo em,caption,legend{color:#000;font-weight:inherit}.typo-em{position:relative}.typo-em:after{position:absolute;top:.65em;left:0;width:100%;overflow:hidden;white-space:nowrap;content:"\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"}.typo img{max-width:100%}.common-content{font-weight:400;color:#353535;line-height:1.75rem;white-space:normal;word-break:normal;font-size:1rem}.common-content img{display:block;max-width:100%;background-color:#eee}.common-content audio,.common-content video{width:100%;background-color:#eee}.common-content center,.common-content font{margin-top:1rem;display:inline-block}.common-content center{width:100%}.common-content pre{margin-top:1rem;padding-left:0;padding-right:0;position:relative;overflow:hidden}.common-content pre code{font-size:.8rem;font-family:Consolas,Liberation Mono,Menlo,monospace,Courier;display:block;width:100%;box-sizing:border-box;padding-left:1rem;padding-right:1rem;overflow-x:auto}.common-content hr{border:none;margin-top:1.5rem;margin-bottom:1.5rem;border-top:1px solid #f5f5f5;height:1px;background:none}.common-content b,.common-content h1,.common-content h2,.common-content h3,.common-content h4,.common-content h5,.common-content strong{font-weight:700}.common-content h1,.common-content h2{font-size:1.125rem;margin-bottom:.45rem}.common-content h3,.common-content h4,.common-content h5{font-size:1rem;margin-bottom:.45rem}.common-content p{font-weight:400;color:#353535;margin-top:.15rem}.common-content .orange{color:#ff5a05}.common-content .reference{font-size:1rem;color:#888}.custom-rich-content h1{margin-top:0;font-weight:400;font-size:15.25px;border-bottom:1px solid #eee;line-height:2.8}.custom-rich-content li,.custom-rich-content p{font-size:14px;color:#888;line-height:1.6}table.hljs-ln{margin-bottom:0;border-spacing:0;border-collapse:collapse}table.hljs-ln,table.hljs-ln tbody,table.hljs-ln td,table.hljs-ln tr{box-sizing:border-box}table.hljs-ln td{padding:0;border:0}table.hljs-ln td.hljs-ln-numbers{min-width:15px;color:rgba(27,31,35,.3);text-align:right;white-space:nowrap;cursor:pointer;user-select:none}table.hljs-ln td.hljs-ln-code,table.hljs-ln td.hljs-ln-numbers{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;line-height:20px;vertical-align:top}table.hljs-ln td.hljs-ln-code{position:relative;padding-right:10px;padding-left:10px;overflow:visible;color:#24292e;word-wrap:normal;white-space:pre}video::-webkit-media-controls{overflow:hidden!important}video::-webkit-media-controls-enclosure{width:calc(100% + 32px);margin-left:auto}.button-cancel{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel,.button-primary{-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary{color:#fff;background-color:#ff5a05;border-radius:3px}@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot);src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.woff) format("woff"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.ttf) format("truetype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.svg#iconfont) format("svg")}@font-face{font-family:player-font;src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot);src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.woff) format("woff"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.ttf) format("truetype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.svg#player-font) format("svg")}.iconfont{font-family:iconfont!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}html{background:#fff;min-height:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{width:100%}body.fixed{overflow:hidden;position:fixed;width:100vw;height:100vh}i{font-style:normal}a{word-wrap:break-word;-webkit-tap-highlight-color:rgba(0,0,0,0)}a:hover{text-decoration:none}.fade-enter-active,.fade-leave-active{transition:opacity .3s}.fade-enter,.fade-leave-to{opacity:0}.MathJax,.MathJax_CHTML,.MathJax_MathContainer,.MathJax_MathML,.MathJax_PHTML,.MathJax_PlainSource,.MathJax_SVG{outline:0}.ios-app-switch .js-audit{display:none}._loading_wrap_{position:fixed;width:100vw;height:100vh;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999}._loading_div_class_,._loading_wrap_{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}._loading_div_class_{word-wrap:break-word;padding:.5rem .75rem;text-align:center;z-index:9999;font-size:.6rem;max-width:60%;color:#fff;border-radius:.25rem;-ms-flex-direction:column;flex-direction:column}._loading_div_class_ .message{color:#353535;font-size:16px;line-height:3}.spinner{animation:circle-rotator 1.4s linear infinite}.spinner *{line-height:0;box-sizing:border-box}@keyframes circle-rotator{0%{transform:rotate(0deg)}to{transform:rotate(270deg)}}.path{stroke-dasharray:187;stroke-dashoffset:0;transform-origin:center;animation:circle-dash 1.4s ease-in-out infinite,circle-colors 5.6s ease-in-out infinite}@keyframes circle-colors{0%{stroke:#ff5a05}to{stroke:#ff5a05}}@keyframes circle-dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;transform:rotate(135deg)}to{stroke-dashoffset:187;transform:rotate(450deg)}}.confirm-box-wrapper,.confirm-box-wrapper .mask{position:absolute;top:0;left:0;right:0;bottom:0}.confirm-box-wrapper .mask{background:rgba(0,0,0,.6)}.confirm-box-wrapper .confirm-box{position:fixed;top:50%;left:50%;width:267px;background:#fff;transform:translate(-50%,-50%);border-radius:7px}.confirm-box-wrapper .confirm-box .head{margin:0 18px;font-size:18px;text-align:center;line-height:65px;border-bottom:1px solid #d9d9d9}.confirm-box-wrapper .confirm-box .body{padding:18px;padding-bottom:0;color:#353535;font-size:12.5px;max-height:150px;overflow:auto}.confirm-box-wrapper .confirm-box .foot{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:18px}.confirm-box-wrapper .confirm-box .foot .button-cancel{border:1px solid #d9d9d9}.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+
+
+
+
+    </style>
+    <style type="text/css">
+        .button-cancel[data-v-87ffcada]{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel[data-v-87ffcada],.button-primary[data-v-87ffcada]{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary[data-v-87ffcada]{color:#fff;background-color:#ff5a05;border-radius:3px}.pd[data-v-87ffcada]{padding-left:1.375rem;padding-right:1.375rem}.article[data-v-87ffcada]{max-width:70rem;margin:0 auto}.article .article-unavailable[data-v-87ffcada]{color:#fa8919;font-size:15px;font-weight:600;line-height:24px;border-radius:5px;padding:12px;background-color:#f6f7fb;margin-top:20px}.article .article-unavailable .iconfont[data-v-87ffcada]{font-size:12px}.article .main[data-v-87ffcada]{padding:1.25rem 0;margin-bottom:52px}.article-title[data-v-87ffcada]{color:#353535;font-weight:400;line-height:1.65rem;font-size:1.34375rem}.article-info[data-v-87ffcada]{color:#888;font-size:.9375rem;margin-top:1.0625rem}.article-content[data-v-87ffcada]{margin-top:1.0625rem}.article-content.android video[data-v-87ffcada]::-webkit-media-controls-fullscreen-button{display:none}.copyright[data-v-87ffcada]{color:#b2b2b2;padding-bottom:20px;margin-top:20px;font-size:13px}.audio-player[data-v-87ffcada]{width:100%;margin:20px 0}.to-comment[data-v-87ffcada]{overflow:hidden;padding-top:10px;margin-bottom:-30px}.to-comment a.button-primary[data-v-87ffcada]{float:right;height:20px;font-size:12px;line-height:20px;padding:4px 8px;cursor:pointer}.article-comments[data-v-87ffcada]{margin-top:2rem}.article-comments h2[data-v-87ffcada]{text-align:center;color:#888;position:relative;z-index:1;margin-bottom:1rem}.article-comments h2[data-v-87ffcada]:before{border-top:1px dotted #888;content:"";position:absolute;top:56%;left:0;width:100%;z-index:-1}.article-comments h2 span[data-v-87ffcada]{font-size:15.25px;font-weight:400;padding:0 1rem;background:#fff;display:inline-block}.article-sub-bottom[data-v-87ffcada]{z-index:10;cursor:pointer}.switch-btns[data-v-87ffcada]{height:76px;cursor:pointer;padding-top:24px;padding-bottom:24px;border-bottom:10px solid #f6f7fb;position:relative}.switch-btns[data-v-87ffcada]:before{content:" ";height:1px;background:#e8e8e8;position:absolute;top:0;left:0;-webkit-box-sizing:border-box;box-sizing:border-box;left:1.375rem;right:1.375rem}.switch-btns .btn[data-v-87ffcada]{height:38px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.switch-btns .btn .tag[data-v-87ffcada]{-webkit-box-flex:0;-ms-flex:0 0 62px;flex:0 0 62px;text-align:center;color:#888;font-size:14px;border-radius:10px;height:22px;line-height:22px;background:#f6f7fb;font-weight:400}.switch-btns .btn .txt[data-v-87ffcada]{margin-left:10px;-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;color:#888;font-size:15px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}@media (max-width:769px){.article .breadcrumb[data-v-87ffcada]{padding-top:10px;padding-bottom:10px}}
+
+
+
+
+
+    </style>
+
+    <style type="text/css">
+        .comment-item{list-style-position:inside;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:1rem}.comment-item a{border-bottom:none}.comment-item .avatar{width:2.625rem;height:2.625rem;-ms-flex-negative:0;flex-shrink:0;border-radius:50%}.comment-item .info{margin-left:.5rem;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.comment-item .info .hd{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .username{color:#888;font-size:15.25px;font-weight:400;line-height:1.2}.comment-item .info .hd .control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .control .btn-share{color:#888;font-size:.75rem;margin-right:1rem}.comment-item .info .hd .control .btn-praise{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15.25px;text-decoration:none}.comment-item .info .hd .control .btn-praise i{color:#888;display:inline-block;font-size:.75rem;margin-right:.3rem;margin-top:-.01rem}.comment-item .info .hd .control .btn-praise i.on,.comment-item .info .hd .control .btn-praise span{color:#ff5a05}.comment-item .info .bd{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all;line-height:1.6}.comment-item .info .time{color:#888;font-size:9px;line-height:1}.comment-item .info .reply .reply-hd{font-size:15.25px}.comment-item .info .reply .reply-hd span{margin-left:-12px;color:#888;font-weight:400}.comment-item .info .reply .reply-hd i{color:#ff5a05;font-size:15.25px}.comment-item .info .reply .reply-content{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all}.comment-item .info .reply .reply-time{color:#888;font-size:9px}
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+
+    <div data-v-87ffcada="" class="article" id="watermark">
+        <p class="x">更多课程请加QQ1046877154，微信loveu_110获取</p>
+        <div data-v-87ffcada="" class="main main-app">
+            <h1 data-v-87ffcada="" class="article-title pd">
+                26讲关于编译，你需要了解什么
+            </h1>
+            <div data-v-87ffcada="" class="article-content typo common-content pd"><img data-v-87ffcada=""
+                                                                                        src="https://static001.geekbang.org/resource/image/c4/dc/c4f2c33930d10b011bbae06ac7c356dc.jpg">
+
+
+                <div data-v-87ffcada="" id="article-content" class="">
+                    <div class="text">
+                        <p>作为Android工程师，我们每天都会经历无数次编译；而对于大型项目来说，每次编译就意味着要花去一杯咖啡的时间。可能我讲具体的数字你会更有体会，当时我在微信时，全量编译Debug包需要5分钟，而编译Release包更是要超过15分钟。</p><p>如果每次编译可以减少1分钟，对微信整个Android团队来说就可以节约1200分钟（团队40人 × 每天编译30次 × 1分钟）。所以说优化编译速度，对于提升整个团队的开发效率是非常重要的。</p><p>那应该怎么样优化编译速度呢？微信、Google、Facebook等国内外大厂都做了哪些努力呢？除了编译速度之外，关于编译你还需要了解哪些知识呢？</p><h2>关于编译</h2><p>虽然我们每天都在编译，那到底什么是编译呢？</p><p>你可以把编译简单理解为，将高级语言转化为机器或者虚拟机所能识别的低级语言的过程。对于Android来说，这个过程就是把Java或者Kotlin转变为Android虚拟机运行的<a href="https://source.android.com/devices/tech/dalvik/dalvik-bytecode">Dalvik字节码</a>的过程。</p><p>编译的整个过程会涉及词法分析、语法分析 、语义检查和代码优化等步骤。对于底层编译原理感兴趣的同学，你可以挑战一下编译原理的三大经典巨作：<a href="https://www.itcodemonkey.com/article/3521.html">龙书、虎书、鲸鱼书</a>。</p><p>但今天我们的重点不是底层的编译原理，而是希望一起讨论Android编译需要解决的问题是什么，目前又遇到了哪些挑战，以及国内外大厂又给出了什么样的解决方案。</p><!-- [[[read_end]]] --><p><strong>1. Android编译的基础知识</strong></p><p>无论是微信的编译优化，还是Tinker项目，都涉及比较多的编译相关知识，因此我在Android编译方面研究颇多，经验也比较丰富。Android的编译构建流程主要包括代码、资源以及Native Library三部分，整个流程可以参考官方文档的<a href="https://developer.android.com/studio/build/?hl=zh-cn">构建流程图</a>。</p><p><img src="https://static001.geekbang.org/resource/image/7e/87/7e66559bb42ce21a538ab34f596c1f87.png" alt=""></p><p><a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle</a>是Android官方的编译工具，它也是GitHub上的一个<a href="https://github.com/gradle/gradle">开源项目</a>。从Gradle的<a href="https://gradle.org/releases/">更新日志</a>可以看到，当前这个项目还更新得非常频繁，基本上每一两个月都会有新的版本。对于Gradle，我感觉最痛苦的还是Gradle Plugin的编写，主要是因为Gradle在这方面没有完善的文档，因此一般都只能靠看源码或者<a href="https://fucknmb.com/2017/07/05/%E5%8F%88%E6%8E%8C%E6%8F%A1%E4%BA%86%E4%B8%80%E9%A1%B9%E6%96%B0%E6%8A%80%E8%83%BD-%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95Gradle%E6%8F%92%E4%BB%B6/">断点调试</a>的方法。</p><p>但是编译实在太重要了，每个公司的情况又各不相同，必须强行造一套自己的“轮子”。已经开源的项目有Facebook的<a href="https://github.com/facebook/buck">Buck</a>以及Google的<a href="https://github.com/bazelbuild/bazel">Bazel</a>。</p><p>为什么要自己“造轮子”呢？主要有下面几个原因：</p><ul>
+<li>
+<p><strong>统一编译工具</strong>。Facebook、Google都有专门的团队负责编译工作，他们希望内部的所有项目都使用同一套构建工具，这里包括Android、Java、iOS、Go、C++等。编译工具的统一优化，所有项目都会受益。</p>
+</li>
+<li>
+<p><strong>代码组织管理架构</strong>。Facebook和Google的代码管理有一个非常特别的地方，就是整个公司的所有项目都放到同一个仓库里面。因此整个仓库非常庞大，所以他们也不会使用Git。目前Google使用的是<a href="http://www.ruanyifeng.com/blog/2016/07/google-monolithic-source-repository.html">Piper</a>，Facebook是基于<a href="https://www.mercurial-scm.org/">HG</a>修改的，也是一种基于分布式的文件系统。</p>
+</li>
+<li>
+<p><strong>极致的性能追求</strong>。Buck和Bazel的性能的确比Gradle更好，内部包含它们的各种编译优化。但是它们或多或少都有一些定制的味道，例如对Maven、JCenter这样的外部依赖支持的也不是太好。</p>
+</li>
+</ul><p><img src="https://static001.geekbang.org/resource/image/fa/90/fa5da989a8047e935ec15803235ecd90.png" alt=""></p><p>“程序员最痛恨写文档，还有别人不写文档”，所以它们的文档也是比较少的，如果想做二次定制开发会感到很痛苦。如果你想把编译工具切换到Buck和Bazel，需要下很大的决心，而且还需要考虑和其他上下游项目的协作。当然即使我们不去直接使用，它们内部的优化思路也非常值得我们学习和参考。</p><p>Gradle、Buck、Bazel都是以更快的编译速度、更强大的代码优化为目标，我们下面一起来看看它们做了哪些努力。</p><p><strong>2. 编译速度</strong></p><p>回想一下我们的Android开发生涯，在编译这件事情上面究竟浪费了多少时间和生命。正如前面我所说，编译速度对团队效率非常重要。</p><p>关于编译速度，我们最关心的可能还是编译Debug包的速度，尤其是<strong>增量编译</strong>（incremental build）的速度，希望可以做到更加快速的调试。正如下图所示，我们每次代码验证都要经过编译和安装两个步骤。</p><p><img src="https://static001.geekbang.org/resource/image/04/56/04a94858fd23dc6d1ccce64f400c2656.png" alt=""></p><ul>
+<li>
+<p><strong>编译时间</strong>。把Java或者Kotlin代码编译为“.class“文件，然后通过dx编译为Dex文件。对于增量编译，我们希望编译尽可能少的代码和资源，最理想情况是只编译变化的部分。但是由于代码之间的依赖，大部分情况这并不可行。这个时候我们只能退而求其次，希望编译更少的模块。<a href="https://developer.android.com/studio/build/dependencies">Android Plugin 3.0</a>使用Implementation代替Compile，正是为了优化依赖关系。</p>
+</li>
+<li>
+<p><strong>安装时间</strong>。我们要先经过签名校验，校验成功后会有一大堆的文件拷贝工作，例如APK文件、Library文件、Dex文件等。之后我们还需要编译Odex文件，这个过程特别是在Android 5.0和6.0会非常耗时。对于增量编译，最好的优化是直接应用新的代码，无需重新安装新的APK。</p>
+</li>
+</ul><p>对于增量编译，我先来讲讲Gradle的官方方案<a href="https://developer.android.com/studio/run/?hl=zh-cn">Instant Run</a>。在Android Plugin 2.3之前，它使用的Multidex实现。在Android Plugin 2.3之后，它使用Android 5.0新增的Split APK机制。</p><p>如下图所示，资源和Manifest都放在Base APK中， 在Base APK中代码只有Instant Run框架，应用的本身的代码都在Split APK中。</p><p><img src="https://static001.geekbang.org/resource/image/11/a5/118f836da894cdc9ff16675293e44aa5.png" alt=""></p><p>Instant Run有三种模式，如果是热交换和温交换，我们都无需重新安装新的Split APK，它们的区别在于是否重启Activity。对于冷交换，我们需要通过<code>adb install-multiple -r -t</code>重新安装改变的Split APK，应用也需要重启。</p><p>虽然无论哪一种模式，我们都不需要重新安装Base APK。这让Instant Run看起来是不是很不错，但是在大型项目里面，它的性能依然非常糟糕，主要原因是：</p><ul>
+<li>
+<p><strong>多进程问题</strong>。“The app was restarted since it uses multiple processes”，如果应用存在多进程，热交换和温交换都不能生效。因为大部分应用都会存在多进程的情况，Instant Run的速度也就大打折扣。</p>
+</li>
+<li>
+<p><strong>Split APK安装问题</strong>。虽然Split APK的安装不会生成Odex文件，但是这里依然会有签名校验和文件拷贝（APK安装的乒乓机制）。这个时间需要几秒到几十秒，是不能接受的。</p>
+</li>
+<li>
+<p><strong>javac问题</strong>。在Gradle 4.6之前，如果项目中运用了Annotation Processor。那不好意思，本次修改以及它依赖的模块都需要全量javac，而这个过程是非常慢的，可能会需要几十秒。这个问题直到<a href="https://docs.gradle.org/current/userguide/java_plugin.html#sec:incremental_annotation_processing">Gradle 4.7</a>才解决，关于这个问题原因的讨论你可以参考这个<a href="https://github.com/gradle/gradle/issues/1320">Issue</a>。</p>
+</li>
+</ul><p>你还可以看看这一个Issue：“<a href="https://github.com/gradle/gradle/issues/2767">full rebuild if a class contains a constant</a>”，假设修改的类中包含一个“public static final”的变量，那同样也不好意思，本次修改以及它依赖的模块都需要全量javac。这是为什么呢？因为常量池是会直接把值编译到其他类中，Gradle并不知道有哪些类可能使用了这个常量。</p><p>询问Gradle的工作人员，他们出给的解决方案是下面这个：</p><pre><code>// 原来的常量定义:
+public static final int MAGIC = 23
+
+// 将常量定义替换成方法: 
+public static int magic() {
+  return 23;
+}
+</code></pre><p>对于大型项目来说，这肯定是不可行的。正如我在Issue中所写的一样，无论我们是不是真正改到这个常量，Gradle都会无脑的全量javac，这样肯定是不对的。事实上，我们可以通过比对这次代码修改，看看是否有真正改变某一个常量的值。</p><p>但是可能用过阿里的<a href="https://github.com/alibaba/freeline">Freeline</a>或者蘑菇街的<a href="https://tech.meili-inc.com/233-233?from=timeline&amp;isappinstalled=0">极速编译</a>的同学会有疑问，它们的方案为什么不会遇到Annotation和常量的问题？</p><p>事实上，它们的方案在大部分情况比Instant Run更快，那是因为牺牲了正确性。也就是说它们为了追求更快的速度，直接忽略了Annotation和常量改变可能带来错误的编译产物。Instant Run作为官方方案，它优先保证的是100%的正确性。</p><p><strong>当然Google的人也发现了Instant Run的种种问题，在Android Studio 3.5之后，对于Android 8.0以后的设备将会使用新的方案“<a href="https://androidstudio.googleblog.com/2019/01/android-studio-35-canary-1-available.html">Apply Changes</a>”代替Instant Run。目前我还没找到关于这套方案更多的资料，不过我认为应该是抛弃了Split APK机制</strong>。</p><p>一直以来，我心目中都有一套理想的编译方案，这套方案安装的Base APK依然只是一个壳APK，真正的业务代码放到Assets的ClassesN.dex中。</p><p><img src="https://static001.geekbang.org/resource/image/f0/e4/f02eeaf46a8a4c5a7f82544ca208ebe4.png" alt=""></p><ul>
+<li>
+<p><strong>无需安装</strong>。依然使用类似Tinker热修复的方法，每次只把修改以及依赖的类插入到pathclassloader的最前方就可以，不熟悉的同学可以参考<a href="https://mp.weixin.qq.com/s/-NmkSwZu83HAmzKPawdTqQ">《微信Android热补丁实践演进之路》</a>中的Qzone方案。</p>
+</li>
+<li>
+<p><strong>Oatmeal</strong>。为了解决首次运行时Assets中ClassesN.dex的Odex耗时问题，我们可以使用“安装包优化“中讲过的ReDex中的黑科技：Oatmeal。它可以在100毫秒以内生成一个完全解释执行的Odex文件。</p>
+</li>
+<li>
+<p><strong>关闭JIT</strong>。我们通过在AndroidManifest指定<a href="https://developer.android.com/guide/topics/manifest/application-element?hl=zh-cn#vmSafeMode">android:vmSafeMode=“true”</a>，关闭虚拟机的JIT优化，这样也就不会出现Tinker在<a href="https://mp.weixin.qq.com/s/h9BHnEkV0RMx0yIW1wpw9g">Android N混合编译遇到的问题</a>。</p>
+</li>
+</ul><p>这套方案应该可以完全解决Instant Run当前的各种问题，我也希望对编译优化感兴趣的同学可以自行实现这一套方案，并能开源出来。</p><p>对于编译速度的优化，我还有几个建议：</p><ul>
+<li>
+<p><strong>更换编译机器</strong>。对于实力雄厚的公司，直接更换Mac或者其他更给力的设备作为编译机，这种方式是最简单的。</p>
+</li>
+<li>
+<p><strong>Build Cache</strong>。可以将大部分不常改变的项目拆离出去，并使用<a href="http://docs.gradle.com/enterprise/tutorials/caching/">远端Cache</a>模式保留编译后的缓存。</p>
+</li>
+<li>
+<p><strong>升级Gradle和SDK Build Tools</strong>。我们应该及时去升级最新的编译工具链，享受Google的最新优化成果。</p>
+</li>
+<li>
+<p><strong>使用Buck</strong>。无论是Buck的exopackage，还是代码的增量编译，Buck都更加高效。但我前面也说过，一个大型项目如果要切换到Buck，其实顾虑还是比较多的。在2014年初微信就接入了Buck，但是因为跟其他项目协作的问题，导致在2015年切换回Gradle方案。相比之下，<strong>可能目前最热的Flutter中<a href="https://juejin.im/post/5bc80ef7f265da0a857aa924">Hot Reload</a>秒级编译功能会更有吸引力</strong>。</p>
+</li>
+</ul><p>当然最近几个Android Studio版本，Google也做了大量的其他优化，例如使用<a href="https://developer.android.com/studio/command-line/aapt2">AAPT2</a>替代了AAPT来编译Android资源。AAPT2实现了资源的增量编译，它将资源的编译拆分成Compile和Link两个步骤。前者资源文件以二进制形式编译Flat格式，后者合并所有的文件再打包。</p><p>除了AAPT2，Google还引入了d8和R8，下面分别是Google提供的一些测试数据。</p><p><img src="https://static001.geekbang.org/resource/image/ed/16/ed5dd1797ea15e58c4bbe5a52008bd16.png" alt=""><br>
+<img src="https://static001.geekbang.org/resource/image/cd/2a/cd479426df64c979cda4fe35578c9f2a.png" alt=""></p><p>那什么是d8和R8呢？除了编译速度的优化，它们还有哪些其他的作用？</p><p><strong>3. 代码优化</strong></p><p>对于Debug包编译，我们更关心速度。但是对于Release包来说，代码的优化更加重要，因为我们会更加在意应用的性能。</p><p>下面我就分别讲讲ProGuard、d8、R8和ReDex这四种我们可能会用到的代码优化工具。</p><p><strong>ProGuard</strong></p><p>在微信Release包12分钟的编译过程里，单独ProGuard就需要花费8分钟。尽管ProGuard真的很慢，但是基本每个项目都会使用到它。加入了ProGuard之后，应用的构建过程流程如下：</p><p><img src="https://static001.geekbang.org/resource/image/b4/f3/b4bddb5e8cf4666b3f38f046998f33f3.png" alt=""></p><p>ProGuard主要有混淆、裁剪、优化这三大功能，它的整个处理流程是：</p><p><img src="https://static001.geekbang.org/resource/image/03/e4/031014e00f8568c5eac9256782005ee4.png" alt=""></p><p>其中优化包括内联、修饰符、合并类和方法等30多种，具体介绍与使用方法你可以参考<a href="https://www.guardsquare.com/en/products/proguard/manual/usage/optimizations">官方文档</a>。</p><p><strong>d8</strong></p><p>Android Studio 3.0推出了<a href="https://developer.android.com/studio/command-line/d8">d8</a>，并在3.1正式成为默认工具。它的作用是将“.class”文件编译为Dex文件，取代之前的dx工具。</p><p><img src="https://static001.geekbang.org/resource/image/06/c3/0692ef05be5dac0803819274f6c6b3c3.png" alt=""></p><p>d8除了更快的编译速度之外，还有一个优化是减少生成的Dex大小。根据Google的测试结果，大约会有3%～5%的优化。</p><p><img src="https://static001.geekbang.org/resource/image/a4/ee/a410c50d547c49c37640632c81ec2dee.png" alt=""></p><p><strong>R8</strong></p><p>R8在Android Studio 3.1中引入，它的志向更加高远，它的目标是取代ProGuard和d8。我们可以直接使用R8把“.class”文件变成Dex。</p><p><img src="https://static001.geekbang.org/resource/image/9d/ac/9de1ce2e0d821dabcdabf82844601eac.png" alt=""></p><p>同时，R8还支持ProGuard中混淆、裁剪、优化这三大功能。由于目前R8依然处于实验阶段，网上的介绍资料并不多，你可以参考下面这些资料：</p><ul>
+<li>ProGuard和R8对比：<a href="https://www.guardsquare.com/en/blog/proguard-and-r8">ProGuard and R8: a comparison of optimizers</a>。</li>
+<li>Jake Wharton大神的博客最近有很多R8相关的文章：<a href="https://jakewharton.com/blog/">https://jakewharton.com/blog/</a>。</li>
+</ul><p>R8的最终目的跟d8一样，一个是加快编译速度，一个是更强大的代码优化。</p><p><strong>ReDex</strong></p><p>如果说R8是未来想取代的ProGuard的工具，那Facebook的内部使用的<a href="https://github.com/facebook/redex">ReDex</a>其实已经做到了。</p><p>Facebook内部的很多项目都已经全部切换到ReDex，不再使用ProGuard了。跟ProGuard不同的是，它直接输入的对象是Dex，而不是“.class”文件，也就是它是直接针对最终产物的优化，所见即所得。</p><p>在前面的文章中，我已经不止一次提到ReDex这个项目，因为它里面的功能实在是太强大了，具体可以参考专栏前面的文章<a href="https://time.geekbang.org/column/article/81202">《包体积优化（上）：如何减少安装包大小？》</a>。</p><ul>
+<li>Interdex：类重排和文件重排、Dex分包优化。</li>
+<li>Oatmeal：直接生成的Odex文件。</li>
+<li>StripDebugInfo：去除Dex中的Debug信息。</li>
+</ul><p>此外，ReDex中例如<a href="https://github.com/facebook/redex/tree/master/opt/type-erasure">Type Erasure</a>和去除代码中的<a href="https://github.com/facebook/redex/tree/master/opt/access-marking">Aceess方法</a>也是非常不错的功能，它们无论对包体积还是应用的运行速度都有帮助，因此我也鼓励你去研究和实践一下它们的用法和效果。但是ReDex的文档也是万年不更新的，而且里面掺杂了一些Facebook内部定制的逻辑，所以它用起来的确非常不方便。目前我主要还是直接研究它的源码，参考它的原理，然后再直接单独实现。</p><p>事实上，Buck里面其实也还有很多好用的东西，但是文档里面依然什么都没有提到，所以还是需要“read the source code”。</p><ul>
+<li>Library Merge和Relinker</li>
+<li>多语言拆分</li>
+<li>分包支持</li>
+<li>ReDex支持</li>
+</ul><h2>持续交付</h2><p>Gradle、Buck、Bazel它们代表的都是狭义上的编译，我认为广义的编译应该包括打包构建、Code Review、代码工程管理、代码扫描等流程，也就是业界最近经常提起的持续集成。</p><p><img src="https://static001.geekbang.org/resource/image/02/a9/020fc61a0096102fa1b05be2f30b02a9.png" alt=""></p><p>目前最常用的持续集成工具有Jenkins、GitLab CI、Travis CI等，GitHub也有提供自己的持续集成服务。每个大公司都有自己的持续集成方案，例如腾讯的RDM、阿里的摩天轮、大众点评的<a href="https://tech.meituan.com/2018/07/12/mci.html">MCI</a>等。</p><p>下面我来简单讲一下我对持续集成的一些经验和看法：</p><ul>
+<li>
+<p><strong>自定义代码检查</strong>。每个公司都会有自己的编码规范，代码检查的目的在于防止不符合规范的代码提交到远程仓库中。比如微信就定义了一套代码规范，并且写了专门的插件来检测。例如日志规范、不能直接使用new Thread、new Handler等，而且违反者将会得到一定的惩罚。自定义代码检测可以通过完全自己实现或者扩展Findbugs插件，例如美团它们就利用Findbugs实现了<a href="https://tech.meituan.com/2017/08/17/android-code-arbiter.html">Android漏洞扫描工具Code Arbiter</a>。</p>
+</li>
+<li>
+<p><strong>第三方代码检查</strong>。业界比较常用的代码扫描工具有收费的Coverity，以及Facebook开源的<a href="https://github.com/facebook/infer">Infer</a>，例如空指针、多线程问题、资源泄漏等很多问题都可以扫描出来。除了增加检测流程，我最大的体会是需要同时增加人员的培训。我遇到很多开发者为了解决扫描出来的问题，空指针就直接判空、多线程就直接加锁，最后可能会造成更加严重的问题。</p>
+</li>
+<li>
+<p><strong>Code Review</strong>。关于Code Review，集成GitLab、Phabricator或者Gerrit都是不错的选择。我们一定要重视Code Review，这也是给其他人展示我们“伟大”代码的机会。而且我们自己应该是第一个Code Reviewer，在给别人Review之前，自己先以第三者的角度审视一次代码。这样先通过自己这一关的考验，既尊重了别人的时间，也可以为自己树立良好的技术品牌。</p>
+</li>
+</ul><p>持续集成涉及的流程有很多，你需要结合自己团队的现状。如果只是一味地去增加流程，有时候可能适得其反。</p><h2>总结</h2><p>在Android 8.0，Google引入了<a href="https://source.android.com/devices/tech/dalvik/improvements">Dexlayout</a>库实现类和方法的重排，Facebook的Buck也第一时间引入了AAPT2。ReDex、d8、R8其实都是相辅相成，可以看到Google也在摄取社区的知识，但同时我们也会从Google的新技术发展里寻求思路。</p><p>我在写今天的内容时还有另外一个体会，Google为了解决Android编译速度的问题，花了大量的力气结果却不尽如人意。我想说如果我们敢于跳出系统的制约，可能才会彻底解决这个问题，正如在Flutter上面就可以完美实现秒级编译。其实做人、做事也是如此，我们经常会陷入局部最优解的困局，或者走进“思维怪圈”，这时如果能跳出路径依赖，从更高的维度重新思考、审视全局，得到的体会可能会完全不一样。</p><h2>课后作业</h2><p>在你的工作中，遇到过哪些编译问题？有没有做过具体优化编译速度的工作？对于编译，你还有哪些疑问？欢迎留言跟我和其他同学一起讨论。</p><p>对于Android Build System，可以说每年都会有不少的变化，也有很多新的东西出来。所以我们应该保持敏感度，你会发现很多工具都非常有用，例如Desugar、Dexlayout、JVM  TI、App Bundle等。</p><p><span class="orange">今天的课后作业是，请你观看2018年Google I/O编译工具相关的视频，在留言中写下自己的心得体会。</span></p><ul>
+<li>
+<p><a href="http://v.youku.com/v_show/id_XMzYwMDQ3MDk2OA==.html?spm=a2h0k.11417342.soresults.dtitle">What’s new with the Android build system (Google I/O '18)</a></p>
+</li>
+<li>
+<p><a href="http://v.youku.com/v_show/id_XMzU5ODExNzQzMg==.html?spm=a2h0k.11417342.soresults.dtitle">What’s new in Android development tools</a></p>
+</li>
+</ul><p>欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。最后别忘了在评论区提交今天的作业，我也为认真完成作业的同学准备了丰厚的“学习加油礼包”，期待与你一起切磋进步哦。</p><p><img src="https://static001.geekbang.org/resource/image/bf/f1/bf8fdc35ddccb10b1161d8ca7eb8f8f1.jpg" alt=""></p>
+                    </div>
+                </div>
+
+            </div>
+            <div data-v-87ffcada="" class="article-comments pd"><h2 data-v-87ffcada=""><span
+                    data-v-87ffcada="">精选留言</span></h2>
+                <ul data-v-87ffcada="">
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/b1/5a/d6b19c4d.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">汪海游龙</span>
+                            </div>
+                            <div class="bd">对编译有了更深的认识，另外，Gradle 官方有个 build-scan 的功能，可以生成构建期间的详细报告，其中有性能相关的统计，可以帮助分析一些耗时的 task 等。 <br></div>
+                            <span class="time">2019-02-20 00:53</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/e0/87/b7242f1c.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Mograine</span>
+                            </div>
+                            <div class="bd">微信这么大的一个app，android才40人？ <br></div>
+                            <span class="time">2019-02-19 10:14</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/6c/e9/072b33b9.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">splm</span>
+                            </div>
+                            <div class="bd">annotation processor遇到的问题就是，一旦修改了生成规则，所有类都需要重新解析生成再编译。如果不改，会不会依旧重新编译，没有仔细观察过。 <br></div>
+                            <span class="time">2019-02-26 23:23</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/6c/e9/072b33b9.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">splm</span>
+                            </div>
+                            <div class="bd">1.为什么把常量替换成方法对于大项目不行？是因为方法数吗？<br>2.对于annotation processor出现全量更新问题，gradle4.7的文档该如何解读？ <br></div>
+                            <span class="time">2019-02-26 23:20</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/11/22/e9/32f5fa34.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">QuincySx</span>
+                            </div>
+                            <div class="bd">分享 ProGuard 的用法 ：http:&#47;&#47;blog.smallraw.com&#47;index.php&#47;category&#47;javaProGuard&#47; <br></div>
+                            <span class="time">2019-02-20 20:30</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/11/f9/66/e8fb8ca2.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">xlogic</span>
+                            </div>
+                            <div class="bd">请问作者有没有了解过 JRebel for Android，虽然现在下线了，但是去年我用的时候感觉热部署很快，不知道是啥原理？ <br></div>
+                            <span class="time">2019-02-19 20:30</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">记得应该是类似热修复的原理，之前有专门研究过</p>
+                                <p class="reply-time">2019-02-19 22:25</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/47/5a/7eead23f.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Sc</span>
+                            </div>
+                            <div class="bd">编译一下的时间 都可以去厕所蹲一会了。。。 <br></div>
+                            <span class="time">2019-02-19 13:52</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/11/56/25/ba0e44af.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">恒</span>
+                            </div>
+                            <div class="bd">项目大了之后，一直受编译速度的折磨，即使换了机器，依旧还是那么慢，真的很恼火。google flutter的秒级编译速度刚开始确实让我眼前一亮，只可惜用flutter写的代码太难看了，不知道业界有什么办法能让flutter代码更加简洁一些呢？ <br></div>
+                            <span class="time">2019-02-19 10:46</span>
+                            
+                        </div>
+                    </li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
