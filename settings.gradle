@@ -1,7 +1,4 @@
-
-
-
-//include ':performance:performapp'
+include ':jetpackapp'//include ':performance:performapp'
 
 
 //include 'MemoryLeak:memoryleak1'
