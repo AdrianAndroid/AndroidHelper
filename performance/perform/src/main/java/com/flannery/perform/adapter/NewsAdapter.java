@@ -88,7 +88,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
         holder.textView.setText(newsItem.title);
         Uri uri = Uri.parse(newsItem.imgurl);
-        holder.imageView.setImageURI(uri);
+//        holder.imageView.setImageURI(uri);
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +131,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         public ViewHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.tv_title);
-            imageView = view.findViewById(R.id.iv_news);
+//            imageView = view.findViewById(R.id.iv_news);
             layout = view.findViewById(R.id.ll_out);
         }
     }

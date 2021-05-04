@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mNewsAdapter= new NewsAdapter(mItems);
+        mNewsAdapter = new NewsAdapter(mItems);
         mRecyclerView.setAdapter(mNewsAdapter);
         getNews();
     }
@@ -60,29 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        try {
-                            String json = response.body().string();
-                            JSONObject jsonObject = new JSONObject(json);
-                            JSONObject data = jsonObject.getJSONObject("data");
-                            Iterator<String> keys = data.keys();
-                            while (keys.hasNext()) {
-                                String next = keys.next();
-                                JSONObject itemJO = data.getJSONObject(next);
-                                NewsItem newsItem = JSON.parseObject(itemJO.toString(), NewsItem.class);
-                                mItems.add(newsItem);
-                            }
-                            mNewsAdapter.setItems(mItems);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-                    }
-//                    @Override
-//                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        initDatas();
 //                        try {
 //                            String json = response.body().string();
 //                            JSONObject jsonObject = new JSONObject(json);
@@ -98,11 +76,18 @@ public class MainActivity extends AppCompatActivity {
 //                        } catch (Exception e) {
 //                            e.printStackTrace();
 //                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-//                    }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        initDatas();
+                    }
+
+                    private void initDatas() {
+                        mItems.add(new NewsItem());
+                        mNewsAdapter.setItems(mItems);
+                    }
                 });
     }
 }
