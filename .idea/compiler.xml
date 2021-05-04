@@ -50,6 +50,8 @@
       <module name="AndroidHelper.memoryleak1" target="1.8" />
       <module name="AndroidHelper.modespec" target="1.8" />
       <module name="AndroidHelper.okhttp.app" target="1.8" />
+      <module name="AndroidHelper.perform" target="11" />
+      <module name="AndroidHelper.performance.perform" target="11" />
       <module name="AndroidHelper.photoview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.autohomerefreshlistview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeapp" target="1.8" />
