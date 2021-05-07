@@ -1,7 +1,10 @@
-plugins {
-    id 'com.android.application'
-}
+//plugins {
+//    id 'com.android.application'
+//}
 
+apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
+apply plugin: 'me.ele.lancet'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"

@@ -2,10 +2,13 @@ package com.flannery.perform;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Debug;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
 
+import androidx.core.os.TraceCompat;
 import androidx.multidex.MultiDex;
 
 import com.amap.api.location.AMapLocation;
@@ -15,6 +18,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.stetho.Stetho;
 import com.flannery.perform.bean.NewsItem;
+import com.flannery.perform.utils.LaunchTimer;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -57,15 +61,33 @@ public class PerformApp extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        LaunchTimer.startRecord();
         MultiDex.install(this);
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        //Debug.startMethodTracing("app"); //traceview
+        //TraceCompat.beginSection("tracecompat");
         mApplication = this;
         MMKV.initialize(this);
         MMKV.defaultMMKV().encode("times", 100);
+
+        initAMap();
+        initBugly();
+        initFresco();
+        initJPush();
+        initStetho();
+        initStrictMode();
+        initUmeng();
+        initWeex();
+        for (int i = 0; i < 10000; i++) {
+            new Intent();
+        }
+
+        //Debug.stopMethodTracing();
+        //TraceCompat.endSection();
     }
 
     private void initStrictMode() {

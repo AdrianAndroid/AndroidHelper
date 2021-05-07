@@ -12,8 +12,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/jetpackapp" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/performance" />
-            <option value="$PROJECT_DIR$/performance/perform" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

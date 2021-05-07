@@ -12,6 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.flannery.perform.adapter.NewsAdapter;
 import com.flannery.perform.bean.NewsItem;
 import com.flannery.perform.net.RetrofitNewsUtils;
+import com.flannery.perform.utils.LaunchTimer;
 
 import org.json.JSONObject;
 
@@ -54,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
         getNews();
     }
 
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        //LaunchTimer.endRecord("onWindowFocusChanged");
+    }
 
     private void getNews() {
         RetrofitNewsUtils.getApiService().getNBANews("banner", mStringIds)

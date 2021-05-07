@@ -65,6 +65,7 @@
       <module name="AndroidHelper.recyclerview.leo_RecyclerView" target="1.8" />
       <module name="AndroidHelper.recyclerview.leo_slidecard" target="1.8" />
       <module name="AndroidHelper.rxjava1" target="1.8" />
+      <module name="AndroidHelper.startmodeup" target="11" />
       <module name="AndroidHelper.toolbar" target="1.8" />
       <module name="AndroidHelper.touchevent" target="1.8" />
       <module name="AndroidHelper.webview" target="1.8" />

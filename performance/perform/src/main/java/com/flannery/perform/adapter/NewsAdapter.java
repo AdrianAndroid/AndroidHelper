@@ -60,7 +60,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         if (position == 0 && !mHasRecorded) {
-            mHasRecorded = true;
+            mHasRecorded = true; //记录启动时间
             holder.layout.getViewTreeObserver()
                     .addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                         @Override

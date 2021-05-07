@@ -1,5 +1,6 @@
-include ':performance:perform'
-include ':jetpackapp'//include ':performance:performapp'
+//include ':startmodeup'//include ':performance:perform'
+include ':jetpackapp'
+// include ':performance:performapp'
 
 
 //include 'MemoryLeak:memoryleak1'
