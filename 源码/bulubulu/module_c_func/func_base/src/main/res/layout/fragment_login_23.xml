@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<cn.kuwo.pp.ui.login.MyNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 1" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 2" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 3" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 4" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 5" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 6" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 7" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 8" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 9" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 0" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 11" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 12" />
+
+        <cn.kuwo.pp.ui.login.MyEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:hint="这是第 13" />
+
+    </LinearLayout>
+</cn.kuwo.pp.ui.login.MyNestedScrollView>

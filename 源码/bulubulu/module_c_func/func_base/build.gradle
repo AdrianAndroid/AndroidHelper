@@ -1,0 +1,15 @@
+rootProject.ext.setLibDefaultConfig project
+
+dependencies {
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
+
+    api project(":module_r_library:networker")
+    api project(":module_r_library:verifycode")
+    api project(":module_r_library:bulusocialsdk")
+    api project(":module_r_library:tuikit")
+    api project(":module_r_library:player")
+    api project(":module_r_library:pusher")
+
+    implementation 'com.google.auto.service:auto-service:1.0-rc7'
+    kapt 'com.google.auto.service:auto-service:1.0-rc7'
+}

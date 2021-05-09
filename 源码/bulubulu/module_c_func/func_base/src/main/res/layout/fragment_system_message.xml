@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.kuwo.common.view.CustomToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="@id/toolbar"
+        app:layout_constraintRight_toRightOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar">
+
+        <ImageView
+            android:id="@+id/ivUserHeader"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/oval_white"
+            android:backgroundTint="@color/white"
+            android:padding="2dp"
+            android:src="@drawable/system_header"
+            android:transitionName="ivUserHeader"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivSystemIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_system"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserHeader"
+            app:layout_constraintRight_toRightOf="@+id/ivUserHeader" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="布鲁小助手"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserHeader"
+            app:layout_constraintLeft_toRightOf="@id/ivUserHeader"
+            app:layout_constraintTop_toTopOf="@id/ivUserHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivAddLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="18dp"
+        android:background="#FF3C3C3C"
+        android:contentDescription="横条"
+        app:layout_constraintTop_toBottomOf="@id/user_info_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/chat_bottom_box"
+        app:layout_constraintTop_toBottomOf="@+id/ivAddLine" />
+
+    <com.tencent.qcloud.uikit.business.chat.view.ChatBottomInputGroup
+        android:id="@+id/chat_bottom_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="最下面的输入条"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

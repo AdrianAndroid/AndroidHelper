@@ -1,0 +1,5 @@
+rootProject.ext.setResourcesConfig project
+
+dependencies{
+
+}

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/chat_item_root"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7.5dp"
+              android:layout_marginBottom="7.5dp"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp">
+
+
+    <TextView
+        android:id="@+id/chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/chat_time_margin"
+        android:clickable="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/colorContentColor"
+        android:textSize="12sp"
+        tools:text="5月29"/>
+
+    <TextView
+        android:id="@+id/tv_greet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/colorSubTitleColor"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:id="@+id/chat_info_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/ll_content_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_msg_data_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="40dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_user_icon"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="47dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tvUserInvite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="16sp"
+                        android:textColor="#66FFFFFF"
+                        android:text="向你发出邀请"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_user_icon"
+                        app:layout_constraintTop_toTopOf="@+id/iv_user_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_user_icon"/>
+                    
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutTotalContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/chat_pk_invite_self"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_user_icon">
+
+                        <TextView
+                            android:id="@+id/tvPKTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="15dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/white_color"
+                            android:text="加载中..."
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="18dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardBackgroundColor="@color/transparent"
+                            app:layout_constraintDimensionRatio="h,294:234"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPKTitle">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutCardContent"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/layoutContentOne"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintDimensionRatio="w,147:234"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <RelativeLayout
+                                        android:id="@+id/viewOptionOneBg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/tvOptionOne"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:textAlignment="center"
+                                            android:layout_centerVertical="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#413408"
+                                            android:textStyle="bold"
+                                            android:textSize="20sp"
+                                            android:ellipsize="end"
+                                            android:maxLines="4"/>
+
+                                    </RelativeLayout>
+
+                                    <ImageView
+                                        android:id="@+id/ivOptionOne"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"/>
+
+                                    <FrameLayout
+                                        android:id="@+id/viewAnswerOnePercent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:visibility="invisible"
+                                        app:layout_constraintHeight_percent="0"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:gravity="center"
+                                            android:layout_gravity="center"
+                                            app:layout_constraintLeft_toLeftOf="@+id/viewAnswerOnePercent"
+                                            app:layout_constraintRight_toRightOf="@+id/viewAnswerOnePercent"
+                                            app:layout_constraintBottom_toBottomOf="@+id/viewAnswerOnePercent"
+                                            app:layout_constraintTop_toTopOf="@+id/viewAnswerOnePercent">
+
+                                            <ImageView
+                                                android:id="@+id/ivAnswerOneCheck"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/oval"
+                                                android:src="@drawable/finish_icon"
+                                                android:visibility="gone"/>
+
+                                            <TextView
+                                                android:id="@+id/tvAnswerOnePercent"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="#333333"
+                                                android:textSize="14sp"/>
+
+                                        </LinearLayout>
+
+                                    </FrameLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/layoutContentTwo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintDimensionRatio="w,147:234"
+                                    app:layout_constraintLeft_toRightOf="@id/layoutContentOne"
+                                    app:layout_constraintTop_toTopOf="@id/layoutContentOne">
+
+                                    <RelativeLayout
+                                        android:id="@+id/viewOptionTwoBg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/tvOptionTwo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:textAlignment="center"
+                                            android:layout_centerVertical="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#051D2E"
+                                            android:textStyle="bold"
+                                            android:textSize="20sp"
+                                            android:ellipsize="end"
+                                            android:maxLines="4"/>
+
+                                    </RelativeLayout>
+
+                                    <ImageView
+                                        android:id="@+id/ivOptionTwo"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"/>
+
+                                    <FrameLayout
+                                        android:id="@+id/viewAnswerTwoPercent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:visibility="invisible"
+                                        app:layout_constraintHeight_percent="0"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:gravity="center"
+                                            android:layout_gravity="center"
+                                            app:layout_constraintLeft_toLeftOf="@+id/viewAnswerTwoPercent"
+                                            app:layout_constraintRight_toRightOf="@+id/viewAnswerTwoPercent"
+                                            app:layout_constraintBottom_toBottomOf="@+id/viewAnswerTwoPercent"
+                                            app:layout_constraintTop_toTopOf="@+id/viewAnswerTwoPercent">
+
+                                            <ImageView
+                                                android:id="@+id/ivAnswerTwoCheck"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/oval"
+                                                android:src="@drawable/finish_icon"
+                                                android:visibility="gone"/>
+
+                                            <TextView
+                                                android:id="@+id/tvAnswerTwoPercent"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="#333333"
+                                                android:textSize="14sp"/>
+
+                                        </LinearLayout>
+
+                                    </FrameLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <ImageView
+                            android:id="@+id/ivResultTip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardViewContent"/>
+
+
+                        <TextView
+                            android:id="@+id/tvPKStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="13dp"
+                            app:layout_goneMarginLeft="25dp"
+                            android:textSize="14sp"
+                            android:textColor="#999999"
+                            android:text="点击图片选择"
+                            app:layout_constraintLeft_toRightOf="@+id/ivResultTip"
+                            app:layout_constraintTop_toBottomOf="@+id/cardViewContent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+            <ImageView
+                    android:id="@+id/message_status"
+                    android:layout_width="@dimen/message_status_size"
+                    android:layout_height="@dimen/message_status_size"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/message_status_margin"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/message_send_fail" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

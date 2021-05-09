@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pkPictureLayout"
+    android:layout_width="match_parent"
+    android:layout_height="184dp"
+    android:paddingLeft="37dp"
+    android:paddingTop="15dp">
+
+    <ImageView
+        android:id="@+id/ivPKInvite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pk_invite"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvPKInvite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="#CCCCCC"
+        android:textSize="12sp"
+        android:text="发起投票"
+        app:layout_constraintLeft_toLeftOf="@+id/ivPKInvite"
+        app:layout_constraintRight_toRightOf="@+id/ivPKInvite"
+        app:layout_constraintTop_toBottomOf="@id/ivPKInvite"/>
+
+    <ImageView
+        android:id="@+id/ivPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="54dp"
+        android:src="@drawable/ic_picture"
+        app:layout_constraintLeft_toRightOf="@+id/ivPKInvite"
+        app:layout_constraintTop_toTopOf="@+id/ivPKInvite"/>
+
+    <TextView
+        android:id="@+id/tvPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="#CCCCCC"
+        android:textSize="12sp"
+        android:text="图片"
+        app:layout_constraintLeft_toLeftOf="@+id/ivPicture"
+        app:layout_constraintRight_toRightOf="@+id/ivPicture"
+        app:layout_constraintTop_toBottomOf="@id/ivPicture"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

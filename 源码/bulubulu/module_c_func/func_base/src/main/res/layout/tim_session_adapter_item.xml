@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/friend_list_item_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/session_icon"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <cn.kuwo.pp.util.PlayButton
+        android:id="@+id/play_btn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="e6d3;"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintCircle="@id/session_icon"
+        app:layout_constraintCircleAngle="135"
+        app:layout_constraintCircleRadius="25dp"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/session_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/colorTitleColor"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/session_icon"
+        app:layout_constraintRight_toLeftOf="@id/session_time"
+        app:layout_constraintTop_toTopOf="@id/session_icon"
+        tools:text="黑猫警长黑猫警长黑猫警长黑猫警长黑猫警长"/>
+
+    <TextView
+        android:id="@+id/session_last_msg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="3dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/colorSubTitleColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/session_icon"
+        app:layout_constraintLeft_toLeftOf="@id/session_title"
+        app:layout_constraintRight_toLeftOf="@id/session_unRead"
+        app:layout_goneMarginRight="35dp"
+        tools:text="果然，还是你的声音好听～还是你的声音好听～还是你的声音好听～"/>
+
+    <TextView
+        android:id="@+id/session_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="38dp"
+        android:textColor="@color/colorContentColor"
+        android:textSize="11sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/session_title"
+        tools:text="13:46"/>
+
+    <com.tencent.qcloud.uikit.common.widget.UnReadCountTextView
+        android:id="@+id/session_unRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="38dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="5"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/session_last_msg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/session_last_msg"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

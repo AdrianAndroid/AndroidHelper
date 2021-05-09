@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animFirstGuide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="居中位置,有手势的滚动"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="friend_test_first_guide.json"
+        app:lottie_loop="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:background="@color/transparent"
+        android:contentDescription="始终在心型按钮的上边"
+        app:layout_constraintBottom_toTopOf="@id/ivMatch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_friend_test_2"
+        tools:orientation="horizontal" />
+
+
+    <cn.kuwo.pp.ui.discover.view.PolygonProgressView
+        android:id="@+id/viewAnswerProgress"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="进度条"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMatch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMatch" />
+
+    <ImageView
+        android:id="@+id/ivMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/friend_test_match"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBadgeView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/shape_12dp_71e8e3"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@id/ivMatch"
+        app:layout_constraintTop_toTopOf="@+id/ivMatch" />
+
+    <ImageView
+        android:id="@+id/ivHeardAnim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="匹配成功后，播放的动画"
+        android:src="@drawable/friend_test_heard_anim"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/viewAnswerProgress"
+        app:layout_constraintLeft_toLeftOf="@+id/viewAnswerProgress"
+        app:layout_constraintRight_toRightOf="@+id/viewAnswerProgress"
+        app:layout_constraintTop_toTopOf="@+id/viewAnswerProgress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

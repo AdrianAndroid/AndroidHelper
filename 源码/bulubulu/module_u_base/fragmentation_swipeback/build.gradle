@@ -1,0 +1,5 @@
+rootProject.ext.setLibDefaultConfig project
+
+dependencies {
+    compileOnly project(':module_u_base:fragmentation')
+}

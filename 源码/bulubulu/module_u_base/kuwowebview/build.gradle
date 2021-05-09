@@ -1,0 +1,7 @@
+rootProject.ext.setLibDefaultConfig project
+
+
+dependencies {
+//    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.tencent.tbs.tbssdk:sdk:43939'
+}

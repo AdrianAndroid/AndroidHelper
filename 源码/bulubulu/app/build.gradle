@@ -1,0 +1,333 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+apply plugin: 'AndResGuard'
+apply plugin: 'packer'
+def librarys = rootProject.ext.dependencies
+def build = rootProject.ext.android
+
+android {
+    compileSdkVersion build.compileSdkVersion
+    defaultConfig {
+        applicationId build.applicationId
+        minSdkVersion build.minSdkVersion
+        targetSdkVersion build.targetSdkVersion
+        versionCode build.versionCode
+        versionName build.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        resConfigs "zh-rCN"
+    }
+    signingConfigs {
+        release {
+            keyAlias 'kuwopp'
+            keyPassword 'kuwopp'
+            storeFile file('../key/pp.keystore')
+            storePassword 'kuwopp'
+            v2SigningEnabled true
+        }
+    }
+
+    // 批量打包
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'defaule-proguard-rules.pro', 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+
+            ndk {
+                // 设置支持的SO库架构
+                abiFilters 'armeabi-v7a' //, 'x86'//, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            }
+            buildConfigField("boolean", "IS__DEBUG", "false")
+
+            //https://blog.csdn.net/niuba123456/article/details/95907337
+            //https://blog.csdn.net/qq_38164867/article/details/92832149
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+
+//                    print(output)
+//                    print("\n")w
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def releaseTime = new Date().format("yyyy-MM-dd-HH_mm_ss", TimeZone.getTimeZone("Asia/Shanghai"))
+                        outputFileName = "${variant.buildType.name}-${variant.productFlavors[0].name}_v${defaultConfig.versionName}_${releaseTime}.apk"
+                        print(outputFileName)
+                        print("\n")
+                    }
+                }
+            }
+        }
+        debug {
+            signingConfig signingConfigs.release
+            crunchPngs false
+            minifyEnabled false
+
+            ndk {
+                // 设置支持的SO库架构
+                abiFilters 'armeabi-v7a', 'x86'//, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            }
+            buildConfigField("boolean", "IS__DEBUG", "true")
+        }
+
+        dexOptions {
+            javaMaxHeapSize "4g"
+            preDexLibraries = false
+            additionalParameters = [    //配置multidex参数
+                                        '--multi-dex',//多dex分包
+                                        '--set-max-idx-number=30000',//每个包内方法数上限
+                                        '--main-dex-list=' + projectDir + '/maindexlist.txt', //打包到主classes.dex的文件列表
+                                        '--minimal-main-dex'
+            ]
+        }
+
+    }
+    flavorDimensions "version"
+    productFlavors {
+        umeng {}
+        kuwo {}
+        ///bbb {}
+        xiaomi {}
+        huawei {}
+        baidu {}
+        yingyongbao {}
+        //360 {}
+        M360 {}
+        oppo {}
+        vivo {}
+        meizu {}
+        smartisan {}
+        jiaobu {}
+        zhangchuang {}
+        yeyu {}
+        tuiyou {}
+    }
+
+    //ProductFlavor_Decorated{name=bbb, dimension=null, minSdkVersion=null, targetSdkVersion=null, renderscriptTargetApi=null, renderscriptSupportModeEnabled=null, renderscriptSupportModeBlasEnabled=null, renderscriptNdkModeEnabled=null, versionCode=null, versionName=null, applicationId=null, testApplicationId=null, testInstrumentationRunner=null, testInstrumentationRunnerArguments={}, testHandleProfiling=null, testFunctionalTest=null, signingConfig=null, resConfig=null, mBuildConfigFields={CHANNEL=com.android.builder.internal.ClassFieldImpl@ca01c82f}, mResValues={}, mProguardFiles=[], mConsumerProguardFiles=[], mManifestPlaceholders={}, mWearAppUnbundled=null} of type com.android.build.gradle.internal.dsl.ProductFlavor.
+    productFlavors.all {
+
+        dimension "version"
+        if ("M360" == name) {
+            //versionNameSuffix "-360"
+            buildConfigField("String", "CHANNEL", "\"360\"")
+        } else {
+            //versionNameSuffix "-" + name
+            buildConfigField("String", "CHANNEL", "\"" + name + "\"")
+        }
+        // 记录打包时间
+        def releaseTime = new Date().format("yyyy-MM-dd-HH_mm_ss", TimeZone.getTimeZone("Asia/Shanghai"))
+        buildConfigField("String", "PACKAGE_TIME", "\"" + releaseTime + "\"") // 记录打包时间
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        preDexLibraries true
+    }
+    // 目前不可用状态
+    //rootProject.ext.upload2d project,"这里是本次上传的描述"
+
+}
+
+
+//def getDate() {
+//    def date = new Date()
+//    def formattedDate = date.format("yyyy_MM_dd_HHmm")
+//    return formattedDate
+//}
+
+//渠道包https://github.com/mcxiaoke/packer-ng-plugin
+packer {
+    archiveNameFormat = 'kuwo-pp-v${versionName}-${channel}'
+    archiveOutput = new File(project.rootProject.buildDir, "apks")
+    channelFile = new File(project.rootDir, "/packer/channels.txt")
+}
+
+andResGuard {
+//    mappingFile = file("./resource_mapping.txt")
+    mappingFile = null
+    use7zip = true
+    useSign = true
+    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+    whiteList = [
+            // for your icon
+            "R.drawable.icon",
+            "R.mipmap.ic_launcher",
+            // for fabric
+            "R.string.com.crashlytics.*",
+            "R.anim.umeng*",
+            "R.string.umeng*",
+            "R.string.UM*",
+            "R.string.tb_*",
+            //for umeng
+            "R.layout.umeng*",
+            "R.layout.socialize_*",
+            "R.layout.*messager*",
+            "R.layout.tb_*",
+            "R.color.umeng*",
+            "R.color.tb_*",
+            "R.style.*UM*",
+            "R.style.umeng*",
+            "R.drawable.umeng*",
+            "R.drawable.tb_*",
+            "R.drawable.sina*",
+            "R.drawable.qq_*",
+            "R.drawable.tb_*",
+            "R.drawable.play_page_list_play_state",
+            "R.id.umeng*",
+            "R.id.*messager*",
+            "R.id.progress_bar_parent",
+            "R.id.socialize_*",
+            "R.id.webView",
+            "R.id.ivWechatLogin",
+            "R.id.ivQQLogin",
+            "R.id.tvProtocol",
+            "R.id.anim_water",
+            "R.id.anim_record_uploading",
+            "R.id.record_loading_title",
+            "R.id.record_loading_panel",
+            "R.id.tvAddTitle",
+            "R.id.tvAddDesc",
+            "R.id.ivAddLine",
+            "R.id.tvAddFriend",
+            "R.color.multiple_image_select_primaryDark",
+            "R.layout.toolbar"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.14'
+        //path = "/usr/local/bin/7za"
+    }
+
+    /**
+     * 可选： 如果不设置则会默认覆盖assemble输出的apk
+     **/
+    finalApkBackupPath = "${project.rootDir}/app/build/outputs/apk/release/kuwo-pp-v${build.versionName}.apk"
+
+    /**
+     * 可选: 指定v1签名时生成jar文件的摘要算法
+     * 默认值为“SHA-1”
+     **/
+    // digestalg = "SHA-256"
+}
+
+project.afterEvaluate {
+    tasks.getByName("assembleRelease") {
+        it.doLast {
+            println '多渠道打包开始' + rootProject.getRootDir().getAbsolutePath()
+            def oldName = "app-release"
+            def fileName = oldName + "_7zip_aligned_signed.apk"
+            //String path = rootProject.getRootDir().getAbsolutePath() + '/app/build/outputs/apk/release/AndResGuard_' + oldName + '/' + fileName;
+//            String path = "${project.rootDir}/app/build/outputs/apk/release/app-release.apk";
+            //String path = "${project.rootDir}/app/build/outputs/apk/release/kuwo-pp-v${build.versionName}.apk";
+            String path = "//dddd.apk" //暂时不能用
+            println '瘦身apk目录:' + path
+            def rApk = new File(path)
+            if (rApk.exists()) {
+                println 'apk已经瘦身,多渠道打包开始'
+                packageChannel(rApk.absolutePath)
+            } else {//找不到文件,我日
+                println 'apk瘦身文件找不到啊'
+                println '路径处理下:' + path
+            }
+        }
+    }
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+def isWindows() {
+    return org.gradle.internal.os.OperatingSystem.current().isWindows()
+}
+
+def packageChannel(String releaseApk) {
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            //执行python脚本打多渠道包
+            //commandLine 'python', rootProject.getRootDir().getAbsolutePath() + "/app/ngpacker.py", releaseApk, rootProject.getRootDir().getAbsolutePath()+"/markets.txt", rootProject.getRootDir().getAbsolutePath() + "/build/archives"
+            //commandLine 'sh',rootProject.getRootDir().getAbsolutePath()+ "/pack.sh"
+//            def command = [
+//                    'sh',rootProject.getRootDir().getAbsolutePath()+'/pack.sh'
+//            ]
+//            commandLine command
+
+            if (isWindows()) {
+                println "windows package channels start..."
+                commandLine rootProject.getRootDir().getAbsolutePath() + '/packer/dabao.bat'
+                standardOutput = stdout
+                println "##windows python result##" + stdout.toString().trim() + "||"
+            } else {
+                executable "chmod +x " + rootProject.getRootDir().getAbsolutePath() + "/packer/pack.sh"
+                executable 'sh'
+                args "-c", rootProject.getRootDir().getAbsolutePath().replace("\\", "/") + "/packer/pack.sh " + releaseApk.replace("\\", "/")
+                standardOutput = stdout
+                println "##python打包##" + stdout.toString().trim() + "||"
+            }
+        }
+        return stdout.toString().trim()
+    } catch (ignored) {
+        println "未知错误" + ignored
+        return "";
+    }
+}
+
+//configurations.all {
+//    resolutionStrategy {
+//        force 'com.android.support:support-v4:28.0.0'
+//    }
+//}
+
+/*libs中放aar，需要该配置*/
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    google()
+}
+
+dependencies {
+    //api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    testImplementation 'junit:junit:4.12'
+
+
+    implementation project(':module_c_func:func_friends')
+    implementation project(':module_c_func:func_topic')
+    implementation project(':module_c_func:func_test')
+
+    //泄漏问题
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+
+
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
+
+    implementation 'com.mcxiaoke.packer-ng:helper:2.0.1' //打包工具
+
+    rootProject.ext.dependencies_implementation.each { value ->
+        implementation value
+    }
+}

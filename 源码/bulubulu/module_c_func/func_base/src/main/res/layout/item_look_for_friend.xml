@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.kuwo.pp.util.cardlib.SwipeTouchLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/anim_circle"
+            app:lottie_fileName="water.json"
+            app:lottie_colorFilter="@color/colorHighlight"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="@dimen/look_for_user_header_width"
+            android:layout_height="@dimen/look_for_user_header_width" />
+        <cn.kuwo.pp.util.WaterImageView
+            android:id="@+id/acv"
+            app:layout_constraintTop_toTopOf="@id/anim_circle"
+            app:layout_constraintBottom_toBottomOf="@id/anim_circle"
+            app:layout_constraintLeft_toLeftOf="@id/anim_circle"
+            app:layout_constraintRight_toRightOf="@id/anim_circle"
+            android:layout_width="@dimen/look_for_user_header_pic_width"
+            android:layout_height="336dp" />
+        <cn.kuwo.pp.util.IconFountTextView
+            android:id="@+id/item_look_for_play_state"
+            app:layout_constraintLeft_toLeftOf="@id/acv"
+            app:layout_constraintTop_toTopOf="@id/acv"
+            app:layout_constraintRight_toRightOf="@id/acv"
+            app:layout_constraintBottom_toBottomOf="@id/acv"
+            android:visibility="gone"
+            android:text="e6d3;"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</cn.kuwo.pp.util.cardlib.SwipeTouchLayout>
