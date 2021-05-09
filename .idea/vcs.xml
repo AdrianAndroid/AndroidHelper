@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/network/retrofit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/retrofit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/源码/androidperformance性能优化" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/源码/retrofit" vcs="Git" />
   </component>
 </project>
