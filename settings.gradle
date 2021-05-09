@@ -1,5 +1,5 @@
 //include ':startmodeup'//include ':performance:perform'
-include ':jetpackapp'
+//include ':jetpackapp'
 // include ':performance:performapp'
 
 
@@ -89,3 +89,4 @@ include ':leetcode'
 //include ':app'
 rootProject.name = "AndroidHelper"
 
+include ':jetpackapp2'
