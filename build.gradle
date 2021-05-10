@@ -69,3 +69,4 @@ project.ext {
 
     appCompatVersion = "1.2.0-rc01"
 }
+

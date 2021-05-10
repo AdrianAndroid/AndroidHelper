@@ -10,7 +10,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/customviewdir" />
+            <option value="$PROJECT_DIR$/customviewdir/touchevent" />
             <option value="$PROJECT_DIR$/jetpackapp2" />
+            <option value="$PROJECT_DIR$/lauchmode" />
             <option value="$PROJECT_DIR$/leetcode" />
           </set>
         </option>

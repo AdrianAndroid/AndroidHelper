@@ -32,4 +32,10 @@ public class Button1 extends androidx.appcompat.widget.AppCompatButton {
         L.m3(L.getMotionEventName(event));
         return super.dispatchTouchEvent(event);
     }
+
+    void test() {
+        setOnClickListener(null);
+        setOnTouchListener(null);
+        setOnLongClickListener(null);
+    }
 }

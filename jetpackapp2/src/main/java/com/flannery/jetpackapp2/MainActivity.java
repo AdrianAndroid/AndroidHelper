@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Scroller;
+import android.widget.TextView;
 
 import dalvik.system.DexClassLoader;
 
 public class MainActivity extends AppCompatActivity {
 
+    MyLinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,18 +29,32 @@ public class MainActivity extends AppCompatActivity {
         //dalvik.system.PathClassLoader[
 
         ClassLoader classLoader = getClassLoader();
-        while (classLoader != null)
-        {
+        while (classLoader != null) {
             Log.e("leo", "classLoader -> " + classLoader);
             classLoader = classLoader.getParent();
         }
         //com.flannery.jetpackapp2 E/leo: classLoader -> dalvik.system.PathClassLoader[DexPathList[[zip file "/data/app/com.flannery.jetpackapp2-MdTQAa4cJhemd657NVJ5Lg==/base.apk"],nativeLibraryDirectories=[/data/app/com.flannery.jetpackapp2-MdTQAa4cJhemd657NVJ5Lg==/lib/x86, /system/lib]]]
         //com.flannery.jetpackapp2 E/leo: classLoader -> java.lang.BootClassLoader@2fbedc6
 
+
+        linearLayout = findViewById(R.id.linear);
+        for (int i = 0; i < linearLayout.getChildCount(); i++) {
+            TextView tv = (TextView) linearLayout.getChildAt(i);
+            tv.setText("--->" + i);
+        }
+
+
     }
 
     void test() {
-        DexClassLoader dexClassLoader = new DexClassLoader("dexPath",getCacheDir().getAbsolutePath(), null, getClassLoader());
+        DexClassLoader dexClassLoader = new DexClassLoader("dexPath", getCacheDir().getAbsolutePath(), null, getClassLoader());
 //        Class<?> aClass = dexClassLoader.loadClass("com.enjoy.plugin.Test");
     }
+
+    public void scrollto(View view) {
+        linearLayout.scroller.startScroll(0,0, 0, 1000, 1000);
+        linearLayout.invalidate();
+    }
+
+
 }
