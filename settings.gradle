@@ -95,3 +95,4 @@ rootProject.name = "AndroidHelper"
 //include ':jetpackapp2'
 //include ':lauchmode'
 include ':whale'
+include ':leakcanary22'

@@ -39,6 +39,7 @@
       <module name="AndroidHelper.jetpackapp" target="11" />
       <module name="AndroidHelper.jetpackapp2" target="11" />
       <module name="AndroidHelper.lauchmode" target="11" />
+      <module name="AndroidHelper.leakcanary22" target="11" />
       <module name="AndroidHelper.leo_dispatch.app" target="1.8" />
       <module name="AndroidHelper.leo_dispatch.clickevent" target="1.8" />
       <module name="AndroidHelper.leo_dispatch.scrollview_clash" target="1.8" />

@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/leakcanary22" />
             <option value="$PROJECT_DIR$/leetcode" />
             <option value="$PROJECT_DIR$/whale" />
           </set>

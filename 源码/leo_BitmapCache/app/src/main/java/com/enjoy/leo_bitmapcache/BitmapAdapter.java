@@ -33,14 +33,14 @@ public class BitmapAdapter extends RecyclerView.Adapter<BitmapAdapter.BitmapView
         // 原始方法获取bitmap
 //        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.icon_mv_w);
 
-        // 第一种优化
+        // 第一种优化 直接缩放大小
 //        Bitmap bitmap = ImageResize.resizeBitmap(context, R.drawable.icon_mv, 80, 80, false);
 
         // 第二种优化
         Bitmap bitmap = ImageCache.getInstance().getBitmapFromMemory(String.valueOf(i));
         Log.e("leo", "使用内存缓存" + bitmap);
-        if (bitmap == null) {
-            Bitmap reusable = ImageCache.getInstance().getReusable(60, 60, 1);
+        if (bitmap == null) { // 内存缓存中没有bitmap
+            Bitmap reusable = ImageCache.getInstance().getReusable(60, 60, 1); // 复用内存
             Log.e("leo", "使用复用缓存" + reusable);
 
             bitmap = ImageCache.getInstance().getBitmapFromDisk(String.valueOf(i), reusable);

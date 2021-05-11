@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
-
-    <TextView
-        android:id="@+id/finishThis"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="finish"
-        />
+    tools:context=".MainActivity2">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

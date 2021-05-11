@@ -73,7 +73,7 @@ public class ImageCache {
                     // 3.0 bitmap 缓存 native
                     // <8.0  bitmap 缓存 java
                     // 8.0 native
-                    reusablePool.add(new WeakReference<Bitmap>(oldValue, getReferenceQueue()));
+                    reusablePool.add(new WeakReference<Bitmap>(oldValue, getReferenceQueue())); // 被移除来的放到复用的队列里面
                 }
 
                 oldValue.recycle();
@@ -137,7 +137,7 @@ public class ImageCache {
 
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inMutable = true;
-            options.inBitmap = reusable;
+            options.inBitmap = reusable; //要复用的Bitmap
             bitmap = BitmapFactory.decodeStream(is, null, options);
             if (bitmap != null) {
                 lruCache.put(key, bitmap);
