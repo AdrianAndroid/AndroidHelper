@@ -39,10 +39,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'io.reactivex:rxandroid:1.1.0' // RxAndroid
+    implementation 'io.reactivex:rxjava:1.1.0' // 推荐同时加载RxJava
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
     implementation 'com.squareup.leakcanary:leakcanary-object-watcher-android:2.2'
+
+    implementation('org.greenrobot:eventbus:3.0.0')
+    annotationProcessor('org.greenrobot:eventbus-annotation-processor:3.0.1')
 }
