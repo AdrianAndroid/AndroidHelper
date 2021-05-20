@@ -92,7 +92,7 @@ include ':leetcode'
 //include ':app'
 rootProject.name = "AndroidHelper"
 
-//include ':jetpackapp2'
+include ':jetpackapp2'
 //include ':lauchmode'
-include ':whale'
-include ':leakcanary22'
+//include ':whale'
+//include ':leakcanary22'

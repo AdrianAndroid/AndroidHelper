@@ -11,6 +11,7 @@ import android.os.Message;
 import android.util.Log;
 import android.util.Printer;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Toast;
 
 import com.flannery.leak.Utils;
@@ -126,5 +127,14 @@ public class MainActivity extends AppCompatActivity {
             //如果能找到上面的weakReference=>说明它放法obj被gc回收了
             System.out.println("findRef = " + findRef + "是否等于上面的weakReference = " + (findRef == weakReference));
         } while (findRef != null);//将所有放到referenceQueue引用容器找出来
+    }
+
+    void test() {
+        getWindow().getDecorView().getViewTreeObserver().addOnDrawListener(new ViewTreeObserver.OnDrawListener() {
+            @Override
+            public void onDraw() {
+
+            }
+        });
     }
 }
