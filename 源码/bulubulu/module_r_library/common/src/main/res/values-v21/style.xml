@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Toolbar" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:navigationIcon">@drawable/toolbar_back_icon</item>
+        <item name="navigationIcon">@drawable/toolbar_back_icon</item>
+        <item name="android:textSize">29sp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+</resources>

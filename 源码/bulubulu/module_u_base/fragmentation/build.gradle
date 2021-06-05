@@ -1,0 +1,4 @@
+rootProject.ext.setLibDefaultConfig project
+dependencies {
+    api project(':module_u_base:fragmentation_core')
+}

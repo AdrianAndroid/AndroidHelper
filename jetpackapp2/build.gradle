@@ -1,0 +1,147 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.flannery.jetpackapp2"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //分包1
+        multiDexEnabled true
+        multiDexKeepProguard file('maindexlist.pro') // keep specific classes using proguard syntax
+        multiDexKeepFile file('maindex-config.txt') // keep specific classes
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+    }
+
+    //分包2
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        additionalParameters = ['--multi-dex', '--main-dex-list='+ project.rootDir.absolutePath + '/app/maindexlist.txt', '--minimal-main-dex',
+                                '--set-max-idx-number=1000']
+    }
+
+//    dexOptions {
+//        javaMaxHeapSize "4g"
+//        preDexLibraries = false
+//        additionalParameters = [    //配置multidex参数
+//                                    '--multi-dex',//多dex分包
+//                                    '--set-max-idx-number=30000',//每个包内方法数上限
+//                                    '--main-dex-list=' + projectDir + '/maindexlist.txt', //打包到主classes.dex的文件列表
+//                                    '--minimal-main-dex'
+//        ]
+//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+//2
+//afterEvaluate {
+//    println "===========jjj"
+//    def listFile2 = project.rootDir.absolutePath + '/jetpackapp2/maindexlist.txt'
+//    println listFile2
+//    tasks.matching {
+//        println it.name
+////        it.name.startsWith('dex')
+//        it.name.startsWith('multiDexList')
+//    }.each { dx ->
+//
+//        println "each --"
+//        def listFile = project.rootDir.absolutePath + '/jetpackapp2/maindexlist.txt'
+//        println listFile
+//        if (dx.additionalParameters == null) {
+//            dx.additionalParameters = []
+//        }
+//        //表示当方法数越界时则生成多个dex文件（我的没有越界，貌似也生成了两个）
+//        dx.additionalParameters += '--multi-dex'
+//        //这个指定了listFile中的类（即maindexlist.txt中的类）会打包到主dex中，不过注意下一条。
+//        dx.additionalParameters += '--main-dex-list=' + listFile
+//        //表明只有-main-dex-list所指定的类（在我的配置中，就是app目录下的maindexlist.txt中包含的类）才能打包到主dex中，如果没有这个选项，上个选项就会失效
+//        dx.additionalParameters += '--minimal-main-dex'
+//    }
+//}
+
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'me.yokeyword:fragmentationx:1.0.2'
+
+    implementation 'com.blankj:utilcode:1.25.2'
+
+    implementation 'com.github.anrwatchdog:anrwatchdog:1.3.0'
+    implementation 'cn.dreamtobe.kpswitch:library:1.6.1'
+    implementation 'com.github.hotchemi:permissionsdispatcher:3.3.1'
+    implementation 'com.oushangfeng:PinnedSectionItemDecoration:1.3.2'
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.qiniu:qiniu-android-sdk:7.3.15'
+    implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
+    implementation 'com.koudai.styletextview:styletextview:1.2.0'
+    implementation 'me.jessyan:autosize:1.2.1' //今日头条适配方案
+    implementation 'com.kingja.loadsir:loadsir:1.3.6' // 可以界面加载状态
+    implementation 'it.sephiroth.android.library.imagezoom:library:1.0.4'
+    implementation 'com.github.promeg:tinypinyin:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'//https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.11.0'
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+//https://github.com/wasabeef/glide-transformations
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.google.zxing:android-core:3.3.0'
+    api 'com.google.zxing:core:3.3.2'
+    implementation 'com.bm.photoview:library:1.4.1'
+    implementation "com.chensl.rotatephotoview:rotatephotoview:1.0.5"
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+}

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:layout_height="530dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="20dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="标题"
+        android:textColor="@color/white"
+        android:textSize="22dp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:elevation="50dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutCardContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <cn.kuwo.pp.view.OptionView
+                android:id="@+id/optionOne"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/optionTwo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <cn.kuwo.pp.view.OptionView
+                android:id="@+id/optionTwo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/optionOne"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--<include layout="@layout/view_danmu" />-->
+
+            <ImageView
+                android:id="@+id/ivSkip"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8.5dp"
+                android:layout_marginRight="8.5dp"
+                android:contentDescription="关闭按钮"
+                android:src="@drawable/skip_icon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <cn.kuwo.pp.view.ParallelPKView
+        android:id="@+id/mParallelPKView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pk_result_height"
+        android:layout_marginTop="-25dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="PK视图"
+        android:elevation="100dp"
+        app:cardBackgroundColor="@color/transparent"
+        tools:background="#ff0000"
+        tools:visibility="visible" />
+
+
+    <LinearLayout
+        android:id="@+id/userInfo"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/ivUserHeader"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/oval"
+            android:contentDescription="用户头像"
+            tools:src="@drawable/choose_gender_male_select" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:contentDescription="用户名称"
+            android:gravity="center_vertical"
+            android:textColor="@color/white_alpha_50"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="用户名字" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:contentDescription="分享"
+            android:src="@drawable/question_share" />
+
+        <ImageView
+            android:id="@+id/ivComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:contentDescription="发送评论"
+            android:src="@drawable/question_danmu" />
+
+
+        <ImageView
+            android:id="@+id/ivPraise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:contentDescription="喜欢收藏"
+            android:src="@drawable/question_prise" />
+
+
+        <ImageView
+            android:id="@+id/ivMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="声音"
+            android:src="@drawable/question_bg_music_close" />
+
+    </LinearLayout>
+
+</LinearLayout>

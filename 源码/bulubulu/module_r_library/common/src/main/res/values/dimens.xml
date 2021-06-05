@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">44dp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
+    <dimen name="gird_divider_height">3dp</dimen>
+    <dimen name="find_gird_divider_height">10dp</dimen>
+    <dimen name="tab_layout_height">45dp</dimen>
+    <dimen name="main_tab_layout_height">57dp</dimen><!--主页tablayout高度-->
+    <dimen name="btn_corner">24dp</dimen>
+    <dimen name="statusbar_view_height">0dp</dimen>
+    <dimen name="main_toolbar_play_image_width">52dp</dimen>
+</resources>

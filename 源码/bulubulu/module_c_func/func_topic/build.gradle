@@ -1,0 +1,7 @@
+rootProject.ext.setLibDefaultConfig project
+
+dependencies {
+    api project(":module_c_func:func_base")
+
+    // 这里放autoservice
+}

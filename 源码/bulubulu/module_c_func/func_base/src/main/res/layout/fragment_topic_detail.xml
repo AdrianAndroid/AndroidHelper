@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWindowBackground"
+            android:minHeight="@dimen/tab_layout_height"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <LinearLayout
+                android:id="@+id/all_song_list_herder_layout"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp" />
+
+                <View
+                    android:id="@+id/viewTopLine"
+                    style="@style/Line.color_333333" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_marginLeft="@dimen/common_marginleft"
+                    android:layout_marginRight="@dimen/common_marginRight"
+                    android:background="@drawable/topic_title_bg_1">
+
+
+                    <ImageView
+                        android:id="@+id/imgTopic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/icon_challenge"
+                        app:layout_constraintBottom_toTopOf="@id/tvTopicTitle"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tvTopicTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="#我穿西装A到爆"
+                        android:textColor="@color/white"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/ivUser1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/ivTopicStart"
+                        app:layout_constraintTop_toBottomOf="@id/imgTopic" />
+
+                    <ImageView
+                        android:id="@+id/ivUser1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTopicTitle" />
+
+                    <ImageView
+                        android:id="@+id/ivUser2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivUser1"
+                        app:layout_constraintLeft_toLeftOf="@+id/ivUser1"
+                        app:layout_constraintTop_toTopOf="@+id/ivUser1" />
+
+                    <ImageView
+                        android:id="@+id/ivUser3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivUser2"
+                        app:layout_constraintLeft_toLeftOf="@+id/ivUser2"
+                        app:layout_constraintTop_toTopOf="@+id/ivUser2" />
+
+                    <TextView
+                        android:id="@+id/tvNumbers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivUser2"
+                        app:layout_constraintLeft_toRightOf="@+id/ivUser2"
+                        app:layout_constraintTop_toTopOf="@+id/ivUser2"
+                        tools:text="100人参与" />
+
+                    <include
+                        android:id="@+id/ivTopicStart"
+                        layout="@layout/item_topic_pktest"
+                        android:layout_width="100dp"
+                        android:layout_height="38dp"
+                        android:layout_marginRight="27.5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:background="@color/colorWindowBackground" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="79dp"
+                android:background="@color/white_alpha_10" />
+
+            <com.rey.material.widget.LinearLayout
+                android:id="@+id/top_hover_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWindowBackground"
+                app:layout_collapseMode="pin"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <cn.kuwo.common.view.CustomToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWindowBackground">
+
+                    <TextView
+                        android:id="@+id/tvTopTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:layout_toLeftOf="@id/tvSubscribe"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        tools:text="#我穿西装A到爆" />
+
+                    <ImageView
+                        android:id="@+id/ivShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="20dp"
+                        android:src="@drawable/icon_share_small" />
+
+                    <TextView
+                        android:id="@+id/tvSubscribe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:layout_toLeftOf="@+id/ivShare"
+                        android:background="@drawable/shape_4dp_strok1_ff979797"
+                        android:gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="+订阅"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </cn.kuwo.common.view.CustomToolbar>
+
+            </com.rey.material.widget.LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <cn.kuwo.common.view.NoScrollViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <include layout="@layout/merge_add_publish" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

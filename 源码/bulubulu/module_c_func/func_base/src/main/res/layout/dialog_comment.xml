@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_round_bg">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text="评论 (0)"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/comment_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <View
+        android:id="@+id/viewClose"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="@id/iv_close"
+        app:layout_constraintBottom_toBottomOf="@id/iv_close"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_close"
+        app:layout_constraintRight_toRightOf="@+id/iv_close"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_comments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_close"
+        app:layout_constraintBottom_toTopOf="@id/edPublishComment"/>
+
+    <cn.kuwo.common.view.MultipleStatusView
+        android:id="@+id/multipleStatusView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/rv_comments"
+        app:layout_constraintRight_toRightOf="@+id/rv_comments"
+        app:layout_constraintTop_toTopOf="@+id/rv_comments"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_comments"/>
+
+    <EditText
+        android:id="@+id/edPublishComment"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/comment_bottom_send_bg"
+        android:gravity="center_vertical"
+        android:hint="说说你的看法呀～"
+        android:imeOptions="actionSend"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="#969696"
+        android:textCursorDrawable="@drawable/edit_text_cursor_white_drawable"
+        android:textSize="12sp"
+        android:paddingLeft="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

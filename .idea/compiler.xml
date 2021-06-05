@@ -10,8 +10,10 @@
       <module name="AndroidHelper.bitmap.bigimage" target="1.8" />
       <module name="AndroidHelper.bitmap.bitmapdemo" target="1.8" />
       <module name="AndroidHelper.bitmapdemo" target="1.8" />
+      <module name="AndroidHelper.buildSrc" target="11" />
       <module name="AndroidHelper.chromelikeswipelayout" target="1.8" />
       <module name="AndroidHelper.CustomView" target="1.8" />
+      <module name="AndroidHelper.customviewdir.touchevent" target="11" />
       <module name="AndroidHelper.dialogs" target="1.8" />
       <module name="AndroidHelper.eventbus_activity_scope" target="1.8" />
       <module name="AndroidHelper.fish" target="1.8" />
@@ -34,6 +36,10 @@
       <module name="AndroidHelper.javapoet.common" target="1.8" />
       <module name="AndroidHelper.javapoet.order" target="1.8" />
       <module name="AndroidHelper.javapoet.personal" target="1.8" />
+      <module name="AndroidHelper.jetpackapp" target="11" />
+      <module name="AndroidHelper.jetpackapp2" target="11" />
+      <module name="AndroidHelper.lauchmode" target="11" />
+      <module name="AndroidHelper.leakcanary22" target="11" />
       <module name="AndroidHelper.leo_dispatch.app" target="1.8" />
       <module name="AndroidHelper.leo_dispatch.clickevent" target="1.8" />
       <module name="AndroidHelper.leo_dispatch.scrollview_clash" target="1.8" />
@@ -49,6 +55,8 @@
       <module name="AndroidHelper.memoryleak1" target="1.8" />
       <module name="AndroidHelper.modespec" target="1.8" />
       <module name="AndroidHelper.okhttp.app" target="1.8" />
+      <module name="AndroidHelper.perform" target="11" />
+      <module name="AndroidHelper.performance.perform" target="11" />
       <module name="AndroidHelper.photoview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.autohomerefreshlistview" target="1.8" />
       <module name="AndroidHelper.pullrefresh.chromelikeapp" target="1.8" />
@@ -62,9 +70,11 @@
       <module name="AndroidHelper.recyclerview.leo_RecyclerView" target="1.8" />
       <module name="AndroidHelper.recyclerview.leo_slidecard" target="1.8" />
       <module name="AndroidHelper.rxjava1" target="1.8" />
+      <module name="AndroidHelper.startmodeup" target="11" />
       <module name="AndroidHelper.toolbar" target="1.8" />
       <module name="AndroidHelper.touchevent" target="1.8" />
       <module name="AndroidHelper.webview" target="1.8" />
+      <module name="AndroidHelper.whale" target="11" />
       <module name="AndroidHelper.xrecyclerview" target="1.8" />
     </bytecodeTargetLevel>
   </component>

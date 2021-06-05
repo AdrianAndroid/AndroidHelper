@@ -1,0 +1,46 @@
+//include ':app-test'
+include ':app'
+include ':resources_daynight' // 当前目前结构:独立出来
+include(
+        ':module_c_func:func_base'
+        , ':module_c_func:func_friends'
+        , ':module_c_func:func_topic'
+        , ':module_c_func:func_test'
+)
+
+include(
+        ':module_r_library:bulusocialsdk'
+        , ':module_r_library:common' // 工具类
+        , ':module_r_library:networker'
+        , ':module_r_library:verifycode'
+        , ':module_r_library:tuikit'
+        , ':module_r_library:player'
+        , ':module_r_library:pusher'
+)
+
+include(
+        ':module_u_base:fragmentation_core'
+        , ':module_u_base:fragmentation'
+        , ':module_u_base:fragmentation_swipeback'//include ':lottie'
+        , ':module_u_base:kuwowebview'
+        , ':module_u_base:Userguidelibrary'
+)
+// 业务模块  module_function 登陆 交友 广场 游戏
+// a b c d e
+// 业务联系模块 function_base （使用autoservice） (业务底层通信)(放资源吗？)
+// f g h i j
+// include module_f_func_base
+//module_c_func
+// 总感觉这里要放点儿啥，但没想好
+// k l m n o
+//
+// 基础功能板块（相当于第三方类库） (弹窗) 这里也是工具类，不过是功能模块
+// p q r s t
+// 工具类common 最底层
+// u v w x y z
+
+// 测试程序
+include(
+        'zzz_module:lib'
+        , 'zzz_module:javalib'// app模块
+)

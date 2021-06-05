@@ -1,4 +1,14 @@
-include 'MemoryLeak:memoryleak1'//include(
+
+
+//include ':customviewdir:touchevent'
+//include ':startmodeup'//include ':performance:perform'
+//include ':jetpackapp'
+// include ':performance:performapp'
+
+
+//include 'MemoryLeak:memoryleak1'
+
+//include(
 ////        ':bitmap:app', ':bitmap:bigimage',
 //        ':bitmap:bitmapdemo')
 
@@ -82,3 +92,7 @@ include ':leetcode'
 //include ':app'
 rootProject.name = "AndroidHelper"
 
+include ':jetpackapp2'
+//include ':lauchmode'
+//include ':whale'
+//include ':leakcanary22'

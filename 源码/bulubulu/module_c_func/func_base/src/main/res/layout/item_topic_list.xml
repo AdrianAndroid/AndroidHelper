@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="20dp"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_corners_8dp_bg"
+        android:padding="20dp">
+
+
+        <include
+            android:id="@+id/ivTopicStart"
+            layout="@layout/item_topic_pktest"
+            android:paddingLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTopicTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ivTopicStart"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="#我穿西装A到爆" />
+
+
+        <LinearLayout
+            android:id="@+id/layoutCount"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/tvTopicTitle"
+            app:layout_constraintRight_toRightOf="@id/tvTopicTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvTopicTitle">
+
+            <ImageView
+                android:id="@+id/ivUser1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@+id/tvTopicTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTopicTitle"
+                tools:background="#ff0000"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/ivUser2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/ivUser1"
+                app:layout_constraintLeft_toLeftOf="@+id/ivUser1"
+                app:layout_constraintTop_toTopOf="@+id/ivUser1"
+                tools:background="#00ff00"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/ivUser3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/ivUser2"
+                app:layout_constraintLeft_toLeftOf="@+id/ivUser2"
+                app:layout_constraintTop_toTopOf="@+id/ivUser2"
+                tools:background="#0000ff"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivUser2"
+                app:layout_constraintLeft_toRightOf="@+id/ivUser2"
+                app:layout_constraintTop_toTopOf="@+id/ivUser2"
+                tools:text="100人参与" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/tvTopicTitle"
+            app:layout_constraintRight_toRightOf="@id/tvTopicTitle"
+            app:layout_constraintTop_toBottomOf="@id/layoutCount">
+
+            <ImageView
+                android:id="@+id/ivPKIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_pk"
+                app:layout_constraintLeft_toLeftOf="@+id/tvTopicTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ivUser1" />
+
+            <TextView
+                android:id="@+id/tvTopicDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="132道pk题目"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPKIcon"
+                app:layout_constraintLeft_toRightOf="@+id/ivPKIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivPKIcon" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

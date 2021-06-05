@@ -1,0 +1,16 @@
+rootProject.ext.setLibDefaultConfig project
+android {
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+
+dependencies {
+    api 'com.tencent.imsdk:imsdk:4.6.1'
+    api project(":module_r_library:common")
+}
+
