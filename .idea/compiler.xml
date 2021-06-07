@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.7">
+    <bytecodeTargetLevel target="1.6">
       <module name="AndroidHelper.anrwatchdog" target="1.8" />
       <module name="AndroidHelper.app" target="1.8" />
       <module name="AndroidHelper.app2" target="1.8" />
@@ -13,6 +13,7 @@
       <module name="AndroidHelper.buildSrc" target="11" />
       <module name="AndroidHelper.chromelikeswipelayout" target="1.8" />
       <module name="AndroidHelper.CustomView" target="1.8" />
+      <module name="AndroidHelper.customviewdir.listviewdemo" target="11" />
       <module name="AndroidHelper.customviewdir.touchevent" target="11" />
       <module name="AndroidHelper.dialogs" target="1.8" />
       <module name="AndroidHelper.eventbus_activity_scope" target="1.8" />
@@ -38,6 +39,7 @@
       <module name="AndroidHelper.javapoet.personal" target="1.8" />
       <module name="AndroidHelper.jetpackapp" target="11" />
       <module name="AndroidHelper.jetpackapp2" target="11" />
+      <module name="AndroidHelper.jetpackdir.jetpackapp2" target="11" />
       <module name="AndroidHelper.lauchmode" target="11" />
       <module name="AndroidHelper.leakcanary22" target="11" />
       <module name="AndroidHelper.leo_dispatch.app" target="1.8" />
