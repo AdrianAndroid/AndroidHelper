@@ -12,7 +12,7 @@
 ////        ':bitmap:app', ':bitmap:bigimage',
 //        ':bitmap:bitmapdemo')
 
-//include ':leetcode'
+include ':leetcode'
 
 //include (':pullrefresh:meituanrefreshlistview'
 //        ,':pullrefresh:xrecyclerview'

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.6">
+    <bytecodeTargetLevel target="1.7">
       <module name="AndroidHelper.anrwatchdog" target="1.8" />
       <module name="AndroidHelper.app" target="1.8" />
       <module name="AndroidHelper.app2" target="1.8" />
