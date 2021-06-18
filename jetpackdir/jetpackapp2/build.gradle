@@ -21,9 +21,9 @@ android {
         multiDexKeepFile file('maindex-config.txt') // keep specific classes
 
         //使用databinding
-        dataBinding{
-            enabled true
-        }
+//        dataBinding{
+//            enabled true
+//        }
     }
 
     buildTypes {
@@ -149,4 +149,9 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
     implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'org.jetbrains.Kotlinx:Kotlinx-coroutines-core:1.4.2'
+    implementation 'org.jetbrains.Kotlinx:Kotlinx-coroutines-android:1.4.2'
+
+
 }

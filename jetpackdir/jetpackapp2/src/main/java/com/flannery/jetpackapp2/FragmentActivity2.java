@@ -55,7 +55,7 @@ public class FragmentActivity2 extends AppCompatActivity {
             public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
                 return false;
             }
-        })
+        });
     }
 
     //https://blog.csdn.net/itfootball/article/details/22281549

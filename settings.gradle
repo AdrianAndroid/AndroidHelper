@@ -12,7 +12,7 @@
 ////        ':bitmap:app', ':bitmap:bigimage',
 //        ':bitmap:bitmapdemo')
 
-//include ':leetcode'
+include ':leetcode'
 
 //include (':pullrefresh:meituanrefreshlistview'
 //        ,':pullrefresh:xrecyclerview'
@@ -92,7 +92,7 @@
 //include ':app'
 rootProject.name = "AndroidHelper"
 
-//include ':jetpackdir:jetpackapp2'
+include ':jetpackdir:jetpackapp2'
 //include ':jetpackdir:databinding'
 //include ':lauchmode'
 //include ':whale'
