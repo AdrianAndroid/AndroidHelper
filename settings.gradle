@@ -92,9 +92,10 @@ include ':leetcode'
 //include ':app'
 rootProject.name = "AndroidHelper"
 
-include ':jetpackdir:jetpackapp2'
+//include ':jetpackdir:jetpackapp2'
 //include ':jetpackdir:databinding'
 //include ':lauchmode'
 //include ':whale'
 //include ':leakcanary22'
 //include ':customviewdir:listviewdemo'
+include ':edittextselection'

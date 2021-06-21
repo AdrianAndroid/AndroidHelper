@@ -10,8 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/jetpackdir" />
-            <option value="$PROJECT_DIR$/jetpackdir/jetpackapp2" />
+            <option value="$PROJECT_DIR$/edittextselection" />
             <option value="$PROJECT_DIR$/leetcode" />
           </set>
         </option>

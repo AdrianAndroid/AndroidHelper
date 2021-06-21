@@ -16,6 +16,7 @@
       <module name="AndroidHelper.customviewdir.listviewdemo" target="11" />
       <module name="AndroidHelper.customviewdir.touchevent" target="11" />
       <module name="AndroidHelper.dialogs" target="1.8" />
+      <module name="AndroidHelper.edittextselection" target="11" />
       <module name="AndroidHelper.eventbus_activity_scope" target="1.8" />
       <module name="AndroidHelper.fish" target="1.8" />
       <module name="AndroidHelper.flexboxs.demo-cat-gallery" target="1.8" />
