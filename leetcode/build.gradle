@@ -10,3 +10,5 @@ java {
 dependencies {
 //    implementation 'junit:junit:4.12'
 }
+
+println("[life-cycle] 我是leetcode的build.gradle")

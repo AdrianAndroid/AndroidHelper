@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.flannery.multilanguage"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+
+println("[life-cycle] 我是multilanguage的build.gradle")
+println("[我是app子工程] 我的工程路径是${project.projectDir}") //配置阶段
+
+// 创建一个任务
+task testTask2() {
+    doLast {
+        println("我是 testTask2 任务")
+    }
+}
+/*
+flannery@zhaojiandeMacBook-Pro AndroidHelper % ./gradlew :multilanguage:testTask2  -q
+[life-cycle]  我是settings.gradle 我的工程路径是/Users/flannery/Desktop/AndroidHelper
+[life-cycle] 初始化阶段完成
+[lefe-cycle] projectsLoaded
+[life-cycle] 我是根目录的build.gradle
+MyPlugin apply(Project)
+[life-cycle] 我是edittextselectsion的build.gradle
+[life-cycle] 我是leetcode的build.gradle
+[life-cycle] 我是multilanguage的build.gradle
+[我是app子工程] 我的工程路径是/Users/flannery/Desktop/AndroidHelper/multilanguage
+[lefe-cycle] 配置阶段完成
+【子工程】名称是-edittextselection ，路径是-/Users/flannery/Desktop/AndroidHelper/edittextselection
+【子工程】名称是-leetcode ，路径是-/Users/flannery/Desktop/AndroidHelper/leetcode
+【子工程】名称是-multilanguage ，路径是-/Users/flannery/Desktop/AndroidHelper/multilanguage
+我是 testTask2 任务
+[lefe-cycle] 构建结束
+
+ */
+
+task test2 () {
+    dependsOn testTask2
+    doLast {
+        println("我是 test2 任务")
+    }
+}
+/*
+flannery@zhaojiandeMacBook-Pro AndroidHelper % ./gradlew :multilanguage:test2  -q
+[life-cycle]  我是settings.gradle 我的工程路径是/Users/flannery/Desktop/AndroidHelper
+[life-cycle] 初始化阶段完成
+[lefe-cycle] projectsLoaded
+[life-cycle] 我是根目录的build.gradle
+MyPlugin apply(Project)
+[life-cycle] 我是edittextselectsion的build.gradle
+[life-cycle] 我是leetcode的build.gradle
+[life-cycle] 我是multilanguage的build.gradle
+[我是app子工程] 我的工程路径是/Users/flannery/Desktop/AndroidHelper/multilanguage
+[lefe-cycle] 配置阶段完成
+【子工程】名称是-edittextselection ，路径是-/Users/flannery/Desktop/AndroidHelper/edittextselection
+【子工程】名称是-leetcode ，路径是-/Users/flannery/Desktop/AndroidHelper/leetcode
+【子工程】名称是-multilanguage ，路径是-/Users/flannery/Desktop/AndroidHelper/multilanguage
+我是 testTask2 任务
+我是 test2 任务
+[lefe-cycle] 构建结束
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+ */

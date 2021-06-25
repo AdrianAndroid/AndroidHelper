@@ -23,6 +23,7 @@ if (project == rootProject) {
 def reportsDir = "${rootProject.buildDir}/reports/${project.name}"
 def projectHeader = project.path.replaceAll(':', '/').substring(1)
 
+
 logger.lifecycle "Analyze code of module '${project.path}':"
 logger.lifecycle "Reading changed files..."
 

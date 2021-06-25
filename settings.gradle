@@ -99,3 +99,116 @@ rootProject.name = "AndroidHelper"
 //include ':leakcanary22'
 //include ':customviewdir:listviewdemo'
 include ':edittextselection'
+
+
+include ':multilanguage'
+
+println("[life-cycle]  我是settings.gradle 我的工程路径是${rootProject.projectDir}")
+
+/**
+ [life-cycle]  我是settings.gradle
+ [life-cycle] 初始化阶段完成
+ [lefe-cycle] projectsLoaded
+ MyPlugin apply(Project)
+ [lefe-cycle] 配置阶段完成
+ [lefe-cycle] 构建结束
+ */
+// 添加构建的生命周期监听
+gradle.addBuildListener(new BuildAdapter() {
+    @Override
+    void buildStarted(Gradle gradle) {
+        super.buildStarted(gradle)
+        println("[lefe-cycle] 构建开始") // 构建开始
+    }
+
+    @Override
+    void settingsEvaluated(Settings settings) {
+        super.settingsEvaluated(settings)
+        println("[life-cycle] 初始化阶段完成")
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+        super.projectsEvaluated(gradle)
+        println("[lefe-cycle] 配置阶段完成")
+        // 拿到所有子工程
+        gradle.rootProject.childProjects.each {name, p ->
+            println("【子工程】名称是-$name ，路径是-${p.getProjectDir()}")
+        }
+
+    }
+
+    @Override
+    void buildFinished(BuildResult result) {
+        super.buildFinished(result)
+        println("[lefe-cycle] 构建结束")
+    }
+
+    @Override
+    public void beforeSettings(Settings settings) {
+        println("[lefe-cycle] beforeSettings")
+    }
+
+    @Override
+    public void projectsLoaded(Gradle gradle) {
+        println("[lefe-cycle] projectsLoaded")
+    }
+})
+
+/*
+flannery@zhaojiandeMacBook-Pro AndroidHelper % ./gradlew testTask -q
+[life-cycle]  我是settings.gradle 我的工程路径是/Users/flannery/Desktop/AndroidHelper
+[life-cycle] 初始化阶段完成
+[lefe-cycle] projectsLoaded
+[life-cycle] 我是根目录的build.gradle
+MyPlugin apply(Project)
+[life-cycle] 我是edittextselectsion的build.gradle
+[life-cycle] 我是leetcode的build.gradle
+[life-cycle] 我是multilanguage的build.gradle
+[lefe-cycle] 配置阶段完成
+【子工程】名称是-edittextselection ，路径是-/Users/flannery/Desktop/AndroidHelper/edittextselection
+【子工程】名称是-leetcode ，路径是-/Users/flannery/Desktop/AndroidHelper/leetcode
+【子工程】名称是-multilanguage ，路径是-/Users/flannery/Desktop/AndroidHelper/multilanguage
+[life-cycle] 我是任务中的代码testTask
+[lefe-cycle] 构建结束
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper %
+flannery@zhaojiandeMacBook-Pro AndroidHelper % ./gradlew testTask -q
+[life-cycle]  我是settings.gradle 我的工程路径是/Users/flannery/Desktop/AndroidHelper
+[life-cycle] 初始化阶段完成
+[lefe-cycle] projectsLoaded
+[life-cycle] 我是根目录的build.gradle
+MyPlugin apply(Project)
+[life-cycle] 我是edittextselectsion的build.gradle
+[life-cycle] 我是leetcode的build.gradle
+[life-cycle] 我是multilanguage的build.gradle
+[我是app子工程] 我的工程路径是/Users/flannery/Desktop/AndroidHelper/multilanguage
+[lefe-cycle] 配置阶段完成
+【子工程】名称是-edittextselection ，路径是-/Users/flannery/Desktop/AndroidHelper/edittextselection
+【子工程】名称是-leetcode ，路径是-/Users/flannery/Desktop/AndroidHelper/leetcode
+【子工程】名称是-multilanguage ，路径是-/Users/flannery/Desktop/AndroidHelper/multilanguage
+[life-cycle] 我是任务中的代码testTask
+[lefe-cycle] 构建结束
+flannery@zhaojiandeMacBook-Pro AndroidHelper % ./gradlew testTask -q
+[life-cycle]  我是settings.gradle 我的工程路径是/Users/flannery/Desktop/AndroidHelper
+[life-cycle] 初始化阶段完成
+[lefe-cycle] projectsLoaded
+[life-cycle] 我是根目录的build.gradle
+MyPlugin apply(Project)
+[life-cycle] 我是edittextselectsion的build.gradle
+[life-cycle] 我是leetcode的build.gradle
+[life-cycle] 我是multilanguage的build.gradle
+[我是app子工程] 我的工程路径是/Users/flannery/Desktop/AndroidHelper/multilanguage
+[lefe-cycle] 配置阶段完成
+【子工程】名称是-edittextselection ，路径是-/Users/flannery/Desktop/AndroidHelper/edittextselection
+【子工程】名称是-leetcode ，路径是-/Users/flannery/Desktop/AndroidHelper/leetcode
+【子工程】名称是-multilanguage ，路径是-/Users/flannery/Desktop/AndroidHelper/multilanguage
+[life-cycle] 我是任务中的代码testTask
+[lefe-cycle] 构建结束
+ */
+
