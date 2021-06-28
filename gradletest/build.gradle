@@ -1,7 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    //id 'myplugin'
+    id 'com.immoc.router'
+}
+
+router {
+    wikiDir getRootDir().absolutePath
 }
 
 android {
@@ -9,7 +13,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.flannery.edittextselection"
+        applicationId "com.example.gradletest"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -40,33 +44,19 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
-
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
+println("我是app-build。gradle的代码")
+apply from: project.rootProject.file("other.gradle")
+// 二进制插件
+//      建立插件工程
+//      工程内部逻辑
+//      发布与使用插件
 
-println("[life-cycle] 我是edittextselectsion的build.gradle")
 
-task testTask() {
-    doLast {
-        println("[life-cycle] 我是任务中的代码testTask")
-    }
-}
-/*
-[life-cycle]  我是settings.gradle
-[life-cycle] 初始化阶段完成
-[lefe-cycle] projectsLoaded
-[life-cycle] 我是根目录的build.gradle
-MyPlugin apply(Project)
-[life-cycle] 我是edittextselectsion的build.gradle
-[life-cycle] 我是leetcode的build.gradle
-[life-cycle] 我是multilanguage的build.gradle
-[lefe-cycle] 配置阶段完成
-[life-cycle] 我是任务中的代码testTask     <---- 执行阶段
-[lefe-cycle] 构建结束
 
- */
+
+

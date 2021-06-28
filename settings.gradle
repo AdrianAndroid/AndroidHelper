@@ -212,3 +212,4 @@ MyPlugin apply(Project)
 [lefe-cycle] 构建结束
  */
 
+include ':gradletest'
