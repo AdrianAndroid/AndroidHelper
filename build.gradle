@@ -28,6 +28,7 @@ buildscript {
 
     repositories {
 //        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url uri("./repo") } // 配置maven仓库地址
         google()
         jcenter()
         maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
@@ -39,6 +40,7 @@ buildscript {
         classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.8'
 
         classpath 'me.ele:lancet-plugin:1.0.4'
+        //classpath 'com.imooc.router:router-gradle-plugin:1.0.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

@@ -213,3 +213,4 @@ MyPlugin apply(Project)
  */
 
 include ':gradletest'
+include ':router-gradle-plugin'

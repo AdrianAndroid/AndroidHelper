@@ -33,6 +33,9 @@ apply plugin:  'maven'
 //    }
 //}
 // 调用maven插件，用于发布
+
+println("router-gradle-plugin 中的 build.gradle")
+
 apply plugin: 'maven'
 
 // 配置maven插件中的uploadArchives任务
