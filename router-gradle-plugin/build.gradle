@@ -53,7 +53,7 @@ uploadArchives {
                 pom.artifactId = 'router-gradle-plugin'
 
                 // 设置 插件的版本号
-                pom.version = '1.0.0'
+                pom.version = '1.0.1'
 
             }
 
