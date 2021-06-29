@@ -28,7 +28,7 @@ buildscript {
 
     repositories {
 //        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url uri("./repo") } // 配置maven仓库地址
+        maven { url uri("../repo") } // 配置maven仓库地址
         google()
         jcenter()
         maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
@@ -48,6 +48,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url uri("../repo") } // 配置maven仓库地址
         google()
         jcenter()
 //        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }

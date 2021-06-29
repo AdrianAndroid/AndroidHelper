@@ -81,6 +81,7 @@
       <module name="AndroidHelper.startmodeup" target="11" />
       <module name="AndroidHelper.toolbar" target="1.8" />
       <module name="AndroidHelper.touchevent" target="1.8" />
+      <module name="AndroidHelper.utils" target="11" />
       <module name="AndroidHelper.webview" target="1.8" />
       <module name="AndroidHelper.whale" target="11" />
       <module name="AndroidHelper.xrecyclerview" target="1.8" />
