@@ -212,5 +212,8 @@ MyPlugin apply(Project)
 [lefe-cycle] 构建结束
  */
 
-include ':gradletest'
+
 include ':router-gradle-plugin'
+include ':jetpackdir:navigationdemo'
+include ':gradledemo:asmdemo'
+include ':gradledemo:gradletest'

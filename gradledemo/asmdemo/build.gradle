@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation 'org.ow2.asm:asm:8.0.1'
+    implementation 'org.ow2.asm:asm-commons:8.0.1'
+
+    implementation gradleApi()
+    implementation 'com.android.tools.build:gradle:3.4.1'
+}
+
+repositories {
+//    google()
+//    jcenter()
+    maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
+}

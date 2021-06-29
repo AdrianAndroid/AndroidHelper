@@ -32,6 +32,7 @@
       <module name="AndroidHelper.fragmentations.fragmentation" target="1.8" />
       <module name="AndroidHelper.fragmentations.fragmentation_core" target="1.8" />
       <module name="AndroidHelper.fragmentations.fragmentation_swipeback" target="1.8" />
+      <module name="AndroidHelper.gradledemo.gradletest" target="11" />
       <module name="AndroidHelper.gradletest" target="11" />
       <module name="AndroidHelper.html" target="1.8" />
       <module name="AndroidHelper.javapoet.app2" target="1.8" />
@@ -42,6 +43,7 @@
       <module name="AndroidHelper.jetpackapp" target="11" />
       <module name="AndroidHelper.jetpackapp2" target="11" />
       <module name="AndroidHelper.jetpackdir.jetpackapp2" target="11" />
+      <module name="AndroidHelper.jetpackdir.navigationdemo" target="11" />
       <module name="AndroidHelper.lauchmode" target="11" />
       <module name="AndroidHelper.leakcanary22" target="11" />
       <module name="AndroidHelper.leo_dispatch.app" target="1.8" />
