@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import java.lang.NullPointerException
 import java.util.concurrent.Executors
@@ -51,6 +52,30 @@ class MainActivity : AppCompatActivity() {
 //        test10(ThirdFragment(), "Hello World!")
 //        test12()
 //        test13()
+
+        test17()
+    }
+
+    fun test17() {
+        l1("test17 start")
+        l1("lifecycleScope.launch start")
+        lifecycleScope.launch {
+            l1("lifecycleScope.launch")
+        }
+        l1("lifecycleScope.launch end")
+
+        l1("lifecycleScope.launchWhenResumed start")
+        lifecycleScope.launchWhenResumed {
+            l1("lifecycleScope.launchWhenResumed")
+        }
+        l1("lifecycleScope.launchWhenResumed end")
+
+        l1("test17 end")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        l1("onResume")
     }
 
     fun test14() {
