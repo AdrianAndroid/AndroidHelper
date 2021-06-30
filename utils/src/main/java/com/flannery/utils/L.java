@@ -9,6 +9,8 @@ import android.view.MotionEvent;
  */
 public class L {
 
+    public static final Boolean DEBUG = true;
+
     private static final String DEFAULT_TAG = "CJT";
 
     public static void i(String tag, String msg) {
@@ -17,17 +19,17 @@ public class L {
     }
 
     public static void v(String tag, String msg) {
-        if (BuildConfig.DEBUG)
+        if (DEBUG)
             Log.v(tag, msg);
     }
 
     public static void d(String tag, String msg) {
-        if (BuildConfig.DEBUG)
+        if (DEBUG)
             Log.d(tag, msg);
     }
 
     public static void e(String tag, String msg) {
-        if (BuildConfig.DEBUG)
+        if (DEBUG)
             Log.e(tag, msg);
     }
 
@@ -64,7 +66,7 @@ public class L {
      * @param o
      */
     public static void m3(Object... o) {
-        if (BuildConfig.DEBUG) {
+        if (DEBUG) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
 //            String fileName = stackTraceElement.getFileName();
 //            String className = stackTraceElement.getClassName();
@@ -111,7 +113,7 @@ public class L {
      * 第一版测试用，可以去掉
      */
     public static void m2() {
-        if (BuildConfig.DEBUG) {
+        if (DEBUG) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
             String fileName = stackTraceElement.getFileName();
             String className = stackTraceElement.getClassName();
@@ -122,7 +124,7 @@ public class L {
     }
 
     public static void m(Class<?> aClass, String otherTag, Object... o) {
-        if (BuildConfig.DEBUG) {
+        if (DEBUG) {
             if (aClass == null) {
                 printLogString(null, otherTag, o);
             } else {
@@ -136,7 +138,7 @@ public class L {
     }
 
     public static void m3(Object obj, String otherTag, Object... o) {
-        if (BuildConfig.DEBUG) {
+        if (DEBUG) {
             if (obj == null) {
                 printLogString(null, otherTag, o);
             } else {
@@ -158,7 +160,7 @@ public class L {
     }
 
     public static StackTraceElement findClassStackTraceElement(Class<?> aClass) {
-        if (BuildConfig.DEBUG)
+        if (DEBUG)
             //Thread.currentThread().getStackTrace()[4].getClassName()
             //cn.kuwo.pp.ui.discover.FriendMatchingDialog
             //aClass.getCanonicalName()

@@ -46,8 +46,61 @@ class MainActivity : AppCompatActivity() {
 //        test10(User(), "Hello World!")
 //        test10(FirstFragment(), "Hello World!")
 //        test10(SecondFragment(), "Hello World!")
-        test10(ThirdFragment(), "Hello World!")
+//        test10(ThirdFragment(), "Hello World!")
+//        test12()
+        test13()
     }
+
+    fun test13() {
+        l1("test13 start")
+        val runCatch: Result<String> = kotlin.runCatching {
+            l1("runCatching")
+            //throw Exception("throw")
+            "from runCatching!"
+        }.onSuccess {
+            l1("onSuccess")
+        }.onFailure {
+            l1("onFailure")
+        }
+        println("runCatch.getOrNull() ${runCatch.getOrNull()}")
+        println("runCatch.getOrDefault ${runCatch.getOrDefault("default string")}")
+        println("runCatch.exceptionOrNull() ${runCatch.exceptionOrNull()}")
+
+        l1("test13 end")
+    }
+
+
+    // kotlin中GlobalScope类提供了几个创建协程的构造函数
+    ////// launch：创建协程
+    ////// async：创建带返回值的协程，返回的是Deferred类
+    ////// withContext：不创建新的协程，指定协程上运行代码块
+    ////// runBlocking：不是globalScope的API，可以独立使用，区别runBlocking里面的delay会阻塞线程，而launch创建的不会
+    private fun test12() {
+        // [111111111]
+        // [222222222]
+        // [333333333]
+        // [444444444]
+        l1("[111111111] test12 start")
+        val launch: Job = GlobalScope.launch(Dispatchers.Main) {
+            l1("[222222222] GlobalScope.launch start")
+            val str = withContext(Dispatchers.IO) {
+                l1("[333333333] withContext(Dispatchers.IO")
+
+                repeat(10) {
+                    delay(500)
+                    l1("[333333333] repeat $it")
+                }
+
+                "Hello GlobalScope withContedt"
+            }
+            l1(str)
+            l1("[222222222] GlobalScope.launch end")
+        }
+        l1("[111111111] test12 end ${launch.isActive}")
+        l1("[111111111] test12 end ${launch.isCancelled}")
+        l1("[111111111] test12 end ${launch.isCompleted}")
+    }
+
 
     class User {
         fun getName(): String {

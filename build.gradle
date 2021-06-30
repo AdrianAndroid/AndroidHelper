@@ -28,9 +28,14 @@ buildscript {
 
     repositories {
 //        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url uri("../repo") } // 配置maven仓库地址
-        google()
-        jcenter()
+        //maven { url uri("../repo") } // 配置maven仓库地址
+        println("+++++++++++++++")
+        println("/Users/flannery/Desktop/AndroidHelper/build.gradle")
+        println("${rootProject.getRootDir().absolutePath}/repo")
+        println("+++++++++++++++")
+        maven { url uri("${rootProject.getRootDir().absolutePath}/repo") } // 配置maven仓库地址
+        //google()
+        //jcenter()
         maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
     }
     dependencies {
@@ -48,14 +53,15 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url uri("../repo") } // 配置maven仓库地址
-        google()
-        jcenter()
+        //maven { url uri("../repo") } // 配置maven仓库地址
+        // implementation 'com.flannery.utils:utils:1.0.0@aar'
+        //maven { url uri("/Users/flannery/Desktop/AndroidHelper/repo") }
+        maven { url uri("${rootProject.getRootDir().absolutePath}/repo") } // 配置maven仓库地址
+        //google()
+        //jcenter()
 //        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'https://dl.bintray.com/umsdk/release' }
-        maven {
-            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
-        }
+//        maven { url 'https://dl.bintray.com/umsdk/release' }
+//        maven {url 'http://maven.aliyun.com/nexus/content/repositories/releases/'}
         maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
     }
 }
