@@ -13,3 +13,12 @@
 .externalNativeBuild
 .cxx
 local.properties
+/gradledemo/.settings/
+/gradledemo/asmdemo/.classpath
+/gradledemo/asmdemo/.project
+/gradledemo/asmdemo/.settings/
+/jetpackdir/.settings/
+/jetpackdir/.project
+/gradledemo/gradletest/.settings/
+/gradledemo/gradletest/.classpath
+/gradledemo/gradletest/.project

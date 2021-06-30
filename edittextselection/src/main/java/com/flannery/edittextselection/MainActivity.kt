@@ -1,5 +1,7 @@
 package com.flannery.edittextselection
 
+import KAnimal
+import KDog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -48,11 +50,20 @@ class MainActivity : AppCompatActivity() {
 //        test10(SecondFragment(), "Hello World!")
 //        test10(ThirdFragment(), "Hello World!")
 //        test12()
-        test13()
+//        test13()
+    }
+
+    fun test14() {
+        var animal: List<KAnimal> = ArrayList() // out 上界通配符
+        var dogs = ArrayList<KDog>()
+        animal = dogs
     }
 
     fun test13() {
         l1("test13 start")
+        GlobalScope.launch {
+
+        }
         val runCatch: Result<String> = kotlin.runCatching {
             l1("runCatching")
             //throw Exception("throw")
