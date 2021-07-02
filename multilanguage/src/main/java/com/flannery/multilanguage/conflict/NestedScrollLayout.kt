@@ -27,8 +27,8 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
 
     init {
         setOnScrollChangeListener(OnScrollChangeListener { v, _, scrollY, _, oldScrollY ->
-            Log.e("TAG", "setOnScrollChangeListener")
             v?.let {
+
                 if (isStartFling) {
                     totalDy = 0;
                     isStartFling = false
@@ -42,6 +42,10 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
                 }
                 // 记录RecyclerView fling情况下， 记录当前RecyclerView在y轴的偏移
                 totalDy += scrollY - oldScrollY
+                Log.e(
+                    "TAG",
+                    "setOnScrollChangeListener isStartFling=$isStartFling  totalDy=$totalDy"
+                )
             }
         })
     }

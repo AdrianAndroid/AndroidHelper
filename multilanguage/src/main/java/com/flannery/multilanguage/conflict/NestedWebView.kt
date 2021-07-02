@@ -1,31 +1,70 @@
 package com.flannery.multilanguage.conflict
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewConfiguration
 import android.webkit.WebView
-import androidx.core.view.NestedScrollingChild
+import androidx.core.view.NestedScrollingChild2
+import androidx.core.view.NestedScrollingChild3
 import androidx.core.view.NestedScrollingChildHelper
 import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.flannery.multilanguage.BuildConfig
-import kotlin.math.max
 
 /**
  * Time:2021/7/2 09:22
- * Author:
+ * Author: 备份用
  * Description:
  */
 class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, attrs),
-    NestedScrollingChild {
+    NestedScrollingChild2, NestedScrollingChild3 {
 
-    private var mLastMotionY: Float = 0F
-    private var mNesteedYOffset = 0
+    /**
+     * The RecyclerView is not currently scrolling.
+     * @see .getScrollState
+     */
+    val SCROLL_STATE_IDLE = 0
+
+    /**
+     * The RecyclerView is currently being dragged by outside input such as user touch input.
+     * @see .getScrollState
+     */
+    val SCROLL_STATE_DRAGGING = 1
+
+    /**
+     * The RecyclerView is currently animating to a final position while not under
+     * outside control.
+     * @see .getScrollState
+     */
+    val SCROLL_STATE_SETTLING = 2
+
+    /**
+     * Indicates that the input type for the gesture is from a user touching the screen.
+     */
+    val TYPE_TOUCH = 0
+
+    /**
+     * Indicates that the input type for the gesture is caused by something which is not a user
+     * touching a screen. This is usually from a fling which is settling.
+     */
+    val TYPE_NON_TOUCH = 1
+
     private var mScrollOffset = intArrayOf(0, 0)
-    private var mScrollConsumed = intArrayOf(0, 0)
+    private var mNestedOffsets = intArrayOf(0, 0)
+    private val mReusableIntPair = intArrayOf(0, 0)
+    private var mInitialTouchX: Int = 0
+    private var mInitialTouchY: Int = 0
+    private var mLastTouchX: Int = 0
+    private var mLastTouchY: Int = 0
+
+    private val mTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
+
+    // Touch/scrolling handling
+    private var mScrollState = RecyclerView.SCROLL_STATE_IDLE //当前的状态
     private val mChildHelper: NestedScrollingChildHelper by lazy {
         NestedScrollingChildHelper(this)
     }
@@ -38,58 +77,113 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
         }
     }
 
-    @SuppressLint("Recycle", "ClickableViewAccessibility")
-    override fun onTouchEvent(ev: MotionEvent?): Boolean {
+//    override fun onTouchEvent(event: MotionEvent?): Boolean {
+//        //return super.onTouchEvent(event)
+//        var result = false
+//        result = super.onTouchEvent(event)
+//        if (BuildConfig.DEBUG) Log.e("TAG", "return $result")
+//        return result
+//    }
 
-        var result = false
-        ev?.let { event ->
-            val trackedEvent = MotionEvent.obtain(event)
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                mNesteedYOffset = 0  //没有偏移
+    fun onTouchEvent2(event: MotionEvent?): Boolean {
+        event?.let { e ->
+            val action = e.actionMasked
+            if (action == MotionEvent.ACTION_DOWN) {
+                mNestedOffsets[0] = 0
+                mNestedOffsets[1] = 0
             }
-            event.offsetLocation(0F, mNesteedYOffset.toFloat())
-
-            val y = event.y
-
-            when (event.action) {
+            val vtev = MotionEvent.obtain(e)
+            vtev.offsetLocation(mNestedOffsets[0].toFloat(), mNestedOffsets[1].toFloat())
+            when (action) {
                 MotionEvent.ACTION_DOWN -> {
-                    mLastMotionY = y
-                    startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL)
-                    result = super.onTouchEvent(event)
+                    // 得到未知
+                    mInitialTouchX = ((e.x + 0.5f).toInt())
+                    mLastTouchX = mInitialTouchX
+                    mInitialTouchY = ((e.y + 0.5f).toInt())
+                    mLastTouchY = mInitialTouchY
+
+                    startNestedScroll(
+                        ViewCompat.SCROLL_AXIS_NONE or ViewCompat.SCROLL_AXIS_VERTICAL,
+                        TYPE_TOUCH
+                    )
                 }
                 MotionEvent.ACTION_MOVE -> {
-                    var deltaY = (mLastMotionY - y).toInt() // 距上次移动的距离
-                    if (BuildConfig.DEBUG) Log.i("TAG", "deltaY = $deltaY")
-                    if (dispatchNestedPreScroll(0, deltaY, mScrollConsumed, mScrollOffset)) {
-                        deltaY -= mScrollConsumed[1] // 其他View消费的距离
-                        trackedEvent.offsetLocation(0F, mScrollOffset[1].toFloat())
-                        mNesteedYOffset += mScrollOffset[1]
+                    val x: Int = (e.x + 0.5f).toInt()
+                    val y: Int = (e.y + 0.5f).toInt()
+                    var dx: Int = mLastTouchX - x
+                    var dy: Int = mLastTouchY - y
+
+                    if (mScrollState != SCROLL_STATE_DRAGGING) { // 还不是拖拽状态
+                        var startScroll = false
+                        if (dy > 0) {
+                            dy = Math.max(0, dy - mTouchSlop)
+                        } else {
+                            dy = Math.min(0, dy + mTouchSlop)
+                        }
+                        if (dy != 0) {
+                            startScroll = true
+                        }
+                        if (startScroll) {
+                            setScrollState(SCROLL_STATE_DRAGGING)
+                        }
                     }
+                    if (mScrollState == SCROLL_STATE_DRAGGING) { // 已经是拖拽状态了
+                        mReusableIntPair[0] = 0
+                        mReusableIntPair[1] = 0
+                        if (dispatchNestedPreScroll(
+                                0,
+                                dy,
+                                mReusableIntPair,
+                                mScrollOffset,
+                                TYPE_TOUCH
+                            )
+                        ) {
+                            dx -= mReusableIntPair[0]
+                            dy -= mReusableIntPair[1]
+                            // Updated the nested offsets
+                            mNestedOffsets[0] += mScrollOffset[0]
+                            mNestedOffsets[1] += mScrollOffset[1]
+                            // Scroll has initiated, prevent parents from intercepting
+                            parent.requestDisallowInterceptTouchEvent(true)
+                        }
+                        mLastTouchX = x - mScrollOffset[0]
+                        mLastTouchY = y - mScrollOffset[1]
 
-                    mLastMotionY = y - mScrollOffset[1]
-
-                    val oldY = scrollY
-                    val newScrollY = max(0, oldY + deltaY)
-                    val dyConsumed = newScrollY - oldY
-                    val dyUnconsumed = deltaY - dyConsumed
-
-                    if (dispatchNestedScroll(0, dyConsumed, 0, dyUnconsumed, mScrollOffset)) {
-                        mLastMotionY -= mScrollOffset[1]
-                        trackedEvent.offsetLocation(0F, mScrollOffset[1].toFloat())
-                        mNesteedYOffset += mScrollOffset[1]
                     }
-
-                    result = super.onTouchEvent(trackedEvent)
-                    trackedEvent.recycle()
                 }
-                MotionEvent.ACTION_POINTER_DOWN, MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                    stopNestedScroll()
-                    result = super.onTouchEvent(event)
+                MotionEvent.ACTION_UP -> {
+                    stopNestedScroll(TYPE_TOUCH)
                 }
             }
-        }
 
-        return result
+            vtev.recycle()
+        }
+        return true
+    }
+
+    /**
+     * Return the current scrolling state of the RecyclerView.
+     *
+     * @return [.SCROLL_STATE_IDLE], [.SCROLL_STATE_DRAGGING] or
+     * [.SCROLL_STATE_SETTLING]
+     */
+    fun getScrollState(): Int = mScrollState
+
+    fun setScrollState(state: Int) {
+        if (state == mScrollState) {
+            return
+        }
+//        if (RecyclerView.DEBUG) {
+//            Log.d(
+//                RecyclerView.TAG, "setting scroll state to $state from $mScrollState",
+//                Exception()
+//            )
+//        }
+        mScrollState = state
+//        if (state != RecyclerView.SCROLL_STATE_SETTLING) {
+//            stopScrollersInternal()
+//        }
+//        dispatchOnScrollStateChanged(state)
     }
 
     override fun onNestedFling(
@@ -135,6 +229,10 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
         return mChildHelper.isNestedScrollingEnabled
     }
 
+    override fun startNestedScroll(axes: Int, type: Int): Boolean {
+        return mChildHelper.startNestedScroll(axes, type)
+    }
+
     override fun startNestedScroll(axes: Int): Boolean {
         if (BuildConfig.DEBUG) Log.e(
             "NestedWebView",
@@ -143,12 +241,20 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
         return mChildHelper.startNestedScroll(axes)
     }
 
+    override fun stopNestedScroll(type: Int) {
+        mChildHelper.stopNestedScroll(type)
+    }
+
     override fun stopNestedScroll() {
         if (BuildConfig.DEBUG) Log.e(
             "NestedWebView",
             "stopNestedScroll"
         )
         mChildHelper.stopNestedScroll()
+    }
+
+    override fun hasNestedScrollingParent(type: Int): Boolean {
+        return mChildHelper.hasNestedScrollingParent(type)
     }
 
     override fun hasNestedScrollingParent(): Boolean {
@@ -164,6 +270,35 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
         dyConsumed: Int,
         dxUnconsumed: Int,
         dyUnconsumed: Int,
+        offsetInWindow: IntArray?,
+        type: Int,
+        consumed: IntArray
+    ) {
+    }
+
+    override fun dispatchNestedScroll(
+        dxConsumed: Int,
+        dyConsumed: Int,
+        dxUnconsumed: Int,
+        dyUnconsumed: Int,
+        offsetInWindow: IntArray?,
+        type: Int
+    ): Boolean {
+        return mChildHelper.dispatchNestedScroll(
+            dxConsumed,
+            dyConsumed,
+            dxUnconsumed,
+            dyUnconsumed,
+            offsetInWindow,
+            type
+        )
+    }
+
+    override fun dispatchNestedScroll(
+        dxConsumed: Int,
+        dyConsumed: Int,
+        dxUnconsumed: Int,
+        dyUnconsumed: Int,
         offsetInWindow: IntArray?
     ): Boolean {
         return mChildHelper.dispatchNestedScroll(
@@ -172,6 +307,22 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
             dxUnconsumed,
             dyUnconsumed,
             offsetInWindow
+        )
+    }
+
+    override fun dispatchNestedPreScroll(
+        dx: Int,
+        dy: Int,
+        consumed: IntArray?,
+        offsetInWindow: IntArray?,
+        type: Int
+    ): Boolean {
+        return mChildHelper.dispatchNestedPreScroll(
+            dx,
+            dy,
+            consumed,
+            offsetInWindow,
+            type
         )
     }
 
