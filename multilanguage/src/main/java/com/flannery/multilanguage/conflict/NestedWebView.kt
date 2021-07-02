@@ -38,7 +38,7 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
         }
     }
 
-    @SuppressLint("Recycle")
+    @SuppressLint("Recycle", "ClickableViewAccessibility")
     override fun onTouchEvent(ev: MotionEvent?): Boolean {
 
         var result = false
@@ -59,6 +59,7 @@ class NestedWebView(context: Context, attrs: AttributeSet?) : WebView(context, a
                 }
                 MotionEvent.ACTION_MOVE -> {
                     var deltaY = (mLastMotionY - y).toInt() // 距上次移动的距离
+                    if (BuildConfig.DEBUG) Log.i("TAG", "deltaY = $deltaY")
                     if (dispatchNestedPreScroll(0, deltaY, mScrollConsumed, mScrollOffset)) {
                         deltaY -= mScrollConsumed[1] // 其他View消费的距离
                         trackedEvent.offsetLocation(0F, mScrollOffset[1].toFloat())

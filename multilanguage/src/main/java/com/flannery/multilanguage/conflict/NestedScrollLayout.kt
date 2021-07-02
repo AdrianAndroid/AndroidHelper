@@ -118,7 +118,7 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
     override fun onNestedPreScroll(target: View, dx: Int, dy: Int, consumed: IntArray, type: Int) {
         super.onNestedPreScroll(target, dx, dy, consumed, type)
         val b = dy > 0 && scrollY < topView.measuredHeight
-        Log.e("TAG", "onNestedPreScroll  $b")
+        Log.e("TAG", "onNestedPreScroll  $b  dy = $dy")
         // 向上滑动。若当前topview可见，需要将topview滑动至不见
         if (b) {
             scrollBy(0, dy)
