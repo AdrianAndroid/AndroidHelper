@@ -2,11 +2,14 @@ package com.flannery.edittextselection
 
 import KAnimal
 import KDog
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.edit
+import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import java.lang.NullPointerException
@@ -25,9 +28,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        FirstFragment()
-        SecondFragment()
-        ThirdFragment()
+//        FirstFragment()
+//        SecondFragment()
+//        ThirdFragment()
+        supportFragmentManager.commit {
+            add(R.id.container, FirstFragment())
+        }
+        l1("MyActivity , supportFragmentMananger $supportFragmentManager")
 
 //        pool.execute {
 //            test5()
@@ -53,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 //        test12()
 //        test13()
 
-        test17()
+//        test17()
     }
 
     fun test17() {

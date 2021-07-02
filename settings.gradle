@@ -1,4 +1,6 @@
-
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import groovy.text.SimpleTemplateEngine
 
 //include ':customviewdir:touchevent'
 //include ':startmodeup'//include ':performance:perform'
@@ -98,7 +100,7 @@ rootProject.name = "AndroidHelper"
 //include ':whale'
 //include ':leakcanary22'
 //include ':customviewdir:listviewdemo'
-include ':edittextselection'
+//include ':edittextselection'
 
 
 include ':multilanguage'
@@ -132,7 +134,7 @@ gradle.addBuildListener(new BuildAdapter() {
         super.projectsEvaluated(gradle)
         println("[lefe-cycle] 配置阶段完成")
         // 拿到所有子工程
-        gradle.rootProject.childProjects.each {name, p ->
+        gradle.rootProject.childProjects.each { name, p ->
             println("【子工程】名称是-$name ，路径是-${p.getProjectDir()}")
         }
 
@@ -214,7 +216,233 @@ MyPlugin apply(Project)
 
 
 include ':router-gradle-plugin'
-include ':jetpackdir:navigationdemo'
-include ':gradledemo:asmdemo'
-include ':gradledemo:gradletest'
+//include ':jetpackdir:navigationdemo'
+//include ':gradledemo:asmdemo'
+//include ':gradledemo:gradletest'
 include ':utils'
+
+//def list = []
+//def con = true
+//while (con) {
+//    list.add(1)
+//    println 'while - ${list.size()}'
+//    println list.size()
+//}
+
+def jsonSlurper = new JsonSlurper()
+def object = jsonSlurper.parseText('{"name":"John", "ID":"1"}')
+println(">>>>>>>>" + object.name)
+println(">>>>>>>>" + object.ID)
+
+Object lst = jsonSlurper.parseText('{"List": [2,3,4,5]}')
+lst.each {
+    println it
+}
+println ">>>>>>>"
+def obj = jsonSlurper.parseText ''' {"Integer":12, "fraction":12.55,"double":12e13}} '''
+println(obj.Integer)
+println(obj.fraction)
+println(obj.double)
+println ">>>>>>>"
+def output = JsonOutput.toJson([name: 'John', ID: 1])
+println output
+println ">>>>>>>"
+
+
+def output2 = JsonOutput.toJson([new Student(name: 'John', ID: 1), new Student(name: 'Mark', ID: 2)])
+println output2
+
+class Student {
+    String name
+    int ID
+}
+
+
+println ">>>>>>>"
+def text = 'This Tutorial focuses on $TutorialName. In this tutorial you will lean about $Topic '
+def binding = ["TutorialName": "Groovy", "Topic": "Templates"]
+def engine = new SimpleTemplateEngine()
+def template = engine.createTemplate(text).make(binding)
+println template
+
+
+println ">>>>>>>"
+import groovy.test.*
+import groovy.transform.AnnotationCollector
+
+import java.io.*
+
+def file2 = new File("./Student.template")
+def binding2 = ['name': 'Joe2', 'id': 1, 'subject': 'Physics2']
+def engine2 = new SimpleTemplateEngine()
+def template2 = engine2.createTemplate(file2)
+def writable2 = template2.make(binding2)
+println writable2
+
+println ">>>>>>>"
+import groovy.text.*
+import java.io.*
+
+def file3 = new File("./Student.template")
+def binding3 = ['name': 'Joe3', 'id': 1, 'subject': 'Physics3']
+
+def engine3 = new SimpleTemplateEngine()
+def template3 = engine3.createTemplate(file3)
+def writable3 = template3.make(binding3)
+
+println writable3
+
+println ">>>>>>>"
+// StreamingTemplateEngine
+def text4 = '''This Tutorial is <% out.print TutorialName %> The Topic name
+
+is ${TopicName}'''
+def template4 = new StreamingTemplateEngine().createTemplate(text4)
+def binding4 = [TutorialName: "Groovy", TopicName: "Templates"]
+String response = template4.make(binding4)
+println response
+
+
+println ">>>>>>>"
+def binding6 = [StudentName: 'Joe6', id: 6, subject: 'Physics6']
+def engine6 = new XmlTemplateEngine()
+def text5 = '''
+   <document xmlns:gsp='http://groovy.codehaus.org/2005/gsp'>
+      <Student>
+         <name>${StudentName}</name>
+         <ID>${id}</ID>
+         <subject>${subject}</subject>
+      </Student>
+   </document> 
+'''
+def template6 = engine6.createTemplate(text5).make(binding6)
+println template6.toString()
+
+println ">>>>>>>"
+//Def myStudent = new Student()
+//myStudent.Name = "Jobe"
+//myStudent.Display()
+
+// 字符串类型
+@interface Simple {
+    String str1() default "HelloWorld!";
+}
+// 枚举类型
+enum DayOfWeek {
+    mon, tue, wed, thu, fri, sat, sun
+}
+
+@interface Scheduled {
+    DayOfWeek dayOfWeek()
+}
+// 类类型
+@interface Simple1 {}
+
+@Simple1
+class User {
+    String username
+    int age
+}
+
+def user = new User(username: "jo", age: 1)
+println(user.age)
+println(user.username)
+// 注释成员值
+@interface Example {
+    int status()
+}
+
+@Example(status = 1)
+class E {
+
+}
+
+// 关闭注释参数
+@interface OnlyIf {
+    Class value()
+}
+
+@OnlyIf({ number <= 6 })
+void Version6() {
+    result << 'Number greater than 6'
+}
+
+//OnlyIf({ number >= 6 })
+// class Version7 {
+//    //result< < 'Number greater than 6'
+//}
+
+// 元注释
+//@Procedure
+//@Master class
+@AnnotationCollector
+class MyMasterProcedure {}
+
+
+//Groovy闭包
+def clos = { println "Hello World!" }
+clos.call()
+
+// 闭包中的形式参数
+def clos1 = { param -> println "Hello ${param}" }
+clos1.call("World!!!!!")
+
+def close2 = { println "Hello ${it}" }
+close2.call("World from it.")
+
+// 闭包和变量
+def str1 = "Hello"
+def clos3 = { param -> println "${str1} ${param}" }
+clos3.call("World")
+// We are now changing the value of the String str1 which is referenced in the closure
+str1 = "Welcome"
+clos3.call("World!")
+
+class ExampleStatic {
+    def static Display(clo) {
+        // This time the $param parameter gets replaced by the string "Inner"
+        clo.call("Inner");
+    }
+}
+
+def str4 = "Hello"
+def clos4 = { param -> println "${str4} ${param}" }
+clos4.call("World!3!")
+ExampleStatic.Display(clos4)
+
+// 集合和字符串中的闭包
+// 使用映射闭包
+def mp = ["TopicName": "Map", "TopicDescription": "Methods in Maps"]
+mp.each { println it }
+mp.each { println "${it.key} ----->maps to: ${it.value}" }
+
+def lst2 = [1, 2, 3, 4]
+lst2.each { println it }
+println("The list will only display those numbers which are divisible by 2")
+lst2.each { num -> if (num % 2 == 0) println num }
+
+
+public class ListType<T> {
+    private T localt;
+    public T get() {
+        return this.localt;
+    }
+    public void set(T plocal) {
+        this.localt = plocal;
+    }
+}
+
+// Craeteing a generic List collection
+ListType<String> lststr = new ListType<>()
+lststr.set("First String")
+println(lststr.get())
+
+ListType<Integer> lstint = new ListType<>()
+lstint.set(1)
+println(lstint.get())
+
+
+
+//include ':customviewdir:conflictjd'
+//include ':base'
+//include ':confictJD'

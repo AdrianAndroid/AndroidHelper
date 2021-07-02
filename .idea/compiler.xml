@@ -5,6 +5,7 @@
       <module name="AndroidHelper.anrwatchdog" target="1.8" />
       <module name="AndroidHelper.app" target="1.8" />
       <module name="AndroidHelper.app2" target="1.8" />
+      <module name="AndroidHelper.base" target="11" />
       <module name="AndroidHelper.bigimage" target="1.8" />
       <module name="AndroidHelper.bitmap.app" target="1.8" />
       <module name="AndroidHelper.bitmap.bigimage" target="1.8" />
@@ -12,7 +13,9 @@
       <module name="AndroidHelper.bitmapdemo" target="1.8" />
       <module name="AndroidHelper.buildSrc" target="11" />
       <module name="AndroidHelper.chromelikeswipelayout" target="1.8" />
+      <module name="AndroidHelper.confictJD" target="11" />
       <module name="AndroidHelper.CustomView" target="1.8" />
+      <module name="AndroidHelper.customviewdir.conflictjd" target="11" />
       <module name="AndroidHelper.customviewdir.listviewdemo" target="11" />
       <module name="AndroidHelper.customviewdir.touchevent" target="11" />
       <module name="AndroidHelper.dialogs" target="1.8" />

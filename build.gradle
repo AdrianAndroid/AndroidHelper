@@ -81,7 +81,11 @@ project.ext {
     targetSdkVersion = compileSdkVersion
 
     appCompatVersion = "1.2.0-rc01"
+
+
 }
+
+
 
 println("[life-cycle] 我是根目录的build.gradle")
 
