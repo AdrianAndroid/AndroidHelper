@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flannery.multilanguage">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,19 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidHelper">
-        <activity android:name=".WebViewActivity">
-
-        </activity>
-        <activity android:name=".ConflictActivity">
+        <activity android:name=".confict4.Conflict4Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NestedScrollActivity"></activity>
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".ConflictActivity"></activity>
+        <activity android:name=".ConflictActivity2" />
+        <activity android:name=".ConflictActivity3">
+
+        </activity>
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

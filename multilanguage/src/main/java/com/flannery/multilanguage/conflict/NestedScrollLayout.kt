@@ -26,28 +26,29 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
     private val mFlingHelper: FlingHelper = FlingHelper(context) //滑动距离计算
 
     init {
-        setOnScrollChangeListener(OnScrollChangeListener { v, _, scrollY, _, oldScrollY ->
-            v?.let {
+        if (false)
+            setOnScrollChangeListener(OnScrollChangeListener { v, _, scrollY, _, oldScrollY ->
+                v?.let {
 
-                if (isStartFling) {
-                    totalDy = 0;
-                    isStartFling = false
+                    if (isStartFling) {
+                        totalDy = 0;
+                        isStartFling = false
+                    }
+                    if (scrollY == 0) {
+                        //Top SCROLL
+                    }
+                    if (scrollY == (getChildAt(0).measuredHeight - it.measuredHeight)) {
+                        // BOTTOM SCROLL
+                        dispatchChildFling();
+                    }
+                    // 记录RecyclerView fling情况下， 记录当前RecyclerView在y轴的偏移
+                    totalDy += scrollY - oldScrollY
+                    Log.e(
+                        "TAG",
+                        "setOnScrollChangeListener isStartFling=$isStartFling  totalDy=$totalDy"
+                    )
                 }
-                if (scrollY == 0) {
-                    //Top SCROLL
-                }
-                if (scrollY == (getChildAt(0).measuredHeight - it.measuredHeight)) {
-                    // BOTTOM SCROLL
-                    dispatchChildFling();
-                }
-                // 记录RecyclerView fling情况下， 记录当前RecyclerView在y轴的偏移
-                totalDy += scrollY - oldScrollY
-                Log.e(
-                    "TAG",
-                    "setOnScrollChangeListener isStartFling=$isStartFling  totalDy=$totalDy"
-                )
-            }
-        })
+            })
     }
 
     private fun dispatchChildFling() {

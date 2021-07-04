@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.flannery.multilanguage.confict4.NestedScrollLayout
+        android:id="@+id/mNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".confict4.Conflict4Activity">
+
+        <LinearLayout
+            android:id="@+id/mLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_height="1000dp">
+
+            <View
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#00f" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/mFirstTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:tabBackground="@android:color/holo_green_dark"
+                app:tabContentStart="5dp"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@android:color/holo_purple"
+                app:tabIndicatorHeight="6dp"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="#ff00796b"
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:tabTextColor="#FFFFFF" />
+
+            <com.flannery.multilanguage.confict4.WrapHeightViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0ff"
+                android:minHeight="500dp"
+                tools:layout_height="1000dp" />
+
+        </LinearLayout>
+
+
+    </com.flannery.multilanguage.confict4.NestedScrollLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mSecondTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:contentDescription="停留的Tab"
+        android:visibility="invisible"
+        app:tabBackground="@android:color/holo_green_dark"
+        app:tabContentStart="5dp"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@android:color/holo_purple"
+        app:tabIndicatorHeight="6dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#ff00796b"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:tabTextColor="#FFFFFF"
+        tools:visibility="visible" />
+</FrameLayout>

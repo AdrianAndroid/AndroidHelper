@@ -19,7 +19,6 @@ class ConflictActivity : AppCompatActivity() {
         val mViewPager: ViewPager2 = findViewById(R.id.mViewPager)
         val list = listOf(
             WebViewFragment(),
-            RecyclerViewFragment(),
             RecyclerViewFragment()
         )
         mViewPager.adapter = object : FragmentStateAdapter(this) {
@@ -29,6 +28,9 @@ class ConflictActivity : AppCompatActivity() {
 
 
         TabLayoutMediator(findViewById(R.id.mTabLayout), mViewPager) { tab, position ->
+            tab.text = "TAB $position"
+        }.attach()
+        TabLayoutMediator(findViewById(R.id.mTabLayout2), mViewPager) { tab, position ->
             tab.text = "TAB $position"
         }.attach()
 
