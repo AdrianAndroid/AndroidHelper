@@ -9,6 +9,7 @@
         android:id="@+id/mNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="50dp"
         tools:context=".confict4.Conflict4Activity">
 
         <LinearLayout
@@ -54,8 +55,8 @@
         android:visibility="invisible"
         app:tabIndicatorColor="#22BE8C"
         app:tabIndicatorFullWidth="false"
-        app:tabSelectedTextColor="#22BE8C"
         app:tabMode="fixed"
+        app:tabSelectedTextColor="#22BE8C"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabTextColor="#BBBBC3" />
 </FrameLayout>

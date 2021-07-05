@@ -25,6 +25,7 @@ class WrapHeightViewPager(context: Context, attrs: AttributeSet?) : ViewPager(co
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
 //        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        if(BuildConfig.DEBUG) Log.e("onMeasure", "onMeasure")
         var height = 0
         for (i in 0 until childCount) {
             if (position == i) {
@@ -33,7 +34,7 @@ class WrapHeightViewPager(context: Context, attrs: AttributeSet?) : ViewPager(co
                     widthMeasureSpec,
                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
                 )
-                val measuredHeight = childAt.measuredHeight
+                val measuredHeight = childAt.layoutParams.height
 
                 // 找到所有循环中，高度最高的哪个
                 if (measuredHeight > height) {

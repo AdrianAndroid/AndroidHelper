@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.flannery.multilanguage.confict4.WrapHeightWebView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mWebView"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    tools:context=".confict4.WebViewFragment" />
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.flannery.multilanguage.confict4.WrapHeightWebView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mWebView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:context=".confict4.WebViewFragment" />
+</LinearLayout>
