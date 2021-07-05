@@ -89,7 +89,7 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
         // 调整contentView的高度为父容器高度， 使之填充布局，避免父容器滚动后出现空白
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val lp = contentView.layoutParams
-        lp.height = measuredHeight
+        lp.height = measuredHeight // NestedScrollLayout实际的高度
         contentView.layoutParams = lp
     }
 

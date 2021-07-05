@@ -1,23 +1,21 @@
 package com.flannery.multilanguage.confict4
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.webkit.WebView
-import android.widget.TableLayout
-import androidx.core.view.get
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.flannery.multilanguage.R
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 
 class Conflict4Activity : AppCompatActivity() {
+
+    val arrayListOf = arrayListOf("OverView", "Content")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conflict4)
@@ -29,8 +27,11 @@ class Conflict4Activity : AppCompatActivity() {
             WebViewFragment(),
             RecyclerViewFragment() // 点击事件，需要判断是否需要增加宽度
         )
-
-        viewPager.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
+        (viewPager as? WrapHeightViewPager)?.referencePosition(0)
+        viewPager.adapter = object : FragmentStatePagerAdapter(
+            supportFragmentManager,
+            BEHAVIOR_SET_USER_VISIBLE_HINT
+        ) {
             override fun getCount(): Int {
                 return list.size
             }
@@ -43,16 +44,10 @@ class Conflict4Activity : AppCompatActivity() {
         // initTab
         // https://blog.csdn.net/u010712703/article/details/77884399
         val mFirstTabLayout: TabLayout = findViewById(R.id.mFirstTabLayout)
-        arrayListOf("OverView", "Content").forEachIndexed { index: Int, str: String ->
-            mFirstTabLayout.addTab(mFirstTabLayout.newTab())
-            mFirstTabLayout.getTabAt(index)?.setText(str)
-        }
+        arrayListOf.forEach { _ -> mFirstTabLayout.addTab(mFirstTabLayout.newTab()) }
 
         val mSecondTabLayout: TabLayout = findViewById(R.id.mSecondTabLayout)
-        arrayListOf("OverView", "Content").forEachIndexed { index: Int, str: String ->
-            mSecondTabLayout.addTab(mSecondTabLayout.newTab())
-            mSecondTabLayout.getTabAt(index)?.setText(str)
-        }
+        arrayListOf.forEach { _ -> mSecondTabLayout.addTab(mSecondTabLayout.newTab()) }
 
         mFirstTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -98,6 +93,9 @@ class Conflict4Activity : AppCompatActivity() {
                 Log.e("TAG", "scrollY=$scrollY  visiable false")
             }
         })
+
+        arrayListOf.forEachIndexed { index, s -> mFirstTabLayout.getTabAt(index)?.text = s }
+        arrayListOf.forEachIndexed { index, s -> mSecondTabLayout.getTabAt(index)?.text = s }
 
     }
 

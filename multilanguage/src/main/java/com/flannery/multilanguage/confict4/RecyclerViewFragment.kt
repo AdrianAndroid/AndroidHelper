@@ -19,7 +19,7 @@ import com.flannery.multilanguage.R
  */
 class RecyclerViewFragment : Fragment() {
     var mRecyclerView: RecyclerView? = null
-    var itemCountNumber = 10
+    var itemCountNumber = 100
 
     override fun onCreateView(
         inflater: LayoutInflater,

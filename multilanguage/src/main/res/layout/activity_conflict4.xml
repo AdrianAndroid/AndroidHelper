@@ -27,16 +27,12 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/mFirstTabLayout"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                app:tabBackground="@android:color/holo_green_dark"
-                app:tabContentStart="5dp"
-                app:tabGravity="fill"
-                app:tabIndicatorColor="@android:color/holo_purple"
-                app:tabIndicatorHeight="6dp"
-                app:tabMode="scrollable"
-                app:tabSelectedTextColor="#ff00796b"
-                app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:tabTextColor="#f00" />
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="#22BE8C"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="#22BE8C"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabTextColor="#BBBBC3" />
 
             <com.flannery.multilanguage.confict4.WrapHeightViewPager
                 android:id="@+id/mViewPager"
@@ -54,17 +50,12 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/mSecondTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:contentDescription="停留的Tab"
+        android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:tabBackground="@android:color/holo_green_dark"
-        app:tabContentStart="5dp"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@android:color/holo_purple"
-        app:tabIndicatorHeight="6dp"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="#ff00796b"
-        app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:tabTextColor="#FFFFFF"
-        tools:visibility="visible" />
+        app:tabIndicatorColor="#22BE8C"
+        app:tabIndicatorFullWidth="false"
+        app:tabSelectedTextColor="#22BE8C"
+        app:tabMode="fixed"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="#BBBBC3" />
 </FrameLayout>

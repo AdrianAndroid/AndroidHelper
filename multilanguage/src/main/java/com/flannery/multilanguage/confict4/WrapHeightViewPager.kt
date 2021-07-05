@@ -15,8 +15,6 @@ class WrapHeightViewPager(context: Context, attrs: AttributeSet?) : ViewPager(co
 
     private val POSITION_DEFAULT = -1
     private var position = POSITION_DEFAULT
-    private var positionHeight = 0
-
 
     fun referencePosition(position: Int) {
         this.position = position
@@ -26,30 +24,59 @@ class WrapHeightViewPager(context: Context, attrs: AttributeSet?) : ViewPager(co
     // RecyclerView调用一次
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         var height = 0
         for (i in 0 until childCount) {
-            val childAt = getChildAt(i)
-            childAt.measure(
-                widthMeasureSpec,
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
-            )
-            val measuredHeight = childAt.measuredHeight
+            if (position == i) {
+                val childAt = getChildAt(i)
+                childAt.measure(
+                    widthMeasureSpec,
+                    MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
+                )
+                val measuredHeight = childAt.measuredHeight
 
-            if (this.position == i) {
-                positionHeight = measuredHeight //记录下此位置的高度
-                if (positionHeight > 0) {
-                    height = positionHeight
-                    break //跳出循环
+                // 找到所有循环中，高度最高的哪个
+                if (measuredHeight > height) {
+                    height = measuredHeight
                 }
             }
-            // 找到所有循环中，高度最高的哪个
-            if (measuredHeight > height) {
-                height = measuredHeight
-            }
-            if (BuildConfig.DEBUG) Log.e("TAG", "child----$i  currentHeight=$height")
         }
-        super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY))
+        if (height > 0) {
+            super.onMeasure(
+                widthMeasureSpec,
+                MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY)
+            )
+        } else {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        }
     }
+
+
+//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+//        var height = 0
+//        for (i in 0 until childCount) {
+//            val childAt = getChildAt(i)
+//            childAt.measure(
+//                widthMeasureSpec,
+//                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
+//            )
+//            val measuredHeight = childAt.measuredHeight
+//
+//            if (this.position == i) {
+//                positionHeight = measuredHeight //记录下此位置的高度
+//                if (positionHeight > 0) {
+//                    height = positionHeight
+//                    break //跳出循环
+//                }
+//            }
+//            // 找到所有循环中，高度最高的哪个
+//            if (measuredHeight > height) {
+//                height = measuredHeight
+//            }
+//            if (BuildConfig.DEBUG) Log.e("TAG", "child----$i  currentHeight=$height")
+//        }
+//        super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY))
+//    }
 
 }
