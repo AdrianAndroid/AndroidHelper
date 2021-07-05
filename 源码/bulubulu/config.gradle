@@ -1,5 +1,4 @@
 ext {
-    kotlin_version = '1.4.10'
     android = [
             compileSdkVersion: 29,
             targetSdkVersion : 29,

@@ -1,6 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.31"
     repositories {
         maven { url uri("/Users/flannery/Desktop/AndroidHelper/repo") } // maven
         maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' } // 在公司必须加这个

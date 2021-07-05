@@ -447,3 +447,6 @@ println(lstint.get())
 //include ':base'
 //include ':confictJD'
 include ':app_tablayout_usecase'
+include ':routerdemo'
+include ':router-annotations'
+include ':router-processor'
