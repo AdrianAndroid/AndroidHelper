@@ -36,7 +36,7 @@
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="#ff00796b"
                 app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:tabTextColor="#FFFFFF" />
+                app:tabTextColor="#f00" />
 
             <com.flannery.multilanguage.confict4.WrapHeightViewPager
                 android:id="@+id/mViewPager"

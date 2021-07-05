@@ -19,6 +19,7 @@ import com.flannery.multilanguage.R
  */
 class RecyclerViewFragment : Fragment() {
     var mRecyclerView: RecyclerView? = null
+    var itemCountNumber = 10
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +32,21 @@ class RecyclerViewFragment : Fragment() {
         mRecyclerView = inflate.findViewById<RecyclerView>(R.id.mRecyclerView)
         mRecyclerView?.layoutManager =
             LinearLayoutManager(inflate.context, LinearLayoutManager.VERTICAL, false)
+        mRecyclerView?.adapter = object : RecyclerView.Adapter<MyAdapter>() {
+            override fun getItemCount(): Int = itemCountNumber
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter =
+                MyAdapter(
+                    LayoutInflater.from(parent.context)
+                        .inflate(android.R.layout.simple_list_item_1, parent, false)
+                )
 
+            override fun onBindViewHolder(holder: MyAdapter, position: Int) {
+                val mTv = holder.itemView.findViewById<TextView>(android.R.id.text1)
+                mTv.setText("$position")
+                mTv.setTextColor(Color.BLACK)
+                mTv.setTextSize(10F)
+            }
+        }
         return inflate
     }
 
@@ -42,24 +57,7 @@ class RecyclerViewFragment : Fragment() {
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
-        if (isVisibleToUser) {
-            Log.e("TAG", "setUserVisibleHint=$isVisibleToUser")
-            if (mRecyclerView?.adapter != null) return
-            mRecyclerView?.adapter = object : RecyclerView.Adapter<MyAdapter>() {
-                override fun getItemCount(): Int = 1000
-                override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter =
-                    MyAdapter(
-                        LayoutInflater.from(parent.context)
-                            .inflate(android.R.layout.simple_list_item_1, parent, false)
-                    )
-
-                override fun onBindViewHolder(holder: MyAdapter, position: Int) {
-                    val mTv = holder.itemView.findViewById<TextView>(android.R.id.text1)
-                    mTv.setText("$position")
-                    mTv.setTextColor(Color.BLACK)
-                    mTv.setTextSize(10F)
-                }
-            }
-        }
+//        itemCountNumber = 100
+//        mRecyclerView?.adapter?.notifyDataSetChanged()
     }
 }

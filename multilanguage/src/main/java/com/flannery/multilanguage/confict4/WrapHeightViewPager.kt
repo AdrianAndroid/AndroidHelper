@@ -13,6 +13,18 @@ import com.flannery.multilanguage.BuildConfig
  */
 class WrapHeightViewPager(context: Context, attrs: AttributeSet?) : ViewPager(context, attrs) {
 
+    private val POSITION_DEFAULT = -1
+    private var position = POSITION_DEFAULT
+    private var positionHeight = 0
+
+
+    fun referencePosition(position: Int) {
+        this.position = position
+    }
+
+    // 创建的时候调用onMeasure一次
+    // RecyclerView调用一次
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         var height = 0
@@ -23,10 +35,18 @@ class WrapHeightViewPager(context: Context, attrs: AttributeSet?) : ViewPager(co
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
             )
             val measuredHeight = childAt.measuredHeight
+
+            if (this.position == i) {
+                positionHeight = measuredHeight //记录下此位置的高度
+                if (positionHeight > 0) {
+                    height = positionHeight
+                    break //跳出循环
+                }
+            }
+            // 找到所有循环中，高度最高的哪个
             if (measuredHeight > height) {
                 height = measuredHeight
             }
-
             if (BuildConfig.DEBUG) Log.e("TAG", "child----$i  currentHeight=$height")
         }
         super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY))

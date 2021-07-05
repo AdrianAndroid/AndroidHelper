@@ -5,6 +5,7 @@
       <module name="AndroidHelper.anrwatchdog" target="1.8" />
       <module name="AndroidHelper.app" target="1.8" />
       <module name="AndroidHelper.app2" target="1.8" />
+      <module name="AndroidHelper.app_tablayout_usecase" target="11" />
       <module name="AndroidHelper.base" target="11" />
       <module name="AndroidHelper.bigimage" target="1.8" />
       <module name="AndroidHelper.bitmap.app" target="1.8" />
