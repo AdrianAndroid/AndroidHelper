@@ -9,7 +9,6 @@
         android:id="@+id/mNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="50dp"
         tools:context=".confict4.Conflict4Activity">
 
         <LinearLayout
@@ -39,7 +38,6 @@
                 android:id="@+id/mViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0ff"
                 android:minHeight="500dp"
                 tools:layout_height="1000dp" />
 

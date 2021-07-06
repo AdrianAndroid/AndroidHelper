@@ -1,12 +1,14 @@
 package com.flannery.multilanguage.confict4
 
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.NestedScrollView
 import com.flannery.multilanguage.BuildConfig
+import com.flannery.utils.K
 
 /**
  * 适配RecyclerView滑动
@@ -22,6 +24,27 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
     private var contentView: View? = null //ViewPager
     private var alreadyMeasure = false
 //    private val mFlingHelper: FlingHelper = FlingHelper(context) //滑动距离计算
+
+    init {
+        if (BuildConfig.DEBUG) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                setOnScrollChangeListener(object : View.OnScrollChangeListener {
+                    override fun onScrollChange(
+                        v: View?,
+                        scrollX: Int,
+                        scrollY: Int,
+                        oldScrollX: Int,
+                        oldScrollY: Int
+                    ) {
+                        K.m(
+                            javaClass,
+                            "NestedScrollLayout setOnScrollChangeListener scrollX=$scrollX scrollY=$scrollY oldScrollX=$oldScrollX oldScrollY=$oldScrollY v=$v"
+                        )
+                    }
+                })
+            }
+        }
+    }
 
     override fun onFinishInflate() {
         super.onFinishInflate()
@@ -55,9 +78,28 @@ class NestedScrollLayout(context: Context, attrs: AttributeSet?) :
         Log.e("TAG", "onNestedPreScroll  $b  dy = $dy")
         // 向上滑动。若当前topview可见，需要将topview滑动至不见
         if (b) {
-            scrollBy(0, dy)
-            consumed[1] = dy
+            scrollBy(0, dy) // NestedScrollLayout滑动
+            consumed[1] = dy //消费了多少
         }
+    }
+
+
+    override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
+        super.onScrollChanged(l, t, oldl, oldt)
+        if (BuildConfig.DEBUG) K.m(javaClass, "onScrollChanged l=$l t=$t oldl=$oldl oldt=$oldt")
+    }
+
+    override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+        super.onLayout(changed, l, t, r, b)
+        if (BuildConfig.DEBUG) K.m(javaClass, "onLayout changed:$changed l=$l t=$t r=$r b=$b")
+    }
+
+    override fun onOverScrolled(scrollX: Int, scrollY: Int, clampedX: Boolean, clampedY: Boolean) {
+        super.onOverScrolled(scrollX, scrollY, clampedX, clampedY)
+        if (BuildConfig.DEBUG) K.m(
+            javaClass,
+            "onOverScrolled scrollX=$scrollY scrollY=$scrollY clampedX=$clampedX clampedY=$clampedY"
+        )
     }
 
 }
