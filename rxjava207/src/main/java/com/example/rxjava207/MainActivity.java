@@ -14,6 +14,7 @@ import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 "]" +
                 txt);
     }
+
     static Disposable disposable;
-    private void test3(){
+
+    private void test3() {
         Observable
                 .create(new ObservableOnSubscribe<String>() {
                     @Override
@@ -57,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         disposable = d;
-                       // mTextView.append("bind on subscribe \n");
+                        // mTextView.append("bind on subscribe \n");
                     }
 
                     @Override
                     public void onNext(@NonNull String s) {
-                       /// mTextView.append(s);
+                        /// mTextView.append(s);
                         //mTextView.append("\n");
                     }
 
@@ -78,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void test2(){
+    private void test2() {
         Observable.just("");
         Observable.fromArray("");
         Observable.just("", "");
@@ -87,10 +90,12 @@ public class MainActivity extends AppCompatActivity {
             public void subscribe(@NonNull ObservableEmitter<Object> e) throws Exception {
 
             }
+        }).filter(new Predicate<Object>() {
+            @Override
+            public boolean test(Object o) throws Exception {
+                return false;
+            }
         });
-    }
-
-    private void test2(){
     }
 
     private void test() {

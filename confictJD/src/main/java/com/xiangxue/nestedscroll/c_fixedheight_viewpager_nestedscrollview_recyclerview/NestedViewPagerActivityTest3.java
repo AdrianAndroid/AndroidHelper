@@ -27,7 +27,7 @@ public class NestedViewPagerActivityTest3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_nested_view_pager_test);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(this, getPageFragments());
-        binding.viewpagerView.setAdapter(pagerAdapter);
+        binding.viewpagerView.setAdapter(pagerAdapter);x
         final String[] labels = new String[]{"linear", "scroll", "recycler"};
         new TabLayoutMediator(binding.tablayout, binding.viewpagerView, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override

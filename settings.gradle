@@ -66,8 +66,8 @@ include ':leetcode'
 
 //include ':photoview'
 //include ':javalib'
-//include ':rxjava207'
-//include ':rxjava1'
+include ':rxjava207'
+include ':rxjava1'
 
 //include ':flowlayout'
 //include ':viewpagerdemo'

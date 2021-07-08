@@ -18,6 +18,8 @@
             <option value="$PROJECT_DIR$/router-gradle-plugin" />
             <option value="$PROJECT_DIR$/router-processor" />
             <option value="$PROJECT_DIR$/routerdemo" />
+            <option value="$PROJECT_DIR$/rxjava1" />
+            <option value="$PROJECT_DIR$/rxjava207" />
             <option value="$PROJECT_DIR$/utils" />
           </set>
         </option>

@@ -103,7 +103,8 @@
       <module name="AndroidHelper.router-gradle-plugin" target="11" />
       <module name="AndroidHelper.router-processor" target="11" />
       <module name="AndroidHelper.routerdemo" target="11" />
-      <module name="AndroidHelper.rxjava1" target="1.8" />
+      <module name="AndroidHelper.rxjava1" target="11" />
+      <module name="AndroidHelper.rxjava207" target="11" />
       <module name="AndroidHelper.startmodeup" target="11" />
       <module name="AndroidHelper.toolbar" target="1.8" />
       <module name="AndroidHelper.touchevent" target="1.8" />
