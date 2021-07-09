@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/flannery/Desktop/AndroidHelper/cpp/demo/hexoct2.cpp" "/Users/flannery/Desktop/AndroidHelper/cpp/demo/cmake-build-debug/CMakeFiles/demo.dir/hexoct2.cpp.o"
+  "/Users/flannery/Desktop/AndroidHelper/cpp/demo/limits.cpp" "/Users/flannery/Desktop/AndroidHelper/cpp/demo/cmake-build-debug/CMakeFiles/demo.dir/limits.cpp.o"
   "/Users/flannery/Desktop/AndroidHelper/cpp/demo/main.cpp" "/Users/flannery/Desktop/AndroidHelper/cpp/demo/cmake-build-debug/CMakeFiles/demo.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

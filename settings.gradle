@@ -275,9 +275,9 @@ import java.io.*
 def file2 = new File("./Student.template")
 def binding2 = ['name': 'Joe2', 'id': 1, 'subject': 'Physics2']
 def engine2 = new SimpleTemplateEngine()
-def template2 = engine2.createTemplate(file2)
-def writable2 = template2.make(binding2)
-println writable2
+//def template2 = engine2.createTemplate(file2)
+//def writable2 = template2.make(binding2)
+//println writable2
 
 println ">>>>>>>"
 import groovy.text.*
@@ -286,11 +286,11 @@ import java.io.*
 def file3 = new File("./Student.template")
 def binding3 = ['name': 'Joe3', 'id': 1, 'subject': 'Physics3']
 
-def engine3 = new SimpleTemplateEngine()
-def template3 = engine3.createTemplate(file3)
-def writable3 = template3.make(binding3)
+//def engine3 = new SimpleTemplateEngine()
+//def template3 = engine3.createTemplate(file3)
+//def writable3 = template3.make(binding3)
 
-println writable3
+//println writable3
 
 println ">>>>>>>"
 // StreamingTemplateEngine

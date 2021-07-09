@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/flannery/Desktop/AndroidHelper/cpp/demo/hexoct2.cpp">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/Users/flannery/Desktop/AndroidHelper/cpp/demo/hexoct2.h">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/Users/flannery/Desktop/AndroidHelper/cpp/demo/limits.cpp">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/Users/flannery/Desktop/AndroidHelper/cpp/demo/limits.h">
+			<Option target="demo"/>
+		</Unit>
 		<Unit filename="/Users/flannery/Desktop/AndroidHelper/cpp/demo/main.cpp">
 			<Option target="demo"/>
 		</Unit>

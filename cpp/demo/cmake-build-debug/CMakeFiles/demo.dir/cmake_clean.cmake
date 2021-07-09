@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/demo.dir/hexoct2.cpp.o"
+  "CMakeFiles/demo.dir/limits.cpp.o"
   "CMakeFiles/demo.dir/main.cpp.o"
   "demo"
   "demo.pdb"

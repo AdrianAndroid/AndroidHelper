@@ -46,4 +46,6 @@ dependencies {
     implementation project(':router-annotations')
 //    annotationProcessor project(':router-processor')
     kapt project(':router-processor')
+//    implementation "com.immoc.router:router-annotations:1.0.0"
+//    kap "com.immoc.router:router-processor:1.0.0"
 }

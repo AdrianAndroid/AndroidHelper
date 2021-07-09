@@ -143,6 +143,60 @@ demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
+hexoct2.o: hexoct2.cpp.o
+
+.PHONY : hexoct2.o
+
+# target to build an object file
+hexoct2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hexoct2.cpp.o
+.PHONY : hexoct2.cpp.o
+
+hexoct2.i: hexoct2.cpp.i
+
+.PHONY : hexoct2.i
+
+# target to preprocess a source file
+hexoct2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hexoct2.cpp.i
+.PHONY : hexoct2.cpp.i
+
+hexoct2.s: hexoct2.cpp.s
+
+.PHONY : hexoct2.s
+
+# target to generate assembly for a file
+hexoct2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hexoct2.cpp.s
+.PHONY : hexoct2.cpp.s
+
+limits.o: limits.cpp.o
+
+.PHONY : limits.o
+
+# target to build an object file
+limits.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/limits.cpp.o
+.PHONY : limits.cpp.o
+
+limits.i: limits.cpp.i
+
+.PHONY : limits.i
+
+# target to preprocess a source file
+limits.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/limits.cpp.i
+.PHONY : limits.cpp.i
+
+limits.s: limits.cpp.s
+
+.PHONY : limits.s
+
+# target to generate assembly for a file
+limits.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/limits.cpp.s
+.PHONY : limits.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +233,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... demo"
+	@echo "... hexoct2.o"
+	@echo "... hexoct2.i"
+	@echo "... hexoct2.s"
+	@echo "... limits.o"
+	@echo "... limits.i"
+	@echo "... limits.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

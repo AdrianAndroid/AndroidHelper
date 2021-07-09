@@ -11,22 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidHelper">
-        <activity android:name=".ExpandActivity">
+        <activity android:name=".WebpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".confict4.Conflict4Activity" />
-        <activity android:name=".confict5.Conflict5Activity">
-
+        <activity android:name=".ExpandActivity">
         </activity>
+        <activity android:name=".confict4.Conflict4Activity" />
+        <activity android:name=".confict5.Conflict5Activity"></activity>
         <activity android:name=".NestedScrollActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ConflictActivity" />
         <activity android:name=".ConflictActivity2" />
-        <activity android:name=".ConflictActivity3"></activity>
+        <activity android:name=".ConflictActivity3" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity" />
