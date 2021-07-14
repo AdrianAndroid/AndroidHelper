@@ -66,8 +66,8 @@ include ':leetcode'
 
 //include ':photoview'
 //include ':javalib'
-include ':rxjava207'
-include ':rxjava1'
+//include ':rxjava207'
+//include ':rxjava1'
 
 //include ':flowlayout'
 //include ':viewpagerdemo'
@@ -216,7 +216,7 @@ MyPlugin apply(Project)
 
 
 include ':router-gradle-plugin'
-//include ':jetpackdir:navigationdemo'
+include ':jetpackdir:navigationdemo'
 //include ':gradledemo:asmdemo'
 //include ':gradledemo:gradletest'
 include ':utils'
@@ -446,7 +446,14 @@ println(lstint.get())
 //include ':customviewdir:conflictjd'
 //include ':base'
 //include ':confictJD'
-include ':app_tablayout_usecase'
+//include ':app_tablayout_usecase'
 include ':routerdemo'
 include ':router-annotations'
 include ':router-processor'
+
+
+// 执行构建任务
+gradle.taskGraph.beforeTask { task -> //
+    println("[all-task] " + task.name)
+}
+//include ':textautosizing-example'
