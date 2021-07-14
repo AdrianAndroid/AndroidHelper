@@ -21,6 +21,11 @@ import 'package:flutter_helper/widgets/a019_animate_size.dart';
 import 'package:flutter_helper/widgets/a020_animate_switcher.dart';
 import 'package:flutter_helper/widgets/a021_appbar.dart';
 import 'package:flutter_helper/widgets/a023_buttons.dart';
+import 'package:flutter_helper/widgets/a024_backdropfilter.dart';
+import 'package:flutter_helper/widgets/a025_banner.dart';
+import 'package:flutter_helper/widgets/a026_baseline.dart';
+import 'package:flutter_helper/widgets/a027_border.dart';
+import 'package:flutter_helper/widgets/a028_bottomappbar.dart';
 
 void main() {
   //runApp(MyApp());
@@ -44,7 +49,12 @@ void main() {
   // runApp(AnimatedSizeApp());
   // runApp(AnimatedSwitcherApp());
   // runApp(AppbarApp());
-  runApp(ButtonsApp());
+  // runApp(ButtonsApp());
+  // runApp(BackdropFilterApp());
+  // runApp(BannerApp());
+  // runApp(BaselineApp());
+  // runApp(BorderApp());
+  runApp(BottomAppBarApp());
 }
 
 // class MyApp extends StatelessWidget {
