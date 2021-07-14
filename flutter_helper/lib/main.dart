@@ -6,6 +6,21 @@ import 'package:flutter_helper/widgets/a004_actionchip.dart';
 import 'package:flutter_helper/widgets/a005_alertdialog.dart';
 import 'package:flutter_helper/widgets/a006_align.dart';
 import 'package:flutter_helper/widgets/a007_aniatedbuilder.dart';
+import 'package:flutter_helper/widgets/a008_animated_container.dart';
+import 'package:flutter_helper/widgets/a009_animated_crossfade.dart';
+import 'package:flutter_helper/widgets/a010_animate_default_textstyle.dart';
+import 'package:flutter_helper/widgets/a011_animate_icon.dart';
+import 'package:flutter_helper/widgets/a012_animate_list.dart';
+import 'package:flutter_helper/widgets/a013_animate_modalbarrier.dart';
+import 'package:flutter_helper/widgets/a014_animate_opacity.dart';
+import 'package:flutter_helper/widgets/a015_animate_padding.dart';
+import 'package:flutter_helper/widgets/a016_animate_physicalmodel.dart';
+import 'package:flutter_helper/widgets/a017_animate_positioned.dart';
+import 'package:flutter_helper/widgets/a018_animate_positioned_directional.dart';
+import 'package:flutter_helper/widgets/a019_animate_size.dart';
+import 'package:flutter_helper/widgets/a020_animate_switcher.dart';
+import 'package:flutter_helper/widgets/a021_appbar.dart';
+import 'package:flutter_helper/widgets/a023_buttons.dart';
 
 void main() {
   //runApp(MyApp());
@@ -14,12 +29,27 @@ void main() {
   // runApp(ActionChipApp());
   // runApp(AlertDialogApp());
   // runApp(AlignApp());
-  runApp(AnimatedBuilderApp());
+  // runApp(AnimatedBuilderApp());
+  // runApp(AnimatedContainerApp());
+  // runApp(AnimatedCrossFadeApp());
+  // runApp(AnimatedDefaultTextStyleApp());
+  //runApp(AnimatedIconApp());
+  // runApp(AnimatedListApp());
+  // runApp(AnimatedModalBarrierApp());
+  // runApp(AnimatedOpacityApp());
+  // runApp(AnimatedPaddingApp());
+  // runApp(AnimatedPhysicalModelApp());
+  // runApp(AnimatedPositionedApp());
+  // runApp(AnimatedPositionedDirectionalApp());
+  // runApp(AnimatedSizeApp());
+  // runApp(AnimatedSwitcherApp());
+  // runApp(AppbarApp());
+  runApp(ButtonsApp());
 }
 
 // class MyApp extends StatelessWidget {
 //   @override
-//   Widget build(BuildContext context) {
+//   Widget build(BuildContext context) {å
 //     return MaterialApp(
 //       title: 'Flutter Demo',
 //       theme: ThemeData(
