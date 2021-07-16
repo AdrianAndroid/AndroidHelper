@@ -26,6 +26,54 @@ import 'package:flutter_helper/widgets/a025_banner.dart';
 import 'package:flutter_helper/widgets/a026_baseline.dart';
 import 'package:flutter_helper/widgets/a027_border.dart';
 import 'package:flutter_helper/widgets/a028_bottomappbar.dart';
+import 'package:flutter_helper/widgets/a029_bottomnavigationbar.dart';
+import 'package:flutter_helper/widgets/a031_builder.dart';
+import 'package:flutter_helper/widgets/a032_card.dart';
+import 'package:flutter_helper/widgets/a033_circleavator.dart';
+import 'package:flutter_helper/widgets/a034_cpertinoactionsheet.dart';
+import 'package:flutter_helper/widgets/a035_indicator.dart';
+import 'package:flutter_helper/widgets/a036_cupertinocontextmenu.dart';
+import 'package:flutter_helper/widgets/a037_cupertinodatepicker.dart';
+import 'package:flutter_helper/widgets/a038_cupertinofullscrendialogtransitionr.dart';
+import 'package:flutter_helper/widgets/a039_cupertinonavigationnar.dart';
+import 'package:flutter_helper/widgets/a040_cupertinopicker.dart';
+import 'package:flutter_helper/widgets/a041_scrollbar.dart';
+import 'package:flutter_helper/widgets/a042_slider.dart';
+import 'package:flutter_helper/widgets/a043_refreshindicator.dart';
+import 'package:flutter_helper/widgets/a044_switch.dart';
+import 'package:flutter_helper/widgets/a045_cupertinotab.dart';
+import 'package:flutter_helper/widgets/a046_textfield.dart';
+import 'package:flutter_helper/widgets/a047_cliprect.dart';
+import 'package:flutter_helper/widgets/a048_custommultichildlayout.dart';
+import 'package:flutter_helper/widgets/a050_custompaint.dart';
+import 'package:flutter_helper/widgets/a051_customscrollview.dart';
+import 'package:flutter_helper/widgets/a052_customsinglechildlayout.dart';
+import 'package:flutter_helper/widgets/a053_datatable.dart';
+import 'package:flutter_helper/widgets/a054_decoratedbox.dart';
+import 'package:flutter_helper/widgets/a055decoratedboxtransition.dart';
+import 'package:flutter_helper/widgets/a056_teststyle.dart';
+import 'package:flutter_helper/widgets/a057_directionly.dart';
+import 'package:flutter_helper/widgets/a058_widgets.dart';
+import 'package:flutter_helper/widgets/a059_draggablescrollableactuator.dart';
+import 'package:flutter_helper/widgets/a059_draggablescrollablesheet.dart';
+import 'package:flutter_helper/widgets/a060_dropdownbuttonfromfield.dart';
+import 'package:flutter_helper/widgets/a061_expansiontile.dart';
+import 'package:flutter_helper/widgets/a062_flexiable.dart';
+import 'package:flutter_helper/widgets/a063_fadetransition.dart';
+import 'package:flutter_helper/widgets/a064_dialog.dart';
+import 'package:flutter_helper/widgets/a065_wrap.dart';
+import 'package:flutter_helper/widgets/a066_fittedbox.dart';
+import 'package:flutter_helper/widgets/a067_flexible.dart';
+import 'package:flutter_helper/widgets/a068_flexiblespacebar.dart';
+import 'package:flutter_helper/widgets/a069_flow.dart';
+import 'package:flutter_helper/widgets/a070_textfield.dart';
+import 'package:flutter_helper/widgets/a071_futurebuilder.dart';
+import 'package:flutter_helper/widgets/a072_gesturedetector.dart';
+import 'package:flutter_helper/widgets/a073_hero.dart';
+import 'package:flutter_helper/widgets/a074_intrinsicheight.dart';
+import 'package:flutter_helper/widgets/a075_nestedscrollview.dart';
+import 'package:flutter_helper/widgets/a076_notificationlistener.dart';
+import 'package:flutter_helper/widgets/a077_pageview.dart';
 
 void main() {
   //runApp(MyApp());
@@ -54,103 +102,55 @@ void main() {
   // runApp(BannerApp());
   // runApp(BaselineApp());
   // runApp(BorderApp());
-  runApp(BottomAppBarApp());
+  // runApp(BottomAppBarApp());
+  // runApp(BottomNavigationBarApp());
+  // runApp(BuildApp());
+  // runApp(CardApp());
+  // runApp(CircleAvatorApp());
+  // runApp(CupertinoActionSheetApp());
+  // runApp(IndicatorApp());
+  // runApp(CupertinoContextMenuApp());
+  // runApp(CupertinoDatePickeruApp());
+  // runApp(CupertinoFullscreenDialogTransitionApp());
+  // runApp(CupertinoPageScaffoldApp());
+  // runApp(CupertinoPickerApp());
+  // runApp(ScrollbarApp());
+  // runApp(SliderApp());
+  // runApp(RefreshIndicatorApp());
+  // runApp(SwitchApp());
+  // runApp(CupertinoTabBarApp());
+  // runApp(TextFieldApp());
+  // runApp(ClipRectApp());
+  // runApp(CustomMultiChildLayoutApp());
+  // runApp(CustomPaintApp());
+  // runApp(CustomScrollViewApp());
+  // runApp(CustomSingleChildLayoutApp());
+  // runApp(DataTableApp());
+  // runApp(DecoratedBoxApp());
+  // runApp(DecoratedBoxTransitionApp());
+  // runApp(TextStyleApp());
+  // runApp(DirectionlyApp());
+  // runApp(Widgets2App());
+  // runApp(ScraaggableScrollableActuatorApp());
+  // runApp(DraggableScrollableSheetApp());
+  // runApp(DropdownButtonFromFieldApp());
+  // runApp(FlexiableApp());
+  // runApp(ExpansionTileApp());
+  // runApp(FadeTransitionApp());
+  // runApp(DialogsApp());
+  // runApp(WrapApp());
+  // runApp(FittedBoxApp());
+  // runApp(FlexibleApp());
+  // runApp(FlexibleSpaceBarApp());
+  // runApp(DemoFlowPopMenuApp());
+  // runApp(DemoFlowCircelApp());
+  // runApp(DemoFlowMenuApp());
+  // runApp(TextField222App());
+  // runApp(FutureBuilderApp());
+  // runApp(GestureDetectorApp());
+  // runApp(HeroApp());
+  // runApp(IntrinsicHeightApp());
+  // runApp(NestedScrollViewApp());
+  // runApp(NotificationListenerApp());
+  runApp(PageViewApp());
 }
-
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {å
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//         visualDensity: VisualDensity.adaptivePlatformDensity,
-//       ),
-//       home: DialogHomePage(title: 'Flutter Demo Home Page'),
-//     );
-//   }
-// }
-//
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key key, this.title}) : super(key: key);
-//
-//   final String title;
-//
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-//
-// class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
-//
-//   void _incrementCounter() {
-//     setState(() {
-//       showSimpleDialog();
-//       _counter++;
-//     });
-//   }
-//
-//   // 显示第一个Dialog
-//   void showSimpleDialog() {
-//     showDialog(
-//         context: context,
-//         barrierDismissible: false,
-//         builder: (BuildContext context) {
-//           return new AlertDialog(
-//             title: Text("标题"),
-//             //可滑动
-//             content: SingleChildScrollView(
-//               child: ListBody(
-//                 children: [
-//                   Text("内容1"),
-//                   Text("内容2"),
-//                   Text("内容1"),
-//                   Text("内容2"),
-//                   Text("内容2"),
-//                 ],
-//               ),
-//             ),
-//             actions: [
-//               FlatButton(
-//                   onPressed: () {
-//                     Navigator.of(context).pop();
-//                   },
-//                   child: Text("确定")),
-//               FlatButton(
-//                   onPressed: () {
-//                     Navigator.of(context).pop();
-//                   },
-//                   child: Text("取消"))
-//             ],
-//           );
-//         });
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.headline4,
-//             ),
-//           ],
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: Icon(Icons.add),
-//       ), // This trailing comma makes auto-formatting nicer for build methods.
-//     );
-//   }
-// }
