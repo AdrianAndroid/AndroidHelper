@@ -23,6 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # https://github.com/a14n/dart-decimal
+  decimal: ">=1.0.0 <3.0.0"
+  # https://github.com/dart-lang/crypto
+  crypto: ">=3.0.0 <5.0.0"
+  # https://github.com/dart-lang/convert
+  convert: ">=3.0.0 <5.0.0"
 
 
   # The following adds the Cupertino Icons font to your application.

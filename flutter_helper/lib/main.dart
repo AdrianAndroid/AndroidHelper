@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_helper/utils/util_log.dart';
 import 'package:flutter_helper/widgets/a001_about_dialog.dart';
 import 'package:flutter_helper/widgets/a002_about_list_tile.dart';
 import 'package:flutter_helper/widgets/a003_absorbpointer.dart';
@@ -152,5 +153,139 @@ void main() {
   // runApp(IntrinsicHeightApp());
   // runApp(NestedScrollViewApp());
   // runApp(NotificationListenerApp());
-  runApp(PageViewApp());
+  // runApp(PageViewApp());
+
+  LogUtil.init(isDebug: true);
+
+  runApp(_HomeApp());
+}
+
+class _HomeApp extends StatelessWidget {
+  var list = [
+    AboutListTileApp(),
+    AbsorbPointerApp(),
+    ActionChipApp(),
+    AlertDialogApp(),
+    AlignApp(),
+    AnimatedBuilderApp(),
+    AnimatedContainerApp(),
+    AnimatedCrossFadeApp(),
+    AnimatedDefaultTextStyleApp(),
+    AnimatedIconApp(),
+    AnimatedListApp(),
+    AnimatedModalBarrierApp(),
+    AnimatedOpacityApp(),
+    AnimatedPaddingApp(),
+    AnimatedPhysicalModelApp(),
+    AnimatedPositionedApp(),
+    AnimatedPositionedDirectionalApp(),
+    AnimatedSizeApp(),
+    AnimatedSwitcherApp(),
+    AppbarApp(),
+    ButtonsApp(),
+    BackdropFilterApp(),
+    BannerApp(),
+    BaselineApp(),
+    BorderApp(),
+    BottomAppBarApp(),
+    BottomNavigationBarApp(),
+    BuildApp(),
+    CardApp(),
+    CircleAvatorApp(),
+    CupertinoActionSheetApp(),
+    IndicatorApp(),
+    CupertinoContextMenuApp(),
+    CupertinoDatePickeruApp(),
+    CupertinoFullscreenDialogTransitionApp(),
+    CupertinoPageScaffoldApp(),
+    CupertinoPickerApp(),
+    ScrollbarApp(),
+    SliderApp(),
+    RefreshIndicatorApp(),
+    SwitchApp(),
+    CupertinoTabBarApp(),
+    TextFieldApp(),
+    ClipRectApp(),
+    CustomMultiChildLayoutApp(),
+    CustomPaintApp(),
+    CustomScrollViewApp(),
+    CustomSingleChildLayoutApp(),
+    DataTableApp(),
+    DecoratedBoxApp(),
+    DecoratedBoxTransitionApp(),
+    TextStyleApp(),
+    DirectionlyApp(),
+    Widgets2App(),
+    ScraaggableScrollableActuatorApp(),
+    DraggableScrollableSheetApp(),
+    DropdownButtonFromFieldApp(),
+    FlexiableApp(),
+    ExpansionTileApp(),
+    FadeTransitionApp(),
+    DialogsApp(),
+    WrapApp(),
+    FittedBoxApp(),
+    FlexibleApp(),
+    FlexibleSpaceBarApp(),
+    DemoFlowPopMenuApp(),
+    DemoFlowCircelApp(),
+    DemoFlowMenuApp(),
+    TextField222App(),
+    FutureBuilderApp(),
+    GestureDetectorApp(),
+    HeroApp(),
+    IntrinsicHeightApp(),
+    NestedScrollViewApp(),
+    NotificationListenerApp(),
+    PageViewApp()
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Flutter DEMO APP",
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Flutter"),
+        ),
+        body: ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            var name = list[index].toStringShort();
+            // return Text('$name');
+            // return Center(child: Text('$name'));
+            return SizedBox(
+              height: 30,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(right: 10, bottom: 2),
+                    child: ElevatedButton(
+                      child: Text('点击'),
+                      onPressed: () {
+                        var app = list[index];
+                        LogUtil.d(app);
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return app;
+                        }));
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('$name')
+                ],
+              ),
+            );
+          },
+          itemCount: list.length,
+        ),
+      ),
+    );
+  }
 }
