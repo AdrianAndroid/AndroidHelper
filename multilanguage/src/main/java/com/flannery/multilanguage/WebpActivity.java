@@ -1,6 +1,7 @@
 package com.flannery.multilanguage;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ResourceManagerInternal;
 
 import android.os.Bundle;
 import android.util.Log;
