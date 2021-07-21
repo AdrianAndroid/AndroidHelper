@@ -162,14 +162,9 @@ void writeXmlToFile(File file, JSONObject jo) {
     bufferedWriter.writeLine("</resources>")
     bufferedWriter.flush()
     bufferedWriter.close()
-
-//    <?xml version="1.0" encoding="utf-8"?>
-//            <resources>
-//            <string name="test_str">test_str</string>
-//    </resources>
 }
 
-Boolean check_validate(String str) {
+static Boolean check_validate(String str) {
     for (i in 0..<str.length()) {
         int c = str.charAt(i)
         if(i == 0 && !Character.isLowerCase(c)) { //只能为小写字母
