@@ -1,0 +1,122 @@
+import org.json.JSONObject
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id "de.undercouch.download"
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+task downloadEfox() {
+    def projectPath = "Teachee___2_3_0" // 项目
+    def valuesDir = [
+            "values"   : "en",
+            "values-ko": "ko",
+            //"values-zh" : "zh",
+    ]
+    def listJsonObject = [] //把所有的字符串都下载下来
+
+    File buildTmpValue = new File(buildDir, "tmp${File.separator}values") // 先保存到临时目录
+    buildTmpValue.deleteOnExit()
+    buildTmpValue.mkdirs()
+
+
+    valuesDir.forEach({ value, path ->
+        def pathJson = "${path}.json"
+        def url_path = "http://multi-lang.duowan.com/multiLangBig/Teachee/${projectPath}/${pathJson}"
+
+        // 读取字符串
+        JSONObject jo = new JSONObject(readStringFromUrl(url_path))
+        JSONObject jo_data = jo.optJSONObject("data")
+        listJsonObject.add(jo_data) // 保存所有的jsonObject， 要有过滤功能
+    })
+
+
+//    valuesDir.forEach({ value, path ->
+//        def pathJson = "${path}.json"
+//        download {
+//            src "http://multi-lang.duowan.com/multiLangBig/Teachee/${projectPath}/${pathJson}"
+//            dest buildTmpValue.absolutePath
+//            overwrite false
+//        }
+//
+//        // 读取字符串
+//        JSONObject jo = new JSONObject(readStringFromFile(new File(buildTmpValue, pathJson)))
+//        JSONObject jo_data = jo.optJSONObject("data")
+//        listJsonObject.add(jo_data) // 保存所有的jsonObject， 要有过滤功能
+//    })
+
+    //
+}
+
+// 从网络读取内容
+String readStringFromUrl(String url_path) {
+    //https://blog.csdn.net/zhangmiao301/article/details/80839676
+    URL url = new URL(url_path)
+    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection()
+    httpURLConnection.setConnectTimeout(5000)
+    httpURLConnection.setRequestMethod("GET")
+    httpURLConnection.connect()
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()))
+    String line = null
+    StringBuffer stringBuffer = new StringBuffer()
+    String json = "";
+    while ((json = bufferedReader.readLine()) != null) {
+        stringBuffer.append(json);
+    }
+    String rsp = new String(stringBuffer.toString().getBytes(), "UTF-8")
+    bufferedReader.close()
+    httpURLConnection.disconnect()
+    print("---->$rsp")
+    return rsp
+}
+
+//String readStringFromFile(jsonFile) {
+//    //File jsonFile = new File(buildTmpValue, pathJson)
+//    FileInputStream fis = new FileInputStream(jsonFile)
+//    byte[] bytesArray = new byte[jsonFile.size()];
+//    fis.read(bytesArray)
+//    String str = new String(bytesArray) // {"code":0, "msg":"", "data":{}}
+//    print("\n$str")
+//    return str
+//}
+

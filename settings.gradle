@@ -457,3 +457,5 @@ gradle.taskGraph.beforeTask { task -> //
     println("[all-task] " + task.name)
 }
 //include ':textautosizing-example'
+include ':gradledemo:gradledownload'
+include ':gradledemo:gradledownload-library'

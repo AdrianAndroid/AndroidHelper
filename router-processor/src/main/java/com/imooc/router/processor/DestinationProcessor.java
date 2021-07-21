@@ -9,6 +9,7 @@ import com.imooc.router.annotations.Destination;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Writer;
 import java.util.Collections;
 import java.util.Set;
@@ -19,6 +20,7 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.JavaFileObject;
+import javax.tools.StandardLocation;
 
 /**
  * Time:2021/7/5 20:42
@@ -132,6 +134,20 @@ public class DestinationProcessor extends AbstractProcessor {
             writer.close();
         } catch (Exception e) {
             throw new RuntimeException("Error while create file", e);
+        }
+
+        // 想创建一个资源文件
+        try {
+            System.out.println("[[[创建一个资源文件]]]");
+            System.out.println(processingEnv.getLocale().getCountry());
+            JavaFileObject source = processingEnv.getFiler().createSourceFile("kkkkk.string");
+//            Writer writer = source.openWriter();
+//            writer.write("xxxxxxxxxxxx111111");
+//            writer.flush();
+//            writer.close();
+//            processingEnv.getFiler().getResource(StandardLocation.SOURCE_PATH, "", "config.")
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         // 写入JSON到本地文件中

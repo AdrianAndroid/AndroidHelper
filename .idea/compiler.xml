@@ -55,6 +55,8 @@
       <module name="AndroidHelper.fragmentations.fragmentation" target="1.8" />
       <module name="AndroidHelper.fragmentations.fragmentation_core" target="1.8" />
       <module name="AndroidHelper.fragmentations.fragmentation_swipeback" target="1.8" />
+      <module name="AndroidHelper.gradledemo.gradledownload" target="11" />
+      <module name="AndroidHelper.gradledemo.gradledownload-library" target="11" />
       <module name="AndroidHelper.gradledemo.gradletest" target="11" />
       <module name="AndroidHelper.gradledemo.routerdemo" target="11" />
       <module name="AndroidHelper.gradletest" target="11" />
