@@ -48,12 +48,21 @@ dependencies {
 
 task downloadEfox() {
     def projectPath = "Teachee___2_3_0" // 项目
+    def key_values = "values"
+    def key_values_ko = "values-ko"
+    //
     def valuesDir = [
-            "values"   : "en",
-            "values-ko": "ko",
+            "$key_values"   : "en",
+            "$key_values_ko": "ko",
             //"values-zh" : "zh",
     ]
-    def listJsonObject = [] //把所有的字符串都下载下来
+    // 每个文件夹存放所有的key
+    def listJsonObject = [
+            "$key_values"   : new JSONObject(),
+            "$key_values_ko": new JSONObject()
+    ] //把所有的字符串都下载下来
+    print("\n $listJsonObject")
+
 
     File buildTmpValue = new File(buildDir, "tmp${File.separator}values") // 先保存到临时目录
     buildTmpValue.deleteOnExit()
@@ -67,25 +76,50 @@ task downloadEfox() {
         // 读取字符串
         JSONObject jo = new JSONObject(readStringFromUrl(url_path))
         JSONObject jo_data = jo.optJSONObject("data")
-        listJsonObject.add(jo_data) // 保存所有的jsonObject， 要有过滤功能
+        listJsonObject.put(value, jo_data) // 保存所有的jsonObject， 要有过滤功能
     })
 
+    print("\n $listJsonObject")
 
-//    valuesDir.forEach({ value, path ->
-//        def pathJson = "${path}.json"
-//        download {
-//            src "http://multi-lang.duowan.com/multiLangBig/Teachee/${projectPath}/${pathJson}"
-//            dest buildTmpValue.absolutePath
-//            overwrite false
-//        }
-//
-//        // 读取字符串
-//        JSONObject jo = new JSONObject(readStringFromFile(new File(buildTmpValue, pathJson)))
-//        JSONObject jo_data = jo.optJSONObject("data")
-//        listJsonObject.add(jo_data) // 保存所有的jsonObject， 要有过滤功能
-//    })
+    // 以第一个为准， 读取文件
+    if (!listJsonObject.isEmpty()) {
+        def fjo = listJsonObject.get("$key_values")
+        assert fjo instanceof JSONObject
 
-    //
+        int count = fjo.length()
+        // 先判断是否等长
+        listJsonObject.forEach({ key, jo ->
+            assert count == jo.length()
+        })
+        // 直接查看是否所有的key都相同,因为已经判断了length
+        Iterator iter = fjo.keys()
+        while (iter.hasNext()) { // 遍历所有的key
+            def key = iter.next()
+            print("\n key = $key")
+            listJsonObject.forEach({ _, JSONObject jo ->
+                assert jo.has(key) // 不包含，直接崩溃，gradle时间太长
+            })
+        }
+
+        // res/value文件夹
+        def res_value = new StringBuilder()
+                .append(getProjectDir().absolutePath)
+                .append(File.separator).append("src")
+                .append(File.separator).append("main")
+                .append(File.separator).append("res")
+                .append(File.separator).toString()
+        print("\nres_value = $res_value")
+
+        // 写入新文件
+        listJsonObject.forEach({ key, JSONObject jo ->
+            // 检查目录是否存在
+            File file = new File(res_value, key)
+            if (!file.exists()) file.mkdirs()
+            // 删除原先生成的commonstring.xml， 这个不进行版本控制
+            // 找到File
+            writeXmlToFile(new File(file, "commonstring.xml"), jo) // 统一文件
+        })
+    }
 }
 
 // 从网络读取内容
@@ -97,7 +131,7 @@ String readStringFromUrl(String url_path) {
     httpURLConnection.setRequestMethod("GET")
     httpURLConnection.connect()
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()))
-    String line = null
+//    String line = null
     StringBuffer stringBuffer = new StringBuffer()
     String json = "";
     while ((json = bufferedReader.readLine()) != null) {
@@ -106,17 +140,55 @@ String readStringFromUrl(String url_path) {
     String rsp = new String(stringBuffer.toString().getBytes(), "UTF-8")
     bufferedReader.close()
     httpURLConnection.disconnect()
-    print("---->$rsp")
+    print("\n---->$rsp")
     return rsp
 }
 
-//String readStringFromFile(jsonFile) {
-//    //File jsonFile = new File(buildTmpValue, pathJson)
-//    FileInputStream fis = new FileInputStream(jsonFile)
-//    byte[] bytesArray = new byte[jsonFile.size()];
-//    fis.read(bytesArray)
-//    String str = new String(bytesArray) // {"code":0, "msg":"", "data":{}}
-//    print("\n$str")
-//    return str
-//}
+void writeXmlToFile(File file, JSONObject jo) {
+    //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()))
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, false)))
+    bufferedWriter.writeLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+    bufferedWriter.writeLine("<resources>")
+    // 所有的内容
+    def key = jo.keys()
+    while (key.hasNext()) {
+        def k = key.next()
+        if (check_validate(k)) {
+            bufferedWriter.writeLine(generatXmlStringitem(k, jo.getString(k)))
+        } else { //不符合要求
+            print("\n 不符合要求 ：$k ")
+        }
+    }
+    bufferedWriter.writeLine("</resources>")
+    bufferedWriter.flush()
+    bufferedWriter.close()
 
+//    <?xml version="1.0" encoding="utf-8"?>
+//            <resources>
+//            <string name="test_str">test_str</string>
+//    </resources>
+}
+
+Boolean check_validate(String str) {
+    for (i in 0..<str.length()) {
+        int c = str.charAt(i)
+        if(i == 0 && !Character.isLowerCase(c)) { //只能为小写字母
+            return false
+        } else if(!(Character.isLowerCase(c) || Character.isDigit(c) || '_' == c)){
+            return false
+        }
+    }
+    return true
+}
+
+String generatXmlStringitem(String key, String value) {
+    if (key == null || key.isEmpty()) {
+        throw IllegalArgumentException("key 不能为空！！！")
+    }
+    if (value == null || value.isEmpty()) {
+        throw new IllegalArgumentException("value 不能为空！！！")
+    }
+    def str = "        <string name=\"${key}\">${value}</string>"
+    print("\n $str")
+    return str
+}
