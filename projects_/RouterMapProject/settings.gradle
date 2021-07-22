@@ -1,0 +1,5 @@
+rootProject.name = "RouterMapProject"
+include ':app'
+include ':router-runtime'
+include ':router-annotations'
+include ':router-processor'

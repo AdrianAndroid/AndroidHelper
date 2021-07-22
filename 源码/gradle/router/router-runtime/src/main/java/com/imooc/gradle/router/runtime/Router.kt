@@ -8,7 +8,6 @@ import android.util.Log
 
 object Router {
 
-    private const val TAG = "RouterTAG"
 
     // 编译期间生成的总映射表
     private const val GENERATED_MAPPING =
