@@ -1,2 +1,0 @@
-com/imooc/gradle/router/runtime/BuildConfig.java
- com.imooc.gradle.router.runtime.BuildConfig
