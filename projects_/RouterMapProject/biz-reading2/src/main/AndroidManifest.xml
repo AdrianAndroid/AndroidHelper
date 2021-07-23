@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.joyy.biz_reading2">
+
+    <application>
+        <activity android:name=".ReadingActivity"></activity>
+    </application>
+
+</manifest>

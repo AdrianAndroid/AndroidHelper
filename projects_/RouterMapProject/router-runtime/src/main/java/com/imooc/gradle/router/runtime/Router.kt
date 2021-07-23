@@ -6,6 +6,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import java.lang.IllegalArgumentException
 import java.lang.StringBuilder
 
 object Router {
@@ -36,6 +38,18 @@ object Router {
         } catch (e: Throwable) {
             Log.e(TAG, "init: error while init router : $e")
         }
+    }
+
+    // url Destination上的路由（完整字符串）
+    fun fullPathFromMapping(url: String): String? {
+        return mapping[url]
+    }
+
+    fun instanceFragment(url: String): Fragment {
+        val fullPath = fullPathFromMapping(url)
+        val fragment = Class.forName(fullPath!!) // Fragment应该在开发阶段就不能出错
+        val newInstance = fragment.getDeclaredConstructor().newInstance()
+        return if (newInstance is Fragment) newInstance else throw IllegalArgumentException("url=$url 不能转化成Fragment哟")
     }
 
     fun go(context: Context, url: String) {

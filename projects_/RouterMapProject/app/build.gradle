@@ -12,9 +12,15 @@ router {
     wikiDir getRootDir().absolutePath
 }
 
+def getRoutePathDir() {
+    return new File(getRootDir(), "src/main/java/com/imooc/router").absolutePath
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+
+//    println "getRootDir().absolutePath = ${getProjectDir()}"
 
     defaultConfig {
         applicationId "com.joyy.routermapproject"
@@ -61,4 +67,5 @@ dependencies {
     kapt project(':router-processor')
     implementation project(':router-runtime')
     implementation project(':router-annotations')
+    implementation project(':biz-reading2')
 }

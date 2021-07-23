@@ -3,7 +3,6 @@ package com.imooc.router.gradle
 import com.android.build.api.transform.Transform
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.AppPlugin
-import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -18,33 +17,42 @@ class RouterPlugin implements Plugin<Project> {
 
     // 实现apply方法，注入插件的逻辑
     void apply(Project project) {
+        log("apply(Project project) --> ${project}")
 
         // 注册 Transform
         if (project.plugins.hasPlugin(AppPlugin)) {
             AppExtension appExtension = project.extensions.getByType(AppExtension)
             Transform transform = new RouterMappingTransform()
             appExtension.registerTransform(transform)
+        } else {
+            log("nnonononononono  project.plugins.hasPlugin(AppPlugin)")
         }
 
         // 1. 自动帮助用户传递路径参数到注解处理器中
         if (project.extensions.findByName("kapt") != null) {
+            log("project.extensions.findByName(kapt) 不等于空")
             project.extensions.findByName("kapt").arguments {
                 arg("root_project_dir", project.rootProject.projectDir.absolutePath)
+                arg("module_name", project.name)
             }
+        } else {
+            log("project.extensions.findByName(kapt) 等于空")
         }
+
+
+        new File(project.rootProject.projectDir, "router_mapping").deleteDir()
 
         // 2. 实现旧的构建产物的自动清理
-        project.clean.doFirst {
-
-            // 删除 上一次构建生成的 router_mapping目录
-            File routerMappingDir =
-                    new File(project.rootProject.projectDir, "router_mapping")
-
-            if (routerMappingDir.exists()) {
-                routerMappingDir.deleteDir()
-            }
-
-        }
+//        project.clean.doFirst {
+//            log("project.clean.doFirst")
+//            // 删除 上一次构建生成的 router_mapping目录
+//            File routerMappingDir = new File(project.rootProject.projectDir, "router_mapping")
+//
+//            if (routerMappingDir.exists()) {
+//                routerMappingDir.deleteOnExit()
+//            }
+//
+//        }
 
         if (!project.plugins.hasPlugin(AppPlugin)) {
             return
@@ -55,79 +63,38 @@ class RouterPlugin implements Plugin<Project> {
         project.getExtensions().create("router", RouterExtension)
 
         project.afterEvaluate {
-
-            RouterExtension extension = project["router"]
-
+            RouterExtension extension = project["router"] //DSL 从gradle声明
             println("用户设置的WIKI路径为 : ${extension.wikiDir}")
-
 
             // 3. 在javac任务 (compileDebugJavaWithJavac) 后，汇总生成文档
             project.tasks.findAll { task ->
-                task.name.startsWith('compile') &&
-                        task.name.endsWith('JavaWithJavac')
+                task.name.startsWith('compile') && task.name.endsWith('JavaWithJavac')
             }.each { task ->
-
                 task.doLast {
-
-                    File routerMappingDir =
-                            new File(project.rootProject.projectDir,
-                                    "router_mapping")
-
+                    File routerMappingDir = new File(project.rootProject.projectDir, "router_mapping")
                     if (!routerMappingDir.exists()) {
                         return
                     }
-
                     File[] allChildFiles = routerMappingDir.listFiles()
-
                     if (allChildFiles.length < 1) {
                         return
                     }
-
                     StringBuilder markdownBuilder = new StringBuilder()
-
                     markdownBuilder.append("# 页面文档\n\n")
-
-
                     allChildFiles.each { child ->
                         log(child.name)
+                        // 读取到了json文件, 可能有好几个
                         if (child.name.endsWith(".json")) {
 
                             String str = new String(com.android.dex.util.FileUtils.readFile(child), "UTF-8")
                             log(str)
-//                            [{"url":"router://FourActivity","description":"FourActivity","realPath":"com.joyy.routermapproject.FourActivity"},{"url":"router://MainActivity","description":"MainActivity","realPath":"com.joyy.routermapproject.MainActivity"},{"url":"router://ThirdActivity","description":"ThirdActivity","realPath":"com.joyy.routermapproject.ThirdActivity"},{"url":"router://FiveActivity","description":"FiveActivity","realPath":"com.joyy.routermapproject.FiveActivity"},{"url":"router://SecondActivity","description":"SecondActivity","realPath":"com.joyy.routermapproject.SecondActivity"}]
-//                            JsonArray ja = new JsonArray(str)
-//                            ja.forEach(
-//                                    {
-//                                        if (it instanceof JSONObject) {
-//                                            log("it instanceof JSONObject")
-//                                        }
-//                                    }
-//                            )
-                            List<JsonRootBean> bean = new Gson().fromJson(str, new TypeToken<List<JsonRootBean>>() {}
-                                    .getType())
+                            List<JsonRootBean> bean = new Gson().fromJson(str, JsonRootBean.getType())
                             log(bean.toString())
                             bean.each {
                                 markdownBuilder.append("## ${it.description} \n")
                                 markdownBuilder.append("- url: ${it.url} \n")
                                 markdownBuilder.append("- realPath: ${it.realPath} \n\n")
                             }
-
-//                            JsonSlurper jsonSlurper = new JsonSlurper()
-//                            def content = jsonSlurper.parse(child)
-
-//                            content.each { innerContent ->
-//
-//                                def url = innerContent['url']
-//                                def description = innerContent['description']
-//                                def realPath = innerContent['realPath']
-//
-//                                markdownBuilder.append("## $description \n")
-//                                markdownBuilder.append("- url: $url \n")
-//                                markdownBuilder.append("- realPath: $realPath \n\n")
-//
-//                            }
-
-
                         }
 
                     }
@@ -141,7 +108,6 @@ class RouterPlugin implements Plugin<Project> {
                     if (wikiFile.exists()) {
                         wikiFile.delete()
                     }
-
 
                     wikiFile.write(markdownBuilder.toString())
 

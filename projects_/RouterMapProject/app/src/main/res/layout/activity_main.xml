@@ -8,6 +8,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btns"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -20,6 +28,46 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
 
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/goReadFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ReadingFragment"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/goReadActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ReadingActivity"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
         <TextView
             android:id="@+id/go1"
             android:layout_width="wrap_content"
@@ -30,6 +78,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <View
             android:layout_width="match_parent"
@@ -47,6 +96,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -62,6 +112,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <View
             android:layout_width="match_parent"
@@ -79,6 +130,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -94,6 +146,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <View
             android:layout_width="match_parent"
@@ -111,6 +164,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -127,11 +181,11 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/black" />
-
 
         <TextView
             android:id="@+id/f4"
@@ -144,26 +198,11 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/black" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/f5"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="FiveFragment"-->
-<!--            android:textSize="20dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintRight_toRightOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--        <View-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="2dp"-->
-<!--            android:background="@color/black" />-->
 
         <TextView
             android:id="@+id/f6"
@@ -197,16 +236,7 @@
             android:layout_height="2dp"
             android:background="@color/black" />
 
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <View
-        android:layout_width="2dp"
-        android:layout_height="match_parent"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/btns"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragments"

@@ -13,6 +13,10 @@ import java.util.zip.ZipEntry
 
 class RouterMappingTransform extends Transform {
 
+    void log(String msg) {
+        println "[RouterMappingTransform] $msg"
+    }
+
     /**
      * 当前 Transform 的名称
      * @return
@@ -54,9 +58,7 @@ class RouterMappingTransform extends Transform {
     /**
      * 所有的class收集好以后，会被打包传入此方法
      * @param transformInvocation
-     * @throws TransformException
-     * @throws InterruptedException
-     * @throws IOException
+     * @throws TransformException* @throws InterruptedException* @throws IOException
      */
     @Override
     void transform(TransformInvocation transformInvocation)
@@ -72,6 +74,7 @@ class RouterMappingTransform extends Transform {
 
             // 把 文件夹 类型的输入，拷贝到目标目录
             it.directoryInputs.each { directoryInput ->
+                log("文件夹 $directoryInput")
                 def destDir = transformInvocation.outputProvider
                         .getContentLocation(
                                 directoryInput.name,
@@ -84,6 +87,7 @@ class RouterMappingTransform extends Transform {
 
             // 把 JAR 类型的输入，拷贝到目标目录
             it.jarInputs.each { jarInput ->
+                log("jar文件 $jarInput")
                 def dest = transformInvocation.outputProvider
                         .getContentLocation(
                                 jarInput.name,
@@ -94,8 +98,7 @@ class RouterMappingTransform extends Transform {
             }
         }
 
-        println("${getName()} all mapping class name = "
-                + collector.mappingClassName)
+        log("${getName()} all mapping class name = " + collector.mappingClassName)
 
         File mappingJarFile = transformInvocation.outputProvider.
                 getContentLocation(
@@ -117,11 +120,9 @@ class RouterMappingTransform extends Transform {
         // 将生成的字节码，写入本地文件
         FileOutputStream fos = new FileOutputStream(mappingJarFile)
         JarOutputStream jarOutputStream = new JarOutputStream(fos)
-        ZipEntry zipEntry =
-                new ZipEntry(RouterMappingByteCodeBuilder.CLASS_NAME + ".class")
+        ZipEntry zipEntry = new ZipEntry(RouterMappingByteCodeBuilder.CLASS_NAME + ".class")
         jarOutputStream.putNextEntry(zipEntry)
-        jarOutputStream.write(
-                RouterMappingByteCodeBuilder.get(collector.mappingClassName))
+        jarOutputStream.write(RouterMappingByteCodeBuilder.get(collector.mappingClassName))
         jarOutputStream.closeEntry()
         jarOutputStream.close()
         fos.close()

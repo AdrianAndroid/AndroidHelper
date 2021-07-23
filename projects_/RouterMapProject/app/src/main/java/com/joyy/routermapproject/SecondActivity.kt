@@ -1,14 +1,11 @@
 package com.joyy.routermapproject
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.imooc.gradle.router.runtime.Router
 import com.imooc.router.annotations.Destination
-import com.imooc.router.mapping.RouterPath
 import java.lang.reflect.Field
-import java.lang.reflect.Modifier
 
 @Destination(
         url = "router://SecondActivity",
@@ -25,11 +22,11 @@ class SecondActivity : AppCompatActivity() {
         }
 
 
-        getAllFieldsList(RouterPath::class.java)?.forEach {
-            if (Modifier.isStatic(it.modifiers)) {
-                Log.i("[SecondActivity]", "${it.name} : ${it.get(Router::class.java)}")
-            }
-        }
+//        getAllFieldsList(RouterPath::class.java)?.forEach {
+//            if (Modifier.isStatic(it.modifiers)) {
+//                Log.i("[SecondActivity]", "${it.name} : ${it.get(Router::class.java)}")
+//            }
+//        }
     }
 
     // https://blog.csdn.net/wangjun5159/article/details/79289244

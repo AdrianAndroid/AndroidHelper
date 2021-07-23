@@ -11,6 +11,10 @@ class RouterMappingCollector {
 
     private final Set<String> mappingClassNames = new HashSet<>()
 
+    private void log(String msg) {
+        println "[RouterMappingCollector] $msg"
+    }
+
     /**
      * 获取收集好的映射表类名
      * @return
@@ -26,11 +30,10 @@ class RouterMappingCollector {
     void collect(File classFile) {
         if (classFile == null || !classFile.exists()) return
         if (classFile.isFile()) {
-            if (classFile.absolutePath.contains(PACKAGE_NAME)
-                    && classFile.name.startsWith(CLASS_NAME_PREFIX)
-                    && classFile.name.endsWith(CLASS_FILE_SUFFIX)) {
-                String className =
-                        classFile.name.replace(CLASS_FILE_SUFFIX, "")
+            if (classFile.absolutePath.contains(PACKAGE_NAME) //com/imooc/router/mapping
+                    && classFile.name.startsWith(CLASS_NAME_PREFIX) //'RouterMapping_'
+                    && classFile.name.endsWith(CLASS_FILE_SUFFIX)) { //'.class'
+                String className = classFile.name.replace(CLASS_FILE_SUFFIX, "")
                 mappingClassNames.add(className)
             }
         } else {
@@ -55,9 +58,9 @@ class RouterMappingCollector {
                     && entryName.contains(CLASS_NAME_PREFIX)
                     && entryName.contains(CLASS_FILE_SUFFIX)) {
                 String className = entryName
-                        .replace(PACKAGE_NAME, "")
+                        .replace(PACKAGE_NAME, "") //'com/imooc/router/mapping'
                         .replace("/", "")
-                        .replace(CLASS_FILE_SUFFIX, "")
+                        .replace(CLASS_FILE_SUFFIX, "") //'.class'
 
                 mappingClassNames.add(className)
             }
