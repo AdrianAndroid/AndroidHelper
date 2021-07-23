@@ -44,8 +44,7 @@ public class DestinationProcessor extends AbstractProcessor {
         String rootDir = processingEnv.getOptions().get("root_project_dir");
 
         // 获取所有标记了 @Destination 注解的 类的信息
-        Set<Element> allDestinationElements = (Set<Element>)
-            roundEnvironment.getElementsAnnotatedWith(Destination.class);
+        Set<Element> allDestinationElements = (Set<Element>) roundEnvironment.getElementsAnnotatedWith(Destination.class);
 
         System.out.println(TAG + " >>> all Destination elements count = "
             + allDestinationElements.size());
