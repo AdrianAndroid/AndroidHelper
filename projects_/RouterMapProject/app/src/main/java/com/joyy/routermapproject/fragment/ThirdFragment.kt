@@ -1,11 +1,11 @@
 package com.joyy.routermapproject.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.imooc.router.annotations.FDest
+import androidx.fragment.app.Fragment
+import com.imooc.router.annotations.Destination
 import com.joyy.routermapproject.R
 
 /**
@@ -13,9 +13,9 @@ import com.joyy.routermapproject.R
  * Use the [ThirdFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-@FDest(
-        url = "router://ScrollingFragment",
-        description = "ScrollingFragment"
+@Destination(
+        url = "router://ThirdFragment",
+        description = "ThirdFragment"
 )
 class ThirdFragment : Fragment() {
 

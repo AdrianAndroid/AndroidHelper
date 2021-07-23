@@ -1,14 +1,14 @@
 package com.joyy.routermapproject.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.imooc.router.annotations.FDest
+import androidx.fragment.app.Fragment
+import com.imooc.router.annotations.Destination
 import com.joyy.routermapproject.R
 
-@FDest(
+@Destination(
         url = "router://FourFragment",
         description = "FourFragment"
 )

@@ -3,15 +3,17 @@ package com.imooc.gradle.router.runtime
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import java.lang.StringBuilder
 
 object Router {
     val TAG = "[Router]"
 
     // 编译期间生成的总映射表
     private const val GENERATED_MAPPING =
-        "com.imooc.router.mapping.generated.RouterMapping"
+            "com.imooc.router.mapping.generated.RouterMapping"
 
     // 存储所有映射表信息
     private val mapping: HashMap<String, String> = HashMap()
@@ -37,11 +39,6 @@ object Router {
     }
 
     fun go(context: Context, url: String) {
-
-        if (context == null || url == null) {
-            Log.i(TAG, "go: param error.")
-            return
-        }
 
         // 匹配URL，找到目标页面
         // router://imooc/profile?name=imooc&message=hello
@@ -93,10 +90,21 @@ object Router {
             context.startActivity(intent)
         } catch (e: Throwable) {
             Log.e(
-                TAG, "go: error while start activity: $targetActivityClass, " +
+                    TAG, "go: error while start activity: $targetActivityClass, " +
                     "e = $e"
             )
         }
+    }
+
+    override fun toString(): String {
+        if (mapping.isEmpty()) return "[:]"
+        val sb = StringBuilder()
+        mapping.forEach { (t, u) ->
+            val line = "$t : $u \n"
+            println(line)
+            sb.append(line)
+        }
+        return sb.toString()
     }
 }
 

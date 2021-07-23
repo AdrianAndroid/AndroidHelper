@@ -1,13 +1,17 @@
 package com.joyy.routermapproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import com.imooc.gradle.router.runtime.Router
 import com.imooc.router.annotations.Destination
-import com.joyy.routermapproject.fragment.*
+import com.joyy.routermapproject.fragment.FirstFragment
+import com.joyy.routermapproject.fragment.FourFragment
+import com.joyy.routermapproject.fragment.ScrollingFragment
+import com.joyy.routermapproject.fragment.SecondFragment
+import com.joyy.routermapproject.fragment.ThirdFragment
 import com.joyy.routermapproject.fragment.ui.login.LoginFragment
 
 @Destination(
@@ -34,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             Router.go(this, "router://FiveActivity")
         }
 
-        val fragments = findViewById<FragmentContainerView>(R.id.fragments)
+//        val fragments = findViewById<FragmentContainerView>(R.id.fragments)
         click(R.id.f1) { replace(FirstFragment()) }
         click(R.id.f2) { replace(SecondFragment()) }
         click(R.id.f3) { replace(ThirdFragment()) }
@@ -42,8 +46,6 @@ class MainActivity : AppCompatActivity() {
 //        click(R.id.f5) { replace(FiveFragment()) }
         click(R.id.f6) { replace(LoginFragment()) }
         click(R.id.f7) { replace(ScrollingFragment()) }
-
-
     }
 
     fun replace(f: Fragment) {

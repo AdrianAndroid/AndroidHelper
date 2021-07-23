@@ -39,6 +39,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    //避免编译不能用于在编译类路径中发现的注解处理器，因为它们中的任何更改都需要运行注解处理任务
+    kapt.includeCompileClasspath = false
 }
 
 dependencies {
@@ -55,7 +57,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
+//http://www.kotlincn.net/docs/reference/kapt.html
     kapt project(':router-processor')
     implementation project(':router-runtime')
     implementation project(':router-annotations')

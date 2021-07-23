@@ -10,11 +10,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.JavaFileObject;
@@ -26,6 +28,7 @@ public class DestinationProcessor extends AbstractProcessor {
 
     /**
      * 编译器找到我们关心的注解后，会回调这个方法
+     *
      * @param set
      * @param roundEnvironment
      * @return
@@ -44,38 +47,40 @@ public class DestinationProcessor extends AbstractProcessor {
         String rootDir = processingEnv.getOptions().get("root_project_dir");
 
         // 获取所有标记了 @Destination 注解的 类的信息
-        Set<Element> allDestinationElements = (Set<Element>) roundEnvironment.getElementsAnnotatedWith(Destination.class);
+        Set<Element> allDestinationElements =
+                (Set<Element>) roundEnvironment.getElementsAnnotatedWith(Destination.class);
 
         System.out.println(TAG + " >>> all Destination elements count = "
-            + allDestinationElements.size());
+                + allDestinationElements.size());
 
         // 当未收集到 @Destination 注解的时候，跳过后续流程
         if (allDestinationElements.size() < 1) {
             return false;
         }
 
-        // 将要自动生成的类的类名
-        String className = "RouterMapping_" + System.currentTimeMillis();
-
-        StringBuilder builder = new StringBuilder();
-
-        builder.append("package com.imooc.router.mapping;\n\n");
-        builder.append("import java.util.HashMap;\n");
-        builder.append("import java.util.Map;\n\n");
-        builder.append("public class ").append(className).append(" {\n\n");
-        builder.append("    public static Map<String, String> get() {\n\n");
-        builder.append("        Map<String, String> mapping = new HashMap<>();\n\n");
-
+        // 将要自动生成的类的类名]
         final JsonArray destinationJsonArray = new JsonArray();
+
+        RouterMappingFactory factory =
+                new RouterMappingFactory("com.imooc.router.mapping", "RouterMapping_" + System.currentTimeMillis());
+        factory.beginClass();
+        factory.methodBeginGet(); //开始记录get方法
+
+        RouterPathFactory pathFactory = new RouterPathFactory(factory.getPackageName(), "RouterPath");
+        pathFactory.beginClass();
+
+        // 需要校验
+        HashSet<String> urls = new HashSet<>(); //用于验证
 
         // 遍历所有 @Destination 注解信息，挨个获取详细信息
         for (Element element : allDestinationElements) {
 
             final TypeElement typeElement = (TypeElement) element;
+            System.out.println("typeEelemtn ==> " + typeElement);
+
 
             // 尝试在当前类上，获取 @Destination 的信息
-            final Destination destination =
-                typeElement.getAnnotation(Destination.class);
+            final Destination destination = typeElement.getAnnotation(Destination.class);
 
             if (destination == null) {
                 continue;
@@ -84,17 +89,22 @@ public class DestinationProcessor extends AbstractProcessor {
             final String url = destination.url();
             final String description = destination.description();
             final String realPath = typeElement.getQualifiedName().toString();
+            if (!urls.add(url)) {
+                String message = "url=" + url + " , " + "realPath=" + realPath + "  路径重复";
+                for (int i = 0; i < 50; i++) {
+                    System.out.println("[ERROR]  异常抛不出文字，多打几遍！！！！！[ERROR]!!!![ERROR]");
+                    System.out.println(message);
+                    System.out.println();
+                }
+                throw new AssertionError(message);
+            }
 
             System.out.println(TAG + " >>> url = " + url);
             System.out.println(TAG + " >>> description = " + description);
             System.out.println(TAG + " >>> realPath = " + realPath);
 
-            builder.append("        ")
-                .append("mapping.put(")
-                .append("\"" + url + "\"")
-                .append(", ")
-                .append("\"" + realPath + "\"")
-                .append(");\n");
+            pathFactory.fieldAdd(url);
+            factory.methodAppendGet(url, realPath);
 
             JsonObject item = new JsonObject();
             item.addProperty("url", url);
@@ -104,23 +114,31 @@ public class DestinationProcessor extends AbstractProcessor {
             destinationJsonArray.add(item);
         }
 
-        builder.append("        return mapping;\n");
-        builder.append("    }\n");
-        builder.append("}\n");
+        factory.methodEndGet(); //结束get
+        factory.endClass();
 
-        String mappingFullClassName = "com.imooc.router.mapping." + className;
+        pathFactory.endClass();
 
-        System.out.println(TAG + " >>> mappingFullClassName = "
-            + mappingFullClassName);
+        urls.clear();
 
-        System.out.println(TAG + " >>> class content = \n" + builder);
+        System.out.println(TAG + " >>> mappingFullClassName = " + factory.getFullPath());
+        System.out.println(TAG + " >>> class content = \n" + factory.toString());
 
         // 写入自动生成的类到本地文件中
         try {
-            JavaFileObject source = processingEnv.getFiler()
-                .createSourceFile(mappingFullClassName);
+            JavaFileObject source = processingEnv.getFiler().createSourceFile(factory.getFullPath());
             Writer writer = source.openWriter();
-            writer.write(builder.toString());
+            writer.write(factory.toString());
+            writer.flush();
+            writer.close();
+        } catch (Exception ex) {
+            throw new RuntimeException("Error while create file", ex);
+        }
+
+        try {
+            JavaFileObject source = processingEnv.getFiler().createSourceFile(pathFactory.getFullPath());
+            Writer writer = source.openWriter();
+            writer.write(pathFactory.toString());
             writer.flush();
             writer.close();
         } catch (Exception ex) {
@@ -138,11 +156,10 @@ public class DestinationProcessor extends AbstractProcessor {
         // 创建 router_mapping 子目录
         File routerFileDir = new File(rootDirFile, "router_mapping");
         if (!routerFileDir.exists()) {
-            routerFileDir.mkdir();
+            routerFileDir.mkdirs();
         }
 
-        File mappingFile = new File(routerFileDir,
-            "mapping_" + System.currentTimeMillis() + ".json");
+        File mappingFile = new File(routerFileDir, "mapping_" + System.currentTimeMillis() + ".json");
 
         // 写入json内容
         try {
@@ -162,12 +179,18 @@ public class DestinationProcessor extends AbstractProcessor {
 
     /**
      * 告诉编译器，当前处理器支持的注解类型
+     *
      * @return
      */
     @Override
     public Set<String> getSupportedAnnotationTypes() {
         return Collections.singleton(
-            Destination.class.getCanonicalName()
+                Destination.class.getCanonicalName()
         );
+    }
+
+    @Override
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.RELEASE_8;
     }
 }

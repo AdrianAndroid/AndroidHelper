@@ -15,12 +15,12 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.imooc.router.annotations.FDest
+import com.imooc.router.annotations.Destination
 import com.joyy.routermapproject.R
 
-@FDest(
-        url = "router://ScrollingFragment",
-        description = "ScrollingFragment"
+@Destination(
+        url = "router://LoginFragment",
+        description = "LoginFragment"
 )
 class LoginFragment : Fragment() {
 

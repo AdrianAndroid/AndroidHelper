@@ -7,18 +7,34 @@ package com.imooc.router.processor;
  */
 public class RouterMappingFactory {
 
-    private StringBuilder builder;
+    final private StringBuilder builder;
+    final private String packageName;
+    final private String className;
 
-    public RouterMappingFactory() {
+    public RouterMappingFactory(String packageName, String className) {
+        assert !(className == null || className.isBlank());
+        this.packageName = packageName;
+        this.className = className;
         builder = new StringBuilder();
         builder.append("package com.imooc.router.mapping;\n\n");
         builder.append("import java.util.HashMap;\n");
         builder.append("import java.util.Map;\n\n");
     }
 
+    public String getFullPath() {
+        return packageName + "." + className;
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
     // 开始创建一个class
-    public void beginClass(String className) {
-        assert !(className == null || className.isBlank());
+    public void beginClass() {
         builder.append("public class ").append(className).append(" {\n\n");
     }
 
@@ -48,4 +64,12 @@ public class RouterMappingFactory {
         builder.append("    }\n");
     }
 
+    @Override
+    public String toString() {
+        if(builder != null) {
+            return builder.toString();
+        } else {
+            return "[null]";
+        }
+    }
 }
