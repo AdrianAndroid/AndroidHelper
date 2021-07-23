@@ -59,8 +59,8 @@ public class RouterMappingFactory2 {
         classHeader(builder); //头部
         beginClass(builder, className); // 类
         // filed
-        for (String key : map.keySet()) {
-            fieldAdd(builder, key);
+        for (DestinationImpl dest : map.values()) {
+            fieldAdd(builder, dest);
         }
         // get
         methodBeginGet(builder);
@@ -96,8 +96,8 @@ public class RouterMappingFactory2 {
         annotationClass(builder, "此类主要方便自己模块的使用，最好不要其他模块使用！！");
         beginClass(builder, className); // 类
         // filed
-        for (String key : map.keySet()) {
-            fieldAdd(builder, key);
+        for (DestinationImpl dest : map.values()) {
+            fieldAdd(builder, dest);
         }
         // get
         // methodBeginGet(builder);
@@ -198,9 +198,13 @@ public class RouterMappingFactory2 {
         builder.append("import java.util.Map;\n\n");
     }
 
-    public void fieldAdd(StringBuilder builder, String url) {
+    public void fieldAdd(StringBuilder builder, DestinationImpl dest) {
         // public static final String ROUTER_FORACTIVITY = "router://FourActivity";
-        builder.append("    public static final String ").append(getFiledName(url)).append(" = \"").append(url)
+        // 添加description
+        builder.append("    //").append(dest.description).append("\n");
+        // 添加realPath
+        builder.append("    //").append(dest.realPath).append("\n");
+        builder.append("    public static final String ").append(getFiledName(dest.url)).append(" = \"").append(dest.url)
                 .append("\";\n");
     }
 
@@ -217,9 +221,9 @@ public class RouterMappingFactory2 {
     }
 
     public void annotationClass(StringBuilder builder, String annotation) {
-        builder.append("/**");
-        builder.append(" * ").append(annotation);
-        builder.append(" */");
+        builder.append("/**").append("\n");
+        builder.append(" * ").append(annotation).append("\n");
+        builder.append(" */").append("\n");
     }
 
     // 开始创建一个class

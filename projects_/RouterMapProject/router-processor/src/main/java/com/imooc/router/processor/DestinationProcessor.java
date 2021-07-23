@@ -1,30 +1,19 @@
 package com.imooc.router.processor;
 
 import com.google.auto.service.AutoService;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.imooc.router.annotations.Destination;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.Writer;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
-import javax.annotation.processing.Filer;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
-import javax.tools.JavaFileObject;
 
 @AutoService(Processor.class)
 public class DestinationProcessor extends AbstractProcessor {

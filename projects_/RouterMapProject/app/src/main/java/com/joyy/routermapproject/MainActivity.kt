@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.imooc.gradle.router.runtime.Router
 import com.imooc.router.annotations.Destination
+import com.imooc.router.mapping.RouterPath_app
 
 @Destination(
         url = "router://MainActivity",
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
             Router.go(this, "router://FiveActivity")
         }
 
+
+        RouterPath_app.ROUTERFIRSTFRAGMENT
 //        val fragments = findViewById<FragmentContainerView>(R.id.fragments)
 
 //        click(R.id.f1) { replace(RouterPath.ROUTERFIRSTFRAGMENT) }
