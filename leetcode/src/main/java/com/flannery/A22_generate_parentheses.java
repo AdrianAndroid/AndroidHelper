@@ -9,11 +9,15 @@ public class A22_generate_parentheses {
 //        System.out.println(x.size());
 //        System.out.println(x);
 
-        List<String> list = generateParenthesis(3);
-        for (String s : list) {
-            System.out.println(s);
-        }
+//        List<String> list = generateParenthesis(3);
+//        for (String s : list) {
+//            System.out.println(s);
+//        }
     }
+
+
+
+
 
     public static List<String> generateParenthesis(int n) {
         ArrayList<String> array = new ArrayList<>();
@@ -21,7 +25,35 @@ public class A22_generate_parentheses {
         return array;
     }
 
+    /**
+     *
+     * @param list 集合
+     * @param sb 字符串
+     * @param n 一共几个
+     * @param l 左边剩几个
+     * @param r 右边剩几个
+     */
     private static void generate(ArrayList<String> list, StringBuilder sb, int n, int l, int r) {
+        if(sb.length() == 2*n) { //符合要求了
+            list.add(sb.toString());
+            return;
+        }
+        if(l < n) {
+            sb.append("(");
+            generate(list, sb, n, l+1, r);
+            sb.deleteCharAt(sb.length()-1); //移除这个
+        }
+        if(r < l) {
+            sb.append(")");
+            generate(list, sb, n, l, r+1);
+            sb.deleteCharAt(sb.length()-1); //移除这个
+        }
+    }
+
+
+
+
+    private static void generate2(ArrayList<String> list, StringBuilder sb, int n, int l, int r) {
         if (sb.length() == 2 * n) {
             list.add(sb.toString());
             return;
