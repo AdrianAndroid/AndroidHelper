@@ -10,17 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app_tablayout_usecase" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/leetcode" />
-            <option value="$PROJECT_DIR$/multilanguage" />
-            <option value="$PROJECT_DIR$/router-annotations" />
-            <option value="$PROJECT_DIR$/router-gradle-plugin" />
-            <option value="$PROJECT_DIR$/router-processor" />
-            <option value="$PROJECT_DIR$/routerdemo" />
-            <option value="$PROJECT_DIR$/rxjava1" />
-            <option value="$PROJECT_DIR$/rxjava207" />
-            <option value="$PROJECT_DIR$/utils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

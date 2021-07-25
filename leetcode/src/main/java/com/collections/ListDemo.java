@@ -8,6 +8,7 @@ import java.util.concurrent.Semaphore;
 public class ListDemo {
 
     public static void main(String[] args) {
+        System.out.println("Hello world!");
         LinkedList<String> list = new LinkedList<>();
         Semaphore semaphore = new Semaphore(3);
         List<String> l = new ArrayList<>();
