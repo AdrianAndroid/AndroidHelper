@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/flannery/Desktop/AndroidHelper/cpp/demo
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/flannery/Desktop/AndroidHelper/cpp/demo/cmake-build-debug

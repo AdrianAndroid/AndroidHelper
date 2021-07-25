@@ -1,3 +1,0 @@
-include ':biz_reading'
-include ':app'
-rootProject.name = "Demo"

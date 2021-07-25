@@ -1,1 +1,0 @@
-pack_win.sh ../app/build/outputs/apk/release/app-release.apk

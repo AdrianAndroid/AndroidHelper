@@ -1,5 +1,0 @@
-rootProject.ext.setLibDefaultConfig project
-
-dependencies {
-    api project(":module_r_library:common")
-}

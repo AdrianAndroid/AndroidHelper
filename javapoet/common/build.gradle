@@ -1,5 +1,0 @@
-rootProject.ext.setLibConfig project
-
-dependencies {
-    api project(":javapoet:arouter_api")
-}
