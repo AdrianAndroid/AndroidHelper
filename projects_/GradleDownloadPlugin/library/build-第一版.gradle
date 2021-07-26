@@ -1,0 +1,313 @@
+import org.json.JSONObject
+
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    //id "de.undercouch.download"
+//    from '../efox.gradle'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+//    println ("getRootProject().name ===> ${getRootProject().name}")
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+
+//apply from: '../efox.gradle'
+
+// 学生端
+Boolean isTeachee() { return "teacheemaster".equals(getRootProject().name) }
+
+// 机构端
+Boolean isEducator() { return "Educator".equals(getRootProject().name) }
+
+task downloadEfox() {
+    def projectPath = "Teachee___2_3_0" // 项目
+    def key_values = "values"
+    def key_values_ko = "values-ko"
+    //
+    def valuesDir = [
+            "$key_values"   : "en",
+            "$key_values_ko": "ko",
+            //"values-zh" : "zh",
+    ]
+    // 每个文件夹存放所有的key
+    def listJsonObject = [
+            "$key_values"   : new JSONObject(),
+            "$key_values_ko": new JSONObject()
+    ] //把所有的字符串都下载下来
+    print("\n $listJsonObject")
+
+
+    File buildTmpValue = new File(buildDir, "tmp${File.separator}values") // 先保存到临时目录
+    buildTmpValue.deleteOnExit()
+    buildTmpValue.mkdirs()
+
+
+    valuesDir.forEach({ value, path ->
+        def pathJson = "${path}.json"
+        def url_path = "http://multi-lang.duowan.com/multiLangBig/Teachee/${projectPath}/${pathJson}?time=${System.currentTimeSeconds()}"
+
+        // 读取字符串
+        JSONObject jo = new JSONObject(readStringFromUrl(url_path))
+        JSONObject jo_data = jo.optJSONObject("data")
+        listJsonObject.put(value, jo_data) // 保存所有的jsonObject， 要有过滤功能
+    })
+
+    print("\n $listJsonObject")
+
+    // 以第一个为准， 读取文件
+    if (!listJsonObject.isEmpty()) {
+        def fjo = listJsonObject.get("$key_values")
+        assert fjo instanceof JSONObject
+
+        int count = fjo.length()
+        // 先判断是否等长
+        listJsonObject.forEach({ key, jo ->
+            assert count == jo.length()
+        })
+        // 直接查看是否所有的key都相同,因为已经判断了length
+        Iterator iter = fjo.keys()
+        while (iter.hasNext()) { // 遍历所有的key
+            def key = iter.next()
+            print("\n key = $key")
+            listJsonObject.forEach({ _, JSONObject jo ->
+                assert jo.has(key) // 不包含，直接崩溃，gradle时间太长
+            })
+        }
+
+        // res/value文件夹
+        def res_value = new StringBuilder()
+                .append(getProjectDir().absolutePath)
+                .append(File.separator).append("src")
+                .append(File.separator).append("main")
+                .append(File.separator).append("res")
+                .append(File.separator).toString()
+        print("\nres_value = $res_value")
+
+        // 写入新文件
+        listJsonObject.forEach({ key, JSONObject jo ->
+            // 检查目录是否存在
+            File file = new File(res_value, key)
+            if (!file.exists()) file.mkdirs()
+            // 删除原先生成的commonstring.xml， 这个不进行版本控制
+            // 找到File
+            writeXmlToFile(new File(file, "commonstring.xml"), jo) // 统一文件
+        })
+    }
+
+//    def branchName = getBranchName()
+//    println "\n分支名称 ： $branchName"
+    println "\n分支名称 ： ${System.currentTimeSeconds()}"
+}
+
+static String getBranchName() {
+    def process = ("git branch").execute(null, getRootDir())
+    def result = process.waitFor()
+    if (result != 0) assert false, "没有找git分支!!!!"
+    List<String> lines = process.text.readLines()
+    String branchName = null
+    if (lines.isEmpty()) {
+        //branchName = 'master'
+        assert false, "git branch 得到的结果为空!!!"
+    } else {
+        lines.each {
+            if (it.startsWith("*")) {
+                branchName = it.substring(1)
+                // return
+            }
+        }
+    }
+    if (branchName == null) assert false, "错啦，没找到具体的分支！！！"
+    return branchName
+}
+
+// 从网络读取内容
+String readStringFromUrl(String url_path) {
+    //https://blog.csdn.net/zhangmiao301/article/details/80839676
+    URL url = new URL(url_path)
+    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection()
+    httpURLConnection.setConnectTimeout(5000)
+    httpURLConnection.setRequestMethod("GET")
+    httpURLConnection.connect()
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()))
+//    String line = null
+    StringBuffer stringBuffer = new StringBuffer()
+    String json = "";
+    while ((json = bufferedReader.readLine()) != null) {
+        stringBuffer.append(json);
+    }
+    String rsp = new String(stringBuffer.toString().getBytes(), "UTF-8")
+    bufferedReader.close()
+    httpURLConnection.disconnect()
+    print("\n---->$rsp")
+    return rsp
+}
+
+void writeXmlToFile(File file, JSONObject jo) {
+    //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()))
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, false)))
+    bufferedWriter.writeLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+    bufferedWriter.writeLine("<resources>")
+    // 所有的内容
+    def key = jo.keys()
+    while (key.hasNext()) {
+        def k = key.next()
+        if (check_validate(k)) {
+            bufferedWriter.writeLine(generatXmlStringitem(k, jo.getString(k)))
+        } else { //不符合要求
+            print("\n 不符合要求 ：$k ")
+        }
+    }
+    bufferedWriter.writeLine("</resources>")
+    bufferedWriter.flush()
+    bufferedWriter.close()
+}
+
+static Boolean check_validate(String str) {
+    for (i in 0..<str.length()) {
+        int c = str.charAt(i)
+        if (i == 0 && !Character.isLowerCase(c)) { //只能为小写字母
+            return false
+        } else if (!(Character.isLowerCase(c) || Character.isDigit(c) || '_' == c)) {
+            return false
+        }
+    }
+    return true
+}
+
+String generatXmlStringitem(String key, String value) {
+    if (key == null || key.isEmpty()) {
+        throw IllegalArgumentException("key 不能为空！！！")
+    }
+    if (value == null || value.isEmpty()) {
+        throw new IllegalArgumentException("value 不能为空！！！")
+    }
+    def str = "        <string name=\"${key}\">${value}</string>"
+    print("\n $str")
+    return str
+}
+
+
+//class HWTask extends DefaultTask {
+//
+//}
+// https://blog.csdn.net/oLianyou1/article/details/89331010
+// https://cloud.tencent.com/developer/article/1358066
+// https://blog.csdn.net/u011913612/article/details/51732632
+// AntlrTask
+// Exec
+//
+task readXmls(type: DefaultTask) {
+    println(">>> ${getProjectDir().absolutePath}")
+    def url = "${getProjectDir().absolutePath}/src/main/res/values/commonstring.xml"
+    File file = new File(url)
+    println(">>> ${file.exists()}")
+
+
+    readXmlMethod(url)
+}
+
+//task afterReadXmls() {
+//    //readXmlMethod()
+//}
+
+static void readXmlMethod(String url) {
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    File f = new File(url);
+    assert f.exists()
+
+
+    def xml = new XmlParser().parse(f) // 读出来
+    //println xml.attributes()
+//    println xml.children()
+    println xml.children().size()
+    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    // 第一版
+//    xml.children().forEach({
+//        if (it instanceof NodeList) {
+//            println "it instanceof NodeList"
+//        } else if (it instanceof Node) {
+//            println "it instanceof Node"
+//        }
+//    })
+    // 第二版
+//    xml.children().forEach({
+//        if (it instanceof Node) {
+//            if (it.value() instanceof List) {
+//                List ll = (List) it.value()
+//                println ll.get(0)
+//            }
+//        }
+//    })
+    // 第三版
+//    xml.children().forEach({
+//        if (it instanceof Node) {
+//            def key = it.attributes()['name']
+//            def value = ((List) it.value()).get(0)
+//            println "$key \t\t====\t\t $value"
+//            println()
+//        }
+//    })
+//    println("xml.children() instanceof List => ${xml.children() instanceof List}")
+    def hashMap = new LinkedHashMap()
+    xml.children().forEach({
+        if (it instanceof Node) {
+            def key = it.attributes()['name']
+            def value = ((List) it.value()).get(0)
+            assert null == hashMap.put(key, value), "不能有重复的值，直接报错，请删除原先文件中的${key}"
+        }
+    })
+    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>打印HashMap>>>>>>>>>>>>>>>>>"
+    hashMap.forEach({ key, value ->
+        println "$key =*******= $value"
+    })
+    println ">>>>>>>>>>>结束HashMap>>>>>>>>>>>>>>>>>"
+    //println xml
+}
