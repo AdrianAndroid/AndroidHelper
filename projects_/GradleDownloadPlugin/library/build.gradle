@@ -124,19 +124,57 @@ task downloadEfox() {
         print("\nres_value = $res_value")
 
         // 写入新文件
+        // values    : ["key":"value]
+        // values-ko : ["key":"value"]
         listJsonObject.forEach({ key, JSONObject jo ->
             // 检查目录是否存在
             File file = new File(res_value, key)
             if (!file.exists()) file.mkdirs()
             // 删除原先生成的commonstring.xml， 这个不进行版本控制
-            // 找到File
-            writeXmlToFile(new File(file, "commonstring.xml"), jo) // 统一文件
+            File xmlFile = new File(file, "commonstring.xml") // 要存放的地址
+            println("[xmlFile] = ${xmlFile.absolutePath}")
+
+            if (xmlFile.exists() && xmlFile.size() > 0) { // 存在，才做增量更新
+                // 增量更新
+                HashMap<String, String> hashMap = readXmlToHashMap(xmlFile) // 读取原有数据
+                hashMap = incremental(hashMap, jo)
+                writeHashMapToFile(xmlFile, hashMap)
+            } else {
+                // 找到File
+                writeXmlToFile(xmlFile, jo) // 统一文件
+            }
         })
     }
 
 //    def branchName = getBranchName()
 //    println "\n分支名称 ： $branchName"
     println "\n分支名称 ： ${System.currentTimeSeconds()}"
+}
+
+static HashMap<String, String> incremental(HashMap<String, String> hashMap, JSONObject jo) {
+    // 1。 把JSONObject中的文件拿出来，
+    //     有相同的，直接提示，手动删除
+    //     增量更新的直接加入
+    // 所有的内容
+    def key = jo.keys()
+    while (key.hasNext()) {
+        def k = key.next()
+        //TDDO assert hashMap.containsKey(k), "按照规定，efox和本地不能有重复，删除efox，保留本地【可手动修改本地】"
+        def v = jo.getString(k)
+        if (check_validate(k) && !hashMap.containsKey(k)) {
+            println(">>>>[新增] key=$k, value=$v")
+            hashMap.put(k, v) // 若没有此key，直接删除即可
+        } else {
+            println(">>>>[不能加入] key=$k, value=$v  (已有数据或者不合格Key数据)")
+//            assert false, "不能有重复数据"
+        }
+//        if (check_validate(k)) {
+//            bufferedWriter.writeLine(generatXmlStringitem(k, jo.getString(k)))
+//        } else { //不符合要求
+//            print("\n 不符合要求 ：$k ")
+//        }
+    }
+    return hashMap
 }
 
 static String getBranchName() {
@@ -182,9 +220,28 @@ String readStringFromUrl(String url_path) {
     return rsp
 }
 
+// 要做增量更新
+void writeHashMapToFile(File file, HashMap<String, String> map) {
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, false)))
+    bufferedWriter.writeLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+    bufferedWriter.writeLine("<resources>")
+    map.entrySet().forEach({ entry ->
+        if (check_validate(entry.getKey())) {
+            bufferedWriter.writeLine(generatXmlStringitem(entry.getKey(), entry.getValue()))
+        } else { //不符合要求
+            print("\n 不符合要求 ：$entry ")
+        }
+    })
+    bufferedWriter.writeLine("</resources>")
+    bufferedWriter.flush()
+    bufferedWriter.close()
+}
+
+
 void writeXmlToFile(File file, JSONObject jo) {
     //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()))
-    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, false)))
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, false))) //
+    // 重新写文件
     bufferedWriter.writeLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
     bufferedWriter.writeLine("<resources>")
     // 所有的内容
@@ -226,60 +283,81 @@ String generatXmlStringitem(String key, String value) {
     return str
 }
 
+task downLoadEfoxAndIncrementalUpdate(type: DefaultTask) {
+//    downloadEfox()
+}
 
-//class HWTask extends DefaultTask {
-//
-//}
-// https://blog.csdn.net/oLianyou1/article/details/89331010
-// https://cloud.tencent.com/developer/article/1358066
-// https://blog.csdn.net/u011913612/article/details/51732632
-// AntlrTask
-// Exec
-//
 task readXmls(type: DefaultTask) {
-   //readXmlMethod()
-}
-
-task afterReadXmls(){
-    //readXmlMethod()
-}
-
-//static void readXmlMethod() {
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>>>>>>>>>>"
-//    File f = new File("/Users/flannery/Desktop/AndroidHelper/GradleDownloadPlugin/library/src/main/res/values" +
-//            "/commonstring.xml");
-//    println f.exists()
+//    println(">>> ${getProjectDir().absolutePath}")
+//    def url = "${getProjectDir().absolutePath}/src/main/res/values/commonstring.xml"
+//    File file = new File(url)
+//    println(">>> ${file.exists()}")
 //
-//    def xml = new XmlParser().parse(f)
-//    //println xml.attributes()
-////    println xml.children()
-//    println xml.children().size()
-//    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-////    xml.children().forEach({
-////        if (it instanceof NodeList) {
-////            println "it instanceof NodeList"
-////        } else if (it instanceof Node) {
-////            println "it instanceof Node"
-////        }
-////    })
-////    xml.children().forEach({
-////        if(it instanceof Node) {
-////            //println it.text()
-//////            println it.attributes()
-//////            println it.value()
-////            if(it.value() instanceof List) {
-////                List ll = (List)it.value()
-////                println ll.get(0)
-////            }
-////        }
-////    })
+//
+//    readXmlMethod(url)
+}
+
+// 把本地文件全部读出来
+static HashMap<String, String> readXmlToHashMap(File xmlFile) {
+    assert xmlFile.exists() && xmlFile.size() > 0 //这里不能为空，按理说已经判断了
+    println ">>>>>>>>>>>>>>>>>>>>"
+    def xml = new XmlParser().parse(xmlFile) // 读出来
+    println xml.children().size()
+    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    def hashMap = new LinkedHashMap() // 现在可以为空
+    xml.children().forEach({
+        if (it instanceof Node) {
+            def key = it.attributes()['name']
+            def value = ((List) it.value()).get(0)
+            assert null == hashMap.put(key, value), "不能有重复的值，直接报错，请删除原先文件中的${key}"
+        }
+    })
+    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>打印HashMap>>>>>>>>>>>>>>>>>"
+    hashMap.forEach({ key, value ->
+        println "$key =*******= $value"
+    })
+    println ">>>>>>>>>>>结束HashMap>>>>>>>>>>>>>>>>>"
+    //println xml
+    return hashMap
+}
+
+static void readXmlMethod(String url) {
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>>>>>>>>>>"
+    File f = new File(url);
+    assert f.exists()
+
+
+    def xml = new XmlParser().parse(f) // 读出来
+    //println xml.attributes()
+//    println xml.children()
+    println xml.children().size()
+    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    // 第一版
+//    xml.children().forEach({
+//        if (it instanceof NodeList) {
+//            println "it instanceof NodeList"
+//        } else if (it instanceof Node) {
+//            println "it instanceof Node"
+//        }
+//    })
+    // 第二版
+//    xml.children().forEach({
+//        if (it instanceof Node) {
+//            if (it.value() instanceof List) {
+//                List ll = (List) it.value()
+//                println ll.get(0)
+//            }
+//        }
+//    })
+    // 第三版
 //    xml.children().forEach({
 //        if (it instanceof Node) {
 //            def key = it.attributes()['name']
@@ -289,19 +367,19 @@ task afterReadXmls(){
 //        }
 //    })
 //    println("xml.children() instanceof List => ${xml.children() instanceof List}")
-//    def hashMap = new LinkedHashMap()
-//    xml.children().forEach({
-//        if (it instanceof Node) {
-//            def key = it.attributes()['name']
-//            def value = ((List) it.value()).get(0)
-//            assert null == hashMap.put(key, value)
-//        }
-//    })
-//    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-//    println ">>>>>>>>>>>打印HashMap>>>>>>>>>>>>>>>>>"
-//    hashMap.forEach({ key, value ->
-//        println "$key =*******= $value"
-//    })
-//    println ">>>>>>>>>>>结束HashMap>>>>>>>>>>>>>>>>>"
-//    //println xml
-//}
+    def hashMap = new LinkedHashMap()
+    xml.children().forEach({
+        if (it instanceof Node) {
+            def key = it.attributes()['name']
+            def value = ((List) it.value()).get(0)
+            assert null == hashMap.put(key, value), "不能有重复的值，直接报错，请删除原先文件中的${key}"
+        }
+    })
+    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    println ">>>>>>>>>>>打印HashMap>>>>>>>>>>>>>>>>>"
+    hashMap.forEach({ key, value ->
+        println "$key =*******= $value"
+    })
+    println ">>>>>>>>>>>结束HashMap>>>>>>>>>>>>>>>>>"
+    //println xml
+}
