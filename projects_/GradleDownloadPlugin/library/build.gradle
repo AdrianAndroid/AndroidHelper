@@ -227,9 +227,9 @@ String generatXmlStringitem(String key, String value) {
 }
 
 
-class HWTask extends DefaultTask {
-
-}
+//class HWTask extends DefaultTask {
+//
+//}
 // https://blog.csdn.net/oLianyou1/article/details/89331010
 // https://cloud.tencent.com/developer/article/1358066
 // https://blog.csdn.net/u011913612/article/details/51732632
@@ -237,71 +237,71 @@ class HWTask extends DefaultTask {
 // Exec
 //
 task readXmls(type: DefaultTask) {
-   readXmlMethod()
+   //readXmlMethod()
 }
 
 task afterReadXmls(){
-    readXmlMethod()
+    //readXmlMethod()
 }
 
-static void readXmlMethod() {
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>>>>>>>>>>"
-    File f = new File("/Users/flannery/Desktop/AndroidHelper/GradleDownloadPlugin/library/src/main/res/values" +
-            "/commonstring.xml");
-    println f.exists()
-
-    def xml = new XmlParser().parse(f)
-    //println xml.attributes()
-//    println xml.children()
-    println xml.children().size()
-    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+//static void readXmlMethod() {
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>>>>>>>>>>"
+//    File f = new File("/Users/flannery/Desktop/AndroidHelper/GradleDownloadPlugin/library/src/main/res/values" +
+//            "/commonstring.xml");
+//    println f.exists()
+//
+//    def xml = new XmlParser().parse(f)
+//    //println xml.attributes()
+////    println xml.children()
+//    println xml.children().size()
+//    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+////    xml.children().forEach({
+////        if (it instanceof NodeList) {
+////            println "it instanceof NodeList"
+////        } else if (it instanceof Node) {
+////            println "it instanceof Node"
+////        }
+////    })
+////    xml.children().forEach({
+////        if(it instanceof Node) {
+////            //println it.text()
+//////            println it.attributes()
+//////            println it.value()
+////            if(it.value() instanceof List) {
+////                List ll = (List)it.value()
+////                println ll.get(0)
+////            }
+////        }
+////    })
 //    xml.children().forEach({
-//        if (it instanceof NodeList) {
-//            println "it instanceof NodeList"
-//        } else if (it instanceof Node) {
-//            println "it instanceof Node"
+//        if (it instanceof Node) {
+//            def key = it.attributes()['name']
+//            def value = ((List) it.value()).get(0)
+//            println "$key \t\t====\t\t $value"
+//            println()
 //        }
 //    })
+//    println("xml.children() instanceof List => ${xml.children() instanceof List}")
+//    def hashMap = new LinkedHashMap()
 //    xml.children().forEach({
-//        if(it instanceof Node) {
-//            //println it.text()
-////            println it.attributes()
-////            println it.value()
-//            if(it.value() instanceof List) {
-//                List ll = (List)it.value()
-//                println ll.get(0)
-//            }
+//        if (it instanceof Node) {
+//            def key = it.attributes()['name']
+//            def value = ((List) it.value()).get(0)
+//            assert null == hashMap.put(key, value)
 //        }
 //    })
-    xml.children().forEach({
-        if (it instanceof Node) {
-            def key = it.attributes()['name']
-            def value = ((List) it.value()).get(0)
-            println "$key \t\t====\t\t $value"
-            println()
-        }
-    })
-    println("xml.children() instanceof List => ${xml.children() instanceof List}")
-    def hashMap = new LinkedHashMap()
-    xml.children().forEach({
-        if (it instanceof Node) {
-            def key = it.attributes()['name']
-            def value = ((List) it.value()).get(0)
-            assert null == hashMap.put(key, value)
-        }
-    })
-    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    println ">>>>>>>>>>>打印HashMap>>>>>>>>>>>>>>>>>"
-    hashMap.forEach({ key, value ->
-        println "$key =*******= $value"
-    })
-    println ">>>>>>>>>>>结束HashMap>>>>>>>>>>>>>>>>>"
-    //println xml
-}
+//    println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+//    println ">>>>>>>>>>>打印HashMap>>>>>>>>>>>>>>>>>"
+//    hashMap.forEach({ key, value ->
+//        println "$key =*******= $value"
+//    })
+//    println ">>>>>>>>>>>结束HashMap>>>>>>>>>>>>>>>>>"
+//    //println xml
+//}

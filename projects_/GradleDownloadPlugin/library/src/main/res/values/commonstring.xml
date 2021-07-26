@@ -13,6 +13,7 @@
         <string name="live_end">Live broadcast has ended</string>
         <string name="check_network_state">Checking network status...</string>
         <string name="deadline">Deadline：%@</string>
+        <string name="report_problem_toast">We have received your message and thank you for your feedback!</string>
         <string name="faq_describe">You can find answers to the most frequently asked questions here.</string>
         <string name="not_login_reminder_chatlist">Login to chat with your teacher</string>
         <string name="check_network_warning">Please do not quit this page or the APP during the process.</string>
