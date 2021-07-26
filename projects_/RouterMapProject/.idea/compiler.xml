@@ -24,7 +24,9 @@
       <module name="RouterMapProject.app" target="11" />
       <module name="RouterMapProject.biz-reading" target="11" />
       <module name="RouterMapProject.biz-reading2" target="11" />
+      <module name="RouterMapProject.biz-writing2" target="11" />
       <module name="RouterMapProject.buildSrc" target="11" />
+      <module name="RouterMapProject.router-plugins" target="11" />
       <module name="RouterMapProject.router-processor" target="11" />
       <module name="RouterMapProject.router-runtime" target="11" />
     </bytecodeTargetLevel>
