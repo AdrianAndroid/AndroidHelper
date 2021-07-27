@@ -78,6 +78,7 @@ public class SkinLayoutInflaterFactory implements LayoutInflater.Factory2, Obser
         return null;
     }
 
+    // createView
     private View createView(String name, Context context, AttributeSet
             attrs) {
         Constructor<? extends View> constructor = findConstructor(context, name);

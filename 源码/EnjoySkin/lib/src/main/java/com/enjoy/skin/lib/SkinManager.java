@@ -86,8 +86,7 @@ public class SkinManager extends Observable {
 
                 //获取外部Apk(皮肤包) 包名
                 PackageManager mPm = mContext.getPackageManager();
-                PackageInfo info = mPm.getPackageArchiveInfo(skinPath, PackageManager
-                        .GET_ACTIVITIES);
+                PackageInfo info = mPm.getPackageArchiveInfo(skinPath, PackageManager.GET_ACTIVITIES);
                 String packageName = info.packageName;
                 SkinResources.getInstance().applySkin(skinResource, packageName);
 

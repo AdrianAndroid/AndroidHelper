@@ -25,6 +25,7 @@ public class SkinResources {
 
     //单例
     private volatile static SkinResources instance;
+
     public static void init(Context context) {
         if (instance == null) {
             synchronized (SkinResources.class) {
@@ -38,6 +39,7 @@ public class SkinResources {
     public static SkinResources getInstance() {
         return instance;
     }
+
     public void reset() {
         mSkinResources = null;
         mSkinPkgName = "";
@@ -55,29 +57,30 @@ public class SkinResources {
      * 1.通过原始app中的resId(R.color.XX)获取到自己的 名字
      * 2.根据名字和类型获取皮肤包中的ID
      */
-    public int getIdentifier(int resId){
-        if(isDefaultSkin){
+    public int getIdentifier(int resId) {
+        if (isDefaultSkin) {
             return resId;
         }
         // 加载系统的Resource
-        String resName=mAppResources.getResourceEntryName(resId);
-        String resType=mAppResources.getResourceTypeName(resId);
+        String resName = mAppResources.getResourceEntryName(resId);
+        String resType = mAppResources.getResourceTypeName(resId);
         // 通过名称替换成插件的resource
-        int skinId=mSkinResources.getIdentifier(resName,resType,mSkinPkgName);
+        int skinId = mSkinResources.getIdentifier(resName, resType, mSkinPkgName);
         return skinId;
     }
 
     /**
      * 输入主APP的ID，到皮肤APK文件中去找到对应ID的颜色值
+     *
      * @param resId
      * @return
      */
-    public int getColor(int resId){
-        if(isDefaultSkin){
+    public int getColor(int resId) {
+        if (isDefaultSkin) {
             return mAppResources.getColor(resId);
         }
-        int skinId=getIdentifier(resId);
-        if(skinId==0){
+        int skinId = getIdentifier(resId);
+        if (skinId == 0) {
             return mAppResources.getColor(resId);
         }
         return mSkinResources.getColor(skinId);
@@ -106,6 +109,8 @@ public class SkinResources {
         }
         return mSkinResources.getDrawable(skinId);
     }
+
+
 
 
     /**

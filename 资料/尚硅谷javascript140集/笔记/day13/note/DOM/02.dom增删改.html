@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<link rel="stylesheet" type="text/css" href="style/css.css" />
+		<script type="text/javascript">
+		
+			window.onload = function() {
+				//创建一个"广州"节点,添加到#city下
+				//将"广州"节点插入到#bj前面
+				//使用"广州"节点替换#bj节点
+				//删除#bj节点
+				//读取#city内的HTML代码
+				//设置#bj内的HTML代码
+				
+			};
+			
+			function myClick(idStr, fun) {
+				var btn = document.getElementById(idStr);
+				btn.onclick = fun;
+			}
+			
+		
+		</script>
+		
+	</head>
+	<body>
+		<div id="total">
+			<div class="inner">
+				<p>
+					你喜欢哪个城市?
+				</p>
+
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+				
+			</div>
+		</div>
+		<div id="btnList">
+			<div><button id="btn01">创建一个"广州"节点,添加到#city下</button></div>
+			<div><button id="btn02">将"广州"节点插入到#bj前面</button></div>
+			<div><button id="btn03">使用"广州"节点替换#bj节点</button></div>
+			<div><button id="btn04">删除#bj节点</button></div>
+			<div><button id="btn05">读取#city内的HTML代码</button></div>
+			<div><button id="btn06">设置#bj内的HTML代码</button></div>
+		</div>
+	</body>
+</html>

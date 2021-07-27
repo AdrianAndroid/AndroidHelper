@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加删除记录练习</title>
+<link rel="stylesheet" type="text/css" href="ex_2_style/css.css" />
+<script type="text/javascript">
+
+	function removeTr(){
+		var trNode = this.parentNode.parentNode;
+		var tds = trNode.getElementsByTagName("td");
+		var nameStr = tds[0].firstChild.nodeValue;
+		var flag = confirm("真的要删除" + nameStr + "的信息吗？");
+		if(flag){
+			trNode.parentNode.removeChild(trNode);
+		}
+		
+		return false;
+	}
+
+	window.onload = function(){
+		//目标1：点击Delete删除记录
+		var aEles = document.getElementsByTagName("a");
+		for(var i = 0;i < aEles.length;i++){
+			aEles[i].onclick = removeTr;
+		}
+		
+		//目标2：点击Submit增加记录
+		var subBtn = document.getElementById("addEmpButton");
+		subBtn.onclick = function(){
+			var nameText = trim(document.getElementById("empName").value);
+			var emailText = trim(document.getElementById("email").value);
+			var salaryText = trim(document.getElementById("salary").value);
+			
+			document.getElementById("empName").value = nameText;
+			document.getElementById("email").value = emailText;
+			document.getElementById("salary").value = salaryText;
+			
+			if(nameText == "" || emailText == "" || salaryText == ""){
+				alert("您输入的内容不完整");
+				return ;
+			}
+			
+			//组装节点
+			var nameTd = document.createElement("td");
+			nameTd.appendChild(document.createTextNode(nameText));
+			var emailTd = document.createElement("td");
+			emailTd.appendChild(document.createTextNode(emailText));
+			var salaryTd = document.createElement("td");
+			salaryTd.appendChild(document.createTextNode(salaryText));
+			var aTd = document.createElement("td");
+			var aNewEle = document.createElement("a");
+			aNewEle.href = "deleteEmp?id=XXX";
+			aNewEle.appendChild(document.createTextNode("Delete"));
+			aNewEle.onclick = removeTr;
+			aTd.appendChild(aNewEle);
+			
+			var trNode = document.createElement("tr");
+			trNode.appendChild(nameTd);
+			trNode.appendChild(emailTd);
+			trNode.appendChild(salaryTd);
+			trNode.appendChild(aTd);
+			
+			var empTable = document.getElementById("employeeTable");
+			empTable.appendChild(trNode);
+		}
+		
+		function trim(str){
+			var reg = /^\s*|\s*$/g;
+			return str.replace(reg,"");
+		}
+		
+	}
+</script>
+</head>
+<body>
+
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="deleteEmp?id=001">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="deleteEmp?id=002">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>
