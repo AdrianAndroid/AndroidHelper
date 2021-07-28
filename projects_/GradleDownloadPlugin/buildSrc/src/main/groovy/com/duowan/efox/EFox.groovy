@@ -15,10 +15,11 @@ class EFox {
 
 
     private StringBuilder logSb // 记录本地日志
+    
     void logWrite(String msg) {
         def log = "[EFox] $msg"
         println(log)
-        logSb.append(log).append("\n")
+        if(useLog) logSb.append(log).append("\n")
     }
 
     private final EfoxExtension extension //从外面传过来的参数
@@ -34,6 +35,7 @@ class EFox {
     private String urlFomat
     private Map<String, String> valueReplace
     private boolean clearBefore
+    private boolean useLog
 
     EFox(EfoxExtension extension, Project project) {
         this.extension = extension
@@ -48,11 +50,12 @@ class EFox {
         resPath = extension.resPath //src/main/res
         valueReplace = extension.valueReplace //["&": "&amp;", "%@": "%s"]
         clearBefore = extension.clearBefore
+        useLog = extension.useLog
     }
 
     // 下载
     void downloadEFox() {
-        logSb = new StringBuilder()
+        if(useLog) logSb = new StringBuilder()
         long startTime = System.currentTimeMillis()
         // 下载所有内容
         Map<String, JSONObject> listJsonObject = readJSON()
@@ -61,7 +64,7 @@ class EFox {
         doWriteMapToFile(listJsonObject)
         long endTime = System.currentTimeSeconds()
         log("[EFOX] 更新完毕！！用时 = ${endTime - startTime}")
-        writeLogToFile(new File(project.getProjectDir(), "log.md"), logSb.toString())
+        if (useLog) writeLogToFile(new File(project.getProjectDir(), "log.md"), logSb.toString())
     }
 
     // 写入本地文件

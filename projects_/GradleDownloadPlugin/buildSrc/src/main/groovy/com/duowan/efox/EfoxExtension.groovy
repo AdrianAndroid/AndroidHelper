@@ -12,4 +12,5 @@ class EfoxExtension {
     String efoxPath = "Teachee___2_3_0" //需要修改
     Map<String, String> valuesDir = ["values": "en", "values-ko": "ko"] //需要外部传入
     Map<String, String> valueReplace = ["&": "&amp;", "%@": "%s", "\'":"\\\'"]
+    boolean useLog = false
 }
