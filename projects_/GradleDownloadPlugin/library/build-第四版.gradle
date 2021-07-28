@@ -169,26 +169,6 @@ Boolean isEducator() { return "Educator".equals(getRootProject().name) }
 class NewTask extends DefaultTask {
 
 }
-
-
-task combineFileContentNonIncremental {
-    setGroup("study")
-    def sources = fileTree('src')
-    def destination = file('destination.txt')
-
-    inputs.dir sources
-    outputs.file destination
-
-    doLast {
-        destination.withPrintWriter { writer ->
-            sources.each { source ->
-                println("$TAG--->$source")
-                writer.println source.text
-            }
-        }
-    }
-}
-
 //
 //rootProject.afterEvaluate { p->
 //    println("-----------------${p.name} ")
