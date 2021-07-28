@@ -1,32 +1,20 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-
-apply plugin: com.duowan.efox.EfoxPlugin
-
-efox {
-    //clearBefore = false      // 现在value之前是否清空原有数据， 最好不要变
-    default_values = "values" // 以这个目录下的key-value为基准
-    urlFomat = "http://multi-lang.duowan.com/multiLangBig/Teachee/%s/%s" // 地址模版
-    //resName = "commonstring.xml" //通用的名称
-    resPath = "src/main/res" // 该工程的这个路径下
-    efoxPath "iOS_1_9_0___1_9_0" //"Teachee___2_3_0" //需要修改
-    valuesDir = ["values": "en", "values-ko": "ko"] //下载几种格式
-    valueReplace = ["&": "&amp;", "%@": "%s", "\'": "\\\'"] // 特殊符号替换
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
 }
-
 
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
+        applicationId "com.joyy.nomral"
         minSdkVersion 16
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -44,13 +32,13 @@ android {
     }
 }
 
-
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

@@ -165,7 +165,7 @@ rootProject.afterEvaluate { project ->
     }
     //将testTask追加在clean的后面
     taskClean.doLast {
-        project.tasks.getByName("taskX").execute()
+//        project.tasks.getByName("taskX").execute()
 //        taskZ.execute()
         println "$TAG ---------taskClean.doLast --------------------"
     }

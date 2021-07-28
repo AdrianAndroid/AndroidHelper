@@ -42,6 +42,7 @@ gradle.addBuildListener(new BuildAdapter(){
 
 rootProject.name = "GradleDownloadPlugin"
 include ':app'
-include ':library'
+//include ':library'
 
 include ':library2'
+include ':nomral'
