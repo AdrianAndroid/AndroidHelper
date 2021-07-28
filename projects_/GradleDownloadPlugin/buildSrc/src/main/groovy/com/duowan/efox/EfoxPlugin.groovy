@@ -15,14 +15,16 @@ class EfoxPlugin implements Plugin<Project> {
     void apply(Project project) {
         log("apply(Porject project)")
 
-        def extension = project.extensions.create('efoxdownload', EfoxExtension)
+        EfoxExtension extension = project.extensions.create('efoxdownload', EfoxExtension)
 
         // 创建一个新的task
         project.task('zhaojian') {
             setGroup("efox")
             log('zhaojian')
             doLast {
+                log("zhaojian ${extension.message}")
                 log("zhaojian ${project.getProjectDir().absolutePath} ")
+                EFox efox = new EFox(extension, project)
                 downloadEfox(project)
             }
         }
