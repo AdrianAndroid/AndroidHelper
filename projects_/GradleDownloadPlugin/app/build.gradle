@@ -1,7 +1,7 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+String TAG = "app - [build.gradle]"
 
 android {
     compileSdkVersion 30
@@ -44,4 +44,65 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation project(':library')
+}
+
+beforeEvaluate {
+    println "app - [build.gradle] beforeEvaluate"
+}
+afterEvaluate {
+    println "app - [build.gradle] afterEvaluate"
+}
+gradle.buildFinished {
+    println "app - [build.gradle] gradle.buildFinished"
+}
+
+task taskX {
+    setGroup("study")
+    doLast {
+        println "$TAG taskX doLast"
+    }
+    doFirst {
+        println "$TAG taskX doFirst"
+    }
+}
+
+
+task taskY {
+    setGroup("study")
+    doLast {
+        println "$TAG taskY doLast"
+    }
+    doFirst {
+        println "$TAG taskY doFirst"
+    }
+}
+
+
+task taskZ(dependsOn: [taskY, taskX]) {
+    setGroup("study")
+    doLast {
+        println "$TAG taskZ doLast"
+    }
+    doFirst {
+        println "$TAG taskZ doFirst"
+    }
+}
+
+task taskZ2() {
+    setGroup("study")
+    setDependsOn([taskY, taskX])
+    doLast {
+        println "$TAG taskZ doLast"
+    }
+    doFirst {
+        println "$TAG taskZ doFirst"
+    }
+}
+
+//tasks.findByPath("taskZ").dependsOn([taskY, taskX])
+taskZ.mustRunAfter([taskY, taskX])
+
+task taskTest {
+    setGroup("study")
+    setDependsOn([taskZ, taskY, taskX])
 }

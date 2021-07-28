@@ -3,14 +3,12 @@ import org.json.JSONObject
 // https://blog.csdn.net/bencheng06/article/details/83628859
 
 
-//plugins {
-//    id 'com.android.library'
-//    id 'kotlin-android'
-//    //id "de.undercouch.download"
-////    from '../efox.gradle'
-//}
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    //id "de.undercouch.download"
+//    from '../efox.gradle'
+}
 
 android {
     compileSdkVersion 30
@@ -54,110 +52,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
-String TAG = "library - [build.gradle]"
-
-beforeEvaluate {
-    println "library - [build.gradle] beforeEvaluate"
-}
-
-// 统计打包时长
-def buildStartTime, buildEndTime
-afterEvaluate {
-    println "library - [build.gradle] afterEvaluate"
-    //保证要找到的task执行完毕
-    def proBuildTask = project.tasks.getByName("preBuild")
-    proBuildTask.doFirst {
-        buildStartTime = System.currentTimeMillis()
-        println("$TAG build start time is ${buildStartTime}")
-    }
-    proBuildTask.doLast {
-        buildEndTime = System.currentTimeMillis()
-        println "$TAG build end time is ${buildEndTime}"
-
-        println "$TAG the build used time is ${buildEndTime - buildStartTime}"
-    }
-}
-
-task printName {
-    setGroup("study")
-    setDescription("study")
-    println "$TAG printName"
-    doFirst {
-        println "$TAG 在APP project 中打印一句话"
-    }
-}
-
-task aaa {
-
-    setGroup("study")
-    setDescription("study")
-    println "$TAG _____________________aaa______${this.tasks.findByPath(":library:printName").name}"
-    doLast {
-        println "$TAG ___________________________${this.tasks.findByPath(":library:printName").name}"
-
-//        print "$TAG 当前获取到的compileSdkVersion属性是：${this.ext.android.compileSdkVersion}"
-    }
-}
-
-gradle.buildFinished {
-    println "library - [build.gradle] gradle.buildFinished"
-//    getAllTasks(true).each {
-//        println "library - [build.gradle] ${it.key} = ${it.value}\n"
-//    }
-}
-
-task testNewTask() {
-    println("$TAG testNewTask")
-    doFirst {
-        println("$TAG testNewTask doFirst")
-    }
-    doLast {
-        println("$TAG testNewTask doLast")
-    }
-}
-
-tasks.create(name: 'hellozj') {
-    println("$TAG hellozj ")
-}
-
-//group---------task所在的分组，所有的task将按照这个分组归类，方便我们以后的查看
-//description---对当前task的描述，方便阅读
-//name----------指定当前task的名称
-//type----------指定当前task的类型
-//dependsOn-----指定当前task与其他task之间的依赖关系
-//overwirte-----重写执行task
-//action--------为task配置执行的逻辑
-task helloTask {
-    setGroup("study")
-    setDescription("创建学习")
-    println "$TAG 我执行在 hello task 的配置阶段"
-
-    doFirst {
-        println "$TAG doFirst 1     我执行在 hello task 已有的的task之前"
-    }
-    doFirst {
-        println "$TAG doFirst 2     我执行在 hello task 已有的task之前"
-    }
-    doLast {
-        println "$TAG doLast 1   我执行在 hello task 已有的task之后"
-    }
-    doLast {
-        println "$TAG doLast 2   我执行在 hello task 已有的task之后"
-    }
-}
-
-
-helloTask.doFirst {
-    println "$TAG helloTask.doFirst 3      我执行在 hello task 已有的task之前"
-}
-
-
-helloTask.doLast {
-    println "$TAG helloTask.doLast 3       我执行在 hello task 已有的task之后"
-}
 
 //apply from: '../efox.gradle'
-
 
 // 学生端
 Boolean isTeachee() { return "teacheemaster".equals(getRootProject().name) }
@@ -175,17 +71,9 @@ class NewTask extends DefaultTask {
 //    downloadEfox()
 //}
 
-//初始化对应groovy中的初始化阶段，主要是读取setting文件，获取所有的projec和task
-//配置阶段主要根据依赖关系组成有线无环图，同时完成task中变量的初始化，方法的执行（简单理解：创建的任务没有放在doFirst和doLast中的代码全部都会在配置阶段执行）
-//执行阶段，定义在doFirst和doLast 中代码执行在构建后的执行阶段
-
 task downloadEfox(type: DefaultTask) {
 //    setDependsOn([clean])
-    setGroup("[efox]")
-    setDescription("[efox]")
-    println("$TAG downloadEfox")
     doFirst {
-        println("$TAG downloadEfox doFirst")
         //setDependsOn([clean])
         //http://multi-lang.duowan.com/multiLangBig/Teachee/iOS_1_9_0___1_9_0/ko.json
         long start = System.currentTimeMillis()
