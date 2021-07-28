@@ -44,3 +44,4 @@ rootProject.name = "GradleDownloadPlugin"
 include ':app'
 include ':library'
 
+include ':library2'

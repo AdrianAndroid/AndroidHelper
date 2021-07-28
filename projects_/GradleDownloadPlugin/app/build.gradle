@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: com.duowan.efox.EfoxPlugin
 
 String TAG = "app - [build.gradle]"
 
