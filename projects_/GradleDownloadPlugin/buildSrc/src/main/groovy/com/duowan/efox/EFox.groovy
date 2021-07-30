@@ -15,11 +15,11 @@ class EFox {
 
 
     private StringBuilder logSb // 记录本地日志
-    
+
     void logWrite(String msg) {
         def log = "[EFox] $msg"
         println(log)
-        if(useLog) logSb.append(log).append("\n")
+        if (useLog) logSb.append(log).append("\n")
     }
 
     private final EfoxExtension extension //从外面传过来的参数
@@ -55,16 +55,16 @@ class EFox {
 
     // 下载
     void downloadEFox() {
-        if(useLog) logSb = new StringBuilder()
-        long startTime = System.currentTimeMillis()
+        if (useLog) logSb = new StringBuilder()
+        long startTime = System.nanoTime()
         // 下载所有内容
         Map<String, JSONObject> listJsonObject = readJSON()
 
         // 写入本地文件
         doWriteMapToFile(listJsonObject)
-        long endTime = System.currentTimeSeconds()
+        long endTime = System.nanoTime()
         log("[EFOX] 更新完毕！！用时 = ${endTime - startTime}")
-        if (useLog) writeLogToFile(new File(project.getProjectDir(), "log.md"), logSb.toString())
+        if (useLog) writeLogToFile(new File(project.getProjectDir(), "log.txt"), logSb.toString())
     }
 
     // 写入本地文件
@@ -221,7 +221,7 @@ class EFox {
     private String replaceValue(String value) {
         if (value == null || value.size() == 0) return ""
         valueReplace.forEach({ k, v ->
-            value = value.replaceAll(k, v)
+            value = value.replace(k, v)//value.replaceAll(k, v)
         })
         return value
     }
@@ -277,7 +277,7 @@ class EFox {
             throw new IllegalArgumentException("value 不能为空！！！")
         }
         String v = replaceValue(value)
-        def str = "        <string name=\"${key}\">${v}</string>"
+        def str = "    <string name=\"${key}\">${v}</string>"
         print("\n $str")
         return str
     }

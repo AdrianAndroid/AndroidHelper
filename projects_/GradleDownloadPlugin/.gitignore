@@ -21,3 +21,4 @@ local.properties
 /.gradle
 .idea/
 build
+*.zip

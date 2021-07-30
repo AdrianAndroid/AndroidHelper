@@ -1,5 +1,6 @@
 package com.flannery.utils;
 
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -8,6 +9,11 @@ import android.view.MotionEvent;
  * flannery
  */
 public class L {
+
+    void test() {
+        Message obtain = Message.obtain();
+        obtain.sendToTarget();
+    }
 
     public static final Boolean DEBUG = true;
 
