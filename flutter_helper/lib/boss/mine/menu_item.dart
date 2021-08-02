@@ -16,7 +16,7 @@ class MenuItem extends StatelessWidget {
       onTap: () {
         LogUtil.e('$title');
         showToast(this.title);
-        onPressed();
+        // onPressed();
       },
       child: Column(
         children: [
