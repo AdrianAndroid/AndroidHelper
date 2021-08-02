@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_helper/boss/boss_app.dart';
+import 'package:flutter_helper/other/other_app.dart';
 import 'package:flutter_helper/utils/util_log.dart';
 import 'package:flutter_helper/widgets/a001_about_dialog.dart';
 import 'package:flutter_helper/widgets/a002_about_list_tile.dart';
@@ -77,84 +79,6 @@ import 'package:flutter_helper/widgets/a076_notificationlistener.dart';
 import 'package:flutter_helper/widgets/a077_pageview.dart';
 
 void main() {
-  //runApp(MyApp());
-  // runApp(AboutListTileApp());
-  // runApp(AbsorbPointerApp());
-  // runApp(ActionChipApp());
-  // runApp(AlertDialogApp());
-  // runApp(AlignApp());
-  // runApp(AnimatedBuilderApp());
-  // runApp(AnimatedContainerApp());
-  // runApp(AnimatedCrossFadeApp());
-  // runApp(AnimatedDefaultTextStyleApp());
-  //runApp(AnimatedIconApp());
-  // runApp(AnimatedListApp());
-  // runApp(AnimatedModalBarrierApp());
-  // runApp(AnimatedOpacityApp());
-  // runApp(AnimatedPaddingApp());
-  // runApp(AnimatedPhysicalModelApp());
-  // runApp(AnimatedPositionedApp());
-  // runApp(AnimatedPositionedDirectionalApp());
-  // runApp(AnimatedSizeApp());
-  // runApp(AnimatedSwitcherApp());
-  // runApp(AppbarApp());
-  // runApp(ButtonsApp());
-  // runApp(BackdropFilterApp());
-  // runApp(BannerApp());
-  // runApp(BaselineApp());
-  // runApp(BorderApp());
-  // runApp(BottomAppBarApp());
-  // runApp(BottomNavigationBarApp());
-  // runApp(BuildApp());
-  // runApp(CardApp());
-  // runApp(CircleAvatorApp());
-  // runApp(CupertinoActionSheetApp());
-  // runApp(IndicatorApp());
-  // runApp(CupertinoContextMenuApp());
-  // runApp(CupertinoDatePickeruApp());
-  // runApp(CupertinoFullscreenDialogTransitionApp());
-  // runApp(CupertinoPageScaffoldApp());
-  // runApp(CupertinoPickerApp());
-  // runApp(ScrollbarApp());
-  // runApp(SliderApp());
-  // runApp(RefreshIndicatorApp());
-  // runApp(SwitchApp());
-  // runApp(CupertinoTabBarApp());
-  // runApp(TextFieldApp());
-  // runApp(ClipRectApp());
-  // runApp(CustomMultiChildLayoutApp());
-  // runApp(CustomPaintApp());
-  // runApp(CustomScrollViewApp());
-  // runApp(CustomSingleChildLayoutApp());
-  // runApp(DataTableApp());
-  // runApp(DecoratedBoxApp());
-  // runApp(DecoratedBoxTransitionApp());
-  // runApp(TextStyleApp());
-  // runApp(DirectionlyApp());
-  // runApp(Widgets2App());
-  // runApp(ScraaggableScrollableActuatorApp());
-  // runApp(DraggableScrollableSheetApp());
-  // runApp(DropdownButtonFromFieldApp());
-  // runApp(FlexiableApp());
-  // runApp(ExpansionTileApp());
-  // runApp(FadeTransitionApp());
-  // runApp(DialogsApp());
-  // runApp(WrapApp());
-  // runApp(FittedBoxApp());
-  // runApp(FlexibleApp());
-  // runApp(FlexibleSpaceBarApp());
-  // runApp(DemoFlowPopMenuApp());
-  // runApp(DemoFlowCircelApp());
-  // runApp(DemoFlowMenuApp());
-  // runApp(TextField222App());
-  // runApp(FutureBuilderApp());
-  // runApp(GestureDetectorApp());
-  // runApp(HeroApp());
-  // runApp(IntrinsicHeightApp());
-  // runApp(NestedScrollViewApp());
-  // runApp(NotificationListenerApp());
-  // runApp(PageViewApp());
-
   LogUtil.init(isDebug: true);
 
   runApp(_HomeApp());
@@ -240,6 +164,96 @@ class _HomeApp extends StatelessWidget {
     PageViewApp()
   ];
 
+  Widget buildList() {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        var name = list[index].toStringShort();
+        // return Text('$name');
+        // return Center(child: Text('$name'));
+        return SizedBox(
+          height: 30,
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(right: 10, bottom: 2),
+                child: ElevatedButton(
+                  child: Text('点击'),
+                  onPressed: () {
+                    var app = list[index];
+                    LogUtil.d(app);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return app;
+                    }));
+                  },
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text('$name')
+            ],
+          ),
+        );
+      },
+      itemCount: list.length,
+    );
+  }
+
+  var listApp = [
+    AppData(app: BossApp()),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+  ];
+
+  Widget buildHorizontal() {
+    return Container(
+      height: 100,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+          var name = listApp[index].app.toStringShort();
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) {
+                  return listApp[index].app;
+                }),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(right: 10),
+              child: Column(
+                children: [
+                  Image.asset(
+                    listApp[index].imageUrl,
+                    width: 60,
+                    height: 80,
+                  ),
+                  Text(name)
+                ],
+              ),
+            ),
+          );
+        },
+        itemCount: listApp.length,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -252,40 +266,33 @@ class _HomeApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Flutter"),
         ),
-        body: ListView.builder(
-          itemBuilder: (BuildContext context, int index) {
-            var name = list[index].toStringShort();
-            // return Text('$name');
-            // return Center(child: Text('$name'));
-            return SizedBox(
-              height: 30,
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(right: 10, bottom: 2),
-                    child: ElevatedButton(
-                      child: Text('点击'),
-                      onPressed: () {
-                        var app = list[index];
-                        LogUtil.d(app);
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return app;
-                        }));
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('$name')
-                ],
-              ),
-            );
-          },
-          itemCount: list.length,
+        body: Column(
+          children: [
+            buildHorizontal(),
+            Expanded(child: buildList()),
+          ],
         ),
+        // body: buildHorizontal(),
+        // body: Row(
+        //   children: [
+        //     buildHorizontal(),
+        //     buildList(),
+        //   ],
+        // ),
       ),
     );
   }
+}
+
+class AppData {
+  final String name;
+  final String imageUrl;
+  final Widget app;
+
+  AppData({
+    Key key,
+    this.app,
+    this.imageUrl = 'images/bossapp2x.png',
+    this.name = "app",
+  });
 }

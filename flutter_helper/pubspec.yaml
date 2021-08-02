@@ -29,6 +29,7 @@ dependencies:
   crypto: ">=3.0.0 <5.0.0"
   # https://github.com/dart-lang/convert
   convert: ">=3.0.0 <5.0.0"
+  fluttertoast: ^4.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,6 +69,15 @@ flutter:
     - images/image_domestic_3204653.png
     - images/image_eye_care.png
     - images/image_hospital.png
+    - images/bossapp2x.png
+    - images/ic_main_tab_company_nor.png
+    - images/ic_main_tab_company_pre.png
+    - images/ic_main_tab_contacts_nor.png
+    - images/ic_main_tab_contacts_pre.png
+    - images/ic_main_tab_find_nor.png
+    - images/ic_main_tab_find_pre.png
+    - images/ic_main_tab_my_nor.png
+    - images/ic_main_tab_my_pre.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

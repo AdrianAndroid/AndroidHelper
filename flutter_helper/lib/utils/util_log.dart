@@ -3,7 +3,7 @@ import 'dart:developer';
 /// 工具类
 class LogUtil {
   static const String _defTag = "common_utils";
-  static bool _debugMode = false;
+  static bool _debugMode = true;
   static int _maxLen = 128;
   static String _tagValue = _defTag;
 

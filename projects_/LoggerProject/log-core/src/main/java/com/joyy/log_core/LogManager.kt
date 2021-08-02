@@ -94,7 +94,7 @@ object LogManager {
         val files = ArrayList<File>()
         for (fn in listNames) {
             val f = File(logFile, fn)
-            if (!isInvalidFile(f)) { // 不合格的删掉
+            if (isInvalidFile(f)) { // 不合格的删掉
                 f.delete()
                 KLog.i(TAG, "delete more 7Day and invalid file!!!!")
             } else if (System.currentTimeMillis() - f.lastModified() > DAYS_COMPRESSED) { // 超过1太天的压缩
