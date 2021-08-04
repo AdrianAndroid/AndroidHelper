@@ -32,7 +32,7 @@ class TravelDao {
     paramsMap['pageSize'] = pageSize;
     params['groupChannelCode'] = groupChannelCode;
     // 请求网络
-    final response = await http.post(url, body: jsonEncode(params));
+    final response = await http.post(Uri.parse(url), body: jsonEncode(params));
     if(response.statusCode == 200) {
       Utf8Decoder utf8decoder = Utf8Decoder(); // 中文乱码
       var result = json.decode(utf8decoder.convert(response.bodyBytes));

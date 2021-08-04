@@ -9,7 +9,7 @@ class TravelTabDao {
       'http://www.devio.org/io/flutter_app/json/travel_page.json';
 
   static Future<TravelTabModel> fetch() async {
-    final response = await http.get(_url);
+    final response = await http.get(Uri.parse(_url));
     if (response.statusCode == 200) {
       Utf8Decoder utf8decoder = Utf8Decoder();
       var result = json.decode(utf8decoder.convert(response.bodyBytes));

@@ -31,11 +31,14 @@ dependencies:
   convert: ">=3.0.0 <5.0.0"
   fluttertoast: ^4.0.1
   flutter_webview_plugin: ^0.3.5
-  http: ^0.12.0+1
+  http: ^0.13.1
   syntax_highlighter: ^0.1.1 # 语法高亮
   underline_indicator: ^0.0.2
   flutter_staggered_grid_view: ^0.3.0
   flutter_swiper: ^1.1.4
+  audioplayers: ^0.19.0
+  path_provider: ^2.0.1
+  flutter_keyboard_visibility: ^5.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -98,6 +101,43 @@ flutter:
     - images/type_sight.png
     - images/type_ticket.png
     - images/type_travelgroup.png
+    - images/flutter_cover.png
+    - res/portrait.jpeg
+    - images/like.gif
+    - images/love.gif
+    - images/haha.gif
+    - images/wow.gif
+    - images/sad.gif
+    - images/angry.gif
+    - images/angry2.png
+    - images/love2.png
+    - images/haha2.png
+    - images/wow2.png
+    - images/sad2.png
+    - images/ic_like.png
+    - images/ic_like_fill.png
+    - images/phoneusage.gif
+    - images/ipad.gif
+
+    - sounds/box_down.mp3
+    - sounds/box_up.mp3
+    - sounds/icon_choose.mp3
+    - sounds/icon_focus.mp3
+    - sounds/short_press_like.mp3
+    - readme_resources/flushbar_logo.png
+    - readme_resources/floating_style.png
+    - readme_resources/grounded_style.png
+    - readme_resources/flushbar_animated.gif
+    - readme_resources/input_bar.png
+    - readme_resources/complete_bar.png
+    - readme_resources/gradient_bar.png
+    - readme_resources/position_bar.png
+    - readme_resources/left_bar_indicator.png
+    - readme_resources/padding_and_radius.png
+    - readme_resources/icon_and_button_bar.png
+    - readme_resources/background_color_bar.png
+    - readme_resources/text_bar.png
+    - readme_resources/basic_bar.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

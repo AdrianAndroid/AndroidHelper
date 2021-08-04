@@ -3,9 +3,18 @@ import 'package:flutter_helper/boss/boss_app.dart';
 import 'package:flutter_helper/boss/utils.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/other/other_app.dart';
+import 'package:flutter_helper/samples/fb_reaction_box/main.dart';
+import 'package:flutter_helper/samples/flip_panel/main.dart';
+import 'package:flutter_helper/samples/flushbar/main.dart';
+import 'package:flutter_helper/samples/pin_code_text_field/main.dart';
 import 'package:flutter_helper/samples/radial_menu/demo.dart';
 import 'package:flutter_helper/samples/samples_1.dart';
+import 'package:flutter_helper/samples/snaplist/main.dart';
 import 'package:flutter_helper/samples/staggerd/main.dart';
+import 'package:flutter_helper/samples/step_touch/main.dart';
+import 'package:flutter_helper/samples/tinder_cards/main.dart';
+import 'package:flutter_helper/samples/typeahed/cupertino_app.dart';
+import 'package:flutter_helper/samples/typeahed/material_app.dart';
 import 'package:flutter_helper/trip/trip_app.dart';
 import 'package:flutter_helper/utils/util_log.dart';
 import 'package:flutter_helper/widgets/a003_absorbpointer.dart';
@@ -106,6 +115,15 @@ class __HomeAppState extends State<_HomeApp> {
   }
 
   List<Widget> _mwidgets = [
+    PinCodeTextFieldApp(),
+    SnapListApp(),
+    TypeAheadMaterialApp(),
+    TypeAheadCupertinoApp(),
+    StepTouchApp(),
+    YourAwesomeApp(),
+    FbReactionBoxApp(),
+    FlipPanelApp(),
+    TinderCardsApp(),
     GridViewCount(),
     ListViewHorizontal(),
     StaggerApp(),
@@ -126,9 +144,11 @@ class __HomeAppState extends State<_HomeApp> {
 
   Widget _builtItem(BuildContext context, int index) {
     Widget w = _mwidgets[index];
-    High high = High("title", "text");
+    High high;
     if (w is HighMixin) {
       high = (w as HighMixin).getHigh();
+    } else {
+      high = High(w.toStringShort(), "没有实现minxin");
     }
     return GestureDetector(
       onTap: () {
@@ -148,7 +168,12 @@ class __HomeAppState extends State<_HomeApp> {
           child: Column(
             children: [
               Text(high.title),
-              Expanded(child: w),
+              ConstrainedBox(
+                  constraints: BoxConstraints(
+                    // maxWidth: 150,
+                    maxHeight: 250,
+                  ),
+                  child: w,),
             ],
           ),
         ),
