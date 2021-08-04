@@ -1,6 +1,0 @@
-rootProject.name = "LoggerProject"
-include ':app'
-//include ':loglibrary'
-include ':log-core'
-include ':log-java'
-include ':log-native'

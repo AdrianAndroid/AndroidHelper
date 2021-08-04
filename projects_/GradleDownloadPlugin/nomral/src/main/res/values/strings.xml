@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">nomral</string>
-<!--    <string name="batch_live_uncoming">Live &amp; Upcoming</string>-->
-<!--    <string name="batch_live_uncoming_">Live & Upcoming</string>-->
-    <string name="batch_live_uncoming">Live %@ Upcoming</string>
-</resources>

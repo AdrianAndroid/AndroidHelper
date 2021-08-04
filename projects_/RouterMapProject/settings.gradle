@@ -1,8 +1,0 @@
-rootProject.name = "RouterMapProject"
-include ':app'
-include ':router-runtime'
-include ':router-annotations'
-include ':router-processor'
-//include ':router-plugins'
-include ':biz-reading2'
-include ':biz-writing2'

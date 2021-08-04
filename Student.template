@@ -1,5 +1,0 @@
-<Student>
-   <name>${name}</name>
-   <ID>${id}</ID>
-   <subject>${subject}</subject>
-</Student>
