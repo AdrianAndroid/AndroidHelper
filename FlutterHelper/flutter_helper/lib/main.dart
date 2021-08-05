@@ -20,6 +20,7 @@ import 'package:flutter_helper/samples/scatcher/main.dart';
 import 'package:flutter_helper/samples/snaplist/main.dart';
 import 'package:flutter_helper/samples/staggerd/main.dart';
 import 'package:flutter_helper/samples/step_touch/main.dart';
+import 'package:flutter_helper/samples/timeline_tile/main.dart';
 import 'package:flutter_helper/samples/timelines/main.dart';
 import 'package:flutter_helper/samples/tinder_cards/main.dart';
 import 'package:flutter_helper/samples/typeahed/cupertino_app.dart';
@@ -117,6 +118,7 @@ class __HomeAppState extends State<_HomeApp> {
   }
 
   List<Widget> _mwidgets = [
+    TimelineTileApp(),
     TimeLinesApp(),
     CardSettingsApp(),
     DoughApp(),
