@@ -39,6 +39,8 @@ dependencies:
   audioplayers: ^0.19.0
   path_provider: ^2.0.1
   flutter_keyboard_visibility: ^5.0.0
+  google_fonts: ^2.0.0
+  rect_getter: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -138,6 +140,17 @@ flutter:
     - readme_resources/background_color_bar.png
     - readme_resources/text_bar.png
     - readme_resources/basic_bar.png
+    - assets/after.jpg
+    - assets/after.png
+    - assets/background.jpg
+    - assets/before.jpg
+    - assets/before.png
+    - assets/dart.png
+    - assets/flutter.png
+    - assets/google.png
+    - assets/scratch.png
+    - assets/unseen.ttf
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -150,6 +163,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: fonts/OpenSans-ExtraBold.ttf
+          weight: 800
   # fonts:
   #   - family: Schyler
   #     fonts:
