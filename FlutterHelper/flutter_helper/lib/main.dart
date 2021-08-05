@@ -4,6 +4,7 @@ import 'package:flutter_helper/boss/utils.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/other/other_app.dart';
 import 'package:flutter_helper/samples/beautiful_popup/main.dart';
+import 'package:flutter_helper/samples/credit_card_input_form/main.dart';
 import 'package:flutter_helper/samples/direct_select_flutter/main.dart';
 import 'package:flutter_helper/samples/fb_reaction_box/main.dart';
 import 'package:flutter_helper/samples/flip_panel/main.dart';
@@ -27,6 +28,8 @@ import 'package:flutter_helper/widgets/a003_absorbpointer.dart';
 import 'package:flutter_helper/widgets/widgets_page.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import 'animated_selection_slide/lib/main.dart';
+import 'flutter_tags/main.dart';
 import 'samples/before_after/main.dart';
 
 void main() {
@@ -112,6 +115,9 @@ class __HomeAppState extends State<_HomeApp> {
   }
 
   List<Widget> _mwidgets = [
+    FlutterTagsApp(),
+    AnimatedSelectionSlideApp(),
+    CreditCardInputFormApp(),
     BeautifulPopupApp(),
     ImageSequenceAnimatorApp(),
     ScatcherApp(),

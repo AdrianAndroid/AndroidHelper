@@ -49,6 +49,13 @@ dependencies:
   flutter_highlight: ^0.7.0
   url_launcher: ^6.0.7
   url_launcher_web: ^2.0.1
+  provider: ^5.0.0
+  flip_card: ^0.5.0
+  dotted_border: ^1.0.4
+  flutter_sequence_animation: ^3.0.1
+
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -73,94 +80,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/bird.png
-    - images/beatiful_lady.jpeg
-    - images/ic_purchase_history_blank.jpeg
-    - images/ic_purchase_history_blank.png
-    - images/ic_purchase_history_blank.webp
-    - images/image_1111.png
-    - images/image_2222.png
-    - images/image_3333.png
-    - images/image_-pet-wild.png
-    - images/image_and_nature.png
-    - images/image_animaltest.png
-    - images/image_domestic_3204653.png
-    - images/image_eye_care.png
-    - images/image_hospital.png
-    - images/bossapp2x.png
-    - images/ic_main_tab_company_nor.png
-    - images/ic_main_tab_company_pre.png
-    - images/ic_main_tab_contacts_nor.png
-    - images/ic_main_tab_contacts_pre.png
-    - images/ic_main_tab_find_nor.png
-    - images/ic_main_tab_find_pre.png
-    - images/ic_main_tab_my_nor.png
-    - images/ic_main_tab_my_pre.png
-    - images/ic_trip.png
-    - images/type_channelgroup.png
-    - images/type_channelgs.png
-    - images/type_channelplane.png
-    - images/type_channeltrain.png
-    - images/type_cruise.png
-    - images/type_district.png
-    - images/type_food.png
-    - images/type_hotel.png
-    - images/type_huodong.png
-    - images/type_shop.png
-    - images/type_sight.png
-    - images/type_ticket.png
-    - images/type_travelgroup.png
-    - images/flutter_cover.png
-    - res/portrait.jpeg
-    - images/like.gif
-    - images/love.gif
-    - images/haha.gif
-    - images/wow.gif
-    - images/sad.gif
-    - images/angry.gif
-    - images/angry2.png
-    - images/love2.png
-    - images/haha2.png
-    - images/wow2.png
-    - images/sad2.png
-    - images/ic_like.png
-    - images/ic_like_fill.png
-    - images/phoneusage.gif
-    - images/ipad.gif
-    - images/show.gif
-    - images/mytemplate.png
-    - images/github.png
+    - images/
 
     - sounds/box_down.mp3
     - sounds/box_up.mp3
     - sounds/icon_choose.mp3
     - sounds/icon_focus.mp3
     - sounds/short_press_like.mp3
-    - readme_resources/flushbar_logo.png
-    - readme_resources/floating_style.png
-    - readme_resources/grounded_style.png
-    - readme_resources/flushbar_animated.gif
-    - readme_resources/input_bar.png
-    - readme_resources/complete_bar.png
-    - readme_resources/gradient_bar.png
-    - readme_resources/position_bar.png
-    - readme_resources/left_bar_indicator.png
-    - readme_resources/padding_and_radius.png
-    - readme_resources/icon_and_button_bar.png
-    - readme_resources/background_color_bar.png
-    - readme_resources/text_bar.png
-    - readme_resources/basic_bar.png
-    - assets/after.jpg
-    - assets/after.png
-    - assets/background.jpg
-    - assets/before.jpg
-    - assets/before.png
-    - assets/dart.png
-    - assets/flutter.png
-    - assets/google.png
-    - assets/scratch.png
-    - assets/unseen.ttf
-    - assets/ImageSequence/
+
+    - readme_resources/
+
+    - img/
     - img/bg/rocket_orange_2.png
     - img/bg/authentication.png
     - img/bg/rocket_orange.png
@@ -177,6 +107,23 @@ flutter:
     - img/bg/gift.png
     - img/bg/fail.png
     - img/source/gift.ai
+
+    - res/portrait.jpeg
+
+    - assets/
+    - assets/images/hum_0.jpg
+    - assets/images/hum_1.jpg
+    - assets/images/hum_2.jpg
+    - assets/images/hum_3.jpg
+    - assets/images/hum_4.jpg
+    - assets/images/hum_5.jpg
+    - assets/images/hum_6.jpg
+    - assets/images/hum_7.jpg
+    - assets/images/hum_8.jpg
+    - assets/images/hum_9.jpg
+    - assets/images/hum_10.jpg
+    - assets/images/img_flutter.gif
+    - assets/images/img_dribbble.gif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -195,6 +142,12 @@ flutter:
       fonts:
         - asset: fonts/OpenSans-ExtraBold.ttf
           weight: 800
+    - family: U and I
+      fonts:
+        - asset: fonts/fontYouandiModernTR.ttf
+    - family: Satisfy
+      fonts:
+        - asset: fonts/Satisfy-Regular.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
