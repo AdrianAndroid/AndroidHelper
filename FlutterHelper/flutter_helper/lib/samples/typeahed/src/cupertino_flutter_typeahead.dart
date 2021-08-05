@@ -624,7 +624,7 @@ class _CupertinoTypeAheadFieldState<T> extends State<CupertinoTypeAheadField<T>>
 
   void _scrollResizeListener() {
     bool isScrolling = _scrollPosition.isScrollingNotifier.value;
-    _resizeOnScrollTimer.cancel();
+    _resizeOnScrollTimer?.cancel();
     if (isScrolling) {
       // Scroll started
       _resizeOnScrollTimer =

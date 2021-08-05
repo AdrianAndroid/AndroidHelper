@@ -113,6 +113,66 @@ flutter:
     - assets/
     - assets/images/
     - assets/images/process_timeline/
+    - assets/ImageSequence/Frame_00000.png
+    - assets/ImageSequence/Frame_00008.png
+    - assets/ImageSequence/Frame_00007.png
+    - assets/ImageSequence/Frame_00006.png
+    - assets/ImageSequence/Frame_00005.png
+    - assets/ImageSequence/Frame_00004.png
+    - assets/ImageSequence/Frame_00003.png
+    - assets/ImageSequence/Frame_00002.png
+    - assets/ImageSequence/Frame_00001.png
+    - assets/ImageSequence/Frame_00016.png
+    - assets/ImageSequence/Frame_00015.png
+    - assets/ImageSequence/Frame_00014.png
+    - assets/ImageSequence/Frame_00013.png
+    - assets/ImageSequence/Frame_00012.png
+    - assets/ImageSequence/Frame_00011.png
+    - assets/ImageSequence/Frame_00010.png
+    - assets/ImageSequence/Frame_00009.png
+    - assets/ImageSequence/Frame_00024.png
+    - assets/ImageSequence/Frame_00023.png
+    - assets/ImageSequence/Frame_00022.png
+    - assets/ImageSequence/Frame_00021.png
+    - assets/ImageSequence/Frame_00020.png
+    - assets/ImageSequence/Frame_00019.png
+    - assets/ImageSequence/Frame_00018.png
+    - assets/ImageSequence/Frame_00017.png
+    - assets/ImageSequence/Frame_00032.png
+    - assets/ImageSequence/Frame_00031.png
+    - assets/ImageSequence/Frame_00030.png
+    - assets/ImageSequence/Frame_00029.png
+    - assets/ImageSequence/Frame_00028.png
+    - assets/ImageSequence/Frame_00027.png
+    - assets/ImageSequence/Frame_00026.png
+    - assets/ImageSequence/Frame_00025.png
+    - assets/ImageSequence/Frame_00040.png
+    - assets/ImageSequence/Frame_00039.png
+    - assets/ImageSequence/Frame_00038.png
+    - assets/ImageSequence/Frame_00037.png
+    - assets/ImageSequence/Frame_00036.png
+    - assets/ImageSequence/Frame_00035.png
+    - assets/ImageSequence/Frame_00034.png
+    - assets/ImageSequence/Frame_00033.png
+    - assets/ImageSequence/Frame_00048.png
+    - assets/ImageSequence/Frame_00047.png
+    - assets/ImageSequence/Frame_00046.png
+    - assets/ImageSequence/Frame_00045.png
+    - assets/ImageSequence/Frame_00044.png
+    - assets/ImageSequence/Frame_00043.png
+    - assets/ImageSequence/Frame_00042.png
+    - assets/ImageSequence/Frame_00041.png
+    - assets/ImageSequence/Frame_00056.png
+    - assets/ImageSequence/Frame_00055.png
+    - assets/ImageSequence/Frame_00054.png
+    - assets/ImageSequence/Frame_00053.png
+    - assets/ImageSequence/Frame_00052.png
+    - assets/ImageSequence/Frame_00051.png
+    - assets/ImageSequence/Frame_00050.png
+    - assets/ImageSequence/Frame_00049.png
+    - assets/ImageSequence/Frame_00059.png
+    - assets/ImageSequence/Frame_00058.png
+    - assets/ImageSequence/Frame_00057.png
 
 
 

@@ -54,6 +54,8 @@ class __HomeAppState extends State<_HomeApp> {
     AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
   ];
 
+  var _simpleItem = true;
+
   Widget buildHorizontal() {
     return Container(
       height: 100,
@@ -101,6 +103,15 @@ class __HomeAppState extends State<_HomeApp> {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Flutter"),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    _simpleItem = !_simpleItem;
+                  });
+                },
+                icon: Icon(Icons.swap_calls)),
+          ],
         ),
         body: Column(
           children: [
@@ -108,7 +119,8 @@ class __HomeAppState extends State<_HomeApp> {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(right: 30),
-                child: _buildGrid(),
+                child:
+                _simpleItem ? _buildSImpleGridView(context) : _buildGrid(),
               ),
             ),
           ],
@@ -150,6 +162,54 @@ class __HomeAppState extends State<_HomeApp> {
 
   ScrollController _scrollController = ScrollController();
 
+  _buildSImpleGridView(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3, //每行三列
+          childAspectRatio: 1.0 //显示区域宽高相等
+      ),
+      itemCount: _mwidgets.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) {
+                return _mwidgets[index];
+              }),
+            );
+          },
+          child: Text("${_mwidgets[index].toStringShort()}"),
+        );
+      },
+    );
+
+    // return GridView.count(
+    //   childAspectRatio: 4.0,
+    //   crossAxisCount: 2,
+    //   children: _mwidgets.map((e) {
+    //     return GestureDetector(
+    //       onTap: () {
+    //         Navigator.push(
+    //           context,
+    //           MaterialPageRoute(builder: (_) {
+    //             return e;
+    //           }),
+    //         );
+    //       },
+    //       child: Text("${e.toStringShort()}"),
+    //     );
+    //   }).toList(),
+    // );
+    // return ListView.builder(
+    //   itemBuilder: (BuildContext context, int index) {
+    //     var w = _mwidgets[index];
+    //     return Text("${w.toStringShort()}");
+    //   },
+    //   itemCount: _mwidgets.length,
+    // );
+  }
+
   _buildGrid() {
     return StaggeredGridView.countBuilder(
       controller: _scrollController,
@@ -187,11 +247,12 @@ class __HomeAppState extends State<_HomeApp> {
             children: [
               Text(high.title),
               ConstrainedBox(
-                  constraints: BoxConstraints(
-                    // maxWidth: 150,
-                    maxHeight: 250,
-                  ),
-                  child: w,),
+                constraints: BoxConstraints(
+                  // maxWidth: 150,
+                  maxHeight: 250,
+                ),
+                child: w,
+              ),
             ],
           ),
         ),
