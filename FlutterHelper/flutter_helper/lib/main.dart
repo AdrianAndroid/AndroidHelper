@@ -3,10 +3,12 @@ import 'package:flutter_helper/boss/boss_app.dart';
 import 'package:flutter_helper/boss/utils.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/other/other_app.dart';
+import 'package:flutter_helper/samples/beautiful_popup/main.dart';
 import 'package:flutter_helper/samples/direct_select_flutter/main.dart';
 import 'package:flutter_helper/samples/fb_reaction_box/main.dart';
 import 'package:flutter_helper/samples/flip_panel/main.dart';
 import 'package:flutter_helper/samples/flushbar/main.dart';
+import 'package:flutter_helper/samples/flutter_image_sequence_animator/main.dart';
 import 'package:flutter_helper/samples/folding_cell/demos/demos_new.dart';
 import 'package:flutter_helper/samples/liquid_pull_to_refresh/main.dart';
 import 'package:flutter_helper/samples/pin_code_text_field/main.dart';
@@ -110,6 +112,8 @@ class __HomeAppState extends State<_HomeApp> {
   }
 
   List<Widget> _mwidgets = [
+    BeautifulPopupApp(),
+    ImageSequenceAnimatorApp(),
     ScatcherApp(),
     BeforeAfterApp(),
     LiquidPullToRefreshApp(),
