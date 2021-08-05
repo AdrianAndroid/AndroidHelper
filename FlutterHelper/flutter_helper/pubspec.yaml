@@ -57,6 +57,16 @@ dependencies:
   equatable: ^2.0.0
   vector_math: ^2.1.0
 
+  extended_masked_text: ^2.1.0
+  intl: ^0.17.0
+  meta: ^1.2.4
+  flutter_cupertino_settings: ^0.5.0
+  flutter_material_pickers: ^3.0.0
+  pattern_formatter: ^2.0.0 # used for localized doubles
+  flutter_multi_formatter: ^2.0.2 # used for localized phone numbers
+  adaptive_theme: ^2.0.0
+  # google_fonts: ^2.0.0
+  font_awesome_flutter: ^9.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -68,6 +78,9 @@ dev_dependencies:
   flutter_localizations:
     sdk: flutter
   very_good_analysis: ^2.0.0
+  test:
+  mockito: ^5.0.2
+  pedantic: ^1.11.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -93,27 +106,13 @@ flutter:
     - readme_resources/
 
     - img/
-    - img/bg/rocket_orange_2.png
-    - img/bg/authentication.png
-    - img/bg/rocket_orange.png
-    - img/bg/rocket_green.png
-    - img/bg/notification.png
-    - img/bg/rocket_blue.png
-    - img/bg/geolocation.png
-    - img/bg/red_packet.png
-    - img/bg/coin.png
-    - img/bg/success.png
-    - img/bg/camera.png
-    - img/bg/thumb.png
-    - img/bg/term.png
-    - img/bg/gift.png
-    - img/bg/fail.png
+    - img/bg/
     - img/source/gift.ai
-
     - res/portrait.jpeg
 
     - assets/
     - assets/images/
+    - assets/images/process_timeline/
 
 
 

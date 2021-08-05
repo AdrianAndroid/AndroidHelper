@@ -3,6 +3,7 @@ import 'package:flutter_helper/boss/boss_app.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/other/other_app.dart';
 import 'package:flutter_helper/samples/beautiful_popup/main.dart';
+import 'package:flutter_helper/samples/card_settings/main.dart';
 import 'package:flutter_helper/samples/credit_card_input_form/main.dart';
 import 'package:flutter_helper/samples/direct_select_flutter/main.dart';
 import 'package:flutter_helper/samples/fb_reaction_box/main.dart';
@@ -19,6 +20,7 @@ import 'package:flutter_helper/samples/scatcher/main.dart';
 import 'package:flutter_helper/samples/snaplist/main.dart';
 import 'package:flutter_helper/samples/staggerd/main.dart';
 import 'package:flutter_helper/samples/step_touch/main.dart';
+import 'package:flutter_helper/samples/timelines/main.dart';
 import 'package:flutter_helper/samples/tinder_cards/main.dart';
 import 'package:flutter_helper/samples/typeahed/cupertino_app.dart';
 import 'package:flutter_helper/samples/typeahed/material_app.dart';
@@ -115,6 +117,8 @@ class __HomeAppState extends State<_HomeApp> {
   }
 
   List<Widget> _mwidgets = [
+    TimeLinesApp(),
+    CardSettingsApp(),
     DoughApp(),
     FlutterNeumorphicApp(),
     FlutterTagsApp(),
