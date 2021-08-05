@@ -120,6 +120,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.7"
+  equatable:
+    dependency: "direct main"
+    description:
+      name: equatable
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -455,6 +462,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.27.1"
+  sensors:
+    dependency: "direct main"
+    description:
+      name: sensors
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -608,12 +622,19 @@ packages:
     source: hosted
     version: "3.0.4"
   vector_math:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: vector_math
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0"
+  very_good_analysis:
+    dependency: "direct dev"
+    description:
+      name: very_good_analysis
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.3.0"
   win32:
     dependency: transitive
     description:

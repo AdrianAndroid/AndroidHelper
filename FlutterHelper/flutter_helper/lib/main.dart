@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_helper/boss/boss_app.dart';
-import 'package:flutter_helper/boss/utils.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/other/other_app.dart';
 import 'package:flutter_helper/samples/beautiful_popup/main.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_helper/samples/fb_reaction_box/main.dart';
 import 'package:flutter_helper/samples/flip_panel/main.dart';
 import 'package:flutter_helper/samples/flushbar/main.dart';
 import 'package:flutter_helper/samples/flutter_image_sequence_animator/main.dart';
+import 'package:flutter_helper/samples/flutter_neumorphic/main.dart';
 import 'package:flutter_helper/samples/folding_cell/demos/demos_new.dart';
 import 'package:flutter_helper/samples/liquid_pull_to_refresh/main.dart';
 import 'package:flutter_helper/samples/pin_code_text_field/main.dart';
@@ -24,13 +24,13 @@ import 'package:flutter_helper/samples/typeahed/cupertino_app.dart';
 import 'package:flutter_helper/samples/typeahed/material_app.dart';
 import 'package:flutter_helper/trip/trip_app.dart';
 import 'package:flutter_helper/utils/util_log.dart';
-import 'package:flutter_helper/widgets/a003_absorbpointer.dart';
 import 'package:flutter_helper/widgets/widgets_page.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'animated_selection_slide/lib/main.dart';
 import 'flutter_tags/main.dart';
 import 'samples/before_after/main.dart';
+import 'samples/dough/main.dart';
 
 void main() {
   LogUtil.init(isDebug: true);
@@ -115,6 +115,8 @@ class __HomeAppState extends State<_HomeApp> {
   }
 
   List<Widget> _mwidgets = [
+    DoughApp(),
+    FlutterNeumorphicApp(),
     FlutterTagsApp(),
     AnimatedSelectionSlideApp(),
     CreditCardInputFormApp(),

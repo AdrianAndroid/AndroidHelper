@@ -296,7 +296,7 @@ popup.show(
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Pick a color!'),
+        title: const Text('Pick a color'),
         content: SingleChildScrollView(
           child: ColorPicker(
             pickerColor: color == null ? Color(0xFF000000) : color,

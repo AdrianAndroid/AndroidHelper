@@ -53,8 +53,9 @@ dependencies:
   flip_card: ^0.5.0
   dotted_border: ^1.0.4
   flutter_sequence_animation: ^3.0.1
-
-
+  sensors: ^2.0.0
+  equatable: ^2.0.0
+  vector_math: ^2.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -66,6 +67,7 @@ dev_dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  very_good_analysis: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -111,19 +113,8 @@ flutter:
     - res/portrait.jpeg
 
     - assets/
-    - assets/images/hum_0.jpg
-    - assets/images/hum_1.jpg
-    - assets/images/hum_2.jpg
-    - assets/images/hum_3.jpg
-    - assets/images/hum_4.jpg
-    - assets/images/hum_5.jpg
-    - assets/images/hum_6.jpg
-    - assets/images/hum_7.jpg
-    - assets/images/hum_8.jpg
-    - assets/images/hum_9.jpg
-    - assets/images/hum_10.jpg
-    - assets/images/img_flutter.gif
-    - assets/images/img_dribbble.gif
+    - assets/images/
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -148,6 +139,12 @@ flutter:
     - family: Satisfy
       fonts:
         - asset: fonts/Satisfy-Regular.ttf
+    - family: NeumorphicIcons
+      fonts:
+        - asset: fonts/NeumorphicIcons.ttf
+    - family: Samsung
+      fonts:
+        - asset: fonts/SamsungSans-Bold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
