@@ -71,10 +71,10 @@ dependencies:
   timezone: ^0.7.0-nullsafety.0
   clock: ^1.1.0
   flutter_native_timezone: ^1.0.4
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  connectivity: ^3.0.2
+  wifi_info_flutter: ^2.0.0
   cupertino_icons: ^1.0.0
+  flutter_offline: ^2.0.0
 
 dev_dependencies:
   flutter_test:

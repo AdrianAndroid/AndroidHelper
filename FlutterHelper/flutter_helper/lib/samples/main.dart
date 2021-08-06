@@ -32,7 +32,9 @@ import 'package:flutter_helper/samples/tinder_cards/main.dart';
 import 'package:flutter_helper/samples/typeahed/cupertino_app.dart';
 import 'package:flutter_helper/samples/typeahed/material_app.dart';
 import 'package:flutter_helper/trip/trip_app.dart';
+import 'package:flutter_helper/ui_helpers/flutter_offline/main.dart';
 import 'package:flutter_helper/ui_helpers/flutter_showcaseview/main.dart';
+import 'package:flutter_helper/ui_helpers/scroll_to_index/main.dart';
 import 'package:flutter_helper/utils/util_log.dart';
 import 'package:flutter_helper/widgets/widgets_page.dart';
 import 'package:flutter_helper/widgets2/search_appbar.dart';
@@ -95,6 +97,8 @@ class _SamplesAppState extends State<SamplesApp> {
   }
 
   List<Widget> _mwidgets = [
+    FlutterOfflineApp(),
+    ScrollToIndexApp(),
     ShowCaseApp(),
     CalendarApp(),
     CalendarCarouselApp(),
