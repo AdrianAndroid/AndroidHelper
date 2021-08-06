@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_helper/animated_selection_slide/lib/main.dart';
 import 'package:flutter_helper/boss/boss_app.dart';
+import 'package:flutter_helper/boss/utils.dart';
 import 'package:flutter_helper/flutter_tags/main.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/other/other_app.dart';
@@ -32,6 +34,7 @@ import 'package:flutter_helper/samples/typeahed/material_app.dart';
 import 'package:flutter_helper/trip/trip_app.dart';
 import 'package:flutter_helper/utils/util_log.dart';
 import 'package:flutter_helper/widgets/widgets_page.dart';
+import 'package:flutter_helper/widgets2/search_appbar.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'before_after/main.dart';
@@ -41,59 +44,17 @@ import 'flutter_calendar_carousel/main.dart';
 void main() {
   LogUtil.init(isDebug: true);
 
-  runApp(_HomeApp());
+  runApp(SamplesApp());
 }
 
-class _HomeApp extends StatefulWidget {
+class SamplesApp extends StatefulWidget {
   @override
-  __HomeAppState createState() => __HomeAppState();
+  _SamplesAppState createState() => _SamplesAppState();
 }
 
-class __HomeAppState extends State<_HomeApp> {
-  var listApp = [
-    AppData(app: BossApp()),
-    AppData(app: TripApp(), imageUrl: 'images/ic_trip.png'),
-    AppData(app: WidgetPage(), imageUrl: 'images/bird.png'),
-    AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
-  ];
+class _SamplesAppState extends State<SamplesApp> {
 
   var _simpleItem = false;
-
-  Widget buildHorizontal() {
-    return Container(
-      height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) {
-          var name = listApp[index].app.toStringShort();
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) {
-                  return listApp[index].app;
-                }),
-              );
-            },
-            child: Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: Column(
-                children: [
-                  Image.asset(
-                    listApp[index].imageUrl,
-                    width: 60,
-                    height: 80,
-                  ),
-                  Text(name)
-                ],
-              ),
-            ),
-          );
-        },
-        itemCount: listApp.length,
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,21 +65,21 @@ class __HomeAppState extends State<_HomeApp> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter"),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  setState(() {
-                    _simpleItem = !_simpleItem;
-                  });
-                },
-                icon: Icon(Icons.swap_calls)),
-          ],
-        ),
+        appBar: _searchAppBarWidget,
+        // appBar: AppBar(
+        //   title: Text("Flutter"),
+        //   actions: [
+        //     IconButton(
+        //         onPressed: () {
+        //           setState(() {
+        //             _simpleItem = !_simpleItem;
+        //           });
+        //         },
+        //         icon: Icon(Icons.swap_calls)),
+        //   ],
+        // ),
         body: Column(
           children: [
-            buildHorizontal(),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(right: 30),
@@ -169,24 +130,69 @@ class __HomeAppState extends State<_HomeApp> {
 
   ScrollController _scrollController = ScrollController();
 
+  var _listDisplay ;
+  FocusNode _focusNode = new FocusNode();
+  TextEditingController _controller = TextEditingController();
+
+  PreferredSizeWidget get _searchAppBarWidget => SearchAppBarWidget(
+    focusNode: _focusNode,
+    controller: _controller,
+    elevation: 2.0,
+    leading: IconButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      icon: Icon(Icons.arrow_back),
+    ),
+    inputFormatters: [LengthLimitingTextInputFormatter(50)],
+    onChangedCallback: (str) {
+      if(str.isNotEmpty) {
+        setState(() {
+          // double _items.clear()
+          LogUtil.e('onChangeCallBack -> $str');
+          var tmp = _mwidgets
+              .where((e) =>
+              e.toStringShort().toLowerCase().contains(str.toLowerCase()))
+              .toList();
+          _listDisplay = tmp;
+        });
+      } else {
+        setState(() {
+          _listDisplay = null;
+        });
+      }
+    },
+    onEditingComplete: () {
+      showToast('onEditingComplete!');
+      setState(() {
+        _listDisplay = null;
+      });
+    },
+  );
+
+
+
   _buildSImpleGridView(BuildContext context) {
+    if(_listDisplay == null) {
+      _listDisplay = _mwidgets;
+    }
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3, //每行三列
           childAspectRatio: 1.0 //显示区域宽高相等
       ),
-      itemCount: _mwidgets.length,
+      itemCount: _listDisplay.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (_) {
-                return _mwidgets[index];
+                return _listDisplay[index];
               }),
             );
           },
-          child: Text("${_mwidgets[index].toStringShort()}"),
+          child: Text("${_listDisplay[index].toStringShort()}"),
         );
       },
     );
