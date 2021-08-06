@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_helper/boss/utils.dart';
 import 'package:flutter_helper/hightlight/mixin_highlight.dart';
 import 'package:flutter_helper/hightlight/syntax_highlight.dart';
@@ -79,6 +80,7 @@ import 'package:flutter_helper/widgets/a076_notificationlistener.dart';
 import 'package:flutter_helper/widgets/a077_pageview.dart';
 import 'package:flutter_helper/widgets/a078_fractionallysizedbox.dart';
 import 'package:flutter_helper/widgets/a078_media_query.dart';
+import 'package:flutter_helper/widgets2/search_appbar.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class WidgetPage extends StatefulWidget {
@@ -169,36 +171,71 @@ class _WidgetPageState extends State<WidgetPage> {
     FractionallySizedBoxApp(),
   ];
 
-  ScrollController _scrollController = ScrollController();
+  var _listDisplay = null;
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    body: buildList(context),
-  );
+        backgroundColor: Colors.white,
+        primary: true,
+        appBar: _searchAppBarWidget,
+        body: SafeArea(child: buildList(context)),
+      );
+
+  FocusNode _focusNode = new FocusNode();
+  TextEditingController _controller = TextEditingController();
+
+  PreferredSizeWidget get _searchAppBarWidget => SearchAppBarWidget(
+        focusNode: _focusNode,
+        controller: _controller,
+        elevation: 2.0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+        inputFormatters: [LengthLimitingTextInputFormatter(50)],
+        onChangedCallback: (str) {
+          if(str.isNotEmpty) {
+            setState(() {
+              // TODO _items.clear()
+              LogUtil.e('onChangeCallBack -> $str');
+              var tmp = list
+                  .where((e) =>
+                  e.toStringShort().toLowerCase().contains(str.toLowerCase()))
+                  .toList();
+              _listDisplay = tmp;
+            });
+          } else {
+            setState(() {
+              _listDisplay = null;
+            });
+          }
+        },
+        onEditingComplete: () {
+          showToast('onEditingComplete!');
+          setState(() {
+            _listDisplay = null;
+          });
+        },
+      );
 
   Widget buildList(BuildContext context) {
-    list.sort((a, b) {
-      var aName = a.toStringShort().toLowerCase();
-      var bName = b.toStringShort().toLowerCase();
-      return aName.compareTo(bName);
-    });
-    // return StaggeredGridView.countBuilder(
-    //   controller: _scrollController,
-    //   crossAxisCount: 4,
-    //   itemCount: list.length,
-    //   itemBuilder: (context, index) {
-    //     return CardItem(outWidget: list[index]);
-    //   },
-    //   staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
-    // );
-    return ListView.builder(
-      itemBuilder: (BuildContext context, int index) =>
-          buildSizeBox(context, index),
-      itemCount: list.length,
-    );
+    if (_listDisplay == null) {
+      list.sort((a, b) {
+        var aName = a.toStringShort().toLowerCase();
+        var bName = b.toStringShort().toLowerCase();
+        return aName.compareTo(bName);
+      });
+      _listDisplay = list;
+    }
+    return _buildListView(_listDisplay);
   }
 
-  buildSizeBox(BuildContext context, int index) => SizedBox(
+  _buildListView(_list) {
+    return ListView.builder(
+      // itemBuilder: (BuildContext context, int index) => buildSizeBox(context, index, _listDisplay[index]),
+      itemBuilder: (BuildContext context, int index) => SizedBox(
         height: 30,
         child: Row(
           children: [
@@ -207,7 +244,55 @@ class _WidgetPageState extends State<WidgetPage> {
               child: ElevatedButton(
                 child: Text('IN'),
                 onPressed: () {
-                  var app = list[index];
+                  LogUtil.d(_list[index]);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return _list[index];
+                  }));
+                },
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Expanded(child: Text(_list[index].toStringShort())),
+            Padding(
+              padding: EdgeInsets.only(right: 10, bottom: 2),
+              child: ElevatedButton(
+                child: Text('源'),
+                onPressed: () {
+                  LogUtil.d(_list[index]);
+                  if (_list[index] is HighMixin) {
+                    var h = (_list[index] as HighMixin).getHigh();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return HighLight(
+                        title: h.title,
+                        text: h.text,
+                        outWidget: _list[index],
+                      );
+                    }));
+                  } else {
+                    showToast("未实现mixin HighMixin");
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+      itemCount: _list.length,
+    );
+  }
+
+  buildSizeBox(BuildContext context, int index, Widget app) => SizedBox(
+        height: 30,
+        child: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(right: 10, bottom: 2),
+              child: ElevatedButton(
+                child: Text('IN'),
+                onPressed: () {
                   LogUtil.d(app);
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return app;
@@ -218,13 +303,12 @@ class _WidgetPageState extends State<WidgetPage> {
             SizedBox(
               width: 10,
             ),
-            Expanded(child: Text(list[index].toStringShort())),
+            Expanded(child: Text(app.toStringShort())),
             Padding(
               padding: EdgeInsets.only(right: 10, bottom: 2),
               child: ElevatedButton(
                 child: Text('源'),
                 onPressed: () {
-                  var app = list[index];
                   LogUtil.d(app);
                   if (app is HighMixin) {
                     var h = (app as HighMixin).getHigh();
