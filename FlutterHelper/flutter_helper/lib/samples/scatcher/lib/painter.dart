@@ -48,7 +48,7 @@ class ScratchPainter extends CustomPainter {
     final areaRect = Rect.fromLTRB(0, 0, size.width, size.height);
     canvas.drawRect(areaRect, Paint()..color = color);
     if (image != null && imageFit != null) {
-      // TODO: why the ! are needed here, as check against null been performed?
+      // double: why the ! are needed here, as check against null been performed?
       final imageSize = Size(image.width.toDouble(), image.height.toDouble());
       final sizes = applyBoxFit(imageFit, imageSize, size);
       final inputSubrect =

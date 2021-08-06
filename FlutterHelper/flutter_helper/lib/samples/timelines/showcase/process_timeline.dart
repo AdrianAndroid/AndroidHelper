@@ -176,7 +176,7 @@ class _ProcessTimelinePageState extends State<ProcessTimelinePage> {
 }
 
 /// hardcoded bezier painter
-/// TODO: Bezier curve into package component
+/// double: Bezier curve into package component
 class _BezierPainter extends CustomPainter {
   const _BezierPainter({
     @required this.color,
@@ -216,7 +216,7 @@ class _BezierPainter extends CustomPainter {
       path = Path()
         ..moveTo(offset1.dx, offset1.dy)
         ..quadraticBezierTo(0.0, size.height / 2, -radius,
-            radius) // TODO connector start & gradient
+            radius) // double connector start & gradient
         ..quadraticBezierTo(0.0, size.height / 2, offset2.dx, offset2.dy)
         ..close();
 
@@ -230,7 +230,7 @@ class _BezierPainter extends CustomPainter {
       path = Path()
         ..moveTo(offset1.dx, offset1.dy)
         ..quadraticBezierTo(size.width, size.height / 2, size.width + radius,
-            radius) // TODO connector end & gradient
+            radius) // double connector end & gradient
         ..quadraticBezierTo(size.width, size.height / 2, offset2.dx, offset2.dy)
         ..close();
 

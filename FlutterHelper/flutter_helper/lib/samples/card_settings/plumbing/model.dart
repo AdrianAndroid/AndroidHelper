@@ -7,9 +7,9 @@ import 'package:flutter_helper/samples/card_settings/lib/models/picker_model.dar
 
 class PonyModel {
   String name = 'Twilight Sparkle';
-  PickerModel type = ponyTypes[1]; //TODO, bind by value
+  PickerModel type = ponyTypes[1]; //double, bind by value
   int age = 7;
-  PickerModel gender = ponyGenders[1]; //TODO: "F";
+  PickerModel gender = ponyGenders[1]; //double: "F";
   String coatColor = 'D19FE4';
   String maneColor = '273873';
   bool hasSpots = false;
@@ -25,7 +25,7 @@ class PonyModel {
   ];
   double height = 3.5;
   int weight = 45;
-  PickerModel style = ponyStyles[1]; // TODO: "MG";
+  PickerModel style = ponyStyles[1]; // double: "MG";
   DateTime showDateTime = DateTime(2010, 10, 10, 20, 30);
   double ticketPrice = 65.99;
   int boxOfficePhone = 18005551212;

@@ -56,7 +56,7 @@ class TimelineTheme extends StatelessWidget {
   /// ```dart
   /// @override
   /// Widget build(BuildContext context) {
-  ///   // TODO: replace to Timeline
+  ///   // double: replace to Timeline
   ///   return TimelineTheme(
   ///     data: TimelineThemeData.vertical(),
   ///     child: Builder(
@@ -188,7 +188,7 @@ class TimelineThemeData with Diagnosticable {
   }) {
     direction ??= Axis.vertical;
     color ??= Colors
-        .blue; // TODO: Need to change the default color to the theme color?
+        .blue; // double: Need to change the default color to the theme color?
     nodePosition ??= 0.5;
     nodeItemOverlap ??= false;
     indicatorPosition ??= 0.5;

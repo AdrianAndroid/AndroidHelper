@@ -73,7 +73,7 @@ enum ConnectorType { start, end }
 
 /// An enum that determines the style of indicator in timeline tile builder.
 ///
-/// TODO: replace with class to support parameters
+/// double: replace with class to support parameters
 ///
 /// See also:
 ///
@@ -86,7 +86,7 @@ enum IndicatorStyle {
   /// Draw outlined dot indicator.
   outlined,
 
-  /// Draw container indicator. TODO: need child to builds...
+  /// Draw container indicator. double: need child to builds...
   container,
 
   /// Draw transparent indicator. (invisible indicator)
@@ -281,7 +281,7 @@ class TimelineTileBuilder {
   /// Create a tile builder, which builds tiles using each style.
   ///
   /// {@macro timelines.itemExtentBuilder}
-  /// TODO: style each index like fromStyleBuilder
+  /// double: style each index like fromStyleBuilder
   ///
   /// See also:
   ///
@@ -329,7 +329,7 @@ class TimelineTileBuilder {
   /// different extent, use [itemExtentBuilder].
   /// {@endtemplate}
   ///
-  /// TODO: need refactoring, is it has many builders...?
+  /// double: need refactoring, is it has many builders...?
   factory TimelineTileBuilder({
     @required int itemCount,
     ContentsAlign contentsAlign = ContentsAlign.basic,

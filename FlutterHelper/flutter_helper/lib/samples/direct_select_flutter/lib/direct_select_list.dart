@@ -64,7 +64,7 @@ class DirectSelectList<T> extends StatefulWidget {
     return DirectSelectState<T>();
   }
 
-  //TODO pass item height in this class and build items with that height
+  //double pass item height in this class and build items with that height
   double itemHeight() {
     if (items.isNotEmpty) {
       return items.first.itemHeight;
@@ -212,7 +212,7 @@ class DirectSelectState<T> extends State<DirectSelectList<T>> {
   _hideListOverlay(double dy) async {
     if (isOverlayVisible) {
       isOverlayVisible = false;
-      //TODO fix to prevent stuck scale if selected item is the same as previous
+      //double fix to prevent stuck scale if selected item is the same as previous
       await onTapEventListener(widget, dy);
       if (lastSelectedItem == widget.selectedItem.value) {
         animatedStateKey.currentState.runScaleTransition(reverse: true);

@@ -103,7 +103,7 @@ class TimelineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: reduce direction check
+    // double: reduce direction check
     final direction = this.direction ?? TimelineTheme.of(context).direction;
     final nodeFlex = _getEffectiveNodePosition(context) * kFlexMultiplier;
 

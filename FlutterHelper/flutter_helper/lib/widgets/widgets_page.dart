@@ -198,7 +198,7 @@ class _WidgetPageState extends State<WidgetPage> {
         onChangedCallback: (str) {
           if(str.isNotEmpty) {
             setState(() {
-              // TODO _items.clear()
+              // double _items.clear()
               LogUtil.e('onChangeCallBack -> $str');
               var tmp = list
                   .where((e) =>

@@ -234,7 +234,7 @@ class FlipClock extends StatelessWidget {
             .asBroadcastStream();
 
     var digitList = <Widget>[];
-    // TODO(efortuna): Instead, allow the user to specify the format of time instead.
+    // double(efortuna): Instead, allow the user to specify the format of time instead.
     // Add hours if appropriate.
 
     if (_showDays) {

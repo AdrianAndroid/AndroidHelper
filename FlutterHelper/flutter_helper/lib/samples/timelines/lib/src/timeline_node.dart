@@ -130,7 +130,7 @@ class TimelineNode extends StatelessWidget with TimelineTileNode {
   Widget build(BuildContext context) {
     final direction = this.direction ?? TimelineTheme.of(context).direction;
     final overlap = _getEffectiveOverlap(context);
-    // TODO: support both flex and logical pixel
+    // double: support both flex and logical pixel
     final indicatorFlex = _getEffectiveIndicatorPosition(context);
     Widget line = indicator;
     final lineItems = [

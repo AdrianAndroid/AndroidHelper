@@ -48,7 +48,7 @@ class Timeline extends BoxScrollView {
     ScrollPhysics physics,
     bool shrinkWrap = false,
     EdgeInsetsGeometry padding,
-    // double itemExtent, TODO: fixedExtentTileBuilder
+    // double itemExtent, double: fixedExtentTileBuilder
     double cacheExtent,
     int semanticChildCount,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
@@ -66,7 +66,7 @@ class Timeline extends BoxScrollView {
       childrenDelegate: SliverChildBuilderDelegate(
         builder.build,
         childCount: builder.itemCount,
-        // TODO: apply some fields if needed.
+        // double: apply some fields if needed.
       ),
       scrollDirection: scrollDirection,
       reverse: reverse,
@@ -349,7 +349,7 @@ class FixedTimeline extends StatelessWidget {
     VerticalDirection verticalDirection = VerticalDirection.down,
     Clip clipBehavior = Clip.none,
   }) {
-    // TODO: how remove Builders
+    // double: how remove Builders
     return FixedTimeline(
       children: [
         for (int i = 0; i < builder.itemCount; i++)
