@@ -148,6 +148,18 @@ flutter:
     - family: Samsung
       fonts:
         - asset: fonts/SamsungSans-Bold.ttf
+    - family: Themify
+      fonts:
+        - asset: assets/fonts/themify.ttf
+    - family: LineAwesome
+      fonts:
+        - asset: assets/fonts/line-awesome.ttf
+    - family: Timeburner
+      fonts:
+        - asset: assets/fonts/timeburnernormal.ttf
+        - asset: assets/fonts/timeburnerbold.ttf
+          weight: 700
+
   # fonts:
   #   - family: Schyler
   #     fonts:

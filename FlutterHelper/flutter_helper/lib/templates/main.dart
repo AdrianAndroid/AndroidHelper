@@ -7,6 +7,7 @@ import 'package:flutter_helper/widgets2/search_appbar.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'movie_details_ui/main.dart';
+import 'profileapp/main.dart';
 
 void main() {
   LogUtil.init(isDebug: true);
@@ -49,6 +50,7 @@ class _TemplatesAppState extends State<TemplatesApp> {
   }
 
   List<Widget> _mwidgets = [
+    ProfileApp(),
     MovieDetailsUiApp(),
   ];
 
