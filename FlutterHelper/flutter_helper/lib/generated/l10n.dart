@@ -65,41 +65,11 @@ class S {
     );
   }
 
-  /// `Resend OTP（%lds）`
-  String get ResendFormats {
-    return Intl.message(
-      'Resend OTP（%lds）',
-      name: 'ResendFormats',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Send OTP`
   String get send_otp {
     return Intl.message(
       'Send OTP',
       name: 'send_otp',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign Up Successfully`
-  String get Sign_Up_Successfully {
-    return Intl.message(
-      'Sign Up Successfully',
-      name: 'Sign_Up_Successfully',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Login successfully`
-  String get Login_successfully {
-    return Intl.message(
-      'Login successfully',
-      name: 'Login_successfully',
       desc: '',
       args: [],
     );
@@ -205,16 +175,6 @@ class S {
     );
   }
 
-  /// `Attendance Status:`
-  String get Attendance_Status {
-    return Intl.message(
-      'Attendance Status:',
-      name: 'Attendance_Status',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Leave Early`
   String get leave_early {
     return Intl.message(
@@ -230,16 +190,6 @@ class S {
     return Intl.message(
       'Checking network status...',
       name: 'check_network_state',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Network Diagnostics`
-  String get Network_Diagnostics {
-    return Intl.message(
-      'Network Diagnostics',
-      name: 'Network_Diagnostics',
       desc: '',
       args: [],
     );
@@ -310,26 +260,6 @@ class S {
     return Intl.message(
       'You can find answers to the most frequently asked questions here.',
       name: 'faq_describe',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Help & Support`
-  String get Help_Support {
-    return Intl.message(
-      'Help & Support',
-      name: 'Help_Support',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Report a Problem`
-  String get Report_a_Problem {
-    return Intl.message(
-      'Report a Problem',
-      name: 'Report_a_Problem',
       desc: '',
       args: [],
     );

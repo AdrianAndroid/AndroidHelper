@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_helper/boss/boss_app.dart';
+import 'package:flutter_helper/language/languagea_app.dart';
 import 'package:flutter_helper/other/other_app.dart';
 import 'package:flutter_helper/templates/main.dart';
 import 'package:flutter_helper/trip/trip_app.dart';
@@ -27,6 +28,7 @@ class __HomeAppState extends State<_HomeApp> {
     AppData(app: SamplesApp(), imageUrl: 'assets/flutter.png'),
     AppData(app: TemplatesApp(), imageUrl: 'images/poster.png'),
     AppData(app: OtherApp(), imageUrl: 'images/beatiful_lady.jpeg'),
+    AppData(app: LanguageApp(), imageUrl: 'images/flutter_cover.png'),
   ];
 
   _buildGridViewBuilder() {

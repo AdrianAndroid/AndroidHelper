@@ -21,13 +21,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "Attendance_Status" : MessageLookupByLibrary.simpleMessage("Attendance Status:"),
-    "Help_Support" : MessageLookupByLibrary.simpleMessage("Help & Support"),
-    "Login_successfully" : MessageLookupByLibrary.simpleMessage("Login successfully"),
-    "Network_Diagnostics" : MessageLookupByLibrary.simpleMessage("Network Diagnostics"),
-    "Report_a_Problem" : MessageLookupByLibrary.simpleMessage("Report a Problem"),
-    "ResendFormats" : MessageLookupByLibrary.simpleMessage("Resend OTP（%lds）"),
-    "Sign_Up_Successfully" : MessageLookupByLibrary.simpleMessage("Sign Up Successfully"),
     "check_network_describe" : MessageLookupByLibrary.simpleMessage("We are currently checking your network status and generating a log, which would help our developers to better solve your problem. "),
     "check_network_state" : MessageLookupByLibrary.simpleMessage("Checking network status..."),
     "check_network_toast" : MessageLookupByLibrary.simpleMessage("Diagnostics complete, log has been generated."),

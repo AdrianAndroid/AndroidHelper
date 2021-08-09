@@ -21,13 +21,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "Attendance_Status" : MessageLookupByLibrary.simpleMessage("출석 상태:"),
-    "Help_Support" : MessageLookupByLibrary.simpleMessage("도움말 "),
-    "Login_successfully" : MessageLookupByLibrary.simpleMessage("로그인 성공"),
-    "Network_Diagnostics" : MessageLookupByLibrary.simpleMessage("네트워크 측정"),
-    "Report_a_Problem" : MessageLookupByLibrary.simpleMessage("오류 보고하기"),
-    "ResendFormats" : MessageLookupByLibrary.simpleMessage("인증번호 재전송(%lds)"),
-    "Sign_Up_Successfully" : MessageLookupByLibrary.simpleMessage("회원가입 성공"),
     "check_network_describe" : MessageLookupByLibrary.simpleMessage("현재 네트워크 상황을 검사하고 로그를 생성하고 있습니다. 이 로그는 개발자들이 문제를 해결하는 데 도움이 됩니다. "),
     "check_network_state" : MessageLookupByLibrary.simpleMessage("네트워크 측정 중..."),
     "check_network_toast" : MessageLookupByLibrary.simpleMessage("검사가 끝났습니다. 로그가 생성되었습니다."),
