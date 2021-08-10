@@ -59,6 +59,8 @@ dependencies:
   sensors: ^2.0.0
   equatable: ^2.0.0
   vector_math: ^2.1.0
+  rxdart: ^0.26.0
+  flutter_masked_text: ^0.8.0
 
   extended_masked_text: ^2.1.0
   meta: ^1.2.4
@@ -77,6 +79,7 @@ dependencies:
   wifi_info_flutter: ^2.0.0
   cupertino_icons: ^1.0.0
   flutter_offline: ^2.0.0
+#  uuid: ^2.0.4
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +90,8 @@ dev_dependencies:
   test:
   mockito: ^5.0.2
   pedantic: ^1.11.0
+  mustache: ^1.1.1
+  protobuf: ^1.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -119,7 +124,10 @@ flutter:
     - assets/
     - assets/images/
     - assets/timezone/2018c.tzf
+    - locale/i18n_en.json
+    - locale/i18n_hi.json
 
+    - google_fonts/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -161,7 +169,21 @@ flutter:
         - asset: assets/fonts/timeburnernormal.ttf
         - asset: assets/fonts/timeburnerbold.ttf
           weight: 700
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand-Medium.ttf
+          style: normal
+        - asset: assets/fonts/Quicksand_Bold.otf
+          weight: 700
 
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+          style: normal
+        - asset: assets/fonts/Raleway-Medium.ttf
+    - family: CustomFont
+      fonts:
+        - asset: assets/CustomFont.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

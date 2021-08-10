@@ -91,14 +91,14 @@ packages:
       name: built_collection
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.1.0"
+    version: "4.3.2"
   built_value:
     dependency: transitive
     description:
       name: built_value
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "8.1.1"
+    version: "7.1.0"
   cached_network_image:
     dependency: "direct main"
     description:
@@ -154,7 +154,7 @@ packages:
       name: code_builder
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "4.1.0"
+    version: "3.7.0"
   collection:
     dependency: transitive
     description:
@@ -287,7 +287,7 @@ packages:
       name: fixnum
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.0"
+    version: "0.10.11"
   flip_card:
     dependency: "direct main"
     description:
@@ -361,6 +361,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_masked_text:
+    dependency: "direct main"
+    description:
+      name: flutter_masked_text
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.8.0"
   flutter_material_pickers:
     dependency: "direct main"
     description:
@@ -559,7 +566,14 @@ packages:
       name: mockito
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.0.13"
+    version: "5.0.7"
+  mustache:
+    dependency: "direct dev"
+    description:
+      name: mustache
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.1"
   nested:
     dependency: transitive
     description:
@@ -693,6 +707,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.2.3"
+  protobuf:
+    dependency: "direct dev"
+    description:
+      name: protobuf
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.4"
   provider:
     dependency: "direct main"
     description:
@@ -707,6 +728,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
+  quiver:
+    dependency: transitive
+    description:
+      name: quiver
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.5"
   rational:
     dependency: transitive
     description:
@@ -722,12 +750,12 @@ packages:
     source: hosted
     version: "1.0.0"
   rxdart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: rxdart
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.27.1"
+    version: "0.26.0"
   sensors:
     dependency: "direct main"
     description:
