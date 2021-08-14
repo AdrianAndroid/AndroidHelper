@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidHelper.iml" filepath="$PROJECT_DIR$/AndroidHelper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/leetcode/AndroidHelper.leetcode.iml" filepath="$PROJECT_DIR$/.idea/modules/leetcode/AndroidHelper.leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidHelper.iml" filepath="$PROJECT_DIR$/.idea/AndroidHelper.iml" />
     </modules>
   </component>
 </project>

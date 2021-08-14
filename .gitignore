@@ -1,4 +1,5 @@
 .gradle
-.idea
 .settings
 out
+cmake-build-debug
+.idea/
