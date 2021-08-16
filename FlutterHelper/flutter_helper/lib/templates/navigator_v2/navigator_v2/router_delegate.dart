@@ -11,7 +11,7 @@ class VeggieRouterDelegate extends RouterDelegate<VeggieRoutePath>
   final GlobalKey<NavigatorState> navigatorKey;
 
   Veggie _selectedVeggie;
-  bool show404 = false;
+  bool show404 = true;
 
   List<Veggie> veggies = LocalVeggieProvider.veggies;
 
@@ -29,20 +29,16 @@ class VeggieRouterDelegate extends RouterDelegate<VeggieRoutePath>
 
   @override
   Widget build(BuildContext context) {
-
     List<Page> pages = <Page>[
       MaterialPage(
         key: ValueKey('VeggiesListPage'),
-        child: VeggiesListScreen(
-          veggies: veggies,
-          onTapped: _handleVeggieTapped,
-        ),
+        child:
+            VeggiesListScreen(veggies: veggies, onTapped: _handleVeggieTapped),
       ),
       if (show404)
         MaterialPage(key: ValueKey('UnknownPage'), child: UnknownScreen())
-      else
-        if (_selectedVeggie != null)
-          VeggieDetailsPage(veggie: _selectedVeggie)
+      else if (_selectedVeggie != null)
+        VeggieDetailsPage(veggie: _selectedVeggie)
     ];
 
     return Navigator(
@@ -89,6 +85,6 @@ class VeggieRouterDelegate extends RouterDelegate<VeggieRoutePath>
   void _handleVeggieTapped(Veggie veggie) {
     print("_handleVeggieTapped");
     _selectedVeggie = veggie;
-    notifyListeners();
+    // notifyListeners();
   }
 }

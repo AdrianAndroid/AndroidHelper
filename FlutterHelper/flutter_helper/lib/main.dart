@@ -38,8 +38,8 @@ class __HomeAppState extends State<_HomeApp> {
     AppData(app: GoogleFontsApp(), imageUrl: 'assets/fonts.png'),
     AppData(app: LanguageApp(), imageUrl: 'images/beatiful_lady.png'),
     AppData(app: TodoApp(), imageUrl: 'assets/todo.png'),
-    AppData(app: NavigatorVeggiesApp(), imageUrl: 'assets/navigation_route.png'),
     AppData(app: AwesomeFlutterApp(), imageUrl: 'assets/awsome.png'),
+    AppData(app: NavigatorVeggiesApp(), imageUrl: 'assets/navigation_route.png'),
   ];
 
   _buildGridViewBuilder() {

@@ -13,8 +13,7 @@ class NavigatorVeggiesApp extends StatefulWidget {
 
 class _NavigatorVeggiesAppState extends State<NavigatorVeggiesApp> {
   VeggieRouterDelegate _routerDelegate = VeggieRouterDelegate();
-  VeggieRouteInformationParser _routeInformationParser =
-      VeggieRouteInformationParser();
+  VeggieRouteInformationParser _routeInformationParser = VeggieRouteInformationParser();
 
   @override
   Widget build(BuildContext context) {
