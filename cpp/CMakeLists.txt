@@ -11,4 +11,4 @@ add_executable(AndroidHelper main.cpp
         practice/vectors/vect2.cpp practice/vectors/vect2.h
         practice/vectors/vect3.cpp practice/vectors/vect3.h
         practice/statics/StaticDemo.cpp practice/statics/StaticDemo.h
-        common/Review.h common/Review.cpp common/Node.cpp common/Node.h)
+        common/Review.h common/Review.cpp common/Node.cpp common/Node.h common/iterator.cpp common/iterator.h)
