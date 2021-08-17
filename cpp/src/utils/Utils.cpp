@@ -30,7 +30,7 @@ vector<int> Utils::vector001() {
     return obj;
 }
 
-int Utils::getLen(int * ar) {
+int Utils::getLen(int *ar) {
     int cnt = sizeof(*ar) / sizeof(ar[0]);
     return cnt;
 }
@@ -50,3 +50,33 @@ void Utils::printVectorWithAddr(vector<int> obj) {
 //
 //    }
 }
+
+void Utils::output(const string &s) {
+    std::cout << s << " ";
+}
+
+void Utils::outint(int num) {
+    std::cout << num << " ";
+}
+
+void Utils::printList(list<int> l) {
+    for_each(l.begin(), l.end(), outint);
+}
+
+void Utils::println(const string &s) {
+    cout << endl << s;
+}
+
+void Utils::ShowDouble(double v) {
+    std::cout.width(6);
+    std::cout << v << ' ';
+}
+
+void Utils::ShowInt(int num) {
+    std::cout << num << " ";
+}
+
+void Utils::display(const string &s) {
+    cout << s << " ";
+}
+

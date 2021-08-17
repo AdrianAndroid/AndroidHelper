@@ -28,6 +28,13 @@ public:
         return tmp;
     }
 
+//    iterator find_ll(iterator head, const double &val) {
+//        iterator start;
+//        for (start = head; start != 0; ++start) {
+//            if (*start == val) return start;
+//        }
+//        return 0;
+//    }
 };
 
 
