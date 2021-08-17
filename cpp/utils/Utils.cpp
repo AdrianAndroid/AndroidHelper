@@ -30,16 +30,23 @@ vector<int> Utils::vector001() {
     return obj;
 }
 
-int Utils::getLen(int *ar) {
-    int cnt = sizeof(ar) / sizeof(ar[0]);
+int Utils::getLen(int * ar) {
+    int cnt = sizeof(*ar) / sizeof(ar[0]);
     return cnt;
 }
 
-vector<int> Utils::vectorFrom(int * arr) {
+vector<int> Utils::vectorFrom(int *arr) {
     int len = getLen(arr);
     vector<int> obj(len);
     for (int i = 0; i < len; ++i) {
         obj.push_back(arr[i]);
     }
     return obj;
+}
+
+void Utils::printVectorWithAddr(vector<int> obj) {
+//    vector<int>::iterator it;
+//    for (it = obj.begin(); it != obj.end(); it++) {
+//
+//    }
 }

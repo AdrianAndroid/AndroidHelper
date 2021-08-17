@@ -77,4 +77,5 @@ vector<int> LeetCode::twoSum(vector<int> &nums, int target) {
         }
         a[nums[i]] = i;
     }
+    return b;
 }

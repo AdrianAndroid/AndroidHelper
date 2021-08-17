@@ -12,11 +12,10 @@ using namespace std;
 class Utils {
 public:
     // utils
-    static int getLen(int arr[]);
-
+    static int getLen(int * arr);
     static void printVector(vector<int> v);
-
     static void printVector2(vector<vector<int>> obj);
+    static void printVectorWithAddr(vector<int> obj);
 
     // source
     static vector<int> vector001();
