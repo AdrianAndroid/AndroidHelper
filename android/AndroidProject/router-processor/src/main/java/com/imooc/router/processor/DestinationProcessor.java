@@ -17,6 +17,7 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.JavaFileObject;
@@ -30,6 +31,11 @@ import javax.tools.StandardLocation;
 @AutoService(Processor.class)
 public class DestinationProcessor extends AbstractProcessor {
 
+
+    @Override
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.RELEASE_8;
+    }
 
     private static final String TAG = "DestinationProcessor";
 
@@ -66,9 +72,10 @@ public class DestinationProcessor extends AbstractProcessor {
 
         // 传递过来的参数
         String rootDir = processingEnv.getOptions().get("root_project_dir");
-//        if (rootDir != null) {
+        if (rootDir == null) {
+            return false;
 //            throw new RuntimeException("rootDir = " + rootDir); // 编译过程比较漫长，这么比较快的退出
-//        }
+        }
 
 
         // 获取所有标记了@Destination注解的类的信息
@@ -137,19 +144,15 @@ public class DestinationProcessor extends AbstractProcessor {
         }
 
         // 想创建一个资源文件
-        try {
-            System.out.println("[[[创建一个资源文件]]]");
-            System.out.println(processingEnv.getLocale().getCountry());
-            JavaFileObject source = processingEnv.getFiler().createSourceFile("kkkkk.string");
-//            Writer writer = source.openWriter();
-//            writer.write("xxxxxxxxxxxx111111");
-//            writer.flush();
-//            writer.close();
-//            processingEnv.getFiler().getResource(StandardLocation.SOURCE_PATH, "", "config.")
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println("[[[创建一个资源文件]]]");
+//            System.out.println(processingEnv.getLocale().getCountry());
+//            JavaFileObject source = processingEnv.getFiler().createSourceFile("kkkkk.string");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
+        System.out.println(rootDir);
         // 写入JSON到本地文件中
         File rootDirFile = new File(rootDir);
         if (!rootDirFile.exists()) throw new RuntimeException("root_project_dir not exits");

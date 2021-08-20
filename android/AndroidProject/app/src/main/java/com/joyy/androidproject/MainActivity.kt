@@ -1,9 +1,12 @@
 package com.joyy.androidproject
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.joyy.stringescape.StringEscapeUtils
+import com.joyy.webviews.WebViewActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +16,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        findViewById<View>(R.id.webview).setOnClickListener {
+            startActivity(Intent(this, WebViewActivity::class.java))
+        }
+
+
         // 1. 先打印字符串测试
         // 2。抽离StringEscapeUtils代码
         // 3。 WebView写JS

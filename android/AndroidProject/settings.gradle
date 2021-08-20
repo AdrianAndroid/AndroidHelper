@@ -14,7 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidProject"
 include ':app'
-//include 'router-annotations'
+include 'router-annotations'
 //include 'router-gradle-plugin'
-//include 'router-processor'
+include 'router-processor'
 include ':stringescape'
+include ':webviews'
