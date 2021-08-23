@@ -1,4 +1,4 @@
-package com.joyy.webviews.default
+package com.joyy.webviews.defaults
 
 import android.content.Intent
 import android.graphics.Bitmap

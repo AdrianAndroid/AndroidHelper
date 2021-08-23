@@ -18,7 +18,7 @@ import org.json.JSONObject
 object JSHelper {
 
     fun log(msg: String) {
-        Log.e("JSHelper", msg)
+        Log.e("JSHelper", "${Thread.currentThread().name}  $msg")
     }
 
     const val ON_BRIDGE_EVENT = "onBridgeEvent"

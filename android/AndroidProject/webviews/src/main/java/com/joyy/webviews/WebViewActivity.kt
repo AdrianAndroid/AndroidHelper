@@ -25,9 +25,8 @@ class WebViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_web_view)
 
 //        mWebView.loadUrl("https://www.jianshu.com/p/6c796944a19f")
-        mWebView.loadUrl("file:///android_asset/web/test.html")
+//        mWebView.loadUrl("file:///android_asset/web/test.html")
 //        mWebView.addJavascriptInterface(webAppInterface, "app")
-        mWebView.settings.javaScriptEnabled = true
         WebView.setWebContentsDebuggingEnabled(true)
 //        // 注入
 //        JSHelper.addJavascriptInterface(mWebView) // 注入JS
@@ -38,8 +37,9 @@ class WebViewActivity : AppCompatActivity() {
 //        }
     }
 
+    lateinit var jsInterface: JSInterface
     fun addCommands(mWebView: WebView) {
-        val jsInterface = JSInterface()
+        jsInterface = JSInterface(mWebView)
         mWebView.addJavascriptInterface(jsInterface, "app")
 
         jsInterface.addCommand(Command("getName", object : IWebJS {
@@ -50,7 +50,7 @@ class WebViewActivity : AppCompatActivity() {
         jsInterface.addCommand(Command("sayHello", object : IWebJS {
             override fun invoke(name: String?, params: String?, cbName: String?): String {
                 runOnUiThread {
-                    Toast.makeText(this@WebViewActivity, name ?: "还没点击按钮", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@WebViewActivity, params ?: "还没点击按钮", Toast.LENGTH_SHORT)
                         .show()
                 }
                 return ""
@@ -70,6 +70,18 @@ class WebViewActivity : AppCompatActivity() {
                 return ""
             }
         }))
+
+        jsInterface.loadUrl("file:///android_asset/web/test.html")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        jsInterface.resume()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        jsInterface.destroy()
     }
 //
 //    inner class WebAppInterface(val context: Context) {

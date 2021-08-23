@@ -1,4 +1,4 @@
-package com.joyy.webviews.default
+package com.joyy.webviews.defaults
 
 import android.net.Uri
 import android.view.View

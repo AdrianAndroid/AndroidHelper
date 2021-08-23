@@ -1,18 +1,14 @@
 package com.joyy.webviews
 
 import android.annotation.SuppressLint
-import android.webkit.JavascriptInterface
-import android.webkit.WebChromeClient
-import android.webkit.WebSettings
-import android.webkit.WebView
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.OnLifecycleEvent
+import android.view.View
+import android.view.ViewGroup
+import android.webkit.*
 import com.joyy.webviews.api.IWeb
-import com.joyy.webviews.api.IWebCallBack
 import com.joyy.webviews.api.IWebJS
-import com.joyy.webviews.default.DefaultWebChromeClient
-import com.joyy.webviews.default.DefaultWebViewClient
-import com.joyy.webviews.default.WebCallBackImpl
+import com.joyy.webviews.defaults.DefaultWebChromeClient
+import com.joyy.webviews.defaults.DefaultWebViewClient
+import com.joyy.webviews.defaults.WebCallBackImpl
 import com.joyy.webviews.utils.JSHelper
 import java.lang.IllegalArgumentException
 
@@ -60,13 +56,21 @@ class JSInterface(val webView: WebView) : WebCallBackImpl(),
     // 唯一的跟WebView交互
     @JavascriptInterface
     override fun invoke(name: String?, params: String?, cbName: String?): String? {
-        JSHelper.log(">>>${Thread.currentThread().name} $name $params $cbName <<<")
+        JSHelper.log(">>>invoke $name $params $cbName<<<")
         return hashMap[name]?.invokeMethod?.invoke(name, params, cbName)
+    }
+
+    // 主动加载JS，用途：
+    // 1。 本地主动调用JS，
+    // 2。 上传完成后通知JS
+    fun loadJS(params: Any, name: String?) {
+        JSHelper.loadYyJs(webView, params, name)
     }
 
 
     //IWeb/////////////////////////
     override fun loadUrl(url: String, force: Boolean) {
+        JSHelper.log(">>>loadUrl(url=$url, force=$force)<<<")
         if (force || webView.url != url) {
             if (url.startsWith("http") || url.startsWith("file")) {
                 webView.settings.blockNetworkImage = true
@@ -76,6 +80,7 @@ class JSInterface(val webView: WebView) : WebCallBackImpl(),
     }
 
     override fun create() {
+        JSHelper.log(">>>create()<<<")
         webView.webViewClient = DefaultWebViewClient(this)
         webView.webChromeClient = DefaultWebChromeClient(this)
 
@@ -88,15 +93,30 @@ class JSInterface(val webView: WebView) : WebCallBackImpl(),
     }
 
     override fun resume() {
+        JSHelper.log(">>>resume()<<<")
+        webView.onResume()
     }
 
     override fun destroy() {
+        JSHelper.log(">>>destroy()<<<")
+        hashMap.clear()
+        webView.removeJavascriptInterface("app")
+        webView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null)
+        webView.clearHistory()
+        WebStorage.getInstance().deleteAllData()
+        if (webView.parent is ViewGroup)
+            (webView.parent as ViewGroup).removeView(webView)
+        webView.visibility = View.GONE
+        webView.destroy()
     }
 
     override fun refresh() {
+        JSHelper.log(">>>refresh()<<<")
+        webView.reload()
     }
 
     override fun addCommand(command: Command) {
+        JSHelper.log(">>>addCommand(command=$command)<<<")
         if (command.name.isBlank()) throw IllegalArgumentException("name不能为空!!")
         hashMap[command.name] = command
     }
