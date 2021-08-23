@@ -11,4 +11,11 @@
         android:layout_height="match_parent" />
 
 
+    <Button
+        android:layout_gravity="right"
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="测试成功" />
+
 </FrameLayout>

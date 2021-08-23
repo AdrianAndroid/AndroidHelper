@@ -1,50 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>HTML 测试</title>
 
-<script type="text/javascript">
-		console.log("hello world!")
-
-		function string2unicode(str){
-			var ret ="";
-			var ustr = "";
-
-			for(var i=0; i<str.length; i++){
-
-				var code = str.charCodeAt(i);
-				var code16 = code.toString(16);
-
-				if(code < 0xf){
-					ustr = "\\u"+"000"+code16;
-				}else if(code < 0xff){
-					ustr = "\\u"+"00"+code16;
-				}else if(code < 0xfff){
-					ustr = "\\u"+"0"+code16;
-				}else{
-					ustr = "\\u"+code16;
-				}
-				ret +=ustr;
-				//ret += "\\u" + str.charCodeAt(i).toString(16);
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
 			}
-			return ret
-		}
 
-		window.onload = function() {
-			// console.log("onload!!")
-			// var str = "<p>FIFTY-SIXTY CURRENT AFFAIRS TEST SERIES -2021</p><p><br></p><p><br></p><p><br></p><p>\tஇந்திய குடிமைப் பணித் தேர்வில் எனப்படும் தற்கால நிகழ்வுகள் இந்திய மற்றும் சர்வதேச அளவில் முக்கியத்துவம் வாய்ந்த செய்திகள் வினாக்களாக கேட்கப்படுகின்றன இவற்றில் வரலாறு புவியியல் பொருளாதாரம் சுற்றுப்புறச் சூழல் அறிவியல் மற்றும் தொழில்நுட்பம் புவியியல் சம்பந்தப்பட்ட வினாக்கள் கேட்கப்படுகின்றன இந்த தற்கால நிகழ்வுகளுக்கான வினாக்கள் அதிகாரபூர்வமான செய்திகளிலிருந்து பெறப்படுகின்றன இதனடிப்படையில் இந்த தற்கால நிகழ்வுகளுக்கான மாதிரி வினா தேர்வு வினாத் தேர்வு தொடர் அமைக்கப்பட்டுள்ளது இந்த வினா தேர்வு தொடரில் இந்தியா இயர் புக், வேலைவாய்ப்பு செய்திகள், பொருளாதார மதிப்பீடு, அரசாங்க அமைச்சரவைகளின் அதிகாரபூர்வமான ஆண்டு மலர், இந்தியா பத்திரிகை செய்தித் தொடர்புகளின் செய்தி தொகுப்பு ,யோஜனா, குருஷேத்ரா அகில இந்திய வானொலி செய்தி தொகுப்பு, இந்திய அரசாங்கத்தின் வலைத்தளம் மற்றும் இன்ன பிற அதிகாரப்பூர்வ வெளியீடுகளிலிருந்து வினாக்கள் தொகுக்கப்பட்டுள்ளன. அனைத்து வினாக்களும் அரசாங்க அதிகாரப்பூர்வ வெளியீடுகளில் இருந்து பெறப்பட்டவை இவற்றைப் பற்றிய புரிதல் மாணாக்கர்களுக்கு அதிகமாகின்றன. அனைத்து வினாக்களும் விடைகளும் அதற்கான தெளிவான விளக்கங்களும் மின்னணு முறையில் பதிவிறக்கம் செய்து கொள்ளலாம்.இவற்றின் மூலம் மாணாக்கர்களுக்கு தெரியாத வினாக்களுக்கான விடைகளை மாணவர்கள் தெரிந்து கொள்ளலாம் .</p><p><br></p><p><br></p><p><br></p><p>ஒரு மதிப்பெண் கூட மாணவரின் வெற்றி தோல்வியை தீர்மானிப்பதாக அமைந்துள்ளது, நேரம் மேம்பாடு நேர மேலாண்மை மற்றும் கருதுகோள் விடைகளை சரியான முறையில் தேர்ந்தெடுக்கும் வகையில் பயிற்சி படுத்தப்படுகிறார்கள். தற்காலத்திய நிகழ்வுகள் பற்றிய அறிதல் மற்றும் புரிதல் மேம்படுகிறது இந்த தேர்வு தொடரில் பயிற்சி மேற்கொள்ளும் பொழுது அதிக மதிப்பெண் பெறுவதற்கான சாத்தியக்கூறுகள் உள்ளன.</p><p><br></p><p><br></p><p><br></p><p>இந்தத் தேர்வு தொடரில் தற்போதைய நிலையில் 7 தேர்வுகள் உள்ளன ஒவ்வொரு தேர்விற்கும் 50 வினாக்கள் கொடுக்கப்பட்டுள்ளன. தேர்வுக்கான நேரம் 60 நிமிடங்கள்.எதிர்வரும் காலங்களில் இன்னும் மூன்று தேர்வுகள் இதில் சேர்க்கப்பட உள்ளன. எனவே மொத்தத்தில் 10 தேர்வுகள் கொண்ட ஒரு முழு தொடர் இது. </p><p><br></p><p><br></p><p><br></p><p>தேர்வுத் தொடர் சம்பந்தமான ஏதேனும் சந்தேகங்கள் இருப்பின் எங்களது வாட்ஸ்அப் மற்றும் டெலிகிராம் 8939290339 எண்ணுக்கு குறுஞ்செய்தி அனுப்பி தெரிந்து கொள்ளலாம்.</p><p><br></p><p><br></p><p><br></p><p>விருப்பமுள்ள மாணவர்கள் இணைந்து பயன் பெறலாம்</p><p><br></p>"
-			// console.log(JSON.stringify(str))
-			// console.log(string2unicode(str))
-			// console.log("onload end!")
-			console.log("test")
-			var _text = document.getElementById("text")
-			_text.innerHTML += "哈哈"
-			console.log(_text)
-		}
-	</script>
-<head>
-    <meta charset="utf-8">
-    <title>测试用</title>
-</head>
-<body>
-<p id="text">测试用！</p>
-</body>
+			.title {
+				position: relative;
+				width: 100%;
+				height: 50px;
+				background-color: green;
+			}
+
+			.back {
+				position: absolute;
+				font-size: 24px;
+				background-color: #f92;
+				width: 60px;
+				height: 50px;
+			}
+
+			.title h2 {
+				position: absolute;
+				right: 30%;
+				height: 50px;
+				float: left;
+				line-height: 50px;
+
+			}
+
+			.content {
+				margin: 3px;
+			}
+
+			#textName {
+				display: block;
+				width: 100%;
+				height: 35px;
+			}
+
+			.button {
+				display: block;
+				width: 100%;
+				height: 35px;
+				font-size: 24px;
+				border: none;
+				background-color: red;
+			}
+		</style>
+
+		<script type="text/javascript">
+			//invoke(name: String?, params: String?, cbName: String?): String?
+		
+			function getNameFrom() {
+				//var txt = app.getName()
+				var txt = app.invoke('getName', '', '')
+				console.log(txt)
+				document.getElementById('txt').innerHTML += txt
+			}
+
+			function sayHello() {
+				var name = document.getElementById('textName').value;
+				//app.sayHello(name);
+				app.invoke('sayHello', name, name)
+			}
+
+			function back() {
+				//app.back();
+				app.invoke('back', '', '')
+			}
+
+			function showName(name) {
+				//document.getElementById('textName').value = name;
+				app.invoke('showName', name, '')
+			}
+		</script>
+
+	</head>
+	<body>
+		<div class="title">
+			<input class="back" type="button" onclick="back()" value="返回">
+			<h2>H5和js交互</h2>
+		</div>
+		<div class="content">
+			<input id="textName" type="text">
+			<button class="button" onclick="getNameFrom()">HTML按钮</button>
+			<button id="txt" class="button2" onclick="sayHello()">获取内容</button>
+            <button id="txt3" class="button3" onclick="sayHello()">sayHello</button>
+		</div>
+	</body>
 </html>
