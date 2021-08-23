@@ -1,0 +1,22 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+//        jcenter() // Warning: this repository is going to shut down soon
+//        maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
+//        maven { url uri("${rootProject.getRootDir().absolutePath}/../../../repo") }
+        maven {
+            url 'http://repo.duowan.com:8181/nexus/content/groups/public'
+            allowInsecureProtocol = true
+        }
+    }
+}
+rootProject.name = "AndroidProject"
+include ':app'
+include 'router-annotations'
+//include 'router-gradle-plugin'
+include 'router-processor'
+include ':stringescape'
+include ':webviews'
+include ':kotlinLib'

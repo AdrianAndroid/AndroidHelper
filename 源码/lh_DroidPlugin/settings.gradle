@@ -1,2 +1,0 @@
-include ':app', ':DroidPlugin', ':plugin', ':test23'
-rootProject.name='lh_DroidPlugin'

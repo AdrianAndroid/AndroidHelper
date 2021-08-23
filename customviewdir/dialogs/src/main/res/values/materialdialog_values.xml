@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="materialdialog_showloading_height">60dp</dimen>
-    <dimen name="materialdialog_showloading_textsize">20dp</dimen>
-    <dimen name="materialdialog_showloading_progressbar_height">50dp</dimen>
-
-</resources>

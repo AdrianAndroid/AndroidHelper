@@ -1,5 +1,0 @@
-rootProject.ext.setLibConfig project
-
-dependencies {
-    implementation 'com.airbnb.android:lottie:2.7.0'
-}

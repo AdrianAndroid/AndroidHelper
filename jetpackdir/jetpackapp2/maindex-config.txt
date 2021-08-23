@@ -1,2 +1,0 @@
-com/flannery/jetpackapp2/MainActivity.class
-com/flannery/jetpackapp2/BuildConfig.class
