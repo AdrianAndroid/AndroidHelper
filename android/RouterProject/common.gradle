@@ -1,10 +1,96 @@
-setLibConfig = { extension ->
-    extension.plugin id: 'com.android.library'
-//        extension.apply plugin: 'com.android.library'
-//        extension.apply plugin: 'kotlin-android'
-//        extension.apply plugin: 'kotlin-android-extensions'
-//        extension.apply plugin: 'kotlin-kapt'
-//        extension.description "库"
-//        setAndroidConfig_ extension.android
-//        setDependeciesConfig_ extension.dependencies
+ext {
+
+    setAppConfig = { project ->
+        project.plugins.apply('com.android.application')
+        project.plugins.apply('kotlin-android')
+
+        project.android {
+            compileSdk 31
+
+            defaultConfig {
+                applicationId "com.joyy.routerproject"
+                minSdk 21
+                targetSdk 31
+                versionCode 1
+                versionName "1.0"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            kotlinOptions {
+                jvmTarget = '1.8'
+            }
+        }
+
+        project.dependencies {
+
+            println("[setAppConfig] dependencies")
+
+            implementation 'androidx.core:core-ktx:1.6.0'
+            implementation 'androidx.appcompat:appcompat:1.3.1'
+            implementation 'com.google.android.material:material:1.4.0'
+            implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+//            implementation project(path: ':router-annotations')
+            testImplementation 'junit:junit:4.+'
+            androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+            androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+        }
+    }
+
+
+    setLibConfig = { project ->
+        project.plugins.apply('com.android.library')
+        //project.plugins.apply('com.android.application')
+        project.plugins.apply('kotlin-android')
+        project.plugins.apply('kotlin-android-extensions')
+        project.plugins.apply('kotlin-kapt')
+        project.description "第三方库"
+
+        project.android {
+            compileSdk 31
+
+            defaultConfig {
+                minSdk 21
+                targetSdk 31
+                versionCode 1
+                versionName "1.0"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                consumerProguardFiles "consumer-rules.pro"
+            }
+
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            kotlinOptions {
+                jvmTarget = '1.8'
+            }
+        }
+
+        project.dependencies {
+            implementation 'androidx.core:core-ktx:1.6.0'
+            implementation 'androidx.appcompat:appcompat:1.3.1'
+            implementation 'com.google.android.material:material:1.4.0'
+            testImplementation 'junit:junit:4.+'
+            androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+            androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+        }
+    }
 }
