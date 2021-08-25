@@ -8,6 +8,26 @@
   <!-- do_not_remove: published-with-gradle-metadata -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.joyy.router</groupId>
-  <artifactId>router-annotations</artifactId>
+  <artifactId>router-processor</artifactId>
   <version>1.0.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.joyy.router</groupId>
+      <artifactId>router-annotations</artifactId>
+      <version>1.0.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.service</groupId>
+      <artifactId>auto-service</artifactId>
+      <version>1.0-rc6</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.1</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
 </project>

@@ -32,6 +32,9 @@ publishing {
             groupId "${GROUP_ID}"
             version "${VERSION_NAME}"
             artifactId POM_ARTIFACT_ID
+
+            from components.java
+//            artifact sourcesJar
         }
     }
     repositories {

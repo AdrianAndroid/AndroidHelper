@@ -16,6 +16,7 @@ include ':app'
 include ':module_1'
 include ':module_2'
 include ':router-annotations'
+include ':router-processor'
 
 
 gradle.addBuildListener(new BuildAdapter() {

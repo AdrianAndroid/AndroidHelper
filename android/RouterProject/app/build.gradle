@@ -1,9 +1,10 @@
 rootProject.ext.setAppConfig project
 
 dependencies {
+//    implementation project(path: ':router-annotations')
+//    kapt project(path: ':router-processor')
     println("[app] dependencies")
     //implementation project(path: ':router-annotations')
-    implementation 'com.joyy.router:router-annotations:1.0.0'
 }
 
 //plugins {
