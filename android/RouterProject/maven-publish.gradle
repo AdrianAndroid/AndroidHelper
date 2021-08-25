@@ -1,0 +1,135 @@
+// apply plugin: 'maven'
+// https://github.com/expo/expo/issues/12774
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+// https://juejin.cn/post/6844904185754812423
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+// https://juejin.cn/post/6844904185754812423
+// https://developer.android.com/studio/build/maven-publish-plugin
+//读取工程的配置
+Properties gradleProperties = new Properties()
+gradleProperties.load(project.rootProject.file("gradle.properties").newDataInputStream())
+def VERSION_NAME = gradleProperties.getProperty("VERSION_NAME")
+def POM_URL = gradleProperties.getProperty("POM_URL")
+def GROUP_ID = gradleProperties.getProperty("GROUP_ID")
+
+// 本项目下的gradle.properties文件
+Properties projectGradleProperties = new Properties()
+projectGradleProperties.load(project.file('gradle.properties').newDataInputStream())
+def POM_ARTIFACT_ID = projectGradleProperties.getProperty("POM_ARTIFACT_ID")
+
+println("maven-publish VERSION_NAME=$VERSION_NAME")
+println("maven-publish POM_URL=$POM_URL")
+println("maven-publish POM_URL=$POM_URL")
+println("maven-publish GROUP_ID=$GROUP_ID")
+
+
+pluginManager.apply('maven-publish')
+
+publishing {
+    publications {
+        m1(MavenPublication) {
+            groupId "${GROUP_ID}"
+            version "${VERSION_NAME}"
+            artifactId POM_ARTIFACT_ID
+        }
+    }
+}
+
+
+//task generateSourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier 'sources'
+//}
+
+//发布任务
+//publishing {
+//    publications {
+//        Production(MavenPublication) {
+//            //url = uri(layout.buildDirectory.dir("repo"))
+//            groupId "${GROUP_ID}"
+//            version "${VERSION_NAME}"
+//            artifactId POM_ARTIFACT_ID
+//            // 依赖 bundleReleaseAar 任务，并上传其产出的aar
+////            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+//            // 也可以指定上传的AAR包，但是需要先手动生成aar
+//            // artifact("$buildDir/outputs/aar/${project.getName()}-debug.aar")
+//            // 上传source，这样使用放可以看到方法注释
+////            artifact generateSourcesJar
+//            // pom文件中声明依赖，从而传递到使用方
+////            pom.withXml {
+////                def dependenciesNode = asNode().appendNode('dependencies')
+////                configurations.implementation.allDependencies.each {
+////                    // 避免出现空节点或 artifactId=unspecified 的节点
+////                    if (it.group != null && (it.name != null && "unspecified" != it.name) && it.version != null) {
+////                        println it.toString()
+////                        def dependencyNode = dependenciesNode.appendNode('dependency')
+////                        dependencyNode.appendNode('groupId', it.group)
+////                        dependencyNode.appendNode('artifactId', it.name)
+////                        dependencyNode.appendNode('version', it.version)
+////                        dependencyNode.appendNode('scope', 'implementation')
+////                    }
+////                }
+////            }
+//        }
+//
+//        repositories {
+//            // 定义一个 maven 仓库
+//            maven {
+//                // 可以有且仅有一个仓库不指定 name 属性，会隐式设置为 Maven
+//                // 根据 versionName 来判断仓库地址
+//                url = uri(POM_URL)//versionName.endsWith('SNAPSHOT') ? SNAPSHOT_REPOSITORY_URL : RELEASE_REPOSITORY_URL
+//                // 仓库用户名密码
+//                credentials {
+//                    username = "shine"
+//                    password = "shine"
+//                }
+//            }
+//            // 定义第二个 maven 仓库，名为 Nexus
+//            maven {
+//                // 必须显示指定 name
+//                name = "nexus"
+//                url = versionName.endsWith('SNAPSHOT') ? SNAPSHOT_REPOSITORY_URL : RELEASE_REPOSITORY_URL
+//            }
+//        }
+//    }
+//}
+
+
+//task publishRepo {
+//    setGroup("publishing")
+//    doLast {
+//        publishing {
+//            publications {
+//                maven {
+//                    //url = uri(layout.buildDirectory.dir("repo"))
+//                    groupId $ { GROUP_ID }
+//                    version $ { VERSION_NAME }
+//                    artifactId POM_ARTIFACT_ID
+//                }
+//            }
+//        }
+//    }
+//}
+
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            // 填入发布信息
+//            repository(url: uri(POM_URL)) {
+//                pom.groupId    = GROUP_ID
+//                pom.artifactId = POM_ARTIFACT_ID
+//                pom.version    = VERSION_NAME
+//            }
+//            pom.whenConfigured { pom ->
+//                pom.dependencies.forEach { dep ->
+//                    if(dep.getVersion() == "unspecified") {
+//                        dep.setGroupId(GROUP_ID)
+//                        dep.setVersion(VERSION_NAME)
+//                    }
+//                }
+//            }
+//
+//        }
+//    }
+//}

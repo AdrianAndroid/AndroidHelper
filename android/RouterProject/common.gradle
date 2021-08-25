@@ -1,0 +1,10 @@
+setLibConfig = { extension ->
+    extension.plugin id: 'com.android.library'
+//        extension.apply plugin: 'com.android.library'
+//        extension.apply plugin: 'kotlin-android'
+//        extension.apply plugin: 'kotlin-android-extensions'
+//        extension.apply plugin: 'kotlin-kapt'
+//        extension.description "库"
+//        setAndroidConfig_ extension.android
+//        setDependeciesConfig_ extension.dependencies
+}

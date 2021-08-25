@@ -1,6 +1,7 @@
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+//        maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
@@ -8,3 +9,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "RouterProject"
 include ':app'
+include ':module_1'
+include ':module_2'
+include ':router-annotations'

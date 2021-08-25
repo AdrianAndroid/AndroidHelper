@@ -1,6 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
+//        maven {
+//            url 'http://repo.duowan.com:8181/nexus/content/groups/public'
+//            allowInsecureProtocol true
+//        }
+//        maven { url "https://plugins.gradle.org/m2/" }
         google()
         mavenCentral()
     }
