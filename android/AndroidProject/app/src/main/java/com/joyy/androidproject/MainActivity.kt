@@ -78,10 +78,6 @@ class MainActivity : AppCompatActivity() {
     fun test18() {
         GlobalScope.launch(SupervisorJob() + CoroutineExceptionHandler { _, _ -> }) {
 
-            this.coroutineContext.fold(this) { _, _ ->
-                this.coroutineContext
-            }
-
         }
     }
 
