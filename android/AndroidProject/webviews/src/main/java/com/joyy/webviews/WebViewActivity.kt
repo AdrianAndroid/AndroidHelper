@@ -2,18 +2,12 @@ package com.joyy.webviews
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.View
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.imooc.router.annotations.Destination
 import com.joyy.webviews.api.IWebJS
 import kotlinx.android.synthetic.main.activity_web_view.*
 
-@Destination(
-    url = "module/webviews",
-    description = "webviews"
-)
 class WebViewActivity : AppCompatActivity() {
 
 //    private val webAppInterface = WebAppInterface(this)
