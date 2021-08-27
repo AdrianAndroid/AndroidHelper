@@ -2,6 +2,7 @@ package com.joyy.module_1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.com.joyy.module_1.R
 import com.joyy.router.annotations.Destination
 
 @Destination(

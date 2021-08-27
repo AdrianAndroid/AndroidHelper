@@ -3,7 +3,10 @@ package com.joyy.androidproject
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.joyy.stringescape.StringEscapeUtils
 import com.joyy.webviews.WebViewActivity
@@ -18,6 +21,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val btnActive = findViewById<Button>(R.id.btnActive).also {
+            it.setOnClickListener {
+                Toast.makeText(this, "Activew : ${it.isActivated}", Toast.LENGTH_SHORT).show()
+            }
+        }
+        findViewById<RadioGroup>(R.id.rg).setOnCheckedChangeListener { rg, id ->
+            if (id == R.id.rb1) {
+                btnActive.isActivated = true
+            } else if (id == R.id.rb2) {
+                btnActive.isActivated = false
+            }
+        }
+
         findViewById<View>(R.id.webview).setOnClickListener {
             startActivity(Intent(this, WebViewActivity::class.java))
         }
@@ -28,5 +44,11 @@ class MainActivity : AppCompatActivity() {
         // 3。 WebView写JS
         // 4。
         findViewById<TextView>(R.id.textview).text = StringEscapeUtils.escapeJava(url)
+    }
+
+
+
+    suspend fun one() {
+//        delay()
     }
 }
