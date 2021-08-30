@@ -17,6 +17,7 @@
 #include "practice/alogs/usealgo.h"
 #include "practice/arrays/valvect.h"
 #include "practice/lists/ilist.h"
+#include "practice/mmap/mmap_demo.h"
 
 
 void leetcodeTest();
@@ -27,9 +28,12 @@ void forTest();
 
 void vectorTest();
 
-int main() {
+int main(int argc, char **argv) {
     std::cout << "Hello, World!" << std::endl;
-    vectorTest();
+    mmap_demo _mmap_demo;
+    _mmap_demo.test2(argc, argv);
+    //_mmap_demo.test1(argc, argv);
+    //vectorTest();
     //forTest();
 //    main_vector1();
 //    leetcodeTest();
@@ -57,7 +61,7 @@ void leetcodeTest() {
 }
 
 void vectorTest() {
-    ilist v15; v15.test();
+//    ilist v15; v15.test();
 //    valvect v14; v14.test();
 //    usealgo v13; v13.test();
 //    listrmv v12; v12.test();

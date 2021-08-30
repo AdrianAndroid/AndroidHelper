@@ -22,4 +22,4 @@ add_executable(AndroidHelper src/main.cpp
         src/practice/fuctors/FunctorsTest.cpp src/practice/fuctors/FunctorsTest.h
         src/practice/fuctors/funadap.cpp src/practice/fuctors/funadap.h
         src/practice/strings/strgst1.cpp src/practice/strings/strgst1.h
-        src/practice/lists/listrmv.cpp src/practice/lists/listrmv.h src/practice/alogs/usealgo.cpp src/practice/alogs/usealgo.h src/practice/arrays/valvect.cpp src/practice/arrays/valvect.h src/practice/lists/ilist.cpp src/practice/lists/ilist.h)
+        src/practice/lists/listrmv.cpp src/practice/lists/listrmv.h src/practice/alogs/usealgo.cpp src/practice/alogs/usealgo.h src/practice/arrays/valvect.cpp src/practice/arrays/valvect.h src/practice/lists/ilist.cpp src/practice/lists/ilist.h src/practice/mmap/mmap_demo.cpp src/practice/mmap/mmap_demo.h)
