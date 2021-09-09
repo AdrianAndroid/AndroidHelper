@@ -111,7 +111,7 @@ class RouterMappingTransform extends Transform {
                                 Format.JAR
                         )
                 log(jarInput.file.absolutePath)
-                controller2.collectJarFile(jarInput.file)
+                controller2.collectFromJarFile(jarInput.file)
                 FileUtils.copyFile(jarInput.file, dest)
             }
 
