@@ -1,2 +1,0 @@
-com/joyy/router/processor/DestinationProcessor.java
- com.joyy.router.processor.DestinationProcessor

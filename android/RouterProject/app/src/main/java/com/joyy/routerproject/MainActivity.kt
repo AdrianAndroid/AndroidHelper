@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         findViewById<View>(R.id.mSecondActvity).setOnClickListener {
             startActivity(Intent(this, SecondActivity::class.java))
         }
@@ -26,6 +25,5 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.mModuleTwoActivity).setOnClickListener {
             startActivity(Intent(this, ModuleTwoActivity::class.java))
         }
-
     }
 }

@@ -2,7 +2,7 @@ apply plugin: 'groovy'
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:4.2.1'
+    implementation "com.android.tools.build:gradle:7.0.0"
     implementation 'org.ow2.asm:asm:7.0'
     implementation 'commons-io:commons-io:2.8.0'
 }
