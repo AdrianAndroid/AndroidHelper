@@ -7,3 +7,6 @@ lib_android/
 lib_flutter/
 lib_ios/
 lib_web/
+.idea/
+.settings/
+.DS_Store
