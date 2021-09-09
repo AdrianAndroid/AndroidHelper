@@ -3,6 +3,8 @@ package com.joyy.router
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 
+import static com.joyy.router.RouterPlugin.log
+
 class RouterMappingController2 {
     private static final String PACKAGE_NAME = 'com/joyy/router/mapping'
     private static final String CLASS_NAME_PREFIX = 'RouterMapping_'
@@ -21,6 +23,7 @@ class RouterMappingController2 {
     void collect(File classFile) {
         if (classFile == null || !classFile.exists()) return
         if (classFile.isFile()) { // 文件
+            log("---->${classFile.name}")
             if (isValidateName(classFile)) {
                 // RouterMapping_xxxxx.class --> RouterMapping_xxxxx
                 String className = classFile.name.replace(CLASS_FILE_SUFFIX, "")
@@ -45,6 +48,7 @@ class RouterMappingController2 {
         while (enumeration.hasMoreElements()) {
             JarEntry jarEntry = (JarEntry) enumeration.nextElement()
             String entryName = jarEntry.getName()
+            log("------> $entryName")
             if (isValidateName(entryName)) {
                 String className = entryName.replace(PACKAGE_NAME, "").replace("/", "").replace(CLASS_FILE_SUFFIX, "")
                 mappingClassNames.add(className)

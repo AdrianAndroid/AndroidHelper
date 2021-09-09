@@ -69,10 +69,8 @@ public class DestinationProcessor extends AbstractProcessor {
         // 传递过来的参数
         String rootDir = processingEnv.getOptions().get("root_project_dir");
         if (rootDir == null) {
-            return true;
-           // throw new RuntimeException("rootDir = " + rootDir); // 编译过程比较漫长，这么比较快的退出
+            throw new RuntimeException("rootDir = " + rootDir); // 编译过程比较漫长，这么比较快的退出
         }
-
 
         // 获取所有标记了@Destination注解的类的信息
         Set<? extends Element> allDestinationElements = roundEnv.getElementsAnnotatedWith(Destination.class);
@@ -112,6 +110,7 @@ public class DestinationProcessor extends AbstractProcessor {
                     .append("\"").append(url).append("\"").append(",")
                     .append("\"").append(realPath).append("\"")
                     .append(");").append("\n");
+
 
             JsonObject item = new JsonObject();
             item.addProperty("url", url);

@@ -1,6 +1,7 @@
 rootProject.ext.setLibConfig project
 
 dependencies {
+    implementation project(path: ':router-runtime')
     implementation project(path: ':router-annotations')
-    implementation project(path: ':router-processor')
+    kapt project(path: ':router-processor')
 }
