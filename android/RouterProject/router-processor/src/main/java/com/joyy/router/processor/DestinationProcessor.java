@@ -44,9 +44,7 @@ public class DestinationProcessor extends AbstractProcessor {
      */
     @Override
     public Set<String> getSupportedAnnotationTypes() {
-        return Collections.singleton(
-                Destination.class.getCanonicalName()
-        );
+        return Collections.singleton(Destination.class.getCanonicalName());
     }
 
 
