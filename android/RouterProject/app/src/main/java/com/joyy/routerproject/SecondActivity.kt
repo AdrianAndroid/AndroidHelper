@@ -1,8 +1,7 @@
 package com.joyy.routerproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.com.joyy.routerproject.R
+import androidx.appcompat.app.AppCompatActivity
 import com.joyy.router.annotations.Destination
 
 @Destination(
