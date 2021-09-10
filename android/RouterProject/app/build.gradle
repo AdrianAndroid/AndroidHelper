@@ -6,7 +6,6 @@ project.router {
 
 dependencies {
     implementation project(path: ':router-annotations')
-    implementation project(path: ':router-processor')
     implementation project(path: ':router-runtime')
     implementation project(path: ':module_2')
     implementation project(path: ':module_1')

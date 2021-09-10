@@ -68,3 +68,4 @@ gradle.afterProject {
 //        println("Evaluation of $project succeeded")
 //    }
 }
+include ':demo'

@@ -14,3 +14,5 @@ repositories {
 
 //cp -rf buildSrc buildSrc
 //./gradlew :buildSrc:uploadArchives
+// 应用发布功能
+//apply from : rootProject.file("maven-publish.gradle")

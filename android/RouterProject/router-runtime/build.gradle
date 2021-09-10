@@ -4,3 +4,6 @@ dependencies {
     implementation project(path: ':router-annotations')
     implementation project(path: ':router-processor')
 }
+// 应用发布功能
+apply from : rootProject.file("maven-publish.gradle")
+//project.plugins.apply(rootProject.file("maven-publish.gradle"))
