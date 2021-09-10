@@ -134,7 +134,7 @@ class RouterMappingTransform extends Transform {
             }
             log("打印所有的MappingClassNames ${controller2.mappingClassNames.size()}")
             controller2.mappingClassNames.each {
-                log("[mappingClassNames] $it")
+                log("[mappingClassNames] in RouterMappingTransform中 $it")
             }
 
             log("将生成的字节码，写入本地文件!")

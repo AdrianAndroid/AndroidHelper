@@ -79,7 +79,7 @@ public class DestinationProcessor extends AbstractProcessor {
         if (allDestinationElements.size() < 1) {
             return false;
         }
-        final String packName = "com.example.routerdemo";
+        final String packName = "com.joyy.router.mapping";
         String className = "RouterMapping_" + System.currentTimeMillis();
         StringBuilder builder = new StringBuilder();
         builder.append("package ").append(packName).append(";\n\n");

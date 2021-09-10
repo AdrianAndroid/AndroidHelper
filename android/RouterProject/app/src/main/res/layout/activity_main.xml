@@ -9,6 +9,18 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mPrintMapping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PrintMapping" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mMainActvity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MainActvity" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/mSecondActvity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -2,6 +2,7 @@ package com.joyy.router.runtime
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 
@@ -12,15 +13,15 @@ import android.util.Log
  */
 object Router {
 
-    fun log(msg: String) {
+    private fun log(msg: String) {
         Log.d("[Router]", msg)
     }
 
-    fun log(e: Throwable) {
+    private fun log(e: Throwable) {
         e.printStackTrace()
     }
 
-    // 编译期间生成的总映射表
+    // 编译期间生成的总映射表 com/joyy/router/mapping/generated/RouterMapping
     private const val GENERATED_MAPPING = "com.joyy.router.mapping.generated.RouterMapping"
 
     // 存储所有映射表信息
@@ -37,6 +38,14 @@ object Router {
             }
         } catch (e: Throwable) {
             log(e)
+        }
+    }
+
+    fun printMapping() {
+        mapping.forEach { (k, v) ->
+            log(k)
+            log("----->$v")
+
         }
     }
 
