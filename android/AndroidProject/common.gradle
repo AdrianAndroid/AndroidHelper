@@ -1,0 +1,146 @@
+ext {
+
+    isLibrary = true
+
+    repoVersion = '1.0.1'
+
+    setAppConfig = { Project project ->
+        Properties projectGradleProperties = new Properties()
+        projectGradleProperties.load(project.file('gradle.properties').newDataInputStream())
+        def applicationId = projectGradleProperties.getProperty("applicationId")
+
+        project.println("applicationId = $applicationId")
+
+
+        project.plugins.apply('com.android.application')
+        project.plugins.apply('kotlin-android')
+        project.plugins.apply('kotlin-android-extensions')
+        project.plugins.apply('kotlin-kapt')
+        project.plugins.apply('com.joyy.router')
+
+        project.android {
+            compileSdk 31
+            println("[setAppConfig] android $applicationId")
+
+            defaultConfig {
+                println("[setAppConfig] defaultConfig $applicationId")
+
+//                applicationId applicationId
+                applicationId applicationId
+                minSdk 21
+                targetSdk 31
+                versionCode 1
+                versionName "2.0"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            kotlinOptions {
+                jvmTarget = '1.8'
+            }
+            buildFeatures {
+                viewBinding true
+            }
+            viewBinding{
+                enabled = true
+            }
+        }
+
+        project.dependencies {
+
+            println("[setAppConfig] dependencies")
+
+            implementation 'androidx.core:core-ktx:1.6.0'
+            implementation 'androidx.appcompat:appcompat:1.3.1'
+            implementation 'com.google.android.material:material:1.4.0'
+            implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+            testImplementation 'junit:junit:4.+'
+            androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+            androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+            implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+            implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+            implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+            implementation 'androidx.activity:activity-ktx:1.3.1'
+        }
+    }
+
+
+    setLibConfig = { project ->
+        project.plugins.apply('com.android.library')
+        //project.plugins.apply('com.android.application')
+        project.plugins.apply('kotlin-android')
+        project.plugins.apply('kotlin-android-extensions')
+        project.plugins.apply('kotlin-kapt')
+        project.plugins.apply('com.joyy.router')
+        project.description "第三方库"
+
+        project.android {
+            compileSdk 31
+
+            defaultConfig {
+                minSdk 21
+                targetSdk 31
+                versionCode 1
+                versionName "1.0"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                consumerProguardFiles "consumer-rules.pro"
+            }
+
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            kotlinOptions {
+                jvmTarget = '1.8'
+            }
+            buildFeatures {
+                viewBinding true
+            }
+            viewBinding{
+                enabled = true
+            }
+        }
+
+        project.dependencies {
+            implementation 'androidx.core:core-ktx:1.6.0'
+            implementation 'androidx.appcompat:appcompat:1.3.1'
+            implementation 'com.google.android.material:material:1.4.0'
+            implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+            implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+            implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+            implementation 'com.joyy.router:router-runtime:2.0.0'
+            implementation 'com.joyy.router:router-annotations:2.0.0'
+            kapt 'com.joyy.router:router-processor:2.0.0'
+
+
+            testImplementation 'junit:junit:4.+'
+            androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+            androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+//            implementation project(path: ':router-runtime')
+//            implementation project(path: ':router-annotations')
+//            kapt project(path: ':router-processor')
+        }
+    }
+}

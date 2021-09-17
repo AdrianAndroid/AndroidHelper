@@ -1,0 +1,5 @@
+//if(rootProject.ext.isLibrary) {
+    rootProject.ext.setLibConfig project
+//}else{
+//    rootProject.ext.setAppConfig project
+//}

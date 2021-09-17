@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProject">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name="com.joyy.androidproject.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.AndroidProject.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

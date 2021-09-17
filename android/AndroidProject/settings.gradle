@@ -3,9 +3,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-//        jcenter() // Warning: this repository is going to shut down soon
-//        maven { url 'http://repo.duowan.com:8181/nexus/content/groups/public' }
-//        maven { url uri("${rootProject.getRootDir().absolutePath}/../../../repo") }
         maven {
             url 'http://repo.duowan.com:8181/nexus/content/groups/public'
             allowInsecureProtocol = true
@@ -20,4 +17,7 @@ include ':app'
 include ':stringescape'
 include ':webviews'
 include ':kotlinLib'
-include ':toolbardemo'
+//include ':toolbardemo'
+
+
+include ':functions:livedatas'
