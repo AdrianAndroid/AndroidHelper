@@ -6,4 +6,5 @@ dependencies {
     implementation project(path: ':functions:livedatas')
     implementation project(path: ':functions:appmanager')
     implementation project(path: ':functions:colors')
+    implementation project(path: ':base')
 }

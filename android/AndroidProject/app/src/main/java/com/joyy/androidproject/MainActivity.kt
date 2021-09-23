@@ -1,6 +1,5 @@
 package com.joyy.androidproject
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.joyy.colors.ColorsActivity
+import com.joyy.utils.ActivityUtils
 import kotlinx.android.synthetic.main.activity_main2.mRecyclerView
 
 //@Destination(
@@ -32,11 +31,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initButtons() {
         findViewById<Button>(R.id.btnPackage).setOnClickListener {
-            startActivity(Intent(this, com.henley.appmanage.activity.MainActivity::class.java))
+            ActivityUtils.startActivity(this, "com.henley.appmanage.activity.MainActivity")
         }
 
         findViewById<Button>(R.id.btnColors).setOnClickListener {
-            startActivity(Intent(this, ColorsActivity::class.java))
+            ActivityUtils.startActivity(this, "com.joyy.colors.ColorsActivity")
         }
     }
 
