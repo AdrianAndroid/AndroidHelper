@@ -1,0 +1,295 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+
+#watermark {
+
+  position: relative;
+  overflow: hidden;
+}
+
+#watermark .x {
+  position: absolute;
+  top: 800;
+  left: 400;
+  color: #3300ff;
+  font-size: 50px;
+  pointer-events: none;
+  opacity:0.3;
+  filter:Alpha(opacity=50);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+    </style>
+
+
+    <style type="text/css">
+ html{color:#333;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-rendering:optimizelegibility;font-family:Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}html.borderbox *,html.borderbox :after,html.borderbox :before{box-sizing:border-box}article,aside,blockquote,body,button,code,dd,details,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}audio,canvas,video{display:inline-block}body,button,input,select,textarea{font:300 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}blockquote{position:relative;color:#999;font-weight:400;border-left:1px solid #1abc9c;padding-left:1em;margin:1em 3em 1em 2em}@media only screen and (max-width:640px){blockquote{margin:1em 0}}abbr,acronym{border-bottom:1px dotted;font-variant:normal}abbr{cursor:help}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}q:after,q:before{content:""}sub,sup{font-size:75%;line-height:0;position:relative}:root sub,:root sup{vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a{color:#1abc9c}a:hover{text-decoration:underline}.typo a{border-bottom:1px solid #1abc9c}.typo a:hover{border-bottom-color:#555;color:#555}.typo a:hover,a,ins{text-decoration:none}.typo-u,u{text-decoration:underline}mark{background:#fffdd1;border-bottom:1px solid #ffedce;padding:2px;margin:0 5px}code,pre,pre tt{font-family:Courier,Courier New,monospace}pre{background:hsla(0,0%,97%,.7);border:1px solid #ddd;padding:1em 1.5em;display:block;-webkit-overflow-scrolling:touch}hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:.8em;height:10px}.typo-small,figcaption,small{font-size:.9em;color:#888}b,strong{font-weight:700;color:#000}[draggable]{cursor:move}.clearfix:after,.clearfix:before{content:"";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.textwrap,.textwrap td,.textwrap th{word-wrap:break-word;word-break:break-all}.textwrap-table{table-layout:fixed}.serif{font-family:Palatino,Optima,Georgia,serif}.typo-dl,.typo-form,.typo-hr,.typo-ol,.typo-p,.typo-pre,.typo-table,.typo-ul,.typo dl,.typo form,.typo hr,.typo ol,.typo p,.typo pre,.typo table,.typo ul,blockquote{margin-bottom:1rem}h1,h2,h3,h4,h5,h6{font-family:PingFang SC,Helvetica Neue,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;line-height:1.35}.typo-h1,.typo-h2,.typo-h3,.typo-h4,.typo-h5,.typo-h6,.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}.typo-h1,.typo h1{font-size:2em}.typo-h2,.typo h2{font-size:1.8em}.typo-h3,.typo h3{font-size:1.6em}.typo-h4,.typo h4{font-size:1.4em}.typo-h5,.typo-h6,.typo h5,.typo h6{font-size:1.2em}.typo-ul,.typo ul{margin-left:1.3em;list-style:disc}.typo-ol,.typo ol{list-style:decimal;margin-left:1.9em}.typo-ol ol,.typo-ol ul,.typo-ul ol,.typo-ul ul,.typo li ol,.typo li ul{margin-bottom:.8em;margin-left:2em}.typo-ol ul,.typo-ul ul,.typo li ul{list-style:circle}.typo-table td,.typo-table th,.typo table caption,.typo table td,.typo table th{border:1px solid #ddd;padding:.5em 1em;color:#666}.typo-table th,.typo table th{background:#fbfbfb}.typo-table thead th,.typo table thead th{background:hsla(0,0%,95%,.7)}.typo table caption{border-bottom:none}.typo-input,.typo-textarea{-webkit-appearance:none;border-radius:0}.typo-em,.typo em,caption,legend{color:#000;font-weight:inherit}.typo-em{position:relative}.typo-em:after{position:absolute;top:.65em;left:0;width:100%;overflow:hidden;white-space:nowrap;content:"\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"}.typo img{max-width:100%}.common-content{font-weight:400;color:#353535;line-height:1.75rem;white-space:normal;word-break:normal;font-size:1rem}.common-content img{display:block;max-width:100%;background-color:#eee}.common-content audio,.common-content video{width:100%;background-color:#eee}.common-content center,.common-content font{margin-top:1rem;display:inline-block}.common-content center{width:100%}.common-content pre{margin-top:1rem;padding-left:0;padding-right:0;position:relative;overflow:hidden}.common-content pre code{font-size:.8rem;font-family:Consolas,Liberation Mono,Menlo,monospace,Courier;display:block;width:100%;box-sizing:border-box;padding-left:1rem;padding-right:1rem;overflow-x:auto}.common-content hr{border:none;margin-top:1.5rem;margin-bottom:1.5rem;border-top:1px solid #f5f5f5;height:1px;background:none}.common-content b,.common-content h1,.common-content h2,.common-content h3,.common-content h4,.common-content h5,.common-content strong{font-weight:700}.common-content h1,.common-content h2{font-size:1.125rem;margin-bottom:.45rem}.common-content h3,.common-content h4,.common-content h5{font-size:1rem;margin-bottom:.45rem}.common-content p{font-weight:400;color:#353535;margin-top:.15rem}.common-content .orange{color:#ff5a05}.common-content .reference{font-size:1rem;color:#888}.custom-rich-content h1{margin-top:0;font-weight:400;font-size:15.25px;border-bottom:1px solid #eee;line-height:2.8}.custom-rich-content li,.custom-rich-content p{font-size:14px;color:#888;line-height:1.6}table.hljs-ln{margin-bottom:0;border-spacing:0;border-collapse:collapse}table.hljs-ln,table.hljs-ln tbody,table.hljs-ln td,table.hljs-ln tr{box-sizing:border-box}table.hljs-ln td{padding:0;border:0}table.hljs-ln td.hljs-ln-numbers{min-width:15px;color:rgba(27,31,35,.3);text-align:right;white-space:nowrap;cursor:pointer;user-select:none}table.hljs-ln td.hljs-ln-code,table.hljs-ln td.hljs-ln-numbers{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;line-height:20px;vertical-align:top}table.hljs-ln td.hljs-ln-code{position:relative;padding-right:10px;padding-left:10px;overflow:visible;color:#24292e;word-wrap:normal;white-space:pre}video::-webkit-media-controls{overflow:hidden!important}video::-webkit-media-controls-enclosure{width:calc(100% + 32px);margin-left:auto}.button-cancel{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel,.button-primary{-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary{color:#fff;background-color:#ff5a05;border-radius:3px}@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot);src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.woff) format("woff"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.ttf) format("truetype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.svg#iconfont) format("svg")}@font-face{font-family:player-font;src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot);src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.woff) format("woff"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.ttf) format("truetype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.svg#player-font) format("svg")}.iconfont{font-family:iconfont!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}html{background:#fff;min-height:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{width:100%}body.fixed{overflow:hidden;position:fixed;width:100vw;height:100vh}i{font-style:normal}a{word-wrap:break-word;-webkit-tap-highlight-color:rgba(0,0,0,0)}a:hover{text-decoration:none}.fade-enter-active,.fade-leave-active{transition:opacity .3s}.fade-enter,.fade-leave-to{opacity:0}.MathJax,.MathJax_CHTML,.MathJax_MathContainer,.MathJax_MathML,.MathJax_PHTML,.MathJax_PlainSource,.MathJax_SVG{outline:0}.ios-app-switch .js-audit{display:none}._loading_wrap_{position:fixed;width:100vw;height:100vh;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999}._loading_div_class_,._loading_wrap_{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}._loading_div_class_{word-wrap:break-word;padding:.5rem .75rem;text-align:center;z-index:9999;font-size:.6rem;max-width:60%;color:#fff;border-radius:.25rem;-ms-flex-direction:column;flex-direction:column}._loading_div_class_ .message{color:#353535;font-size:16px;line-height:3}.spinner{animation:circle-rotator 1.4s linear infinite}.spinner *{line-height:0;box-sizing:border-box}@keyframes circle-rotator{0%{transform:rotate(0deg)}to{transform:rotate(270deg)}}.path{stroke-dasharray:187;stroke-dashoffset:0;transform-origin:center;animation:circle-dash 1.4s ease-in-out infinite,circle-colors 5.6s ease-in-out infinite}@keyframes circle-colors{0%{stroke:#ff5a05}to{stroke:#ff5a05}}@keyframes circle-dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;transform:rotate(135deg)}to{stroke-dashoffset:187;transform:rotate(450deg)}}.confirm-box-wrapper,.confirm-box-wrapper .mask{position:absolute;top:0;left:0;right:0;bottom:0}.confirm-box-wrapper .mask{background:rgba(0,0,0,.6)}.confirm-box-wrapper .confirm-box{position:fixed;top:50%;left:50%;width:267px;background:#fff;transform:translate(-50%,-50%);border-radius:7px}.confirm-box-wrapper .confirm-box .head{margin:0 18px;font-size:18px;text-align:center;line-height:65px;border-bottom:1px solid #d9d9d9}.confirm-box-wrapper .confirm-box .body{padding:18px;padding-bottom:0;color:#353535;font-size:12.5px;max-height:150px;overflow:auto}.confirm-box-wrapper .confirm-box .foot{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:18px}.confirm-box-wrapper .confirm-box .foot .button-cancel{border:1px solid #d9d9d9}.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+
+
+
+
+    </style>
+    <style type="text/css">
+        .button-cancel[data-v-87ffcada]{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel[data-v-87ffcada],.button-primary[data-v-87ffcada]{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary[data-v-87ffcada]{color:#fff;background-color:#ff5a05;border-radius:3px}.pd[data-v-87ffcada]{padding-left:1.375rem;padding-right:1.375rem}.article[data-v-87ffcada]{max-width:70rem;margin:0 auto}.article .article-unavailable[data-v-87ffcada]{color:#fa8919;font-size:15px;font-weight:600;line-height:24px;border-radius:5px;padding:12px;background-color:#f6f7fb;margin-top:20px}.article .article-unavailable .iconfont[data-v-87ffcada]{font-size:12px}.article .main[data-v-87ffcada]{padding:1.25rem 0;margin-bottom:52px}.article-title[data-v-87ffcada]{color:#353535;font-weight:400;line-height:1.65rem;font-size:1.34375rem}.article-info[data-v-87ffcada]{color:#888;font-size:.9375rem;margin-top:1.0625rem}.article-content[data-v-87ffcada]{margin-top:1.0625rem}.article-content.android video[data-v-87ffcada]::-webkit-media-controls-fullscreen-button{display:none}.copyright[data-v-87ffcada]{color:#b2b2b2;padding-bottom:20px;margin-top:20px;font-size:13px}.audio-player[data-v-87ffcada]{width:100%;margin:20px 0}.to-comment[data-v-87ffcada]{overflow:hidden;padding-top:10px;margin-bottom:-30px}.to-comment a.button-primary[data-v-87ffcada]{float:right;height:20px;font-size:12px;line-height:20px;padding:4px 8px;cursor:pointer}.article-comments[data-v-87ffcada]{margin-top:2rem}.article-comments h2[data-v-87ffcada]{text-align:center;color:#888;position:relative;z-index:1;margin-bottom:1rem}.article-comments h2[data-v-87ffcada]:before{border-top:1px dotted #888;content:"";position:absolute;top:56%;left:0;width:100%;z-index:-1}.article-comments h2 span[data-v-87ffcada]{font-size:15.25px;font-weight:400;padding:0 1rem;background:#fff;display:inline-block}.article-sub-bottom[data-v-87ffcada]{z-index:10;cursor:pointer}.switch-btns[data-v-87ffcada]{height:76px;cursor:pointer;padding-top:24px;padding-bottom:24px;border-bottom:10px solid #f6f7fb;position:relative}.switch-btns[data-v-87ffcada]:before{content:" ";height:1px;background:#e8e8e8;position:absolute;top:0;left:0;-webkit-box-sizing:border-box;box-sizing:border-box;left:1.375rem;right:1.375rem}.switch-btns .btn[data-v-87ffcada]{height:38px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.switch-btns .btn .tag[data-v-87ffcada]{-webkit-box-flex:0;-ms-flex:0 0 62px;flex:0 0 62px;text-align:center;color:#888;font-size:14px;border-radius:10px;height:22px;line-height:22px;background:#f6f7fb;font-weight:400}.switch-btns .btn .txt[data-v-87ffcada]{margin-left:10px;-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;color:#888;font-size:15px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}@media (max-width:769px){.article .breadcrumb[data-v-87ffcada]{padding-top:10px;padding-bottom:10px}}
+
+
+
+
+
+    </style>
+
+    <style type="text/css">
+        .comment-item{list-style-position:inside;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:1rem}.comment-item a{border-bottom:none}.comment-item .avatar{width:2.625rem;height:2.625rem;-ms-flex-negative:0;flex-shrink:0;border-radius:50%}.comment-item .info{margin-left:.5rem;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.comment-item .info .hd{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .username{color:#888;font-size:15.25px;font-weight:400;line-height:1.2}.comment-item .info .hd .control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .control .btn-share{color:#888;font-size:.75rem;margin-right:1rem}.comment-item .info .hd .control .btn-praise{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15.25px;text-decoration:none}.comment-item .info .hd .control .btn-praise i{color:#888;display:inline-block;font-size:.75rem;margin-right:.3rem;margin-top:-.01rem}.comment-item .info .hd .control .btn-praise i.on,.comment-item .info .hd .control .btn-praise span{color:#ff5a05}.comment-item .info .bd{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all;line-height:1.6}.comment-item .info .time{color:#888;font-size:9px;line-height:1}.comment-item .info .reply .reply-hd{font-size:15.25px}.comment-item .info .reply .reply-hd span{margin-left:-12px;color:#888;font-weight:400}.comment-item .info .reply .reply-hd i{color:#ff5a05;font-size:15.25px}.comment-item .info .reply .reply-content{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all}.comment-item .info .reply .reply-time{color:#888;font-size:9px}
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+
+    <div data-v-87ffcada="" class="article" id="watermark">
+        <p class="x">更多课程请加QQ1046877154，微信loveu_110获取</p>
+        <div data-v-87ffcada="" class="main main-app">
+            <h1 data-v-87ffcada="" class="article-title pd">
+                聊聊Framework的学习方法
+            </h1>
+            <div data-v-87ffcada="" class="article-content typo common-content pd"><img data-v-87ffcada=""
+                                                                                        src="https://static001.geekbang.org/resource/image/b3/ce/b30c4cab8adb27142c717cb49313c8ce.jpg">
+
+
+                <div data-v-87ffcada="" id="article-content" class="">
+                    <div class="text">
+                        <p>大家好，我是陆晓明，现在在一家互联网手机公司担任Android系统开发工程师。很高兴可以在极客时间Android开发高手课专栏里，分享一些我在手机行业9年的经验以及学习Android的方法。</p><p>今天我要跟你分享的是Framework的学习和调试的方法。</p><p>首先，Android是一种基于Linux的开放源代码软件栈，为广泛的设备和机型而创建。下图是Android平台的<a href="https://developer.android.google.cn/guide/platform">主要组件</a>。</p><p><img src="https://static001.geekbang.org/resource/image/90/df/90763fd9662c8a75553dc92a78112ddf.png" alt=""></p><p>从图中你可以看到主要有以下几部分组成：</p><ul>
+<li><strong>Linux内核</strong></li>
+<li><strong>Android Runtime</strong></li>
+<li><strong>原生C/C++库</strong></li>
+<li><span class="orange">Java API框架（后面我称之为Framework框架层）</span></li>
+<li><strong>系统应用</strong></li>
+</ul><p>我们在各个应用市场看到的，大多是第三方应用，也就是安装在data区域的应用，它们可以卸载，并且权限也受到一些限制，比如不能直接设置时间日期，需要调用到系统应用设置里面再进行操作。</p><p>而我们在应用开发过程中使用的四大组件，便是在Framework框架层进行实现，应用通过约定俗成的规则，在AndroidMainfest.xml中进行配置，然后继承对应的基类进行复写。系统在启动过程中解析AndroidMainfest.xml，将应用的信息存储下来，随后根据用户的操作，或者系统的广播触发，启动对应的应用。</p><!-- [[[read_end]]] --><p>那么，我们先来看看Framework框架层都有哪些东西。</p><p>Framework框架层是应用开发过程中，调用的系统方法的内部实现，比如我们使用的TextView、Button控件，都是在这里实现的。再举几个例子，我们调用ActivityManager的getRunningAppProcesses方法查看当前运行的进程列表，还有我们使用NotificationManager的notify发送一个系统通知。</p><p>让我们来看看Framework相关的代码路径。</p><p><img src="https://static001.geekbang.org/resource/image/17/d4/178ef00a181a85e85a3b75d4c60abcd4.jpg" alt=""></p><p>如何快速地学习、梳理Framework知识体系呢？常见的学习方法有下面几种：</p><ul>
+<li>阅读书籍（方便梳理知识体系，但对于解决问题只能提供方向）。</li>
+<li>直接阅读源码（效率低，挑战难度大）。</li>
+<li>打Log和打堆栈 （效率有所提升，但需要反复编译，添加Log和堆栈代码）。</li>
+<li>直接联调，实时便捷（需要调试版本）。</li>
+</ul><p>首先可以通过购买相关的书籍进行学习，其中主要的知识体系有Linux操作系统，比如进程、线程、进程间通信、虚拟内存，建立起自己的软件架构。在此基础上学习Android的启动过程、服务进程SystemServer的创建、各个服务线程（AMS/PMS等）的创建过程，以及Launcher的启动过程。熟悉了这些之后，你还要了解ART虚拟机的主要工作原理，以及init和Zygote的主要工作原理。之后随着在工作和实践过程中你会发现，Framework主要是围绕应用启动、显示、广播消息、按键传递、添加服务等开展，这些代码的实现主要使用的是Java和C++这两种语言。</p><p>通过书籍或者网络资料学习一段时间后，你会发现很多问题都没有现成的解决方案，而此时就需要我们深入源码中进行挖掘和学习。但是除了阅读官方文档外，别忘了调试Framework也是一把利刃，可以让你游刃有余快速定位和分析源码。</p><p>下面我们来看看调试Framework的Java部分，关于C++的部分，需要使用GDB进行调试，你可以在课下实践一下，调试的过程可以参考<a href="https://mp.weixin.qq.com/s/VSVUbaEIfrmFZMB1k49fyA">《深入Android源码系列（一）》</a>。</p><p>我们这里使用Android Studio进行调试，在调试前我们要先掌握一些知识。Java代码的调试，主要依据两个因素，一个是你要调试的进程；一个是调试的类对应的包名路径，同时还要保证你所运行的手机环境和你要调试的代码是匹配的。只要这两个信息匹配，编译不通过也是可以进行调试的。</p><p>我们调试的系统服务是在SystemServer进程中，可以使用下面的命令验证（我这里使用Genymotion上安装Android对应版本镜像的环境演示）。</p><pre><code>ps -A |grep system_server  查看系统服务进程pid
+cat /proc/pid/maps |grep services 通过cat查看此进程的内存映射，看看是否services映射到内存里面。
+</code></pre><p>这里我们看到信息：/system/framework/oat/x86/services.odex 。</p><p>odex是Android系统对于dex的进一步优化，目的是为了提升执行效率。从这个信息便可以确定，我们的services.jar确实是跑到这里了，也就是我们的系统服务相关联的代码，可以通过调试SystemServer进程进行跟踪。</p><p>下来我们来建立调试环境。</p><ul>
+<li>
+<p>打开Genymotion，选择下载好Android 9.0的镜像文件，启动模拟器。</p>
+</li>
+<li>
+<p>找到模拟器对应的ActivityManagerService.java代码。 我是从<a href="http://androidxref.com/">http://androidxref.com/</a>下载Android 9.0对应的代码。</p>
+</li>
+<li>
+<p>打开Android Studio，File -&gt; New -&gt; New Project然后直接Next直到完成就行。</p>
+</li>
+<li>
+<p>新建一个包名，从ActivityManagerService.java文件中找到它，这里为<code>com.android.server.am</code>，然后把ActivityManagerService.java放到里面即可。</p>
+</li>
+<li>
+<p>在ActivityManagerService.java的startActivity方法上面设置断点，然后找到菜单的Run -&gt; Attach debugger to Android process勾选Show all process，选中SystemServer进程确定。</p>
+</li>
+</ul><p><img src="https://static001.geekbang.org/resource/image/ba/f0/ba1eb6bded9167f26ae48b34a6d792f0.png" alt=""></p><p>这时候我们点击Genymotion模拟器中桌面的一个图标，启动新的界面。</p><p><img src="https://static001.geekbang.org/resource/image/c9/45/c92b62d1065f967696dbdd2851037b45.png" alt=""></p><p>会发现这时候我们设定的断点已经生效。</p><p><img src="https://static001.geekbang.org/resource/image/76/05/763f222e01a30c969024d8cf77dd0705.png" alt=""></p><p>你可以看到断下来的堆栈信息，以及一些变量值，然后我们可以一步步调试下去，跟踪启动的流程。</p><p>对于学习系统服务线程来讲，通过调试可以快速掌握流程，再结合阅读源码，便可以快速学习，掌握系统框架的整个逻辑，从而节省学习的时间成本。</p><p>以上我们验证了系统服务AMS服务代码的调试，其他服务调试方法也是一样，具体的线程信息，可以使用下面的命令查看。</p><pre><code>ps -T 353 
+这里353是使用ps -A |grep SystemServer查出 SystemServer的进程号
+</code></pre><p><img src="https://static001.geekbang.org/resource/image/62/a8/62d0d79e490a14f19422486c5da85fa8.png" alt=""></p><p>在上面图中，PID = TID的只有第一行这一行，如果PID = TID的话，也就是这个线程是主线程。下面是我们平时使用Logcat查看输出的信息。</p><pre><code>03-10 09:33:01.804   240   240 I hostapd : type=1400 audit(0.0:1123): avc: de
+03-10 09:33:37.320   353  1213 D WificondControl: Scan result ready event
+03-10 09:34:00.045   404   491 D hwcomposer: hw_composer sent 6 syncs in 60s
+</code></pre><p>这里我还框了一个ActivityManager的线程，这个是线程的名称，通过查看这行的TID（368）就知道下面的Log就是这个线程输出的。</p><pre><code>03-10 08:47:33.574   353   368 I ActivityManager: Force stopping com.android.providers
+</code></pre><p>学习完上面的知识，相信你应该学会了系统服务的调试。通过调试分析，我们便可以将系统服务框架进行庖丁解牛般的学习，面对大量庞杂的代码掌握起来也可以轻松一些。</p><p>我们回过头来，再次在终端中输入<code>ps -A</code>，看看下面这一段信息。</p><p><img src="https://static001.geekbang.org/resource/image/29/4e/298cadbc90a1f04d02e1e116f6db464e.png" alt=""></p><p>你可以看到这里的第一列，代表的是当前的用户，这里有system root和u0_axx，不同的用户有不同的权限。我们当前关注的是第二列和第三列，第二列代表的是PID，也就是进程ID；第三列代表的是PPID，也就是父进程ID。</p><p>你发现我这里框住的都是同一个父进程，那么我们来找下这个323进程，看看它到底是谁。</p><pre><code>root 323 1 1089040 127540 poll_schedule_timeout f16fcbc9 S zygote
+</code></pre><p>这个名字在学习Android系统的时候，总被反复提及，因为它是我们Android世界的孵化器，每一个上层应用的创建，都是通过Zygote调用fork创建的子进程，而子进程可以快速继承父进程已经加载的资源库，这里主要指的是应用所需的JAR包，比如/system/framework/framework.jar，因为我们应用所需的基础控件都在这里，像View、TextView、ImageView。</p><p>接下来我来讲解下一个调试，也就是对TextView的调试（其他Button调试方式一样）。如前面所说，这个代码被编译到/system/framework/framework.jar，那么我们通过ps命令和cat /proc/pid/maps命令在Zygote中找到它，同时它能够被每一个由Zygote创建的子进程找到，比如我们当前要调试Gallery的主界面TextView。</p><p>我们验证下，使用<code>ps -A |grep gallery3d</code>查到Gallery对应的进程PID，使用cat /proc/pid/maps |grep framework.jar看到如下信息：</p><pre><code>efcd5000-efcd6000 r--s 00000000 08:06 684                                /system/framework/framework.jar
+</code></pre><p>这说明我们要调试的应用进程在内存映射中确实存在，那么我们就需要在gallery3d进程中下断点了。</p><p>下来我们建立调试环境：</p><ul>
+<li>
+<p>打开Genymotion，选择下载好Android 9.0的镜像文件，启动模拟器，然后在桌面上启动Gallery图库应用。</p>
+</li>
+<li>
+<p>找到模拟器对应的TextView.java代码。</p>
+</li>
+<li>
+<p>打开Android Studio，File -&gt; New -&gt; New Project然后直接Next直到完成就行。</p>
+</li>
+<li>
+<p>新建一个包名，从TextView.java文件中找到它的包名，这里为android.widget，然后把TextView.java放到里面即可。</p>
+</li>
+<li>
+<p>在TextView.java的onDraw方法上面设置断点，然后找到菜单的Run -&gt; Attach debugger to Android process勾选Show all process，选中com.android.gallery3d进程（我们已知这个主界面有TextView控件）确定。</p>
+</li>
+</ul><p>然后我们点击下这个界面左上角的菜单，随便选择一个点击，发现断点已生效，具体如下图所示。</p><p><img src="https://static001.geekbang.org/resource/image/c2/85/c2a9a5a71d4bd4a02b5bee113d866b85.png" alt=""></p><p>然后我们可以使用界面上的调试按钮（或者快捷键）进行调试代码。</p><p><img src="https://static001.geekbang.org/resource/image/c3/f8/c395c9f16a7c057c1076b4619dd1b5f8.png" alt=""></p><p>今天我讲解了如何调试Framework中的系统服务进程的AMS服务线程，其他PMS、WMS的调试方法跟AMS一样。并且我也讲解了如何调试一个应用里面的TextView控件，其他的比如Button、ImageView调试方法跟TextView也是一样的。</p><p>通过今天的学习，我希望能够给你一个学习系统框架最便捷的路径。在解决系统问题的时候，你可以方便的使用调试分析，从而快速定位、修复问题。</p><p><img src="https://static001.geekbang.org/resource/image/bf/f1/bf8fdc35ddccb10b1161d8ca7eb8f8f1.jpg" alt=""></p>
+                    </div>
+                </div>
+
+            </div>
+            <div data-v-87ffcada="" class="article-comments pd"><h2 data-v-87ffcada=""><span
+                    data-v-87ffcada="">精选留言</span></h2>
+                <ul data-v-87ffcada="">
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/7e/bb/bd549720.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Dimple</span>
+                            </div>
+                            <div class="bd">我就是有个毛病，遇到难的，更底层的东西总想着绕过去，而不是迎头而上，所以很多时候不能很好的解决问题。惧怕看源码，调试，到现在不一样了，我也知道很多高手都是能轻松看源码和调试，所以我也试着改变自己了 <br></div>
+                            <span class="time">2019-03-12 08:06</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/b9/76/bc5f8468.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">代码GG陆晓明</span>
+                            </div>
+                            <div class="bd">如果调试某个具体的流程，就将关联的文件放到对应的包名下即可。找对你要调试的进程，就可以在这些文件的具体方法下断点，进行调试跟踪。<br><br>当发现没有调试上的时候，可以确定下是否源码不匹配？是否调试的进程不对（可以通过干掉你调试的进程，看看是否你调试的东西会挂掉，当然systemserver干掉手机就软重启啦。你想调试systemserver的启动过程，倒是可以这么干）在调试的过程中，使用源码阅读工具，将相关联的代码放入环境，在可疑地方，或者方法调用的地方设断点，做个简单判定即可，然后使用多个断点的设定，来卡住具体走到哪个流程，在断住之后，使用堆栈回溯，看看调用顺序，帮你梳理整个流程。 <br></div>
+                            <span class="time">2019-03-12 09:02</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/12/e4/c2/e8ac8b6d.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">亮</span>
+                            </div>
+                            <div class="bd">以前总以为调试源码需要下载源代码，编译工程，今天才知道原来还可以这样，新技能get√ <br></div>
+                            <span class="time">2019-03-12 08:57</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/b9/76/bc5f8468.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">代码GG陆晓明</span>
+                            </div>
+                            <div class="bd">楼上说的官方是在8.1，需要自己切换分支，下载9.0的就行了。 国内的可以先使用清华镜像下载，下载好了切换到9.0的代码上。<br><br>有问题欢迎在官方安卓进阶开发微信群@ 我，随时等待大家的交流。 <br></div>
+                            <span class="time">2019-03-12 18:19</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/9c/0e/0ad9a63d.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">夏能</span>
+                            </div>
+                            <div class="bd">有一个问题，如何能下到与genymotion中镜像对应的源码呢？不然debug的时候有的行会对不上 <br></div>
+                            <span class="time">2019-03-12 11:35</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/a7/42/f510bb91.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">wang_acmilan</span>
+                            </div>
+                            <div class="bd">支持明哥，前排占座。调试framework是系统工程师必备技能。 <br></div>
+                            <span class="time">2019-03-12 08:32</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/11/24/07/380666e3.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">bytecode</span>
+                            </div>
+                            <div class="bd">调试Android Framework的Java部分代码，以调试源码android-28为例，需要一个API 28的模拟器配合使用。<br>1、下载源码<br>下载源码方式很多，由于调试Framework只需要java代码即可，这里使用Android Studio的SDK Manager下载android-28为例，sdk&#47;sources下看到android-28源码。<br>2、新建一个项目，包名cn.test.demo，避免com开头是因为源码有com，等下拷贝源码是避免重复。<br>3、拷贝源码到项目的java目录下。<br>4、新建一个与源码对应的模拟器。<br>5、启动模拟器，选择debug的进程。<br>6、选择某一个源码类进行调试。<br>更多查看：https:&#47;&#47;github.com&#47;libill&#47;DebugAndroidFramework <br></div>
+                            <span class="time">2019-03-15 09:28</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/b9/76/bc5f8468.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">代码GG陆晓明</span>
+                            </div>
+                            <div class="bd">看到很多朋友留言，让我感觉受宠若惊。不时在看着留言又有哪些问题，想给大家更好的解答。<br>极客没有专门针对一条留言回复的功能，导致回复的有些乱。<br>如果有机会，欢迎大家加我微信，帮你解答调试中的任何疑问。<br>再次感谢！<br>我的微信<br><br>code_gg_boy<br><br> <br></div>
+                            <span class="time">2019-03-13 01:05</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="http://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83erxVv707tjh3TAYI4icKQK5Ksf8QEZXQfwTbwjA3ZIPUOfpPRx8flia6IlxOR5TkDhSic63SbxiaX5I4Q/132" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">seven</span>
+                            </div>
+                            <div class="bd">🐮🐮🐮<br>赞了收藏再说！ <br></div>
+                            <span class="time">2019-03-13 22:22</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/12/e7/89/207cc841.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">HI</span>
+                            </div>
+                            <div class="bd">长见识了。。不过对于native的函数还是挺麻烦的，不知道是否有好的办法 <br></div>
+                            <span class="time">2019-03-12 23:55</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/e7/39/b47b1bc0.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">奚岩</span>
+                            </div>
+                            <div class="bd">文中提到的到 androidxref 下载的源码，是一个个下载么，怎么全部下载呢？<br>官方的 aosp 网站（ https:&#47;&#47;source.android.com&#47;setup&#47;build-numbers.html#source-code-tags-and-builds ）最新的是 8.1 的。 <br></div>
+                            <span class="time">2019-03-12 16:43</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/1b/e6/6a88c8a3.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">刘伟</span>
+                            </div>
+                            <div class="bd">这两天遇到一个问题：<br>framework.jar 应该就是framework的源码，但是这两天我遇到一个崩溃，这个崩溃打印出来的线程调用栈 和 framework.jar 中反编译的源码不一样，这是为什么呢？<br><br>这个  framework.jar  是我从出现崩溃的手机上导出的<br><br><br><br><br><br><br><br> <br></div>
+                            <span class="time">2019-03-12 16:13</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/15/8b/85/e50b98f1.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">张乐</span>
+                            </div>
+                            <div class="bd">很好的介绍，可以再具体介绍单个模块的？ <br></div>
+                            <span class="time">2019-03-12 09:07</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/80/34/abb7bfe3.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">王超</span>
+                            </div>
+                            <div class="bd">您好，如果是看一个特定启动流程，是不是得把涉及到的类都copy到studio <br></div>
+                            <span class="time">2019-03-12 08:42</span>
+                            
+                        </div>
+                    </li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

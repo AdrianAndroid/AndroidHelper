@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/*设置outer*/
+			#outer{
+				width: 520px;
+				height: 333px;
+				/*居中*/
+				margin: 50px auto;
+				background-color: greenyellow;
+				padding: 10px 0px;
+				/*开启相对定位*/
+				position: relative;
+				overflow: hidden;
+			}
+			
+			/*设置ul*/
+			#imgList{
+				list-style: none;
+				/*开启绝对定位*/
+				position: absolute;
+				
+				/*
+				 * 第一张 0
+				 * 第二张 -520
+				 * 第三张 -1040
+				 */
+				left:0px;
+			}
+			
+			/*设置li浮动*/
+			#imgList li{
+				float: left;
+				/*设置外边距*/
+				margin: 0px 10px;
+			}
+			
+			/*设置导航按钮*/
+			#nav{
+				position: absolute;
+				bottom: 20px;
+				/*
+				 * nav的宽度（子元素）
+				 * 		25*5 = 125
+				 * outer的宽度 （父元素）
+				 * 		520
+				 * 
+				 * 520 - 125 = 395
+				 * 
+				 * 395/2 = 197.5
+				 * 
+				 * left: 197px;
+				 */
+				
+			}
+			
+			/*
+			 * 设置超链接的样式
+			 */
+			#nav a{
+				/*设置浮动*/
+				float: left;
+				/*设置宽和高*/
+				width: 15px;
+				height: 15px;
+				background-color: red;
+				
+				/*设置外边距*/
+				margin: 0 5px;
+				/*设置背景透明*/
+				opacity: 0.5;
+				filter:alpha(opacity=50);
+			}
+			
+			#nav a:hover{
+				background-color: black;
+			}
+			
+		</style>
+		
+		<script type="text/javascript" src="js/tools.js"></script>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				var timer;
+				
+				//设置ul的宽度
+				//获取ul
+				var imgList = document.getElementById("imgList");
+				//获取所有的img标签
+				var imgArr = document.getElementsByTagName("img");
+				//ul宽度是图片的数量 * 520
+				imgList.style.width = 520 * imgArr.length + "px";
+				
+				/*
+				 * 设置导航按钮居中
+				 */
+				//获取outer
+				var outer = document.getElementById("outer");
+				//获取nav
+				var nav = document.getElementById("nav");
+				nav.style.left = (outer.offsetWidth - nav.offsetWidth)/2 + "px";
+				
+				//获取所有的a
+				var aArr = document.getElementsByTagName("a");
+				
+				//设置默认第一个图片显示
+				var num = 0;
+				
+				//设置当前选中a的样式
+				setA();
+				
+				/*
+				 * 点击按钮以后，切换到指定的图片
+				 */
+				//为所有的超链接绑定一个单击响应函数
+				for(var i=0 ; i<aArr.length ; i++){
+					
+					//在遍历时向超链接中添加一个属性，用来保存它自己的索引
+					aArr[i].index = i;
+					
+					aArr[i].onclick = function(){
+						
+						//在切换图片之前，关闭自动切换
+						clearInterval(timer);
+						
+						//当前点击的超链接的索引
+						//alert(this.index);
+						//修改当前图片的索引
+						num = this.index;
+						
+						//修改a的样式
+						setA();
+						//在函数中切换图片，切换图片就是修改ul的left值
+						/*
+						 * 0  0*-520
+						 * 1  1*-520
+						 * 2  2*-520
+						 * 。。。
+						 */
+						//imgList.style.left = num*-520 + "px";
+						//调用move做动画切换
+						move(imgList , "left" , -520*num , 20 , function(){
+							//当动画执行完毕，继续开启自动切换图片
+							autoChange();
+						});
+						
+					};
+				}
+				
+				//开启自动切换图片
+				autoChange();
+				
+				//定义一个函数，用户设置选中的a
+				function setA(){
+					
+					//判断当前显示的图片是否是最后一张
+					if(num == imgArr.length - 1){
+						//如果显示的是最后一张，则设置num为0
+						num = 0;
+						//修改imgList的left属性值为0
+						imgList.style.left = 0;
+					}
+					
+					//将所有的超链接设置为红色
+					for(var i=0 ; i<aArr.length ; i++){
+						aArr[i].style.backgroundColor = "";
+					}
+					
+					//将选中的设置为黑色
+					aArr[num].style.backgroundColor = "black";
+				}
+				
+				/*
+				 * 定义一个函数用来开启图片的自动切换
+				 */
+				function autoChange(){
+					
+					//开启自动切换图片，需要一个定时器来控制图片的切换
+					timer = setInterval(function(){
+						
+						//使num自增
+						num++;
+						
+						//判断num的值是否合法
+						//num %= imgArr.length;
+						if(num >= imgArr.length){
+							num = 0;
+							imgList.style.left = 0;
+						}
+						
+						//执行动画切换到num所在的图片
+						move(imgList , "left" , -520*num , 20 , function(){
+							//动画执行完毕，修正选中的超链接
+							setA();
+						});
+						
+						
+					},3000);
+					
+				}
+				
+				
+			};
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<!-- 创建外部div -->
+		<div id="outer">
+			
+			<!-- 创建一个ul用于存放图片 -->
+			<ul id="imgList">
+				<li><img src="img/1.jpg" alt="冰棍" /></li>
+				<li><img src="img/2.jpg" alt="冰棍" /></li>
+				<li><img src="img/3.jpg" alt="冰棍" /></li>
+				<li><img src="img/4.jpg" alt="冰棍" /></li>
+				<li><img src="img/5.jpg" alt="冰棍" /></li>
+				<li><img src="img/1.jpg" alt="冰棍" /></li>
+			</ul>
+			
+			<!-- 创建一组导航按钮 -->
+			<div id="nav">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>

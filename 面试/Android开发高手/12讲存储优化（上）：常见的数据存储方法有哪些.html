@@ -1,0 +1,182 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+
+#watermark {
+
+  position: relative;
+  overflow: hidden;
+}
+
+#watermark .x {
+  position: absolute;
+  top: 800;
+  left: 400;
+  color: #3300ff;
+  font-size: 50px;
+  pointer-events: none;
+  opacity:0.3;
+  filter:Alpha(opacity=50);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+    </style>
+
+
+    <style type="text/css">
+ html{color:#333;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-rendering:optimizelegibility;font-family:Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}html.borderbox *,html.borderbox :after,html.borderbox :before{box-sizing:border-box}article,aside,blockquote,body,button,code,dd,details,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}audio,canvas,video{display:inline-block}body,button,input,select,textarea{font:300 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}blockquote{position:relative;color:#999;font-weight:400;border-left:1px solid #1abc9c;padding-left:1em;margin:1em 3em 1em 2em}@media only screen and (max-width:640px){blockquote{margin:1em 0}}abbr,acronym{border-bottom:1px dotted;font-variant:normal}abbr{cursor:help}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}q:after,q:before{content:""}sub,sup{font-size:75%;line-height:0;position:relative}:root sub,:root sup{vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a{color:#1abc9c}a:hover{text-decoration:underline}.typo a{border-bottom:1px solid #1abc9c}.typo a:hover{border-bottom-color:#555;color:#555}.typo a:hover,a,ins{text-decoration:none}.typo-u,u{text-decoration:underline}mark{background:#fffdd1;border-bottom:1px solid #ffedce;padding:2px;margin:0 5px}code,pre,pre tt{font-family:Courier,Courier New,monospace}pre{background:hsla(0,0%,97%,.7);border:1px solid #ddd;padding:1em 1.5em;display:block;-webkit-overflow-scrolling:touch}hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:.8em;height:10px}.typo-small,figcaption,small{font-size:.9em;color:#888}b,strong{font-weight:700;color:#000}[draggable]{cursor:move}.clearfix:after,.clearfix:before{content:"";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.textwrap,.textwrap td,.textwrap th{word-wrap:break-word;word-break:break-all}.textwrap-table{table-layout:fixed}.serif{font-family:Palatino,Optima,Georgia,serif}.typo-dl,.typo-form,.typo-hr,.typo-ol,.typo-p,.typo-pre,.typo-table,.typo-ul,.typo dl,.typo form,.typo hr,.typo ol,.typo p,.typo pre,.typo table,.typo ul,blockquote{margin-bottom:1rem}h1,h2,h3,h4,h5,h6{font-family:PingFang SC,Helvetica Neue,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;line-height:1.35}.typo-h1,.typo-h2,.typo-h3,.typo-h4,.typo-h5,.typo-h6,.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}.typo-h1,.typo h1{font-size:2em}.typo-h2,.typo h2{font-size:1.8em}.typo-h3,.typo h3{font-size:1.6em}.typo-h4,.typo h4{font-size:1.4em}.typo-h5,.typo-h6,.typo h5,.typo h6{font-size:1.2em}.typo-ul,.typo ul{margin-left:1.3em;list-style:disc}.typo-ol,.typo ol{list-style:decimal;margin-left:1.9em}.typo-ol ol,.typo-ol ul,.typo-ul ol,.typo-ul ul,.typo li ol,.typo li ul{margin-bottom:.8em;margin-left:2em}.typo-ol ul,.typo-ul ul,.typo li ul{list-style:circle}.typo-table td,.typo-table th,.typo table caption,.typo table td,.typo table th{border:1px solid #ddd;padding:.5em 1em;color:#666}.typo-table th,.typo table th{background:#fbfbfb}.typo-table thead th,.typo table thead th{background:hsla(0,0%,95%,.7)}.typo table caption{border-bottom:none}.typo-input,.typo-textarea{-webkit-appearance:none;border-radius:0}.typo-em,.typo em,caption,legend{color:#000;font-weight:inherit}.typo-em{position:relative}.typo-em:after{position:absolute;top:.65em;left:0;width:100%;overflow:hidden;white-space:nowrap;content:"\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"}.typo img{max-width:100%}.common-content{font-weight:400;color:#353535;line-height:1.75rem;white-space:normal;word-break:normal;font-size:1rem}.common-content img{display:block;max-width:100%;background-color:#eee}.common-content audio,.common-content video{width:100%;background-color:#eee}.common-content center,.common-content font{margin-top:1rem;display:inline-block}.common-content center{width:100%}.common-content pre{margin-top:1rem;padding-left:0;padding-right:0;position:relative;overflow:hidden}.common-content pre code{font-size:.8rem;font-family:Consolas,Liberation Mono,Menlo,monospace,Courier;display:block;width:100%;box-sizing:border-box;padding-left:1rem;padding-right:1rem;overflow-x:auto}.common-content hr{border:none;margin-top:1.5rem;margin-bottom:1.5rem;border-top:1px solid #f5f5f5;height:1px;background:none}.common-content b,.common-content h1,.common-content h2,.common-content h3,.common-content h4,.common-content h5,.common-content strong{font-weight:700}.common-content h1,.common-content h2{font-size:1.125rem;margin-bottom:.45rem}.common-content h3,.common-content h4,.common-content h5{font-size:1rem;margin-bottom:.45rem}.common-content p{font-weight:400;color:#353535;margin-top:.15rem}.common-content .orange{color:#ff5a05}.common-content .reference{font-size:1rem;color:#888}.custom-rich-content h1{margin-top:0;font-weight:400;font-size:15.25px;border-bottom:1px solid #eee;line-height:2.8}.custom-rich-content li,.custom-rich-content p{font-size:14px;color:#888;line-height:1.6}table.hljs-ln{margin-bottom:0;border-spacing:0;border-collapse:collapse}table.hljs-ln,table.hljs-ln tbody,table.hljs-ln td,table.hljs-ln tr{box-sizing:border-box}table.hljs-ln td{padding:0;border:0}table.hljs-ln td.hljs-ln-numbers{min-width:15px;color:rgba(27,31,35,.3);text-align:right;white-space:nowrap;cursor:pointer;user-select:none}table.hljs-ln td.hljs-ln-code,table.hljs-ln td.hljs-ln-numbers{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;line-height:20px;vertical-align:top}table.hljs-ln td.hljs-ln-code{position:relative;padding-right:10px;padding-left:10px;overflow:visible;color:#24292e;word-wrap:normal;white-space:pre}video::-webkit-media-controls{overflow:hidden!important}video::-webkit-media-controls-enclosure{width:calc(100% + 32px);margin-left:auto}.button-cancel{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel,.button-primary{-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary{color:#fff;background-color:#ff5a05;border-radius:3px}@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot);src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.woff) format("woff"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.ttf) format("truetype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.svg#iconfont) format("svg")}@font-face{font-family:player-font;src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot);src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.woff) format("woff"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.ttf) format("truetype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.svg#player-font) format("svg")}.iconfont{font-family:iconfont!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}html{background:#fff;min-height:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{width:100%}body.fixed{overflow:hidden;position:fixed;width:100vw;height:100vh}i{font-style:normal}a{word-wrap:break-word;-webkit-tap-highlight-color:rgba(0,0,0,0)}a:hover{text-decoration:none}.fade-enter-active,.fade-leave-active{transition:opacity .3s}.fade-enter,.fade-leave-to{opacity:0}.MathJax,.MathJax_CHTML,.MathJax_MathContainer,.MathJax_MathML,.MathJax_PHTML,.MathJax_PlainSource,.MathJax_SVG{outline:0}.ios-app-switch .js-audit{display:none}._loading_wrap_{position:fixed;width:100vw;height:100vh;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999}._loading_div_class_,._loading_wrap_{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}._loading_div_class_{word-wrap:break-word;padding:.5rem .75rem;text-align:center;z-index:9999;font-size:.6rem;max-width:60%;color:#fff;border-radius:.25rem;-ms-flex-direction:column;flex-direction:column}._loading_div_class_ .message{color:#353535;font-size:16px;line-height:3}.spinner{animation:circle-rotator 1.4s linear infinite}.spinner *{line-height:0;box-sizing:border-box}@keyframes circle-rotator{0%{transform:rotate(0deg)}to{transform:rotate(270deg)}}.path{stroke-dasharray:187;stroke-dashoffset:0;transform-origin:center;animation:circle-dash 1.4s ease-in-out infinite,circle-colors 5.6s ease-in-out infinite}@keyframes circle-colors{0%{stroke:#ff5a05}to{stroke:#ff5a05}}@keyframes circle-dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;transform:rotate(135deg)}to{stroke-dashoffset:187;transform:rotate(450deg)}}.confirm-box-wrapper,.confirm-box-wrapper .mask{position:absolute;top:0;left:0;right:0;bottom:0}.confirm-box-wrapper .mask{background:rgba(0,0,0,.6)}.confirm-box-wrapper .confirm-box{position:fixed;top:50%;left:50%;width:267px;background:#fff;transform:translate(-50%,-50%);border-radius:7px}.confirm-box-wrapper .confirm-box .head{margin:0 18px;font-size:18px;text-align:center;line-height:65px;border-bottom:1px solid #d9d9d9}.confirm-box-wrapper .confirm-box .body{padding:18px;padding-bottom:0;color:#353535;font-size:12.5px;max-height:150px;overflow:auto}.confirm-box-wrapper .confirm-box .foot{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:18px}.confirm-box-wrapper .confirm-box .foot .button-cancel{border:1px solid #d9d9d9}.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+
+
+
+
+    </style>
+    <style type="text/css">
+        .button-cancel[data-v-87ffcada]{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel[data-v-87ffcada],.button-primary[data-v-87ffcada]{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary[data-v-87ffcada]{color:#fff;background-color:#ff5a05;border-radius:3px}.pd[data-v-87ffcada]{padding-left:1.375rem;padding-right:1.375rem}.article[data-v-87ffcada]{max-width:70rem;margin:0 auto}.article .article-unavailable[data-v-87ffcada]{color:#fa8919;font-size:15px;font-weight:600;line-height:24px;border-radius:5px;padding:12px;background-color:#f6f7fb;margin-top:20px}.article .article-unavailable .iconfont[data-v-87ffcada]{font-size:12px}.article .main[data-v-87ffcada]{padding:1.25rem 0;margin-bottom:52px}.article-title[data-v-87ffcada]{color:#353535;font-weight:400;line-height:1.65rem;font-size:1.34375rem}.article-info[data-v-87ffcada]{color:#888;font-size:.9375rem;margin-top:1.0625rem}.article-content[data-v-87ffcada]{margin-top:1.0625rem}.article-content.android video[data-v-87ffcada]::-webkit-media-controls-fullscreen-button{display:none}.copyright[data-v-87ffcada]{color:#b2b2b2;padding-bottom:20px;margin-top:20px;font-size:13px}.audio-player[data-v-87ffcada]{width:100%;margin:20px 0}.to-comment[data-v-87ffcada]{overflow:hidden;padding-top:10px;margin-bottom:-30px}.to-comment a.button-primary[data-v-87ffcada]{float:right;height:20px;font-size:12px;line-height:20px;padding:4px 8px;cursor:pointer}.article-comments[data-v-87ffcada]{margin-top:2rem}.article-comments h2[data-v-87ffcada]{text-align:center;color:#888;position:relative;z-index:1;margin-bottom:1rem}.article-comments h2[data-v-87ffcada]:before{border-top:1px dotted #888;content:"";position:absolute;top:56%;left:0;width:100%;z-index:-1}.article-comments h2 span[data-v-87ffcada]{font-size:15.25px;font-weight:400;padding:0 1rem;background:#fff;display:inline-block}.article-sub-bottom[data-v-87ffcada]{z-index:10;cursor:pointer}.switch-btns[data-v-87ffcada]{height:76px;cursor:pointer;padding-top:24px;padding-bottom:24px;border-bottom:10px solid #f6f7fb;position:relative}.switch-btns[data-v-87ffcada]:before{content:" ";height:1px;background:#e8e8e8;position:absolute;top:0;left:0;-webkit-box-sizing:border-box;box-sizing:border-box;left:1.375rem;right:1.375rem}.switch-btns .btn[data-v-87ffcada]{height:38px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.switch-btns .btn .tag[data-v-87ffcada]{-webkit-box-flex:0;-ms-flex:0 0 62px;flex:0 0 62px;text-align:center;color:#888;font-size:14px;border-radius:10px;height:22px;line-height:22px;background:#f6f7fb;font-weight:400}.switch-btns .btn .txt[data-v-87ffcada]{margin-left:10px;-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;color:#888;font-size:15px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}@media (max-width:769px){.article .breadcrumb[data-v-87ffcada]{padding-top:10px;padding-bottom:10px}}
+
+
+
+
+
+    </style>
+
+    <style type="text/css">
+        .comment-item{list-style-position:inside;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:1rem}.comment-item a{border-bottom:none}.comment-item .avatar{width:2.625rem;height:2.625rem;-ms-flex-negative:0;flex-shrink:0;border-radius:50%}.comment-item .info{margin-left:.5rem;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.comment-item .info .hd{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .username{color:#888;font-size:15.25px;font-weight:400;line-height:1.2}.comment-item .info .hd .control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .control .btn-share{color:#888;font-size:.75rem;margin-right:1rem}.comment-item .info .hd .control .btn-praise{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15.25px;text-decoration:none}.comment-item .info .hd .control .btn-praise i{color:#888;display:inline-block;font-size:.75rem;margin-right:.3rem;margin-top:-.01rem}.comment-item .info .hd .control .btn-praise i.on,.comment-item .info .hd .control .btn-praise span{color:#ff5a05}.comment-item .info .bd{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all;line-height:1.6}.comment-item .info .time{color:#888;font-size:9px;line-height:1}.comment-item .info .reply .reply-hd{font-size:15.25px}.comment-item .info .reply .reply-hd span{margin-left:-12px;color:#888;font-weight:400}.comment-item .info .reply .reply-hd i{color:#ff5a05;font-size:15.25px}.comment-item .info .reply .reply-content{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all}.comment-item .info .reply .reply-time{color:#888;font-size:9px}
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+
+    <div data-v-87ffcada="" class="article" id="watermark">
+        <p class="x">更多课程请加QQ1046877154，微信loveu_110获取</p>
+        <div data-v-87ffcada="" class="main main-app">
+            <h1 data-v-87ffcada="" class="article-title pd">
+                12讲存储优化（上）：常见的数据存储方法有哪些
+            </h1>
+            <div data-v-87ffcada="" class="article-content typo common-content pd"><img data-v-87ffcada=""
+                                                                                        src="https://static001.geekbang.org/resource/image/a0/03/a0ce24d9559ab360cf77314cbb971d03.jpg">
+
+
+                <div data-v-87ffcada="" id="article-content" class="">
+                    <div class="text">
+                        <p>通过专栏前面我讲的I/O优化基础知识，相信你肯定了解了文件系统和磁盘的一些机制，以及不同I/O方式的使用场景以及优缺点，并且可以掌握如何在线上监控I/O操作。</p><p>万丈高楼平地起，在理解并掌握这些基础知识的同时，你肯定还想知道如何利用这些知识指导我们写出更好的代码。</p><p>今天我来结合Android系统的一些特性，讲讲开发过程中常见存储方法的优缺点，希望可以帮你在日常工作中如何做出更好的选择。</p><h2>Android的存储基础</h2><p>在讲具体的存储方法之前，我们应该对Android系统存储相关的一些基础知识有所了解。</p><p><strong>1. Android分区</strong></p><p>I/O优化中讲到的大部分知识更侧重Linux系统，对于Android来说，我们首先应该对Android分区的架构和作用有所了解。在我们熟悉的Windows世界中，我们一般都把系统安装在C盘，然后还会有几个用来存放应用程序和数据的分区。</p><p>Android系统可以通过/proc/partitions或者df命令来查看的各个分区情况，下图是Nexus 6中df命令的运行结果。</p><p><img src="https://static001.geekbang.org/resource/image/a1/1c/a1036cee7c76e900b146e0875587601c.png" alt=""></p><p>什么是分区呢？分区简单来说就是将设备中的存储划分为一些互不重叠的部分，每个部分都可以单独格式化，用作不同的目的。这样系统就可以灵活的针对单独分区做不同的操作，例如在系统还原（recovery）过程，我们不希望会影响到用户存储的数据。</p><!-- [[[read_end]]] --><p><img src="https://static001.geekbang.org/resource/image/e7/31/e7440b651fec65f40ac324065b3ed331.png" alt=""></p><p>从上面的表中你可以看到，每个分区非常独立，<strong>不同的分区可以使用的不同的文件系统</strong>。其中比较重要的有：</p><ul>
+<li>
+<p>/system分区：它是存放所有Google提供的Android组件的地方。这个分区只能以只读方式mount。这样主要基于稳定性和安全性考虑，即使发生用户突然断电的情况，也依然需要保证/system分区的内容不会受到破坏和篡改。</p>
+</li>
+<li>
+<p>/data分区：它是所有用户数据存放的地方。主要为了实现数据隔离，即系统升级和恢复的时候会擦除整个/system分区，但是却不会影响/data的用户数据。而恢复出厂设置，只会擦除/data的数据。</p>
+</li>
+<li>
+<p>/vendor分区：它是存放厂商特殊系统修改的地方。特别是在Android 8.0以后，隆重推出了<a href="https://source.android.com/devices/architecture">“Treble”项目</a>。厂商OTA时可以只更新自己的/vendor分区即可，让厂商能够以更低的成本，更轻松、更快速地将设备更新到新版Android系统。</p>
+</li>
+</ul><p><strong>2. Android存储安全</strong></p><p>除了数据的分区隔离，存储安全也是Android系统非常重要的一部分<strong>，</strong>存储安全首先考虑的是权限控制。</p><p><strong>第一，权限控制</strong></p><p>Android的每个应用都在自己的<a href="https://source.android.google.cn/security/app-sandbox">应用沙盒</a>内运行，在 Android 4.3之前的版本中，这些沙盒使用了标准Linux的保护机制，通过为每个应用创建独一无二的Linux UID来定义。简单来说，我们需要保证微信不能访问淘宝的数据，并且在没有权限的情况下也不能访问系统的一些保护文件。</p><p>在Android 4.3引入了<a href="https://source.android.google.cn/security/selinux">SELinux</a>（Security Enhanced Linux）机制进一步定义Android应用沙盒的边界。那它有什么特别的呢？它的作用是即使我们进程有root权限也不能为所欲为，如果想在SELinux系统中干任何事情，都必须先在专门的安全策略配置文件中赋予权限。</p><p><strong>第二，数据加密</strong></p><p>除了权限的控制，用户还会担心在手机丢失或者被盗导致个人隐私数据泄露。加密或许是一个不错的选择，它可以保护丢失或被盗设备上的数据。</p><p>Android有两种<a href="https://source.android.google.cn/security/encryption">设备加密方法</a>：全盘加密和文件级加密。<a href="https://source.android.google.cn/security/encryption/full-disk">全盘加密</a>是在Android 4.4中引入的，并在Android 5.0中默认打开。它会将/data分区的用户数据操作加密/解密，对性能会有一定的影响，但是新版本的芯片都会在硬件中提供直接支持。</p><p>我们知道，基于文件系统的加密，如果设备被解锁了，加密也就没有用了。所以Android 7.0增加了<a href="https://source.android.google.cn/security/encryption/file-based">基于文件的加密</a>。在这种加密模式下，将会给每个文件都分配一个必须用用户的passcode推导出来的密钥。特定的文件被屏幕锁屏之后，直到用户下一次解锁屏幕期间都不能访问。</p><p>可能有些同学会问了，Android的这两种设备加密方法跟应用的加密有什么不同，我们在应用存储还需要单独的给敏感文件加密吗？</p><p>我想说的是，设备加密方法对应用程序来说是透明的，它保证我们读取到的是解密后的数据。对于应用程序特别敏感的数据，我们也需要采用RSA、AES、chacha20等常用方式做进一步的存储加密。</p><h2>常见的数据存储方法</h2><p>Android为我们提供了很多种持久化存储的方案，在具体介绍它们之前，你需要先问一下自己，什么是存储？</p><p>每个人可能都会有自己的答案，在我看来，存储就是把特定的数据结构转化成可以被记录和还原的格式，这个数据格式可以是二进制的，也可以是XML、JSON、Protocol Buffer这些格式。</p><p>对于闪存来说，一切归根到底还是二进制的，XML、JSON它们只是提供了一套通用的二进制编解码格式规范。既然有那么多存储的方案，那我们在选择数据存储方法时，一般需要考虑哪些关键要素呢？</p><p><strong>1. 关键要素</strong></p><p>在选择数据存储方法时，我一般会想到下面这几点，我把它们总结给你。</p><p><img src="https://static001.geekbang.org/resource/image/63/c3/63ef4665d77714c0704f11d82a5f0ac3.png" alt=""></p><p>那上面这些要素哪个最重要呢？数据存储方法不能脱离场景来考虑，我们不可能把这六个要素都做成最完美。</p><p>我来解释一下这句话。如果首要考虑的是正确性，那我们可能需要采用冗余、双写等方案，那就要容忍对时间开销产生的额外影响。同样如果非常在意安全，加解密环节的开销也必不可小。如果想针对启动场景，我们希望选择在初始化时间和读取时间更有优势的方案。</p><p><strong>2. 存储选项</strong></p><p>总的来说，我们需要结合应用场景选择合适的数据存储方法。那Android为应用开发者提供了哪些存储数据的方法呢？你可以参考<a href="https://developer.android.com/guide/topics/data/data-storage">存储选项</a>，综合来看，有下面几种方法。</p><ul>
+<li>
+<p>SharedPreferences</p>
+</li>
+<li>
+<p>ContentProvider</p>
+</li>
+<li>
+<p>文件</p>
+</li>
+<li>
+<p>数据库</p>
+</li>
+</ul><p>今天我先来讲SharedPreferences和ContentProvider这两个存储方法，文件和数据库将放到“存储优化”后面两期来讲。</p><p><strong>第一，SharedPreferences的使用。</strong></p><p><a href="http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/java/android/content/SharedPreferences.java">SharedPreferences</a>是Android中比较常用的存储方法，它可以用来存储一些比较小的键值对集合。</p><p>虽然SharedPreferences使用非常简便，但也是我们诟病比较多的存储方法。它的性能问题比较多，我可以轻松地说出它的“七宗罪”。</p><ul>
+<li>
+<p>跨进程不安全。由于没有使用跨进程的锁，就算使用<a href="https://developer.android.com/reference/android/content/Context">MODE_MULTI_PROCESS</a>，SharedPreferences在跨进程频繁读写有可能导致数据全部丢失。根据线上统计，SP大约会有万分之一的损坏率。</p>
+</li>
+<li>
+<p>加载缓慢。SharedPreferences文件的加载使用了异步线程，而且加载线程并没有设置线程优先级，如果这个时候主线程读取数据就需要等待文件加载线程的结束。<strong>这就导致出现主线程等待低优先级线程锁的问题，比如一个100KB的SP文件读取等待时间大约需要50~100ms，我建议提前用异步线程预加载启动过程用到的SP文件。</strong></p>
+</li>
+<li>
+<p>全量写入。无论是调用commit()还是apply()，即使我们只改动其中的一个条目，都会把整个内容全部写到文件。而且即使我们多次写入同一个文件，SP也没有将多次修改合并为一次，这也是性能差的重要原因之一。</p>
+</li>
+<li>
+<p>卡顿。由于提供了异步落盘的apply机制，在崩溃或者其他一些异常情况可能会导致数据丢失。所以当应用收到系统广播，或者被调用onPause等一些时机，系统会强制把所有的SharedPreferences对象数据落地到磁盘。如果没有落地完成，这时候主线程会被一直阻塞。<strong>这样非常容易造成卡顿，甚至是ANR，从线上数据来看SP卡顿占比一般会超过5%。</strong></p>
+</li>
+</ul><p>讲到这里，如果你对SharedPreferences机制还不熟悉的话，可以参考<a href="https://juejin.im/entry/597446ed6fb9a06bac5bc630">《彻底搞懂SharedPreferences》</a>。</p><p>坦白来讲，<strong>系统提供的SharedPreferences的应用场景是用来存储一些非常简单、轻量的数据</strong>。我们不要使用它来存储过于复杂的数据，例如HTML、JSON等。而且SharedPreference的文件存储性能与文件大小相关，每个SP文件不能过大，我们不要将毫无关联的配置项保存在同一个文件中，同时考虑将频繁修改的条目单独隔离出来。</p><p>我们也可以替换通过复写Application的getSharedPreferences方法替换系统默认实现，比如优化卡顿、合并多次apply操作、支持跨进程操作等。具体如何替换呢？在今天的Sample中我也提供了一个简单替换实现。</p><pre><code>public class MyApplication extends Application {
+  @Override
+  public SharedPreferences getSharedPreferences(String name, int mode)        
+  {
+     return SharedPreferencesImpl.getSharedPreferences(name, mode);
+  }
+}
+</code></pre><p>对系统提供的SharedPreferences的小修小补虽然性能有所提升，但是依然不能彻底解决问题。基本每个大公司都会自研一套替代的存储方案，比如微信最近就开源了<a href="https://github.com/Tencent/MMKV">MMKV</a>。</p><p>下面是MMKV对于SharedPreferences的“六要素”对比。</p><p><img src="https://static001.geekbang.org/resource/image/f1/ea/f1aadf32f59291e428be7591a38668ea.png" alt=""></p><p>你可以参考MMKV的<a href="https://github.com/Tencent/MMKV/wiki/design">实现原理</a>和<a href="https://github.com/Tencent/MMKV/wiki/android_benchmark_cn">性能测试报告</a>，里面有一些非常不错的思路。例如<a href="https://github.com/Tencent/MMKV/wiki/android_ipc">利用文件锁保证跨进程的安全</a>、使用mmap保证数据不会丢失、选用性能和存储空间更好的Protocol Buffer代替XML、支持增量更新等。</p><p>根据I/O优化的分析，对于频繁修改的配置使用mmap的确非常合适，使用者不用去理解apply()和commit()的差别，也不用担心数据的丢失。同时，我们也不需要每次都提交整个文件，整体性能会有很大提升。</p><p><strong>第二，ContentProvider的使用。</strong></p><p>为什么Android系统不把SharedPreferences设计成跨进程安全的呢？那是因为Android系统更希望我们在这个场景选择使用ContentProvider作为存储方式。ContentProvider作为Android四大组件中的一种，为我们提供了不同进程甚至是不同应用程序之间共享数据的机制。</p><p>Android系统中比如相册、日历、音频、视频、通讯录等模块都提供了ContentProvider的访问支持。它的使用十分简单，你可以参考<a href="https://developer.android.com/guide/topics/providers/content-providers">官方文档</a>。</p><p>当然，在使用过程也有下面几点需要注意。</p><ul>
+<li>启动性能</li>
+</ul><p>ContentProvider的生命周期默认在Application onCreate()之前，而且都是在主线程创建的。我们自定义的ContentProvider类的构造函数、静态代码块、onCreate函数都尽量不要做耗时的操作，会拖慢启动速度。</p><p><img src="https://static001.geekbang.org/resource/image/b2/40/b2dcd6744561a4e219235c874491fa40.png" alt=""></p><p>可能很多同学都不知道ContentProvider还有一个多进程模式，它可以和AndroidManifest中的multiprocess属性结合使用。这样调用进程会直接在自己进程里创建一个push进程的Provider实例，就不需要跨进程调用了。需要注意的是，这样也会带来Provider的多实例问题。</p><ul>
+<li>稳定性</li>
+</ul><p>ContentProvider在进行跨进程数据传递时，利用了Android的Binder和匿名共享内存机制。简单来说，就是通过Binder传递CursorWindow对象内部的匿名共享内存的文件描述符。这样在跨进程传输中，结果数据并不需要跨进程传输，而是在不同进程中通过传输的匿名共享内存文件描述符来操作同一块匿名内存，这样来实现不同进程访问相同数据的目的。</p><p><img src="https://static001.geekbang.org/resource/image/1d/b4/1d516441b44e3a7fbd33aca6a96a64b4.png" alt=""></p><p>正如我前面I/O优化所讲的，基于mmap的匿名共享内存机制也是有代价的。当传输的数据量非常小的时候，可能不一定划算。所以ContentProvider提供了一种call函数，它会直接通过Binder来传输数据。</p><p>Android的Binder传输是有大小限制的，一般来说限制是1~2MB。ContentProvider的接口调用参数和call函数调用并没有使用匿名共享机制，比如要批量插入很多数据，那么就会出现一个插入数据的数组，如果这个数组太大了，那么这个操作就可能会出现数据超大异常。</p><ul>
+<li>安全性</li>
+</ul><p>虽然ContentProvider为应用程序之间的数据共享提供了很好的安全机制，但是如果ContentProvider是exported，当支持执行SQL语句时就需要注意SQL注入的问题。另外如果我们传入的参数是一个文件路径，然后返回文件的内容，这个时候也要校验合法性，不然整个应用的私有数据都有可能被别人拿到，在intent传递参数的时候可能经常会犯这个错误。</p><p>最后我给你总结一下ContentProvider的“六要素”优缺点。</p><p><img src="https://static001.geekbang.org/resource/image/67/26/677a736dfdcb8cc4e3d7157a58fe7726.png" alt=""></p><p>总的来说，ContentProvider这套方案实现相对比较笨重，适合传输大的数据。</p><h2>总结</h2><p>虽然SharedPreferences和ContentProvider都是我们日常经常使用的存储方法，但是里面的确会有大大小小的暗坑。所以我们需要充分了解它们的优缺点，这样在工作中可以更好地使用和优化。</p><p>如何在合适的场景选择合适的存储方法是存储优化的必修课，你应该学会通过正确性、时间开销、空间开销、安全、开发成本以及兼容性这六大关键要素来分解某个存储方法。</p><p>在设计某个存储方案的时候也是同样的道理，我们无法同时把所有的要素都做得最好，因此要学会取舍和选择，在存储的世界里不存在全局最优解，我们要找的是局部的最优解。这个时候更应明确自己的诉求，大胆牺牲部分关键点的指标，将自己场景最关心的要素点做到最好。</p><h2>课后作业</h2><p>下面是MMKV给出的性能测试报告，你可以看到跟系统的SharedPreferences相比，主要差距在于写的速度。</p><p><img src="https://static001.geekbang.org/resource/image/5d/bd/5df2fdd4c21452641afacb0dfd02cabd.png" alt=""></p><p>没有实践就没有发言权，今天我们一起来尝试测试对比MMKV与系统SharedPreferences的性能差异。请将你的测试结果和分析体会，写在留言区跟同学们分享交流吧。</p><p>今天的练习<a href="https://github.com/AndroidAdvanceWithGeektime/Chapter12">Sample</a>是通过复写Application的getSharedPreferences方法替换系统默认实现，这种方式虽然不是最好的方法，不过它主要的优点在于代码的侵入性比较低，无需修改太多的代码。</p><p>欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。最后别忘了在评论区提交今天的作业，我也为认真完成作业的同学准备了丰厚的“学习加油礼包”，期待与你一起切磋进步哦。</p><p><img src="https://static001.geekbang.org/resource/image/bf/f1/bf8fdc35ddccb10b1161d8ca7eb8f8f1.jpg" alt=""></p>
+                    </div>
+                </div>
+
+            </div>
+            <div data-v-87ffcada="" class="article-comments pd"><h2 data-v-87ffcada=""><span
+                    data-v-87ffcada="">精选留言</span></h2>
+                <ul data-v-87ffcada="">
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4c/60/524a18e9.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">李杰</span>
+                            </div>
+                            <div class="bd">老师您好!<br>最近正打算利用MMKV替换SharedPreferences，研读了一下MMKV的源代码，发现他们在内存重组的时候是直接在原始文件中写重组过后的数据，并且重组完成之后没有sync, 感觉这样会有很大的风险。虽说mmap利用操作系统的机制来保证即使进程被杀，也能写数据, 但首先得保证把所有要写的数据写进mmap映射的内存中，如果在写完成之前进程就已经被杀了，那就有可能出现mmap中的数据是错误的，即使完成了写mmap内存，如果在操作系统将数据写入硬盘前突然关机，那也有可能丢失数据，造成最终的数据损坏。<br>而SharedPreferences的写操作，首先是将原始文件备份，再写入所有数据，只有写入成功了，并且通过sync完成落盘后，才会将Backup文件删除。如果在写入过程中进程被杀，或者关机，进程再次起来的时候发现存在Backup文件，就将Backup文件重命名为原始文件，原本未完成写入的文件就直接丢弃来，这样最多也就是未完成写入的数据丢失，文件是不会损坏的，所以可以认为SharedPreferences的写入在单进程中是安全的，也正是因为back的机制，导致多进程可能会丢失新写入的数据。<br>从MMKV的github上看到数据有效性的说明，在ios每天存在超过70万次的数据校验失败，是不是就是写数据实际是不安全的导致的呢？对MMKV和SharedPreferences的理解可能不对，请老师帮忙解答一下，谢谢！ <br></div>
+                            <span class="time">2019-01-08 11:29</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">赞，研究的挺细的，大部分都对。不过mmkv有考虑这点做了crc检验，文件损坏之后支持recover模式，从文件中尽力而为的修复数据</p>
+                                <p class="reply-time">2019-01-08 12:43</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4c/60/524a18e9.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">李杰</span>
+                            </div>
+                            <div class="bd">老师您好!<br>针对mmkv的recover模式，也正是我们担心的一个点。从mmkv源码来看，在crc校验失败后默认选择丢弃数据。recover模式作为一个可选模式，也没有看到有什么恢复数据的措施，只是仍然强行decode数据，这样的话理论上decode出来的数据就可能是错误的，不知道是不是哪里疏漏了或是理解有问题。 <br></div>
+                            <span class="time">2019-01-08 13:37</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">因为用了pb的结构已经二进制了，如果某一行写出问题，应该是decode失败的。<br><br>不过这里可能的确有优化的空间，可能文件头上面可以记住上一次检验成功的行数。</p>
+                                <p class="reply-time">2019-01-09 09:08</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4b/19/6f037647.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">东方</span>
+                            </div>
+                            <div class="bd">张老师，今天跑了mmkv的demo，发现文件内容是append形式，不会覆盖前面的key，导致文件内容越来越大。 <br></div>
+                            <span class="time">2019-01-10 22:39</span>
+                            
+                        </div>
+                    </li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

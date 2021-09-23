@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			
+			使用form标签来创建一个表单
+				form中有一个必须的属性叫做action
+				action需要一个服务器的地址，当我们提交表单时，填写的内容将会提交到action指向的地址
+			
+		-->
+		
+		<form action="target.html">
+			
+			<!-- 在form中可以创建一个表单项，用户可以通过表单项来填写信息 -->
+			<!-- 
+				文本框
+				- 使用input标签来创建一个文本框
+				- 它需要一个type属性是text
+				- 如果希望表单中的内容最终发送到服务器，还必须要给表单项添加一个name属性
+					该属性将会作为用户填写内容名字，在服务器中可以根据这个名字来获取用户填写内容
+					
+				- 默认情况下，用户添加的内容将会以查询字符串的形式发送给服务器，
+					所谓的查询字符串就是url地址?后边的内容
+				- username=sunwukong&password=123123
+				- 查询字符实际上就是一个一个的名值对结构，多个名值对之间使用&隔开
+					一个名字 = 一个值
+					名字就是表单项指定的name属性值
+					值就是用户填写的内容，在服务器中可以通过名字来获取用户填写的内容
+					
+					可以通过value属性为文本框指定一个默认值
+			-->
+			用户名 <input type="text" name="username" value="hello" /> <br /><br />
+			
+			<!--
+				密码框也是input，不同的是它type需要使用password
+			-->
+			
+			密码 <input type="password" name="password" /> <br /><br />
+			
+			<!--
+				单选按钮
+				 - 使用input来创建一个单选按钮
+				 - 它的type属性值是radio
+				 - 单选按钮是通过name属性来分组的，相同的name属性值属于一组
+				 - 像这种选择框不需要用户填写内容的，还必须指定一个value属性，
+				 	这样选中的元素的value属性值将会被提交到服务器
+				 - 如果希望某个单选按钮处在默认选中的状态可以在标签中添加属性 checked="checked"	
+			-->
+			性别 <input type="radio" name="gender" value="male" />男  
+				<input type="radio" name="gender" value="female" checked="checked" />女
+			<br /><br />
+			
+			<!--
+				多选框
+					- 使用input来创建一个多选框
+					- 它的type属性是checkbox
+			-->
+			爱好 <input type="checkbox" name="hobby" value="ppq" />乒乓球
+				<input type="checkbox" name="hobby" value="ymq" checked="checked" />羽毛球
+				<input type="checkbox" name="hobby" value="lq" />篮球
+				
+				<br /><br />
+				
+			<!--
+				下拉列表
+					- 使用select来创建一个下拉列表
+					- 使用option标签来创建下拉列表中的选项
+					- 下拉列表的name属性需要指定给select标签，value属性需要指定给option
+					- 如果希望将option设置为默认选中，则可以在option中添加一个属性 selected = "selected"
+			-->	
+			你最喜欢的明星
+						<select name="star">
+							<option value="fbb">范冰冰</option>
+							<option value="zw" >赵薇</option>
+							<option value="lxr" selected="selected">林心如</option>
+						</select>
+			
+			<br /><br />
+			
+			<!--
+				提交按钮
+					- 使用input来创建一个提交按钮
+					- 它的type叫做submit
+					- 通过value属性可以设置提交按钮上的文字
+			-->
+			<input type="submit" value="注册" />
+			
+			<!--
+				重置按钮
+					重置按钮可以使表单恢复到默认值
+			-->
+			<input type="reset" />
+			
+			<!--
+				如果type设置为button，那么会生成一个普通的按钮，
+				它只有一个功能就是被点
+			-->
+			<input type="button" value="按钮" />
+			
+			<br /><br />
+			
+			<!--
+				也可以通过button标签来创建按钮
+					使用button创建的按钮和input创建的按钮功能一致，
+					只不过button标签更加的灵活
+			-->
+			<button type="submit">提交按钮</button>
+			<button type="reset">重置</button>
+			<button type="button">单纯的按钮</button>
+			
+		</form>
+	</body>
+</html>

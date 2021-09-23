@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>全选练习</title>
+<script type="text/javascript">
+
+	/*
+	功能：
+		①全选按钮：点击后所有爱好都选中
+		②全不选按钮：点击后所有爱好都选中
+		③反选按钮：点击后所有爱好选中状态反转
+		④提交按钮：点击后依次弹出选中内容
+		⑤全选框：点击后让所有爱好的选中状态和自己一致
+		⑥爱好框：点满后将全选框选中，否则取消选中
+	*/
+	
+	window.onload = function(){
+		var items = document.getElementsByName("items");
+		
+		//1.#checkedAllBtn
+		var checkedAllBtn = document.getElementById("checkedAllBtn");
+		checkedAllBtn.onclick = function(){
+			
+			setItemsChecked(true);
+			
+			checkedAllBox.checked=true;
+			
+		};
+		
+		//2.#checkedNoBtn
+		var checkedNoBtn = document.getElementById("checkedNoBtn");
+		checkedNoBtn.onclick = function(){
+			
+			setItemsChecked(false);
+			checkedAllBox.checked=false;
+			
+		};
+		//3.#checkedRevBtn
+		var checkedRevBtn = document.getElementById("checkedRevBtn");
+		checkedRevBtn.onclick = function(){
+			
+			setItemsChecked("reversStatus");
+			//点满时将checkedAllBox.checked设置为true
+			//统计当前items中被选中的个数
+			checkedAllBox.checked=isAllChecked();
+		};
+		
+		//4.#checkedAllBox
+		var checkedAllBox = document.getElementById("checkedAllBox");
+		checkedAllBox.onclick = function(){
+			
+			setItemsChecked(this.checked);
+			
+		};
+		
+		//5.#sendBtn
+		var sendBtn = document.getElementById("sendBtn");
+		sendBtn.onclick = function(){
+			
+			for(var i = 0; i < items.length; i++) {
+				
+				if(items[i].checked) {
+					
+					alert(items[i].value);
+					
+				}
+				
+			}
+			
+		};
+		//6.items
+		for(var i = 0; i < items.length; i++) {
+			items[i].onclick = function(){
+				
+				//点满时将checkedAllBox.checked设置为true
+				//统计当前items中被选中的个数
+				checkedAllBox.checked=isAllChecked();
+			}
+		}
+		
+		function isAllChecked() {
+			for(var j = 0; j < items.length; j++) {
+				if(!items[j].checked) 
+					return false;
+			}
+			return true;
+		}
+		
+		function setItemsChecked(checkedStatus) {
+			for(var i = 0; i < items.length; i++) {
+				
+				items[i].checked = (checkedStatus == "reversStatus")?(!items[i].checked):checkedStatus;
+				
+			}
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+	<form method="post" action="">
+		你爱好的运动是？<input type="checkbox" id="checkedAllBox" />全选/全不选 
+		
+		<br />
+		<input type="checkbox" name="items" value="足球" />足球
+		<input type="checkbox" name="items" value="篮球" />篮球
+		<input type="checkbox" name="items" value="羽毛球" />羽毛球
+		<input type="checkbox" name="items" value="乒乓球" />乒乓球
+		<br />
+		<input type="button" id="checkedAllBtn" value="全　选" />
+		<input type="button" id="checkedNoBtn" value="全不选" />
+		<input type="button" id="checkedRevBtn" value="反　选" />
+		<input type="button" id="sendBtn" value="提　交" />
+	</form>
+
+</body>
+</html>

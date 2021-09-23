@@ -1,0 +1,458 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+
+#watermark {
+
+  position: relative;
+  overflow: hidden;
+}
+
+#watermark .x {
+  position: absolute;
+  top: 800;
+  left: 400;
+  color: #3300ff;
+  font-size: 50px;
+  pointer-events: none;
+  opacity:0.3;
+  filter:Alpha(opacity=50);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+    </style>
+
+
+    <style type="text/css">
+ html{color:#333;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-rendering:optimizelegibility;font-family:Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}html.borderbox *,html.borderbox :after,html.borderbox :before{box-sizing:border-box}article,aside,blockquote,body,button,code,dd,details,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}audio,canvas,video{display:inline-block}body,button,input,select,textarea{font:300 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}blockquote{position:relative;color:#999;font-weight:400;border-left:1px solid #1abc9c;padding-left:1em;margin:1em 3em 1em 2em}@media only screen and (max-width:640px){blockquote{margin:1em 0}}abbr,acronym{border-bottom:1px dotted;font-variant:normal}abbr{cursor:help}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}q:after,q:before{content:""}sub,sup{font-size:75%;line-height:0;position:relative}:root sub,:root sup{vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a{color:#1abc9c}a:hover{text-decoration:underline}.typo a{border-bottom:1px solid #1abc9c}.typo a:hover{border-bottom-color:#555;color:#555}.typo a:hover,a,ins{text-decoration:none}.typo-u,u{text-decoration:underline}mark{background:#fffdd1;border-bottom:1px solid #ffedce;padding:2px;margin:0 5px}code,pre,pre tt{font-family:Courier,Courier New,monospace}pre{background:hsla(0,0%,97%,.7);border:1px solid #ddd;padding:1em 1.5em;display:block;-webkit-overflow-scrolling:touch}hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:.8em;height:10px}.typo-small,figcaption,small{font-size:.9em;color:#888}b,strong{font-weight:700;color:#000}[draggable]{cursor:move}.clearfix:after,.clearfix:before{content:"";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.textwrap,.textwrap td,.textwrap th{word-wrap:break-word;word-break:break-all}.textwrap-table{table-layout:fixed}.serif{font-family:Palatino,Optima,Georgia,serif}.typo-dl,.typo-form,.typo-hr,.typo-ol,.typo-p,.typo-pre,.typo-table,.typo-ul,.typo dl,.typo form,.typo hr,.typo ol,.typo p,.typo pre,.typo table,.typo ul,blockquote{margin-bottom:1rem}h1,h2,h3,h4,h5,h6{font-family:PingFang SC,Helvetica Neue,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;line-height:1.35}.typo-h1,.typo-h2,.typo-h3,.typo-h4,.typo-h5,.typo-h6,.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}.typo-h1,.typo h1{font-size:2em}.typo-h2,.typo h2{font-size:1.8em}.typo-h3,.typo h3{font-size:1.6em}.typo-h4,.typo h4{font-size:1.4em}.typo-h5,.typo-h6,.typo h5,.typo h6{font-size:1.2em}.typo-ul,.typo ul{margin-left:1.3em;list-style:disc}.typo-ol,.typo ol{list-style:decimal;margin-left:1.9em}.typo-ol ol,.typo-ol ul,.typo-ul ol,.typo-ul ul,.typo li ol,.typo li ul{margin-bottom:.8em;margin-left:2em}.typo-ol ul,.typo-ul ul,.typo li ul{list-style:circle}.typo-table td,.typo-table th,.typo table caption,.typo table td,.typo table th{border:1px solid #ddd;padding:.5em 1em;color:#666}.typo-table th,.typo table th{background:#fbfbfb}.typo-table thead th,.typo table thead th{background:hsla(0,0%,95%,.7)}.typo table caption{border-bottom:none}.typo-input,.typo-textarea{-webkit-appearance:none;border-radius:0}.typo-em,.typo em,caption,legend{color:#000;font-weight:inherit}.typo-em{position:relative}.typo-em:after{position:absolute;top:.65em;left:0;width:100%;overflow:hidden;white-space:nowrap;content:"\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"}.typo img{max-width:100%}.common-content{font-weight:400;color:#353535;line-height:1.75rem;white-space:normal;word-break:normal;font-size:1rem}.common-content img{display:block;max-width:100%;background-color:#eee}.common-content audio,.common-content video{width:100%;background-color:#eee}.common-content center,.common-content font{margin-top:1rem;display:inline-block}.common-content center{width:100%}.common-content pre{margin-top:1rem;padding-left:0;padding-right:0;position:relative;overflow:hidden}.common-content pre code{font-size:.8rem;font-family:Consolas,Liberation Mono,Menlo,monospace,Courier;display:block;width:100%;box-sizing:border-box;padding-left:1rem;padding-right:1rem;overflow-x:auto}.common-content hr{border:none;margin-top:1.5rem;margin-bottom:1.5rem;border-top:1px solid #f5f5f5;height:1px;background:none}.common-content b,.common-content h1,.common-content h2,.common-content h3,.common-content h4,.common-content h5,.common-content strong{font-weight:700}.common-content h1,.common-content h2{font-size:1.125rem;margin-bottom:.45rem}.common-content h3,.common-content h4,.common-content h5{font-size:1rem;margin-bottom:.45rem}.common-content p{font-weight:400;color:#353535;margin-top:.15rem}.common-content .orange{color:#ff5a05}.common-content .reference{font-size:1rem;color:#888}.custom-rich-content h1{margin-top:0;font-weight:400;font-size:15.25px;border-bottom:1px solid #eee;line-height:2.8}.custom-rich-content li,.custom-rich-content p{font-size:14px;color:#888;line-height:1.6}table.hljs-ln{margin-bottom:0;border-spacing:0;border-collapse:collapse}table.hljs-ln,table.hljs-ln tbody,table.hljs-ln td,table.hljs-ln tr{box-sizing:border-box}table.hljs-ln td{padding:0;border:0}table.hljs-ln td.hljs-ln-numbers{min-width:15px;color:rgba(27,31,35,.3);text-align:right;white-space:nowrap;cursor:pointer;user-select:none}table.hljs-ln td.hljs-ln-code,table.hljs-ln td.hljs-ln-numbers{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;line-height:20px;vertical-align:top}table.hljs-ln td.hljs-ln-code{position:relative;padding-right:10px;padding-left:10px;overflow:visible;color:#24292e;word-wrap:normal;white-space:pre}video::-webkit-media-controls{overflow:hidden!important}video::-webkit-media-controls-enclosure{width:calc(100% + 32px);margin-left:auto}.button-cancel{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel,.button-primary{-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary{color:#fff;background-color:#ff5a05;border-radius:3px}@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot);src:url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.woff) format("woff"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.ttf) format("truetype"),url(//at.alicdn.com/t/font_372689_bwwwtosxtzp.svg#iconfont) format("svg")}@font-face{font-family:player-font;src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot);src:url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.eot#iefix) format("embedded-opentype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.woff) format("woff"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.ttf) format("truetype"),url(//at.alicdn.com/t/font_509397_1cyjv4o90qiod2t9.svg#player-font) format("svg")}.iconfont{font-family:iconfont!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}html{background:#fff;min-height:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{width:100%}body.fixed{overflow:hidden;position:fixed;width:100vw;height:100vh}i{font-style:normal}a{word-wrap:break-word;-webkit-tap-highlight-color:rgba(0,0,0,0)}a:hover{text-decoration:none}.fade-enter-active,.fade-leave-active{transition:opacity .3s}.fade-enter,.fade-leave-to{opacity:0}.MathJax,.MathJax_CHTML,.MathJax_MathContainer,.MathJax_MathML,.MathJax_PHTML,.MathJax_PlainSource,.MathJax_SVG{outline:0}.ios-app-switch .js-audit{display:none}._loading_wrap_{position:fixed;width:100vw;height:100vh;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999}._loading_div_class_,._loading_wrap_{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}._loading_div_class_{word-wrap:break-word;padding:.5rem .75rem;text-align:center;z-index:9999;font-size:.6rem;max-width:60%;color:#fff;border-radius:.25rem;-ms-flex-direction:column;flex-direction:column}._loading_div_class_ .message{color:#353535;font-size:16px;line-height:3}.spinner{animation:circle-rotator 1.4s linear infinite}.spinner *{line-height:0;box-sizing:border-box}@keyframes circle-rotator{0%{transform:rotate(0deg)}to{transform:rotate(270deg)}}.path{stroke-dasharray:187;stroke-dashoffset:0;transform-origin:center;animation:circle-dash 1.4s ease-in-out infinite,circle-colors 5.6s ease-in-out infinite}@keyframes circle-colors{0%{stroke:#ff5a05}to{stroke:#ff5a05}}@keyframes circle-dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;transform:rotate(135deg)}to{stroke-dashoffset:187;transform:rotate(450deg)}}.confirm-box-wrapper,.confirm-box-wrapper .mask{position:absolute;top:0;left:0;right:0;bottom:0}.confirm-box-wrapper .mask{background:rgba(0,0,0,.6)}.confirm-box-wrapper .confirm-box{position:fixed;top:50%;left:50%;width:267px;background:#fff;transform:translate(-50%,-50%);border-radius:7px}.confirm-box-wrapper .confirm-box .head{margin:0 18px;font-size:18px;text-align:center;line-height:65px;border-bottom:1px solid #d9d9d9}.confirm-box-wrapper .confirm-box .body{padding:18px;padding-bottom:0;color:#353535;font-size:12.5px;max-height:150px;overflow:auto}.confirm-box-wrapper .confirm-box .foot{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:18px}.confirm-box-wrapper .confirm-box .foot .button-cancel{border:1px solid #d9d9d9}.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+
+
+
+
+    </style>
+    <style type="text/css">
+        .button-cancel[data-v-87ffcada]{color:#888;border:1px solid #888;border-radius:3px;margin-right:12px}.button-cancel[data-v-87ffcada],.button-primary[data-v-87ffcada]{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;height:35px;display:inline-block;font-size:15px;text-align:center;line-height:36px}.button-primary[data-v-87ffcada]{color:#fff;background-color:#ff5a05;border-radius:3px}.pd[data-v-87ffcada]{padding-left:1.375rem;padding-right:1.375rem}.article[data-v-87ffcada]{max-width:70rem;margin:0 auto}.article .article-unavailable[data-v-87ffcada]{color:#fa8919;font-size:15px;font-weight:600;line-height:24px;border-radius:5px;padding:12px;background-color:#f6f7fb;margin-top:20px}.article .article-unavailable .iconfont[data-v-87ffcada]{font-size:12px}.article .main[data-v-87ffcada]{padding:1.25rem 0;margin-bottom:52px}.article-title[data-v-87ffcada]{color:#353535;font-weight:400;line-height:1.65rem;font-size:1.34375rem}.article-info[data-v-87ffcada]{color:#888;font-size:.9375rem;margin-top:1.0625rem}.article-content[data-v-87ffcada]{margin-top:1.0625rem}.article-content.android video[data-v-87ffcada]::-webkit-media-controls-fullscreen-button{display:none}.copyright[data-v-87ffcada]{color:#b2b2b2;padding-bottom:20px;margin-top:20px;font-size:13px}.audio-player[data-v-87ffcada]{width:100%;margin:20px 0}.to-comment[data-v-87ffcada]{overflow:hidden;padding-top:10px;margin-bottom:-30px}.to-comment a.button-primary[data-v-87ffcada]{float:right;height:20px;font-size:12px;line-height:20px;padding:4px 8px;cursor:pointer}.article-comments[data-v-87ffcada]{margin-top:2rem}.article-comments h2[data-v-87ffcada]{text-align:center;color:#888;position:relative;z-index:1;margin-bottom:1rem}.article-comments h2[data-v-87ffcada]:before{border-top:1px dotted #888;content:"";position:absolute;top:56%;left:0;width:100%;z-index:-1}.article-comments h2 span[data-v-87ffcada]{font-size:15.25px;font-weight:400;padding:0 1rem;background:#fff;display:inline-block}.article-sub-bottom[data-v-87ffcada]{z-index:10;cursor:pointer}.switch-btns[data-v-87ffcada]{height:76px;cursor:pointer;padding-top:24px;padding-bottom:24px;border-bottom:10px solid #f6f7fb;position:relative}.switch-btns[data-v-87ffcada]:before{content:" ";height:1px;background:#e8e8e8;position:absolute;top:0;left:0;-webkit-box-sizing:border-box;box-sizing:border-box;left:1.375rem;right:1.375rem}.switch-btns .btn[data-v-87ffcada]{height:38px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.switch-btns .btn .tag[data-v-87ffcada]{-webkit-box-flex:0;-ms-flex:0 0 62px;flex:0 0 62px;text-align:center;color:#888;font-size:14px;border-radius:10px;height:22px;line-height:22px;background:#f6f7fb;font-weight:400}.switch-btns .btn .txt[data-v-87ffcada]{margin-left:10px;-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;color:#888;font-size:15px;height:22px;line-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}@media (max-width:769px){.article .breadcrumb[data-v-87ffcada]{padding-top:10px;padding-bottom:10px}}
+
+
+
+
+
+    </style>
+
+    <style type="text/css">
+        .comment-item{list-style-position:inside;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:1rem}.comment-item a{border-bottom:none}.comment-item .avatar{width:2.625rem;height:2.625rem;-ms-flex-negative:0;flex-shrink:0;border-radius:50%}.comment-item .info{margin-left:.5rem;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.comment-item .info .hd{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .username{color:#888;font-size:15.25px;font-weight:400;line-height:1.2}.comment-item .info .hd .control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-item .info .hd .control .btn-share{color:#888;font-size:.75rem;margin-right:1rem}.comment-item .info .hd .control .btn-praise{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15.25px;text-decoration:none}.comment-item .info .hd .control .btn-praise i{color:#888;display:inline-block;font-size:.75rem;margin-right:.3rem;margin-top:-.01rem}.comment-item .info .hd .control .btn-praise i.on,.comment-item .info .hd .control .btn-praise span{color:#ff5a05}.comment-item .info .bd{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all;line-height:1.6}.comment-item .info .time{color:#888;font-size:9px;line-height:1}.comment-item .info .reply .reply-hd{font-size:15.25px}.comment-item .info .reply .reply-hd span{margin-left:-12px;color:#888;font-weight:400}.comment-item .info .reply .reply-hd i{color:#ff5a05;font-size:15.25px}.comment-item .info .reply .reply-content{color:#353535;font-size:15.25px;font-weight:400;white-space:normal;word-break:break-all}.comment-item .info .reply .reply-time{color:#888;font-size:9px}
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+
+    <div data-v-87ffcada="" class="article" id="watermark">
+        <p class="x">更多课程请加QQ1046877154，微信loveu_110获取</p>
+        <div data-v-87ffcada="" class="main main-app">
+            <h1 data-v-87ffcada="" class="article-title pd">
+                02讲崩溃优化（下）：应用崩溃了，你应该如何去分析
+            </h1>
+            <div data-v-87ffcada="" class="article-content typo common-content pd"><img data-v-87ffcada=""
+                                                                                        src="https://static001.geekbang.org/resource/image/6c/d8/6cb17a77e4491faf937228c42ddbb1d8.jpg">
+
+
+                <div data-v-87ffcada="" id="article-content" class="">
+                    <div class="text">
+                        <p>在侦探漫画《名侦探柯南》中，无论柯南走到哪里都会遇到新的“案件”，这也很像程序员的“日常”，我们每天工作也会遇到各种各样的疑难问题，“崩溃”就是其中比较常见的一种问题。</p><p>解决崩溃跟破案一样需要经验，我们分析的问题越多越熟练，定位问题就会越快越准。当然这里也有很多套路，比如对于“案发现场”我们应该留意哪些信息？怎样找到更多的“证人”和“线索”？“侦查案件”的一般流程是什么？对不同类型的“案件”分别应该使用什么样的调查方式？</p><p>“真相永远只有一个”，崩溃也并不可怕。通过今天的学习，希望你能成为代码届的名侦探柯南。</p><h2>崩溃现场</h2><p>崩溃现场是我们的“第一案发现场”，它保留着很多有价值的线索。在这里我们挖掘到的信息越多，下一步分析的方向就越清晰，而不是去靠盲目猜测。</p><p>操作系统是整个崩溃过程的“旁观者”，也是我们最重要的“证人”。一个好的崩溃捕获工具知道应该采集哪些系统信息，也知道在什么场景要深入挖掘哪些内容，从而可以更好地帮助我们解决问题。</p><p>接下来我们具体来看看在崩溃现场应该采集哪些信息。</p><p>1.崩溃信息</p><p>从崩溃的基本信息，我们可以对崩溃有初步的判断。</p><ul>
+<li>
+<p>进程名、线程名。崩溃的进程是前台进程还是后台进程，崩溃是不是发生在UI线程。</p>
+</li>
+<li>
+<p>崩溃堆栈和类型。崩溃是属于Java崩溃、Native崩溃，还是ANR，对于不同类型的崩溃我们关注的点也不太一样。特别需要看崩溃堆栈的栈顶，看具体崩溃在系统的代码，还是我们自己的代码里面。</p>
+</li>
+</ul><!-- [[[read_end]]] --><pre><code>Process Name: 'com.sample.crash'
+Thread Name: 'MyThread'
+
+java.lang.NullPointerException
+    at ...TestsActivity.crashInJava(TestsActivity.java:275)
+</code></pre><p>有时候我们除了崩溃的线程，还希望拿到其他关键的线程的日志。就像上面的例子，虽然是MyThread线程崩溃，但是我也希望可以知道主线程当前的调用栈。</p><p>2.系统信息</p><p>系统的信息有时候会带有一些关键的线索，对我们解决问题有非常大的帮助。</p><ul>
+<li>Logcat。这里包括应用、系统的运行日志。由于系统权限问题，获取到的Logcat可能只包含与当前App相关的。其中系统的event logcat会记录App运行的一些基本情况，记录在文件/system/etc/event-log-tags中。</li>
+</ul><pre><code>system logcat:
+10-25 17:13:47.788 21430 21430 D dalvikvm: Trying to load lib ... 
+event logcat:
+10-25 17:13:47.788 21430 21430 I am_on_resume_called: 生命周期
+10-25 17:13:47.788 21430 21430 I am_low_memory: 系统内存不足
+10-25 17:13:47.788 21430 21430 I am_destroy_activity: 销毁 Activty
+10-25 17:13:47.888 21430 21430 I am_anr: ANR 以及原因
+10-25 17:13:47.888 21430 21430 I am_kill: APP 被杀以及原因
+</code></pre><ul>
+<li>
+<p>机型、系统、厂商、CPU、ABI、Linux版本等。我们会采集多达几十个维度，这对后面讲到寻找共性问题会很有帮助。</p>
+</li>
+<li>
+<p>设备状态：是否root、是否是模拟器。一些问题是由Xposed或多开软件造成，对这部分问题我们要区别对待。</p>
+</li>
+</ul><p>3.内存信息</p><p>OOM、ANR、虚拟内存耗尽等，很多崩溃都跟内存有直接关系。如果我们把用户的手机内存分为“2GB以下”和“2GB以上”两个桶，会发现“2GB以下”用户的崩溃率是“2GB以上”用户的几倍。</p><ul>
+<li>
+<p>系统剩余内存。关于系统内存状态，可以直接读取文件/proc/meminfo。当系统可用内存很小（低于MemTotal的 10%）时，OOM、大量GC、系统频繁自杀拉起等问题都非常容易出现。</p>
+</li>
+<li>
+<p>应用使用内存。包括Java内存、RSS（Resident Set Size）、PSS（Proportional Set Size），我们可以得出应用本身内存的占用大小和分布。PSS和RSS通过/proc/self/smap计算，可以进一步得到例如apk、dex、so等更加详细的分类统计。</p>
+</li>
+<li>
+<p>虚拟内存。虚拟内存可以通过/proc/self/status得到，通过/proc/self/maps文件可以得到具体的分布情况。有时候我们一般不太重视虚拟内存，但是很多类似OOM、tgkill等问题都是虚拟内存不足导致的。</p>
+</li>
+</ul><pre><code>Name:     com.sample.name   // 进程名
+FDSize:   800               // 当前进程申请的文件句柄个数
+VmPeak:   3004628 kB        // 当前进程的虚拟内存峰值大小
+VmSize:   2997032 kB        // 当前进程的虚拟内存大小
+Threads:  600               // 当前进程包含的线程个数
+</code></pre><p>一般来说，对于32位进程，如果是32位的CPU，虚拟内存达到3GB就可能会引起内存申请失败的问题。如果是64位的CPU，虚拟内存一般在3～4GB之间。当然如果我们支持64位进程，虚拟内存就不会成为问题。Google Play要求 2019年8月一定要支持64位，在国内虽然支持64位的设备已经在90%以上了，但是商店都不支持区分CPU架构类型发布，普及起来需要更长的时间。</p><p>4.资源信息</p><p>有的时候我们会发现应用堆内存和设备内存都非常充足，还是会出现内存分配失败的情况，这跟资源泄漏可能有比较大的关系。</p><ul>
+<li>文件句柄fd。文件句柄的限制可以通过/proc/self/limits获得，一般单个进程允许打开的最大文件句柄个数为1024。但是如果文件句柄超过800个就比较危险，需要将所有的fd以及对应的文件名输出到日志中，进一步排查是否出现了有文件或者线程的泄漏。</li>
+</ul><pre><code>opened files count 812:
+0 -&gt; /dev/null
+1 -&gt; /dev/log/main4 
+2 -&gt; /dev/binder
+3 -&gt; /data/data/com.crash.sample/files/test.config
+...
+</code></pre><ul>
+<li>线程数。当前线程数大小可以通过上面的status文件得到，一个线程可能就占2MB的虚拟内存，过多的线程会对虚拟内存和文件句柄带来压力。根据我的经验来说，如果线程数超过400个就比较危险。需要将所有的线程id以及对应的线程名输出到日志中，进一步排查是否出现了线程相关的问题。</li>
+</ul><pre><code> threads count 412:               
+ 1820 com.sample.crashsdk                         
+ 1844 ReferenceQueueD                                             
+ 1869 FinalizerDaemon   
+ ...  
+</code></pre><ul>
+<li>JNI。使用JNI时，如果不注意很容易出现引用失效、引用爆表等一些崩溃。我们可以通过DumpReferenceTables统计JNI的引用表，进一步分析是否出现了JNI泄漏等问题。</li>
+</ul><p>5.应用信息</p><p>除了系统，其实我们的应用更懂自己，可以留下很多相关的信息。</p><ul>
+<li>
+<p>崩溃场景。崩溃发生在哪个Activity或Fragment，发生在哪个业务中。</p>
+</li>
+<li>
+<p>关键操作路径。不同于开发过程详细的打点日志，我们可以记录关键的用户操作路径，这对我们复现崩溃会有比较大的帮助。</p>
+</li>
+<li>
+<p>其他自定义信息。不同的应用关心的重点可能不太一样，比如网易云音乐会关注当前播放的音乐，QQ浏览器会关注当前打开的网址或视频。此外例如运行时间、是否加载了补丁、是否是全新安装或升级等信息也非常重要。</p>
+</li>
+</ul><p>除了上面这些通用的信息外，针对特定的一些崩溃，我们可能还需要获取类似磁盘空间、电量、网络使用等特定信息。所以说一个好的崩溃捕获工具，会根据场景为我们采集足够多的信息，让我们有更多的线索去分析和定位问题。当然数据的采集需要注意用户隐私，做到足够强度的加密和脱敏。</p><h2>崩溃分析</h2><p>有了这么多现场信息之后，我们可以开始真正的“破案”之旅了。绝大部分的“案件”只要我们肯花功夫，最后都能真相大白。不要畏惧问题，经过耐心和细心地分析，总能敏锐地发现一些异常或关键点，并且还要敢于怀疑和验证。下面我重点给你介绍崩溃分析“三部曲”。</p><p>第一步：确定重点</p><p>确认和分析重点，关键在于在日志中找到重要的信息，对问题有一个大致判断。一般来说，我建议在确定重点这一步可以关注以下几点。</p><p><strong>1. 确认严重程度</strong>。解决崩溃也要看性价比，我们优先解决Top崩溃或者对业务有重大影响，例如启动、支付过程的崩溃。我曾经有一次辛苦了几天解决了一个大的崩溃，但下个版本产品就把整个功能都删除了，这令我很崩溃。</p><p><strong>2. 崩溃基本信息</strong>。确定崩溃的类型以及异常描述，对崩溃有大致的判断。一般来说，大部分的简单崩溃经过这一步已经可以得到结论。</p><ul>
+<li>
+<p>Java崩溃。Java崩溃类型比较明显，比如NullPointerException是空指针，OutOfMemoryError是资源不足，这个时候需要去进一步查看日志中的 “内存信息”和“资源信息”。</p>
+</li>
+<li>
+<p>Native崩溃。需要观察signal、code、fault addr等内容，以及崩溃时Java的堆栈。关于各signal含义的介绍，你可以查看<a href="http://www.mkssoftware.com/docs/man5/siginfo_t.5.asp">崩溃信号介绍</a>。比较常见的是有SIGSEGV和SIGABRT，前者一般是由于空指针、非法指针造成，后者主要因为ANR和调用abort() 退出所导致。</p>
+</li>
+<li>
+<p><strong>ANR</strong>。我的经验是，先看看主线程的堆栈，是否是因为锁等待导致。接着看看ANR日志中iowait、CPU、GC、system server等信息，进一步确定是I/O问题，或是CPU竞争问题，还是由于大量GC导致卡死。</p>
+</li>
+</ul><p><strong>3. Logcat</strong>。Logcat一般会存在一些有价值的线索，日志级别是Warning、Error的需要特别注意。从Logcat中我们可以看到当时系统的一些行为跟手机的状态，例如出现ANR时，会有“am_anr”；App被杀时，会有“am_kill”。不同的系统、厂商输出的日志有所差别，<strong>当从一条崩溃日志中无法看出问题的原因，或者得不到有用信息时，不要放弃，建议查看相同崩溃点下的更多崩溃日志。</strong></p><p><strong>4. 各个资源情况</strong>。结合崩溃的基本信息，我们接着看看是不是跟 “内存信息” 有关，是不是跟“资源信息”有关。比如是物理内存不足、虚拟内存不足，还是文件句柄fd泄漏了。</p><p>无论是资源文件还是Logcat，内存与线程相关的信息都需要特别注意，很多崩溃都是由于它们使用不当造成的。</p><p>第二步：查找共性</p><p>如果使用了上面的方法还是不能有效定位问题，我们可以尝试查找这类崩溃有没有什么共性。找到了共性，也就可以进一步找到差异，离解决问题也就更进一步。</p><p>机型、系统、ROM、厂商、ABI，这些采集到的系统信息都可以作为维度聚合，共性问题例如是不是因为安装了Xposed，是不是只出现在x86的手机，是不是只有三星这款机型，是不是只在Android 5.0的系统上。应用信息也可以作为维度来聚合，比如正在打开的链接、正在播放的视频、国家、地区等。</p><p>找到了共性，可以对你下一步复现问题有更明确的指引。</p><p>第三步：尝试复现</p><p>如果我们已经大概知道了崩溃的原因，为了进一步确认更多信息，就需要尝试复现崩溃。如果我们对崩溃完全没有头绪，也希望通过用户操作路径来尝试重现，然后再去分析崩溃原因。</p><p>“只要能本地复现，我就能解”，相信这是很多开发跟测试说过的话。有这样的底气主要是因为在稳定的复现路径上面，我们可以采用增加日志或使用Debugger、GDB等各种各样的手段或工具做进一步分析。</p><p>回想当时在开发Tinker的时候，我们遇到了各种各样的奇葩问题。比如某个厂商改了底层实现、新的Android系统实现有所更改，都需要去Google、翻源码，有时候还需要去抠厂商的ROM或手动刷ROM。这个痛苦的经历告诉我，很多疑难问题需要我们耐得住寂寞，反复猜测、反复发灰度、反复验证。</p><p>疑难问题：系统崩溃</p><p>系统崩溃常常令我们感到非常无助，它可能是某个Android版本的bug，也可能是某个厂商修改ROM导致。这种情况下的崩溃堆栈可能完全没有我们自己的代码，很难直接定位问题。针对这种疑难问题，我来谈谈我的解决思路。</p><p><strong>1. 查找可能的原因</strong>。通过上面的共性归类，我们先看看是某个系统版本的问题，还是某个厂商特定ROM的问题。虽然崩溃日志可能没有我们自己的代码，但通过操作路径和日志，我们可以找到一些怀疑的点。</p><p><strong>2. 尝试规避</strong>。查看可疑的代码调用，是否使用了不恰当的API，是否可以更换其他的实现方式规避。</p><p><strong>3. Hook解决</strong>。这里分为Java Hook和Native Hook。以我最近解决的一个系统崩溃为例，我们发现线上出现一个Toast相关的系统崩溃，它只出现在Android 7.0的系统中，看起来是在Toast显示的时候窗口的token已经无效了。这有可能出现在Toast需要显示时，窗口已经销毁了。</p><pre><code>android.view.WindowManager$BadTokenException: 
+	at android.view.ViewRootImpl.setView(ViewRootImpl.java)
+	at android.view.WindowManagerGlobal.addView(WindowManagerGlobal.java)
+	at android.view.WindowManagerImpl.addView(WindowManagerImpl.java4)
+	at android.widget.Toast$TN.handleShow(Toast.java)
+</code></pre><p>为什么Android 8.0的系统不会有这个问题？在查看Android 8.0的源码后我们发现有以下修改：</p><pre><code>try {
+  mWM.addView(mView, mParams);
+  trySendAccessibilityEvent();
+} catch (WindowManager.BadTokenException e) {
+  /* ignore */
+}
+</code></pre><p>考虑再三，我们决定参考Android 8.0的做法，直接catch住这个异常。这里的关键在于寻找Hook点，这个案例算是相对比较简单的。Toast里面有一个变量叫mTN，它的类型为handler，我们只需要代理它就可以实现捕获。</p><p>如果你做到了我上面说的这些，<strong>95%以上的崩溃都能解决或者规避，大部分的系统崩溃也是如此</strong>。当然总有一些疑难问题需要依赖到用户的真实环境，我们希望具备类似动态跟踪和调试的能力。专栏后面还会讲到xlog日志、远程诊断、动态分析等高级手段，可以帮助我们进一步调试线上疑难问题，敬请期待。</p><p>崩溃攻防是一个长期的过程，我们希望尽可能地提前预防崩溃的发生，将它消灭在萌芽阶段。这可能涉及我们应用的整个流程，包括人员的培训、编译检查、静态扫描工作，还有规范的测试、灰度、发布流程等。</p><p>而崩溃优化也不是孤立的，它跟我们后面讲到的内存、卡顿、I/O等内容都有关。可能等你学完整个课程后，再回头来看会有不同的理解。</p><h2>总结</h2><p>今天我们介绍了崩溃问题的一些分析方法、特殊技巧、以及疑难和常见问题的解决方法。当然崩溃分析要具体问题具体分析，不同类型的应用侧重点可能也有所不同，我们不能只局限在上面所说的一些方法。</p><p>讲讲自己的一些心得体会，在解决崩溃特别是一些疑难问题时，总会觉得患得患失。有时候解了一个问题，发现其他问题也跟“开心消消乐”一样消失了。有时候有些问题“解不出来郁闷，解出来更郁闷”，可能只是一个小的代码疏忽，换来了一个月的青春和很多根白头发。</p><h2>课后作业</h2><p>在崩溃的长期保卫战中，你肯定有一些经典的漂亮战役，希望可以拿出来跟其他同学分享。当然也会有一些百思不得其解的问题，<span class="orange">今天的课后作业是分享你破解崩溃问题的思路和方法，总结一下通过Sample的练习有什么收获。</span></p><p>如果想向崩溃发起挑战，那么Top 20崩溃就是我们无法避免的对手。在这里面会有不少疑难的系统崩溃问题，TimeoutException就是其中比较经典的一个。</p><pre><code>java.util.concurrent.TimeoutException: 
+         android.os.BinderProxy.finalize() timed out after 10 seconds
+at android.os.BinderProxy.destroy(Native Method)
+at android.os.BinderProxy.finalize(Binder.java:459)
+</code></pre><p>今天的<a href="http://github.com/AndroidAdvanceWithGeektime/Chapter02">Sample</a>提供了一种“完全解决”TimeoutException的方法，主要是希望你可以更好地学习解决系统崩溃的套路。</p><p>1.通过源码分析。我们发现TimeoutException是由系统的FinalizerWatchdogDaemon抛出来的。</p><p>2.寻找可以规避的方法。尝试调用了它的Stop()方法，但是线上发现在Android 6.0之前会有线程同步问题。</p><p>3.寻找其他可以Hook的点。通过代码的依赖关系，发现一个取巧的Hook点。</p><p>最终代码你可以参考Sample的实现，但是建议只在灰度中使用。这里需要提的是，虽然有一些黑科技可以帮助我们解决某些问题，但对于黑科技的使用我们需要慎重，比如有的黑科技对保活进程频率没有做限制，可能会导致系统卡死。</p><p>欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。最后别忘了在评论区提交今天的作业，我也为认真完成作业的同学准备了丰厚的“<a href="http://time.geekbang.org/column/article/70250">学习加油礼包</a>”，期待与你一起切磋进步哦。</p><p><img src="https://static001.geekbang.org/resource/image/24/c0/24c190870d71c3daa203a939d67358c0.jpg" alt=""><img src="https://static001.geekbang.org/resource/image/30/aa/306ef8892cc985a19fdd36534e7c5daa.png" alt=""></p>
+                    </div>
+                </div>
+
+            </div>
+            <div data-v-87ffcada="" class="article-comments pd"><h2 data-v-87ffcada=""><span
+                    data-v-87ffcada="">精选留言</span></h2>
+                <ul data-v-87ffcada="">
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/67/a9/e251ace7.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">张绍文</span>
+                            </div>
+                            <div class="bd">补充一下获得logcat和Jave堆栈的方法：<br>一. 获取logcat<br>logcat日志流程是这样的，应用层 --&gt; liblog.so --&gt; logd，底层使用ring buffer来存储数据。<br>获取的方式有以下三种：<br>   1. 通过logcat命令获取。<br>   优点：非常简单，兼容性好。<br>   缺点：整个链路比较长，可控性差，失败率高，特别是堆破坏或者堆内存不足时，基本会失败。<br>   2. hook liblog.so实现。通过hook liblog.so 中__android_log_buf_write 方法，将内容重定向到自己的buffer中。<br>   优点：简单，兼容性相对还好。<br>   缺点：要一直打开。<br>   3.  自定义获取代码。通过移植底层获取logcat的实现，通过socket直接跟logd交互。<br>   优点：比较灵活，预先分配好资源，成功率也比较高。<br>   缺点：实现非常复杂<br><br>二. 获取Java 堆栈<br>   native崩溃时，通过unwind只能拿到Native堆栈。我们希望可以拿到当时各个线程的Java堆栈<br>   1. Thread.getAllStackTraces()。<br>    优点：简单，兼容性好。<br>    缺点：<br>        a. 成功率不高，依靠系统接口在极端情况也会失败。<br>        b. 7.0之后这个接口是没有主线程堆栈。<br>        c. 使用Java层的接口需要暂停线程<br>   2. hook libart.so。通过hook ThreadList和Thread的函数，获得跟ANR一样的堆栈。为了稳定性，我们会在fork子进程执行。<br>   优点：信息很全，基本跟ANR的日志一样，有native线程状态，锁信息等等。<br>   缺点：黑科技的兼容性问题，失败时可以用Thread.getAllStackTraces()兜底<br><br>获取Java堆栈的方法还可以用在卡顿时，因为使用fork进程，所以可以做到完全不卡主进程。这块我们在后面会详细的去讲。 <br></div>
+                            <span class="time">2018-12-04 18:17</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4f/03/2f3e4069.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">小龙虾</span>
+                            </div>
+                            <div class="bd">老师可能还不了解学生的水平，读者都是做应用层程序的你讲这么深入恐怕没什么效果 <br></div>
+                            <span class="time">2018-12-04 21:44</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">不会的，移动开发已经十年了，已经不是单独写个界面就可以了。应用层开发当你深入到后面，这些知识都是必须的。当你知道了更多，学习的更多深入的时候，你才能做一些别人做不了的东西。</p>
+                                <p class="reply-time">2018-12-04 22:58</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIJUpGziaiaJaMHbCFnM9iboQdu7aqlaB2zA3ClxcNrVOTkfFRygFBdYwr4nzAGjjiczBmNflT4YSM8Yg/132" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">arvinljw</span>
+                            </div>
+                            <div class="bd">张老师好，我想问一下，感觉学习这些课有点理解不了，不知道为什么，应该怎么入手呢？ <br></div>
+                            <span class="time">2018-12-04 14:29</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">坚持，可能跟着学习完整个课程再回头看会有不一样的感觉</p>
+                                <p class="reply-time">2018-12-04 22:53</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/12/e7/89/207cc841.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">HI</span>
+                            </div>
+                            <div class="bd">貌似目前NDK中对于错误的检查还不够完善，比如对于函数的返回值，写了一个函数本身要写返回值，后面忘记写了发现IDE没有提示，并且能编译通过，但是在运行的时候会出现崩溃，而且崩溃的信息非常少，貌似就记得最后一行signal 6 还是 signal -1，当时的我看到这个是非常蒙逼的，大量的回退代码，添加日志，勉强找到，要是早点知道signal ，拿着对应的code对比，可能没那么痛苦 <br></div>
+                            <span class="time">2018-12-04 07:46</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/12/d4/8d/a3fd8957.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Kenny</span>
+                            </div>
+                            <div class="bd">张老师，看到你解决一些棘手的崩溃，会去翻看源码，然后对比版本的差异，然后寻找hook点去解决，这个要考虑机型适配吧？毕竟国产机型rom差异化严重。 <br></div>
+                            <span class="time">2018-12-04 12:37</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">Hook的时候，前几个版本一般会把hook失败的机型 rom 堆栈传上来做进一步分析。top的机型也会保证可以兼容</p>
+                                <p class="reply-time">2018-12-04 14:00</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4b/2f/ea949f1f.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Find</span>
+                            </div>
+                            <div class="bd">上一篇运行出啦后还没有达到最终效果，下一篇都出来了，Android开发5年都是应用层开发，突然一下这么深入感觉很难适应，真心建议由浅到深讲解下，针对例子可以讲解一下。 <br></div>
+                            <span class="time">2018-12-05 17:56</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/50/40/292d0a3f.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Stefan</span>
+                            </div>
+                            <div class="bd">回答github上的问题：<br>通过对比Android 6.0前后的源码发现，FinalizerWatchdogDaemon调用的是父类Deamon中的stop方法，区别在于：<br>&#47;&#47;6.0之前<br>...<br>threadToStop.interrupt();<br>...<br>&#47;&#47;&gt;=6.0<br>...<br>interrupt(threadToStop);<br>...<br>public synchronized void interrupt(Thread thread) {<br>    if (thread == null) {<br>        throw new IllegalStateException(&quot;not running&quot;);<br>    }<br>    thread.interrupt();<br>}<br>...<br>可以发现区别在于6.0之前调用threadToStop的interrupt方法是没有加锁的，所以可能会有线程同步的问题。<br>PS：推荐一个在线看源码的网站，包括1.6到9.0全部的源码：http:&#47;&#47;androidxref.com&#47; <br></div>
+                            <span class="time">2018-12-07 17:05</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/13/1e/a5/c0ab907d.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">O_o</span>
+                            </div>
+                            <div class="bd">感觉可以由浅入深的讲，这一脚下去有点深呀，可能很多人3，4年经验，没做过这方面，学完了这一章一脸蒙圈，也没太大帮助呀 <br></div>
+                            <span class="time">2018-12-05 14:20</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">一脸懵逼没有关系，我们可以跟着文中提到的一些文件，去学习到linux的一些基础知识。这些文件记录了一些什么样的内容，对排查问题有什么帮助，怎么在应用获取它们。<br><br>后面的内容会从浅入深，我们学习完整个专栏再回头看应该有不同的感觉</p>
+                                <p class="reply-time">2018-12-05 19:22</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/13/94/3d/5f1fa114.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Z</span>
+                            </div>
+                            <div class="bd">学习了，最近也在学习linux 内核，很强大，作为一个一年的菜鸟受益匪浅，推荐大伙可以看看 <br></div>
+                            <span class="time">2018-12-05 16:27</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/57/6d/07794230.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">jason</span>
+                            </div>
+                            <div class="bd">TimeoutException 直接调用stop存在什么安全问题？请大神指教一二。 <br></div>
+                            <span class="time">2018-12-04 12:05</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">Stop的时候有一定概率导致即使没有超时也会报timeoutexception</p>
+                                <p class="reply-time">2018-12-05 19:25</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/f1/91/4bbc7f73.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">从前有只🐻</span>
+                            </div>
+                            <div class="bd">老师，我们有一个很大量的WindowManager$BadTokenException的异常，发生在ViewRootImpl里，但不是toast和dialog引起的，冒似是启动activity 直接崩溃的，这种是否也可以用hook的方式去解决？还是有什么别的方案 <br></div>
+                            <span class="time">2018-12-14 15:08</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/47/27/448b5262.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">我的心情在荡漾</span>
+                            </div>
+                            <div class="bd">第一次接触偏底层的是有点蒙蒙的，相信以后适应就会好了，大佬能不能介绍一下，更好的理解底层一些机制需要补哪些知识或者看那些书籍？ <br></div>
+                            <span class="time">2018-12-09 21:48</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">后面会给出部分推荐书单</p>
+                                <p class="reply-time">2018-12-10 10:17</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/7e/28/cb5c2e3b.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">华尔街之狼</span>
+                            </div>
+                            <div class="bd">平时都是跟业务层打交道，很少接触底层，好多都没有用过 <br></div>
+                            <span class="time">2018-12-08 22:42</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/0f/85/74/e70862a2.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">、、cryAllen</span>
+                            </div>
+                            <div class="bd">由于从事的工作内容涉及到底层Framwork比较多，目前日常工作中也是经常需要分析BUG，那么分析的素材自然就是log文件，整个Android 系统真的是很好旁观者，我们一切的操作行为基本都是有记录的。如果碰到崩溃的问题，我自己基本解决思路则是先在全局log中搜索是否有Die关键字，然后看进程号，进程号是否有重启过，然后去system_app_crash@1451577628472.txt看相关错误，很多都是java.lang.RuntimeException异常居多。 <br></div>
+                            <span class="time">2018-12-07 17:31</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/11/1b/1e/1ab1347f.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">mzh</span>
+                            </div>
+                            <div class="bd">之前遇到过一个输入法的内存泄露，但是自己完全没有调用过输入法，后面查了一下   网上说是系统的一个bug    张老师  这种应该怎么解决呢？ <br></div>
+                            <span class="time">2018-12-06 21:59</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">那个问题很经典，解决方法就是反射将输入法的两个view置空</p>
+                                <p class="reply-time">2018-12-06 22:37</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4a/1e/2cbc8d78.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">CathyChen</span>
+                            </div>
+                            <div class="bd">java.lang.RuntimeException:createContext failed:EGL_BAD_ALLOC这个崩溃不知道这里有没有朋友遇到过，请指教一下😊出错位置是GLSurfaceView#throwEglException <br></div>
+                            <span class="time">2018-12-06 10:03</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/4b/19/6f037647.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">东方</span>
+                            </div>
+                            <div class="bd">张老师，Toast  Hook mTN ，会有view泄露啊。 <br></div>
+                            <span class="time">2018-12-05 00:29</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">为什么一定会泄露？这块要看你具体的实现方式</p>
+                                <p class="reply-time">2018-12-05 11:09</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/11/8e/c7/6d08d502.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">双子座的马克思</span>
+                            </div>
+                            <div class="bd">学习笔记：<br>看门狗 WatchDog 的作用是监控重要服务的运行状态，当重要服务停止时，发生 Timeout 异常崩溃，WatchDog 负责将应用重启。而当关闭 WatchDog（执行stop（）方法）后，当重要服务停止时，也不会发生 Timeout 异常，是一种通过非正常手段防止异常发生的方法。 <br></div>
+                            <span class="time">2018-12-04 15:52</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/14/5b/d2/34a8c79c.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">Juinn</span>
+                            </div>
+                            <div class="bd">shaowen老师，你提到的崩溃时需要的信息的确很全面，后面会不会有讲述如何抓取这些信息的一个完整的sample，甚至是一个框架，允许我们可以定制和修改的 <br></div>
+                            <span class="time">2019-01-10 20:12</span>
+                            
+                        </div>
+                    </li>
+                    
+                    <li data-v-87ffcada="" class="comment-item"><img
+                            src="https://static001.geekbang.org/account/avatar/00/10/f3/65/2c3ee9b8.jpg" class="avatar">
+                        <div class="info">
+                            <div class="hd"><span class="username">kimmy</span>
+                            </div>
+                            <div class="bd">文兄，关于你讲的虚拟内存那块提到的32位进程和64位进程指的是native吗，我理解要是单纯的java层都是虚拟机解析字节码，根本不分32还是64的吧 <br></div>
+                            <span class="time">2019-01-07 01:46</span>
+                            
+                            <div class="reply">
+                                <div class="reply-hd"><span>作者回复</span></div>
+                                <p class="reply-content">进程启动的时候，就会分zygote32跟zygote64 fork出来</p>
+                                <p class="reply-time">2019-01-08 10:54</p>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

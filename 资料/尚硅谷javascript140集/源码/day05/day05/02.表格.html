@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				/*设置一个宽度*/
+				width: 300px;
+				/*设置居中*/
+				margin: 50px auto;
+				/*设置一个边框*/
+				/*border: 1px solid black;*/
+				/*border-spacing可以用来设置表格边框之间的距离*/
+				border-spacing: 100px;
+				
+				/*
+				 * border-collapse可以用来设置表格的边框的合并
+				 * 	如果将值设置collapse，则table和td的边框将会自动合并为一个
+				 * 	当设置了边框合并以后，border-spacing将自动失效
+				 */
+				border-collapse: collapse;
+			}
+			
+			td,th{
+				/*设置边框*/
+				border: 1px solid black;
+			}
+			
+			tbody > tr{
+				background-color: #bfa;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- table是一个块元素 -->
+		<table>
+			
+			<!--
+				我们在创建一个表格时，如果没有使用thead tbody tfoot这些标签时，
+					浏览器会自动在页面中添加tbody，并且将所有的tr都放到tbody中
+					所以实际上tr并不是table子元素，而是tbody的子元素
+			-->
+			<tr>
+				<!--在html中还为我们提供了一个th标签，专门用来表示表头的单元格-->
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>住址</th>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>孙悟空</td>
+				<td>18</td>
+				<td>花果山</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>猪八戒</td>
+				<td>28</td>
+				<td>高老庄</td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>沙和尚</td>
+				<td>38</td>
+				<td>流沙河</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>
