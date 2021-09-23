@@ -6,11 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/mRecyclerView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPackage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="包名" />
+            <Button
+                android:id="@+id/btnColors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="颜色" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/light_blue_A200"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topbar"
+        tools:itemCount="10"
+        tools:listitem="@android:layout/simple_list_item_1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

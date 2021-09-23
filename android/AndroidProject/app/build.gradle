@@ -1,7 +1,9 @@
-rootProject.ext.setAppConfig project
+rootProject.ext.setAppConfig project, "com.joyy.routerproject2"
 
 dependencies {
     implementation project(path: ':stringescape')
     implementation project(path: ':webviews')
     implementation project(path: ':functions:livedatas')
+    implementation project(path: ':functions:appmanager')
+    implementation project(path: ':functions:colors')
 }

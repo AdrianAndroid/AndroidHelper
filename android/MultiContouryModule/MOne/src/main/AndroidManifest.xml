@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.joyy.mone">
+
+    <application>
+        <activity
+            android:name=".MOneActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.joyy.mone.SecondActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

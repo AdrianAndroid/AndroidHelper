@@ -1,9 +1,13 @@
 package com.joyy.livedatas
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.joyy.livedatas.ui.main.LiveDataFragment
 
+//@Destination(
+//    url = "livedatas/LiveDataActivity",
+//    description = "LiveDataActivity"
+//)
 class LiveDataActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

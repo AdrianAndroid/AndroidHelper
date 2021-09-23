@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.joyy.router",
+    "module": "router-processor",
+    "version": "2.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.0.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "router-processor-2.0.1.jar",
+          "url": "router-processor-2.0.1.jar",
+          "size": 4553,
+          "sha512": "b136a9e89802eb3e7b69c112c5e1ab233da1488b5987c602b311ec11c907302c5525fb8cb8f0210d9c13988939d12d39a788978f40b93088612afd03ae3da1e5",
+          "sha256": "448bd78cf17000c1cfbab30c9cd3bcb31037cdc4f0dadf1ce95c2be3014e5e69",
+          "sha1": "bb92789ad582a75ca5653782d71fd94e5f0975c9",
+          "md5": "05688514ef58e9236be8c97e5bc2da59"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.joyy.router",
+          "module": "router-annotations",
+          "version": {
+            "requires": "2.0.1"
+          }
+        },
+        {
+          "group": "com.google.auto.service",
+          "module": "auto-service",
+          "version": {
+            "requires": "1.0-rc6"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.6"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "router-processor-2.0.1.jar",
+          "url": "router-processor-2.0.1.jar",
+          "size": 4553,
+          "sha512": "b136a9e89802eb3e7b69c112c5e1ab233da1488b5987c602b311ec11c907302c5525fb8cb8f0210d9c13988939d12d39a788978f40b93088612afd03ae3da1e5",
+          "sha256": "448bd78cf17000c1cfbab30c9cd3bcb31037cdc4f0dadf1ce95c2be3014e5e69",
+          "sha1": "bb92789ad582a75ca5653782d71fd94e5f0975c9",
+          "md5": "05688514ef58e9236be8c97e5bc2da59"
+        }
+      ]
+    }
+  ]
+}

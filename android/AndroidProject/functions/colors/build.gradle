@@ -1,0 +1,6 @@
+rootProject.ext.setLibConfig project
+
+
+dependencies {
+    implementation project(':base')
+}
