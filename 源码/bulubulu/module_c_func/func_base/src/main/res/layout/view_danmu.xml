@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.kuwo.pp.util.danmuku.DanMuParentView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/comment_dan_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.kuwo.pp.util.danmuku.DanMuView
+        android:id="@+id/comment_dan_mu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</cn.kuwo.pp.util.danmuku.DanMuParentView>

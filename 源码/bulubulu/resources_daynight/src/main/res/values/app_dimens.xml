@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="common_margin_left_25">25dp</dimen>
+    <dimen name="common_margin_right_25">25dp</dimen>
+
+    <!--头像相关-->
+    <dimen name="icon_width">31dp</dimen>
+    <dimen name="icon_marginTop">35dp</dimen>
+    <dimen name="icon_marginRight">15dp</dimen>
+
+    <!--icon_marginTop+4dp 下移4dp-->
+    <dimen name="toolbar_marginTop">11dp</dimen>
+    <dimen name="toolbar_height">@dimen/icon_width</dimen>
+    <!--15+31+11-->
+    <dimen name="toolbar_marginRight">57dp</dimen>
+    <dimen name="toolbar_magic_textsize">24dp</dimen>
+
+    <!--发现-->
+
+
+    <!--TopicDetailFragment-->
+
+
+</resources>

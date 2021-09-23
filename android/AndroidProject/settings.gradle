@@ -4,7 +4,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         mavenLocal()
-//        maven { url uri('/Users/flannery/Desktop/AndroidHelper/repo') }
+        maven { url uri('/Users/flannery/Desktop/AndroidHelper/repo') }
 //        maven {
 //            url 'http://repo.duowan.com:8181/nexus/content/groups/public'
 //            allowInsecureProtocol = true

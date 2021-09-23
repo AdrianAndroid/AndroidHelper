@@ -1,0 +1,29 @@
+rootProject.ext.setLibDefaultConfig project
+
+
+android {
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+
+dependencies {
+    implementation 'com.tencent:mmkv-static:1.2.6' // 只在common使用
+    implementation 'com.blankj:utilcode:1.17.1' // 只在common使用
+
+    // Dialog
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+
+    // 对外分享
+    api project(':resources_daynight')
+    api project(':module_u_base:fragmentation')
+    api project(path: ':module_u_base:fragmentation_swipeback')
+    api project(path: ':module_u_base:kuwowebview')
+    api project(path: ':module_u_base:Userguidelibrary')
+}

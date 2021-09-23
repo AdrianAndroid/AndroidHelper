@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextView_Title" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorTitleColor</item>
+        <item name="android:textSize">@dimen/fragment_title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView_SubTitle" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorSubTitleColor</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="TextView_Content" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorContentColor</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextView_Tag" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorTagText</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+</resources>

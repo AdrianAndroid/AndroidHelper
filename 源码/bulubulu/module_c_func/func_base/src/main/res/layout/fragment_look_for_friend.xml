@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.kuwo.common.view.MultipleStatusView
+    android:id="@+id/multiple_status_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <cn.kuwo.common.view.CustomToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <cn.kuwo.pp.util.IconFountTextView
+            android:id="@+id/look_for_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="e6c8;"
+            android:textColor="@color/colorHighlightAlpha_80"
+            android:textSize="26sp"/>
+
+        <cn.kuwo.pp.util.IconFountTextView
+            android:id="@+id/look_for_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/look_for_share"
+            android:text="e6cc;"
+            android:textColor="@color/colorHighlightAlpha_80"
+            android:textSize="26sp"/>
+    </cn.kuwo.common.view.CustomToolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/iv_dislike"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/look_for_user_header_width"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/look_for_name"
+                style="@style/TextView_SubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-15dp"
+                android:text="这里是名称名称"
+                android:textColor="@color/colorHighlight"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <cn.kuwo.pp.util.IconFountTextView
+                    android:id="@+id/look_for_tag_sex"
+                    style="@style/TextView_Content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/tag_sex_man_rounded_placeholder"
+                    android:gravity="center"
+                    android:minHeight="21dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="e6d7;12"
+                    android:visibility="gone"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/look_for_tag_city"
+                    app:layout_constraintTop_toBottomOf="@id/look_for_name"/>
+
+                <TextView
+                    android:id="@+id/look_for_tag_city"
+                    style="@style/TextView_Tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/tag_def_rounded_placeholder"
+                    android:gravity="center"
+                    android:minHeight="21dp"
+                    android:text="北京"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/look_for_tag_sex"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@id/look_for_tag_sex"
+                    app:layout_constraintRight_toLeftOf="@id/look_for_tag_song"
+                    app:layout_constraintTop_toTopOf="@id/look_for_tag_sex"/>
+
+                <TextView
+                    android:id="@+id/look_for_tag_song"
+                    style="@style/TextView_Tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/tag_def_rounded_placeholder"
+                    android:gravity="center"
+                    android:minHeight="21dp"
+                    android:text="阳光姑娘"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/look_for_tag_sex"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@id/look_for_tag_city"
+                    app:layout_constraintRight_toLeftOf="@id/look_for_tag_constellation"
+                    app:layout_constraintTop_toTopOf="@id/look_for_tag_sex"/>
+
+                <TextView
+                    android:id="@+id/look_for_tag_constellation"
+                    style="@style/TextView_Tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/tag_def_rounded_placeholder"
+                    android:gravity="center"
+                    android:minHeight="21dp"
+                    android:text="巨蟹"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/look_for_tag_sex"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@id/look_for_tag_song"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/look_for_tag_sex"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/look_for_like_btn_margin_bottom"
+            android:background="@drawable/btn_dislike"
+            android:padding="19dp"
+            android:src="@drawable/look_for_btn_bg"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/iv_like"
+            tools:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_like"
+            android:padding="19dp"
+            android:src="@drawable/look_for_btn_bg"
+            android:transitionName="ivUserHeader"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_dislike"
+            app:layout_constraintLeft_toRightOf="@id/iv_dislike"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:visibility="visible"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</cn.kuwo.common.view.MultipleStatusView>

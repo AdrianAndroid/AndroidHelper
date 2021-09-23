@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/inner_toolbar"
+        style="@style/Toolbar"
+        android:layout_gravity="center"
+        app:titleTextAppearance="@style/TextView_Title"
+        app:titleTextColor="@color/colorHighlight"
+        android:background="@color/transparent"
+        app:contentInsetStart="0dp"/>
+
+    <cn.kuwo.common.view.MarqueeTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:background="@color/transparent"
+        android:layout_marginLeft="@dimen/main_toolbar_play_image_width"
+        android:layout_marginRight="@dimen/main_toolbar_play_image_width"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:text="bulubulu"/>
+</merge>

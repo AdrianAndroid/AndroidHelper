@@ -1,0 +1,281 @@
+ext {
+    android = [
+            compileSdkVersion: 29,
+            targetSdkVersion : 29,
+            applicationId    : "cn.kuwo.bulubulu",
+            minSdkVersion    : 19,
+            versionCode      : 105,
+            versionName      : "1.1.1.1"
+    ]
+    dependencies = [
+            design                       : 'com.google.android.material:material:1.0.0',
+            BaseRecyclerViewAdapterHelper: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.41',//https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+            flexibledivider              : 'com.yqritc:recyclerview-flexibledivider:1.4.0',//https://github.com/yqritc/RecyclerView-FlexibleDivider
+            aspectratioimageview         : 'com.sherlockshi.widget:aspectratioimageview:1.0.1',
+            retrofit                     : 'com.squareup.retrofit2:retrofit:2.4.0',//https://github.com/square/retrofit
+            retrofit2_adapter_rxjava     : 'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
+            retrofit2_converter_gson     : 'com.squareup.retrofit2:converter-gson:2.4.0',
+            okhttp3_logging_interceptor  : 'com.squareup.okhttp3:logging-interceptor:3.6.0',
+            //logger                       : 'com.orhanobut:logger:1.15',//https://github.com/orhanobut/logger
+            takephoto                    : 'org.devio.takephoto:takephoto_library:4.1.0',//https://github.com/crazycodeboy/TakePhoto
+            rxjava                       : 'io.reactivex.rxjava2:rxjava:2.2.3',//https://github.com/ReactiveX/RxJava
+            rxandroid                    : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            rxkotlin                     : 'io.reactivex.rxjava2:rxkotlin:2.3.0',
+            PhotoView                    : 'com.github.chrisbanes:PhotoView:1.3.1',//https://github.com/chrisbanes/PhotoView
+            RecyclerViewPager            : 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2',//https://github.com/lsjwzh/RecyclerViewPager
+            blockcanary_debug            : 'com.github.markzhai:blockcanary-android:1.5.0',//https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
+            blockcanary_release          : 'com.github.markzhai:blockcanary-no-op:1.5.0',
+            rxpermissions                : 'com.github.tbruyelle:RxPermissions:0.10.2',//https://github.com/tbruyelle/RxPermissions
+            material                     : 'com.github.rey5137:material:1.2.5',//https://github.com/rey5137/material#getting-started
+            greendao                     : 'org.greenrobot:greendao:3.2.2',
+            rxbinding                    : 'com.jakewharton.rxbinding2:rxbinding:2.1.1',
+            rxbinding_recyclerview_v7    : 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.1.1',
+            rxbinding_appcompat_v7       : 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1',
+            rxbinding_design             : 'com.jakewharton.rxbinding2:rxbinding-design:2.1.1',
+            //umeng_analytics              : 'com.umeng.analytics:analytics:latest.integration',
+            fastjson                     : "com.alibaba:fastjson:1.1.53.android",
+            banner                       : "com.youth.banner:banner:1.4.10",
+            smarttablayout               : "com.ogaclejapan.smarttablayout:library:1.6.1@aar",//https://github.com/ogaclejapan/SmartTabLayout
+            //utilcode                     : "com.blankj:utilcode:1.17.1",//https://github.com/Blankj/AndroidUtilCode/blob/master/README-CN.md
+            flexbox                      : "com.google.android:flexbox:1.0.0",
+            badgeview                    : "q.rorbin:badgeview:1.1.3",
+            rxlifecycle                  : "com.trello.rxlifecycle2:rxlifecycle-android:2.2.1",
+            PickerView                   : "com.contrarywind:Android-PickerView:4.1.6",//https://github.com/Bigkoo/Android-PickerView/wiki
+            barlibrary                   : "com.gyf.barlibrary:barlibrary:2.3.0",
+            ImageWatcher                 : "com.github.iielse:ImageWatcher:1.1.5",
+            //PictureSelector              : "com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",
+            ucrop                        : "com.github.yalantis:ucrop:2.2.2", // 截图
+            //MagicIndicator               : "com.github.hackware1993:MagicIndicator:1.5.0",
+            VercodeEditText              : "com.justkiddingbaby:vercodeedittext:1.1.0",
+            FlexboxLayout                : "com.google.android:flexbox:2.0.1"
+    ]
+    // 用于一次性遍历所有的工程
+    dependencies_implementation = [
+            'androidx.appcompat:appcompat:1.0.0'
+            , 'androidx.constraintlayout:constraintlayout:1.1.3'
+            , 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+            , 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-beta01'
+            , 'androidx.multidex:multidex:2.0.0'
+            , 'androidx.cardview:cardview:1.0.0'
+            , 'androidx.annotation:annotation:1.0.0'
+            , 'androidx.legacy:legacy-support-v4:1.0.0'
+            , "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+            , dependencies.design
+            , dependencies.BaseRecyclerViewAdapterHelper
+            , 'org.greenrobot:eventbus:3.1.1'
+            //, dependencies.utilcode
+            , dependencies.aspectratioimageview
+            , dependencies.rxjava
+            , dependencies.retrofit
+            , dependencies.retrofit2_adapter_rxjava
+            , dependencies.retrofit2_converter_gson
+            , dependencies.okhttp3_logging_interceptor
+            , dependencies.flexibledivider
+            , dependencies.material
+            , dependencies.barlibrary
+            , dependencies.rxlifecycle
+            , dependencies.takephoto
+            , dependencies.rxbinding
+            , dependencies.banner
+            , 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
+//            , 'com.tencent:mmkv-static:1.0.16'
+//            , 'com.umeng.umsdk:analytics:7.5.4'
+//            , 'com.umeng.umsdk:common:1.5.4'
+            , dependencies.rxkotlin
+            , 'com.airbnb.android:lottie:2.7.0'
+            , dependencies.badgeview
+            , 'me.jessyan:progressmanager:1.5.0'
+            , 'com.tencent.bugly:crashreport_upgrade:1.4.5'
+            //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+            , 'com.tencent.bugly:nativecrashreport:3.7.1'
+            , 'com.tencent.tinker:tinker-android-lib:1.9.14.6'
+            , dependencies.PickerView
+            , dependencies.flexbox
+            , dependencies.ImageWatcher
+            , 'com.github.hackware1993:MagicIndicator:1.7.0'
+//            , dependencies.glide_okhttp3_integration
+            , dependencies.VercodeEditText
+            , dependencies.FlexboxLayout
+            , 'com.github.anrwatchdog:anrwatchdog:1.3.0'
+            , 'cn.dreamtobe.kpswitch:library:1.6.1'
+            , 'com.github.hotchemi:permissionsdispatcher:3.3.1'
+            , 'com.oushangfeng:PinnedSectionItemDecoration:1.3.2'
+            , 'com.google.zxing:core:3.3.3'
+            , 'com.qiniu:qiniu-android-sdk:7.3.15'
+            , 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+            // HUAWEI push sdk
+            , 'com.huawei.android.hms:push:2.6.3.301'
+            , 'com.huawei.android.hms:base:2.6.3.301'
+            // 如果有碰到报错：com.huawei.hms.api不存在，这条也要加上，注意版本号必须相同
+            // MEIZU push sdk
+            , 'com.meizu.flyme.internet:push-internal:3.9.0@aar'
+            , 'com.yanzhenjie.recyclerview:x:1.3.2'
+            //https://github.com/yanzhenjie/SwipeRecyclerView
+            , 'com.github.CarGuo.RickText:textUtilsLib:v2.1.5'
+            //https://github.com/CarGuo/GSYRickText
+            , 'com.koudai.styletextview:styletextview:1.2.0'
+            , 'me.jessyan:autosize:1.2.1' //今日头条适配方案
+            , 'com.kingja.loadsir:loadsir:1.3.6' // 可以界面加载状态
+//            , 'com.google.auto.service:auto-service:1.0-rc7' //组件化基础库
+            , 'it.sephiroth.android.library.imagezoom:library:1.0.4'
+            , 'com.github.promeg:tinypinyin:1.0.0'
+            , 'com.squareup.picasso:picasso:2.5.2'
+            , 'androidx.viewpager2:viewpager2:1.0.0'
+//            , 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+            , 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0' //图片选择器 https://github.com/LuckSiege/PictureSelector/i
+            //, 'com.afollestad.material-dialogs:core:0.9.6.0'//'com.afollestad.material-dialogs:core:3.3.0' ////https://github.com/afollestad/material-dialogs
+            // glide 相关
+            , 'com.github.bumptech.glide:glide:4.11.0'//https://github.com/bumptech/glide
+            , 'com.github.bumptech.glide:okhttp3-integration:4.11.0'
+            //, 'com.github.bumptech.glide:compiler:4.11.0'//https://github.com/bumptech/glide
+            , 'jp.wasabeef:glide-transformations:3.3.0'//https://github.com/wasabeef/glide-transformations
+    ]
+
+    //  compileSdkVersion: 28,
+    //  targetSdkVersion : 28,
+    //  applicationId    : "cn.kuwo.bulubulu",
+    //  minSdkVersion    : 19,
+    //  versionCode      : 101,
+    //  versionName      : "1.0.1"
+//    setDefaultConfig = {
+//        extension -> //闭包参数extension相当于android对象
+//            extension.compileSdkVersion 28
+//            //extendsion.buildToolsVersion 30.0.1
+//            extension.defaultConfig {
+//                minSdkVersion 19
+//                targetSdkVersion 28
+//            }
+//            extension.dataBinding{
+//                enabled = true
+//            }
+//    }
+
+    setResourcesConfig = {
+        extension ->
+            extension.apply plugin: 'com.android.library'
+            extension.apply plugin: 'kotlin-android'
+            extension.apply plugin: 'kotlin-android-extensions'
+            extension.apply plugin: 'kotlin-kapt'
+            extension.description "lib"
+            setAndroidConfig extension.android
+            //setDependencies extension.dependencies
+    }
+
+
+    setLibDefaultConfig = {
+        extension ->
+            extension.apply plugin: 'com.android.library'
+            extension.apply plugin: 'kotlin-android'
+            extension.apply plugin: 'kotlin-android-extensions'
+            extension.apply plugin: 'kotlin-kapt'
+            extension.description "库"
+            setAndroidConfig extension.android
+            setDependencies extension.dependencies
+    }
+
+    // 设置Android配置 android{ }
+    setAndroidConfig = {
+        extension -> //闭包参数extension相当于android对象
+            extension.compileSdkVersion rootProject.ext.android.compileSdkVersion
+            //extendsion.buildToolsVersion 30.0.1
+            //extension.publishNonDefault true
+            extension.defaultConfig {
+                minSdkVersion rootProject.ext.android.minSdkVersion
+                targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+            }
+            extension.dataBinding {
+                enabled = true
+            }
+            extension.buildTypes {
+                release {
+                    minifyEnabled false
+                }
+                debug {
+                    minifyEnabled false
+                }
+            }
+            extension.compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+    }
+
+    setDependencies = {
+        extension ->
+            //extension.implementation fileTree(include: ['*.jar'], dir: 'libs')
+            extension.testImplementation 'junit:junit:4.12'
+            extension.androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+            extension.androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+            extension.implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+            dependencies_implementation.each { value ->
+                extension.api value
+            }
+    }
+
+    //dependencies {
+    //    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    testImplementation 'junit:junit:4.12'
+    //    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    //
+    //
+    //
+    //    api project(':resources_daynight')
+    //    rootProject.ext.dependencies_implementation.each { value ->
+    //        implementation value
+    //    }
+    //}
+
+    // flannery 账户
+    // curl -F 'file=@./app-release.apk' -F '_api_key=fb5b673fdcaf708c00cd4524bef8a038' https://www.pgyer.com/apiv2/app/upload
+    // 自动上传到蒲公英
+    upload2d = { extension, buildUpdateDescription ->
+        extension.android {
+            //在这里获取: https://www.pgyer.com/doc/view/api#uploadApp
+            String pgyerApiKey = 'fb5b673fdcaf708c00cd4524bef8a038'
+            task upload2Pgyer(group: 'upload2Pgyer', description: 'upload apk to pgyer', dependsOn: 'app:assembleRelease') {
+//release修改这里
+                doLast {
+                    applicationVariants.all {
+                        it.outputs.each { out ->
+                            def outputFile = out.outputFile
+                            logger.log(LogLevel.INFO, outputFile.name)
+                            if (outputFile != null && outputFile.name == 'app-release.apk') {
+//release修改这里
+                                logger.log(LogLevel.ERROR, "start up load apk file : ${outputFile.absolutePath}")
+                                def uploadCommand = "curl -F \"file=@${outputFile.absolutePath}\" -F \"_api_key=$pgyerApiKey\" -F " +
+                                        "\"buildUpdateDescription=$buildUpdateDescription\" -F \"buildInstallType=2\" -F \"buildPassword=123\" https://www.pgyer.com/apiv2/app/upload"
+                                Runtime runtime = Runtime.getRuntime()
+                                Process p = runtime.exec(uploadCommand)
+                                InputStream fis = p.getInputStream()
+                                InputStreamReader isr = new InputStreamReader(fis)
+                                BufferedReader br = new BufferedReader(isr)
+                                String line = null
+                                logger.log(LogLevel.ERROR, "upload result :")
+                                while ((line = br.readLine()) != null) {
+                                    logger.log(LogLevel.ERROR, line)
+                                    def startStr = "\"buildShortcutUrl\":\""
+                                    int start = line.indexOf(startStr) + startStr.length()
+                                    int end = line.indexOf("\"", start)
+                                    if (start > 0 && end > 0) {
+                                        String sUrl = line.substring(start, end)
+                                        runtime.exec("cmd   /c   start  https://www.pgyer.com/$sUrl")
+                                    }
+                                }
+                                br.close()
+                                isr.close()
+                                fis.close()
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

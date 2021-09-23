@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
     }
 
+    fun test() {
+
+    }
+
     private fun initButtons() {
         findViewById<Button>(R.id.btnPackage).setOnClickListener {
             ActivityUtils.startActivity(this, "com.henley.appmanage.activity.MainActivity")

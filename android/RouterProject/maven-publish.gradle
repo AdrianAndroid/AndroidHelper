@@ -6,128 +6,215 @@
 // https://juejin.cn/post/6844904185754812423
 // https://developer.android.com/studio/build/maven-publish-plugin
 // https://blog.csdn.net/Melody_Susan/article/details/80861345
+
+
+
+
+
+pluginManager.apply('maven')
+
 //读取工程的配置
 Properties gradleProperties = new Properties()
 gradleProperties.load(project.rootProject.file("gradle.properties").newDataInputStream())
 def VERSION_NAME = gradleProperties.getProperty("VERSION_NAME")
 def POM_URL = gradleProperties.getProperty("POM_URL")
-def POM_GROUP_ID = gradleProperties.getProperty("GROUP_ID")
+def GROUP_ID = gradleProperties.getProperty("GROUP_ID")
 
-// 本项目下的gradle.properties文件
 Properties projectGradleProperties = new Properties()
-projectGradleProperties.load(project.file('gradle.properties').newDataInputStream())
+projectGradleProperties.load(
+        project.file('gradle.properties').newDataInputStream()
+)
 def POM_ARTIFACT_ID = projectGradleProperties.getProperty("POM_ARTIFACT_ID")
 
 println("maven-publish VERSION_NAME=$VERSION_NAME")
 println("maven-publish POM_URL=$POM_URL")
+println("maven-publish POM_URL=$POM_URL")
 println("maven-publish GROUP_ID=$GROUP_ID")
 
-//https://www.cnblogs.com/h--d/p/14768794.html
-pluginManager.apply('maven-publish')
-//pluginManager.apply('java')
 
-if(project.hasProperty("android")) {
-    task sourceJar(type: Jar) {
-//        classifier = 'sources'
-        from android.sourceSets.main.java.sourceFiles
-    }
-
-    task javadoc(type: Javadoc) {
-        source = android.sourceSets.main.java.srcDirs
-        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    }
-} else { // java libraries
-    task sourceJar(type: Jar, dependsOn: classes) {
-//        classifier 'sources'
-        from sourceSets.main.allSource
-    }
-
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-// 解决javadoc打包乱码
-javadoc {
-    options {
-        encoding "UTF-8"
-        charSet 'UTF-8'
-        author true
-        version true
-        title '文档大标题'
-    }
-}
-
-
-publishing {
-    publications {
-        // Creates a Maven publication called "release".
-        maven(MavenPublication) {
-//            from components.java //.release
-            //from components.web //war包
-
-            groupId = POM_GROUP_ID          // 分组ID，一般是公司域名倒过来
-            artifactId = POM_ARTIFACT_ID    // 工程名 默认就是项目名
-            version = VERSION_NAME          // 版本号
-            description 'This is a library' // 描述
-
-//            artifact(outputFilePath)
-            artifact sourceJar
-//            artifact javadocJar
-
-            pom {
-//                name = 'repo'
-                description = "POM_DESCRIPTION"
-                //url = POM_SCM_URL
-
-                licenses {
-                    license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//发布任务
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            // 填入发布信息
+            repository(url: uri(POM_URL)) {
+                pom.groupId    = GROUP_ID
+                pom.artifactId = POM_ARTIFACT_ID
+                pom.version    = VERSION_NAME
+            }
+            pom.whenConfigured { pom ->
+                pom.dependencies.forEach { dep ->
+                    if(dep.getVersion() == "unspecified") {
+                        dep.setGroupId(GROUP_ID)
+                        dep.setVersion(VERSION_NAME)
                     }
-                }
-                developers {
-                    developer {
-                        id = 'flannery'
-                        name = 'flannery'
-                        email = '18310579837@163.com'
-                    }
-                }
-                scm {
-                    connection = 'scm:git:git://example.com/my-library.git'
-                    developerConnection = 'scm:git:ssh://example.com/my-library.git'
-                    url = 'http://example.com/my-library/'
                 }
             }
-        }
 
-    }
-
-    // 添加仓库
-    repositories {
-        //mavenLocal()
-        maven {
-            // 指定路径
-            url = POM_URL
-            //name = 'repo'
-            //credentials {
-            //    username 'user'
-            //    password '123456'
-            //}
         }
-//        maven {
-//            def releasesRepoUrl = "https://intbird.net/maven/releases/"
-//            def snapshotsRepoUrl = "https://intbird.net/maven/snapshots/"
-//            url = Version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
-//            credentials {
-//                username = userName
-//                password = passWord
-//            }
-//        }
     }
 }
 
-//publish.dependsOn build
-//publishToMavenLocal.dependsOn build
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////读取工程的配置
+//Properties gradleProperties = new Properties()
+//gradleProperties.load(project.rootProject.file("gradle.properties").newDataInputStream())
+//def VERSION_NAME = gradleProperties.getProperty("VERSION_NAME")
+//def POM_URL = gradleProperties.getProperty("POM_URL")
+//def POM_GROUP_ID = gradleProperties.getProperty("GROUP_ID")
+//
+//// 本项目下的gradle.properties文件
+//Properties projectGradleProperties = new Properties()
+//projectGradleProperties.load(project.file('gradle.properties').newDataInputStream())
+//def POM_ARTIFACT_ID = projectGradleProperties.getProperty("POM_ARTIFACT_ID")
+//
+//println("maven-publish VERSION_NAME=$VERSION_NAME")
+//println("maven-publish POM_URL=$POM_URL")
+//println("maven-publish GROUP_ID=$GROUP_ID")
+//
+////https://www.cnblogs.com/h--d/p/14768794.html
+//pluginManager.apply('maven-publish')
+////pluginManager.apply('java')
+//
+//if(project.hasProperty("android")) {
+//    println("$project")
+//    println("hasProperty android")
+//    task sourceJar(type: Jar) {
+////        classifier = 'sources'
+//        from android.sourceSets.main.java.sourceFiles
+//    }
+//
+//    task javadoc(type: Javadoc) {
+//        source = android.sourceSets.main.java.srcDirs
+//        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//    }
+//} else { // java libraries
+//    println("$project")
+//    println("hasProperty java")
+//    task sourceJar(type: Jar, dependsOn: classes) {
+////        classifier 'sources'
+//        from sourceSets.main.allSource
+//    }
+//
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//// 解决javadoc打包乱码
+//javadoc {
+//    options {
+//        encoding "UTF-8"
+//        charSet 'UTF-8'
+//        author true
+//        version true
+//        title '文档大标题'
+//    }
+//}
+//
+//
+//publishing {
+//    publications {
+//        // Creates a Maven publication called "release".
+//        maven(MavenPublication) {
+////            from components.java //.release
+//            //from components.web //war包
+//
+//            groupId = POM_GROUP_ID          // 分组ID，一般是公司域名倒过来
+//            artifactId = POM_ARTIFACT_ID    // 工程名 默认就是项目名
+//            version = VERSION_NAME          // 版本号
+//            description 'This is a library' // 描述
+//
+////            artifact(outputFilePath)
+//            artifact sourceJar
+//            artifact javadocJar
+//
+//            pom {
+////                name = 'repo'
+//                description = "POM_DESCRIPTION"
+//                //url = POM_SCM_URL
+//
+//                licenses {
+//                    license {
+//                        name = 'The Apache License, Version 2.0'
+//                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id = 'flannery'
+//                        name = 'flannery'
+//                        email = '18310579837@163.com'
+//                    }
+//                }
+//                scm {
+//                    connection = 'scm:git:git://example.com/my-library.git'
+//                    developerConnection = 'scm:git:ssh://example.com/my-library.git'
+//                    url = 'http://example.com/my-library/'
+//                }
+//            }
+//        }
+//
+//    }
+//
+//    // 添加仓库
+//    repositories {
+//        //mavenLocal()
+//        maven {
+//            // 指定路径
+//            url = POM_URL
+//            //name = 'repo'
+//            //credentials {
+//            //    username 'user'
+//            //    password '123456'
+//            //}
+//        }
+////        maven {
+////            def releasesRepoUrl = "https://intbird.net/maven/releases/"
+////            def snapshotsRepoUrl = "https://intbird.net/maven/snapshots/"
+////            url = Version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
+////            credentials {
+////                username = userName
+////                password = passWord
+////            }
+////        }
+//    }
+//}
+//
+////publish.dependsOn build
+////publishToMavenLocal.dependsOn build

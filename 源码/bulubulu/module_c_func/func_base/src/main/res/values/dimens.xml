@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="look_for_like_btn_margin_bottom">19dp</dimen>
+    <dimen name="look_for_user_header_width">320dp</dimen>
+    <dimen name="look_for_user_header_pic_width">336dp</dimen>
+    <dimen name="tag_pad_bottom">1dp</dimen>
+
+    <!--PublishMainFragment-->
+    <!--投票高度-->
+    <dimen name="publish_vote_edittext_margintop">25dp</dimen>
+
+    <dimen name="pk_result_img_slide">50dp</dimen>
+    <dimen name="pk_result_height">@dimen/pk_result_img_slide</dimen>
+
+    <dimen name="login_marginLeft">35dp</dimen>
+    <dimen name="login_marginRight">35dp</dimen>
+</resources>

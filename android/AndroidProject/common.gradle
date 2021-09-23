@@ -2,7 +2,7 @@ ext {
 
     isLibrary = true
 
-    repoVersion = '2.0.5'
+    repoVersion = '2.0.6'
 
     setAppConfig = { Project project, String appId ->
         project.println("applicationId = $appId")
@@ -14,7 +14,7 @@ ext {
         project.plugins.apply('com.joyy.router')
 
         project.android {
-            compileSdk 31
+            compileSdk 30
             println("[setAppConfig] android $appId")
 
             defaultConfig {
@@ -22,7 +22,7 @@ ext {
 
                 applicationId appId
                 minSdk 21
-                targetSdk 31
+                targetSdk 30
                 versionCode 1
                 versionName "2.0"
 
@@ -84,11 +84,11 @@ ext {
         project.description "第三方库"
 
         project.android {
-            compileSdk 31
+            compileSdk 30
 
             defaultConfig {
                 minSdk 21
-                targetSdk 31
+                targetSdk 30
                 versionCode 1
                 versionName "1.0"
 

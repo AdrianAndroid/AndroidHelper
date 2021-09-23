@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/container_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <cn.kuwo.pp.util.WaterImageView
+        android:id="@+id/acv"
+        android:layout_width="@dimen/look_for_user_header_width"
+        android:layout_height="@dimen/look_for_user_header_width"
+        android:layout_marginTop="99dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/acv"
+        app:layout_constraintLeft_toLeftOf="@id/acv"
+        app:layout_constraintRight_toRightOf="@id/acv" />
+
+    <TextView
+        android:id="@+id/look_for_name"
+        style="@style/TextView_SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorHighlight"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/space"
+        tools:text="这里是名称名称" />
+
+    <cn.kuwo.pp.util.IconFountTextView
+        android:id="@+id/look_for_tag_sex"
+        style="@style/TextView_Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tag_sex_man_rounded_placeholder"
+        android:gravity="center"
+        android:minHeight="21dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="e6d7;12"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/look_for_tag_city"
+        app:layout_constraintTop_toBottomOf="@id/look_for_name" />
+
+    <TextView
+        android:id="@+id/look_for_tag_city"
+        style="@style/TextView_Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/tag_def_rounded_placeholder"
+        android:gravity="center"
+        android:minHeight="21dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="北京"
+        app:layout_constraintBottom_toBottomOf="@id/look_for_tag_sex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/look_for_tag_sex"
+        app:layout_constraintRight_toLeftOf="@id/look_for_tag_song"
+        app:layout_constraintTop_toTopOf="@id/look_for_tag_sex" />
+
+    <TextView
+        android:id="@+id/look_for_tag_song"
+        style="@style/TextView_Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/tag_def_rounded_placeholder"
+        android:gravity="center"
+        android:minHeight="21dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="阳光姑娘"
+        app:layout_constraintBottom_toBottomOf="@id/look_for_tag_sex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/look_for_tag_city"
+        app:layout_constraintRight_toLeftOf="@id/look_for_tag_constellation"
+        app:layout_constraintTop_toTopOf="@id/look_for_tag_sex" />
+
+    <TextView
+        android:id="@+id/look_for_tag_constellation"
+        style="@style/TextView_Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/tag_def_rounded_placeholder"
+        android:gravity="center"
+        android:minHeight="21dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="巨蟹"
+        app:layout_constraintBottom_toBottomOf="@id/look_for_tag_sex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/look_for_tag_song"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/look_for_tag_sex" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/like_anim_view"
+        android:layout_width="146dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="24dp"
+        android:clickable="false"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="like_click.json"
+        app:lottie_loop="false" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
