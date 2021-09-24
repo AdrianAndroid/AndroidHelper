@@ -1,3 +1,6 @@
 [submodule "repo"]
 	path = repo
 	url = git@github.com:AdrianAndroid/repo.git
+[submodule "android/AndroidProject"]
+	path = android/AndroidProject
+	url = git@github.com:AdrianAndroid/AndroidProject.git
