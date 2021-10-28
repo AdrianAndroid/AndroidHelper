@@ -4,3 +4,18 @@
 [submodule "android/AndroidProject"]
 	path = android/AndroidProject
 	url = git@github.com:AdrianAndroid/AndroidProject.git
+[submodule "android/xplayer"]
+	path = android/xplayer
+	url = git@github.com:AdrianAndroid/xplayer.git
+[submodule "ios/TFLive"]
+	path = ios/TFLive
+	url = git@github.com:AdrianAndroid/TFLive.git
+[submodule "android/YUV-Player"]
+	path = android/YUV-Player
+	url = git@github.com:bigFishZhang/YUV-Player.git
+[submodule "android/DKVideoPlayer"]
+	path = android/DKVideoPlayer
+	url = git@github.com:AdrianAndroid/DKVideoPlayer.git
+[submodule "android/android-openGL-canvas"]
+	path = android/android-openGL-canvas
+	url = git@github.com:AdrianAndroid/android-openGL-canvas.git

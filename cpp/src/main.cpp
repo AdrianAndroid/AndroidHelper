@@ -28,7 +28,15 @@ void forTest();
 
 void vectorTest();
 
+void test();
+
 int main(int argc, char **argv) {
+
+    printf("This is a C program.\n");
+    test();
+    return 0;
+
+
     std::cout << "Hello, World!" << std::endl;
     mmap_demo _mmap_demo;
     _mmap_demo.test2(argc, argv);
@@ -40,6 +48,13 @@ int main(int argc, char **argv) {
     return 0;
 }
 
+void test() {
+    float p0 = 1000, r1 = 0.0036, r2 = 0.0225, r3 = 0.190, p1, p2, p3;
+    p1 = p0*(1*r1);
+    p2 = p0*(1+r2);
+    p3 = p0*(1+r3/2)*(1+r3/2);
+    printf("p1=%f\np3=%f\np3=%f\n", p1, p2, p3);
+}
 
 void forTest() {
     int i;
