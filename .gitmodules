@@ -19,3 +19,6 @@
 [submodule "android/android-openGL-canvas"]
 	path = android/android-openGL-canvas
 	url = git@github.com:AdrianAndroid/android-openGL-canvas.git
+[submodule "android/GSYVideoPlayer"]
+	path = android/GSYVideoPlayer
+	url = git@github.com:AdrianAndroid/GSYVideoPlayer.git
