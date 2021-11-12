@@ -27,23 +27,28 @@ println("maven-publish GROUP_ID=$GROUP_ID")
 pluginManager.apply('maven-publish')
 //pluginManager.apply('java')
 
-if(project.hasProperty("android")) {
+if (project.hasProperty("android")) {
     println("$project")
     println("hasProperty android")
     task sourceJar(type: Jar) {
 //        classifier = 'sources'
+        from android.sourceSets.main.java.getSrcDirs()
+        from android.sourceSets.release.java.getSrcDirs()
         from android.sourceSets.main.java.sourceFiles
     }
 
     task javadoc(type: Javadoc) {
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        destinationDir = file('../javadoc/')
+        failOnError false
     }
 } else { // java libraries
     println("$project")
     println("hasProperty java")
     task sourceJar(type: Jar, dependsOn: classes) {
 //        classifier 'sources'
+        //failOnError false
         from sourceSets.main.allSource
     }
 

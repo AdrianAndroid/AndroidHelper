@@ -7,3 +7,16 @@ dependencies {
 // 应用发布功能
 apply from : rootProject.file("maven-publish.gradle")
 //project.plugins.apply(rootProject.file("maven-publish.gradle"))
+
+//tasks.withType(Javadoc) {
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//    options.addStringOption('encoding', 'UTF-8')
+//}
+
+//sourceSets {
+//    main {
+//        java {
+//            srcDirs 'src'
+//        }
+//    }
+//}

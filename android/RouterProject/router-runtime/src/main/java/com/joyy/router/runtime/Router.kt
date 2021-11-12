@@ -2,15 +2,9 @@ package com.joyy.router.runtime
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 
-/**
- * Time:2021/9/9 14:33
- * Author: flannery
- * Description: 工具类
- */
 object Router {
 
     private fun log(msg: String) {
@@ -67,5 +61,4 @@ object Router {
             log(e)
         }
     }
-
 }
