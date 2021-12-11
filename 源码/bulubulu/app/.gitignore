@@ -1,7 +1,0 @@
-/build
-.project
-.classpath
-/.settings
-/proguardMapping.txt
-/release
-*.zip

@@ -1,6 +1,0 @@
-rootProject.ext.setLibDefaultConfig project
-
-
-dependencies {
-    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-}
